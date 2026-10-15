@@ -12,8 +12,23 @@ cd "$(dirname "$0")/.."
 
 PY=${PYTHON:-python3}
 "$PY" --version
+
+make_venv() {
+    # plain venv first; Ubuntu images without python3-venv need one of the fallbacks
+    "$PY" -m venv .venv 2>/dev/null && return 0
+    rm -rf .venv
+    if command -v uv >/dev/null 2>&1 && uv venv --seed --python "$PY" .venv; then return 0; fi
+    local SUDO=""
+    [ "$(id -u)" = 0 ] || SUDO="sudo -n"
+    if command -v apt-get >/dev/null 2>&1 && $SUDO apt-get update -qq \
+        && $SUDO apt-get install -y -qq "python3-venv" >/dev/null && "$PY" -m venv .venv; then return 0; fi
+    rm -rf .venv
+    "$PY" -m pip install --quiet --user --break-system-packages virtualenv 2>/dev/null \
+        || "$PY" -m pip install --quiet --user virtualenv
+    "$PY" -m virtualenv .venv
+}
 if [ ! -x .venv/bin/python ]; then
-    "$PY" -m venv .venv
+    make_venv
 fi
 # shellcheck disable=SC1091
 . .venv/bin/activate

@@ -1,4 +1,5 @@
 # Python and tooling
+.claude/worktrees/
 __pycache__/
 *.pyc
 .venv/
