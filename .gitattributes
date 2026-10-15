@@ -1,0 +1,10 @@
+# Text is stored with LF and checked out with LF everywhere (code and docs are LF), except the two files kept CRLF by
+# convention (CLAUDE.md, docs/research_protocol.md). Shell scripts must be LF for bash on the cloud VMs.
+* text=auto eol=lf
+CLAUDE.md text eol=crlf
+docs/research_protocol.md text eol=crlf
+*.sh text eol=lf
+*.npz binary
+*.npy binary
+*.png binary
+*.pt binary

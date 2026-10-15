@@ -1,0 +1,146 @@
+graph n=2000 m=15616 groups=[650, 723, 627] k=25
+  rep 0 RA=8 z=0.0: moves 2, est disp 0.0095 -> 0.0021 (0.3s)
+  rep 0 RA=8 z=1.0: moves 0, est disp 0.0095 -> 0.0095 (0.0s)
+  rep 0 RA=8 z=2.0: moves 0, est disp 0.0095 -> 0.0095 (0.0s)
+  rep 0 RA=64 z=0.0: moves 1, est disp 0.0138 -> 0.0108 (0.1s)
+  rep 0 RA=64 z=1.0: moves 1, est disp 0.0138 -> 0.0108 (0.0s)
+  rep 0 RA=64 z=2.0: moves 0, est disp 0.0138 -> 0.0138 (0.0s)
+  rep 0 RA=512 z=0.0: moves 3, est disp 0.0432 -> 0.0191 (0.7s)
+  rep 0 RA=512 z=1.0: moves 3, est disp 0.0432 -> 0.0191 (0.8s)
+  rep 0 RA=512 z=2.0: moves 3, est disp 0.0432 -> 0.0191 (0.8s)
+  rep 1 RA=8 z=0.0: moves 3, est disp 0.0346 -> 0.0231 (0.0s)
+  rep 1 RA=8 z=1.0: moves 1, est disp 0.0346 -> 0.0249 (0.0s)
+  rep 1 RA=8 z=2.0: moves 0, est disp 0.0346 -> 0.0346 (0.0s)
+  rep 1 RA=64 z=0.0: moves 3, est disp 0.0411 -> 0.0161 (0.1s)
+  rep 1 RA=64 z=1.0: moves 3, est disp 0.0411 -> 0.0161 (0.2s)
+  rep 1 RA=64 z=2.0: moves 3, est disp 0.0411 -> 0.0161 (0.2s)
+  rep 1 RA=512 z=0.0: moves 4, est disp 0.0420 -> 0.0098 (0.8s)
+  rep 1 RA=512 z=1.0: moves 4, est disp 0.0420 -> 0.0098 (0.9s)
+  rep 1 RA=512 z=2.0: moves 3, est disp 0.0420 -> 0.0121 (0.8s)
+  rep 2 RA=8 z=0.0: moves 2, est disp 0.0358 -> 0.0106 (0.0s)
+  rep 2 RA=8 z=1.0: moves 1, est disp 0.0358 -> 0.0218 (0.0s)
+  rep 2 RA=8 z=2.0: moves 0, est disp 0.0358 -> 0.0358 (0.0s)
+  rep 2 RA=64 z=0.0: moves 2, est disp 0.0381 -> 0.0144 (0.1s)
+  rep 2 RA=64 z=1.0: moves 2, est disp 0.0381 -> 0.0144 (0.1s)
+  rep 2 RA=64 z=2.0: moves 2, est disp 0.0381 -> 0.0144 (0.1s)
+  rep 2 RA=512 z=0.0: moves 4, est disp 0.0418 -> 0.0100 (0.8s)
+  rep 2 RA=512 z=1.0: moves 4, est disp 0.0418 -> 0.0100 (1.0s)
+  rep 2 RA=512 z=2.0: moves 3, est disp 0.0418 -> 0.0105 (0.8s)
+  rep 3 RA=8 z=0.0: moves 5, est disp 0.0148 -> 0.0043 (0.1s)
+  rep 3 RA=8 z=1.0: moves 0, est disp 0.0148 -> 0.0148 (0.0s)
+  rep 3 RA=8 z=2.0: moves 0, est disp 0.0148 -> 0.0148 (0.0s)
+  rep 3 RA=64 z=0.0: moves 3, est disp 0.0378 -> 0.0118 (0.1s)
+  rep 3 RA=64 z=1.0: moves 3, est disp 0.0378 -> 0.0118 (0.2s)
+  rep 3 RA=64 z=2.0: moves 3, est disp 0.0378 -> 0.0118 (0.2s)
+  rep 3 RA=512 z=0.0: moves 3, est disp 0.0419 -> 0.0111 (0.7s)
+  rep 3 RA=512 z=1.0: moves 3, est disp 0.0419 -> 0.0111 (0.8s)
+  rep 3 RA=512 z=2.0: moves 3, est disp 0.0419 -> 0.0111 (0.8s)
+  rep 4 RA=8 z=0.0: moves 2, est disp 0.0223 -> 0.0208 (0.0s)
+  rep 4 RA=8 z=1.0: moves 0, est disp 0.0223 -> 0.0223 (0.0s)
+  rep 4 RA=8 z=2.0: moves 0, est disp 0.0223 -> 0.0223 (0.0s)
+  rep 4 RA=64 z=0.0: moves 3, est disp 0.0456 -> 0.0184 (0.1s)
+  rep 4 RA=64 z=1.0: moves 3, est disp 0.0456 -> 0.0184 (0.2s)
+  rep 4 RA=64 z=2.0: moves 3, est disp 0.0456 -> 0.0184 (0.2s)
+  rep 4 RA=512 z=0.0: moves 6, est disp 0.0413 -> 0.0108 (1.1s)
+  rep 4 RA=512 z=1.0: moves 6, est disp 0.0413 -> 0.0108 (1.2s)
+  rep 4 RA=512 z=2.0: moves 3, est disp 0.0413 -> 0.0156 (0.8s)
+  rep 5 RA=8 z=0.0: moves 3, est disp 0.0050 -> 0.0026 (0.0s)
+  rep 5 RA=8 z=1.0: moves 0, est disp 0.0050 -> 0.0050 (0.0s)
+  rep 5 RA=8 z=2.0: moves 0, est disp 0.0050 -> 0.0050 (0.0s)
+  rep 5 RA=64 z=0.0: moves 3, est disp 0.0439 -> 0.0125 (0.1s)
+  rep 5 RA=64 z=1.0: moves 3, est disp 0.0439 -> 0.0125 (0.2s)
+  rep 5 RA=64 z=2.0: moves 3, est disp 0.0439 -> 0.0125 (0.2s)
+  rep 5 RA=512 z=0.0: moves 3, est disp 0.0414 -> 0.0161 (0.7s)
+  rep 5 RA=512 z=1.0: moves 3, est disp 0.0414 -> 0.0161 (0.8s)
+  rep 5 RA=512 z=2.0: moves 3, est disp 0.0414 -> 0.0161 (0.8s)
+  rep 6 RA=8 z=0.0: moves 2, est disp 0.0479 -> 0.0223 (0.0s)
+  rep 6 RA=8 z=1.0: moves 2, est disp 0.0479 -> 0.0278 (0.1s)
+  rep 6 RA=8 z=2.0: moves 0, est disp 0.0479 -> 0.0479 (0.0s)
+  rep 6 RA=64 z=0.0: moves 4, est disp 0.0169 -> 0.0102 (0.1s)
+  rep 6 RA=64 z=1.0: moves 1, est disp 0.0169 -> 0.0142 (0.1s)
+  rep 6 RA=64 z=2.0: moves 0, est disp 0.0169 -> 0.0169 (0.0s)
+  rep 6 RA=512 z=0.0: moves 3, est disp 0.0414 -> 0.0156 (0.6s)
+  rep 6 RA=512 z=1.0: moves 3, est disp 0.0414 -> 0.0156 (0.7s)
+  rep 6 RA=512 z=2.0: moves 3, est disp 0.0414 -> 0.0156 (0.8s)
+  rep 7 RA=8 z=0.0: moves 1, est disp 0.0025 -> 0.0004 (0.0s)
+  rep 7 RA=8 z=1.0: moves 0, est disp 0.0025 -> 0.0025 (0.0s)
+  rep 7 RA=8 z=2.0: moves 0, est disp 0.0025 -> 0.0025 (0.0s)
+  rep 7 RA=64 z=0.0: moves 3, est disp 0.0107 -> 0.0073 (0.1s)
+  rep 7 RA=64 z=1.0: moves 0, est disp 0.0107 -> 0.0107 (0.0s)
+  rep 7 RA=64 z=2.0: moves 0, est disp 0.0107 -> 0.0107 (0.0s)
+  rep 7 RA=512 z=0.0: moves 3, est disp 0.0328 -> 0.0097 (0.6s)
+  rep 7 RA=512 z=1.0: moves 3, est disp 0.0328 -> 0.0097 (0.7s)
+  rep 7 RA=512 z=2.0: moves 3, est disp 0.0328 -> 0.0097 (0.8s)
+  rep 8 RA=8 z=0.0: moves 2, est disp 0.0493 -> 0.0247 (0.0s)
+  rep 8 RA=8 z=1.0: moves 2, est disp 0.0493 -> 0.0254 (0.1s)
+  rep 8 RA=8 z=2.0: moves 0, est disp 0.0493 -> 0.0493 (0.0s)
+  rep 8 RA=64 z=0.0: moves 1, est disp 0.0131 -> 0.0122 (0.1s)
+  rep 8 RA=64 z=1.0: moves 0, est disp 0.0131 -> 0.0131 (0.0s)
+  rep 8 RA=64 z=2.0: moves 0, est disp 0.0131 -> 0.0131 (0.0s)
+  rep 8 RA=512 z=0.0: moves 6, est disp 0.0430 -> 0.0113 (1.0s)
+  rep 8 RA=512 z=1.0: moves 5, est disp 0.0430 -> 0.0113 (1.0s)
+  rep 8 RA=512 z=2.0: moves 5, est disp 0.0430 -> 0.0113 (1.0s)
+  rep 9 RA=8 z=0.0: moves 1, est disp 0.0016 -> 0.0006 (0.0s)
+  rep 9 RA=8 z=1.0: moves 0, est disp 0.0016 -> 0.0016 (0.0s)
+  rep 9 RA=8 z=2.0: moves 0, est disp 0.0016 -> 0.0016 (0.0s)
+  rep 9 RA=64 z=0.0: moves 3, est disp 0.0323 -> 0.0090 (0.1s)
+  rep 9 RA=64 z=1.0: moves 2, est disp 0.0323 -> 0.0094 (0.1s)
+  rep 9 RA=64 z=2.0: moves 2, est disp 0.0323 -> 0.0094 (0.1s)
+  rep 9 RA=512 z=0.0: moves 4, est disp 0.0139 -> 0.0105 (0.7s)
+  rep 9 RA=512 z=1.0: moves 4, est disp 0.0139 -> 0.0105 (0.6s)
+  rep 9 RA=512 z=2.0: moves 0, est disp 0.0139 -> 0.0139 (0.1s)
+search done (136s); 94 distinct sets; computing truth
+    truth chunk 1/16
+    truth chunk 2/16
+    truth chunk 3/16
+    truth chunk 4/16
+    truth chunk 5/16
+    truth chunk 6/16
+    truth chunk 7/16
+    truth chunk 8/16
+    truth chunk 9/16
+    truth chunk 10/16
+    truth chunk 11/16
+    truth chunk 12/16
+    truth chunk 13/16
+    truth chunk 14/16
+    truth chunk 15/16
+    truth chunk 16/16
+
+SEARCH (means over reps)
+  RA   z  moves  est_gain  true_gain  optimism  nonimproving  total_moves  worsening  true_final  true_slack_min
+  8 0.0    2.3   0.01119    0.00587   0.00402             7           23          7     0.01517        -0.00457
+  8 1.0    0.6   0.00677    0.00523   0.00024             0            6          0     0.01580        -0.00553
+  8 2.0    0.0   0.00000    0.00000  -0.00130             0            0          0     0.02103        -0.00152
+ 64 0.0    2.6   0.01706    0.01561  -0.00012             3           26          2     0.01215        -0.00158
+ 64 1.0    1.8   0.01619    0.01529  -0.00067             0           18          0     0.01247         0.00020
+ 64 2.0    1.6   0.01561    0.01474  -0.00070             0           16          0     0.01301         0.00020
+512 0.0    3.9   0.02588    0.02559  -0.00016             1           39          0     0.01224         0.00182
+512 1.0    3.8   0.02587    0.02559  -0.00016             0           38          0     0.01224         0.00182
+512 2.0    2.9   0.02477    0.02453  -0.00020             0           29          0     0.01330         0.00150
+
+CERTIFY
+  RB  n  floor_miss  disp_miss  certified  halfwidth_rel  mc_halfwidth_rel  mc_passed
+  8 90           0          0    0.06667        0.01390           0.00312    0.35556
+ 64 90           0          0    0.20000        0.00448           0.00312    0.35556
+512 90           0          0    0.72222        0.00154           0.00312    0.35556
+
+COMMUNITY NOISE
+   R    m    rate  sd_observed  sd_predicted
+  8   10 0.33562      0.04769       0.05279
+  8   30 0.44958      0.02333       0.03211
+  8  100 0.45781      0.01275       0.01761
+  8  300 0.35615      0.00669       0.00977
+  8 1000 0.35767      0.00476       0.00536
+ 64   10 0.34250      0.02105       0.01876
+ 64   30 0.45458      0.00954       0.01136
+ 64  100 0.45894      0.00459       0.00623
+ 64  300 0.35893      0.00252       0.00346
+ 64 1000 0.35923      0.00121       0.00190
+512   10 0.33938      0.00583       0.00662
+512   30 0.45479      0.00341       0.00402
+512  100 0.45892      0.00178       0.00220
+512  300 0.35912      0.00083       0.00122
+512 1000 0.35892      0.00051       0.00067
+
+done in 273s -> C:\Users\Odwitiyo\Desktop\FIM-GAT\results\v2\theory

@@ -1,0 +1,17 @@
+# Python and tooling
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+tests/_reports/
+
+# Raw downloads and dumps: rebuilt from their public sources, never committed (the Pokec profiles are personal data)
+data/v2/raw/
+# Over GitHub's 100 MB file limit; large tier only (built on the GPU machine from the SNAP dumps)
+data/pokec/pokec_full.npz
+
+# Scratch output
+results/v2/quick/
+*.tmp
+*.tmp.npz
+*.part

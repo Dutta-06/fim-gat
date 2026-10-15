@@ -1,0 +1,11 @@
+# Tested with Python 3.11 and the versions below.
+# Install PyTorch for your CUDA version first: https://pytorch.org/get-started/locally/
+torch>=2.2            # tested 2.6.0+cu124
+torch_geometric>=2.5  # tested 2.7.0
+numba>=0.59           # tested 0.63.1
+numpy>=1.26           # tested 2.3.5
+scipy>=1.11           # tested 1.17.0
+scikit-learn>=1.4     # tested 1.8.0 (AGE baseline only)
+pandas>=2.1           # tested 3.0.0
+networkx>=3.2         # tested 3.6.1 (Louvain communities for evaluation)
+psutil>=5.9           # tested 7.2.1 (optional: host memory in the v2 stage logs)
