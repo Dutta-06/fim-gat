@@ -25,7 +25,7 @@ v1's honest outcome:
 
 ## Where to pick up
 
-**On a Claude Code cloud session (Linux VM):** follow `docs/cloud_runbook.md`, which lists every job and the rules for running it. The laptop-only advice below (the `python` vs `python3` warning, `PYTHONIOENCODING`, CRLF, the old project's paths) does not apply there.
+**On a Claude Code cloud session (Linux VM):** follow `docs/cloud_mission.md`, your brief (setup, rules, jobs); `docs/cloud_runbook.md` has the background. The laptop-only advice below (the `python` vs `python3` warning, `PYTHONIOENCODING`, CRLF, the old project's paths) does not apply there.
 
 1. **Ask the user before multi-hour local runs.** The user said to start on 2026-10-15, cloud first (`docs/cloud_runbook.md`).
 2. The run order is `docs/research_protocol.md` §1:

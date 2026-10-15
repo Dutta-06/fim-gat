@@ -1,6 +1,6 @@
 # Cloud runbook: running FIM-GAT v2 on Claude Code cloud sessions
 
-Written 2026-10-15. On that day the user said to run everything that a Claude Code cloud session can carry, as soon as possible, so that local compute is not needed. This file is the operating manual for those sessions. `docs/research_protocol.md` still governs what is run and how it is reported. Nothing here changes a pre-registered setting (design §18–§21).
+Written 2026-10-15. On that day the user said to run everything that a Claude Code cloud session can carry, as soon as possible, so that local compute is not needed. This file is the background for those sessions; their operational brief, with the exact commands of every job, is `docs/cloud_mission.md`. `docs/research_protocol.md` still governs what is run and how it is reported. Nothing here changes a pre-registered setting (design §18–§21).
 
 ## 1. What a cloud session can and cannot carry
 
