@@ -4,7 +4,7 @@ You are a Claude Code session on a cloud VM: Ubuntu, about 4 vCPUs, 16 GB RAM, *
 
 FIM-GAT is a fair influence-maximisation research project. Its experiments are **pre-registered**: the claims, tests, settings and analysis were fixed before any run. Your task is to run the CPU-feasible parts of that pipeline on this VM, as fast as the rules allow, and push every result to GitHub.
 
-The researcher launching you adds one line under this brief: `JOB: <name>`, from §5. If there is no such line, your job is **A**. Run only your job.
+The researcher launching you may add one line under this brief: `JOB: <name>`. Then run only that job: A (§4), a B job (§5) or C (§6). If there is no such line, or it says `JOB: ALL`, your job is **ALL** (§4b): the whole list, in priority order, in this one session.
 
 ## 1. Rules that override speed
 
@@ -99,6 +99,57 @@ Before the first chunk, run the same command once with `--dry-run` and put its p
      - the test summary and the dataset sizes;
      - the total time.
    - Push, and open a pull request titled "Cloud job A: datasets and tuning".
+
+## 4b. Job ALL: everything, in one session (the default)
+
+**Branch.** Work on `claude/fimgat-all`. If that branch exists on origin, continue from it: every step below skips what is already done, so a relaunched session picks up where the last one stopped.
+
+**Stay in the loop.** Nobody is watching overnight. Do not end your turn while work remains: waiting for a running chunk is part of the job. While a chunk runs, check its log every few minutes, and as soon as it ends, commit, push and start the next chunk or step.
+- Stop only when the list is done, or at a blocker you cannot fix under rule 4: network, memory, or a failing test.
+- Record any blocker in `status.md`, push, then go on with the steps that do not depend on it.
+- Keep `results/v2/parts/ALL/status.md` current after every chunk: the step you are on, what is done, the rate you measured, and what remains.
+
+The order puts the most important results first. Run each `run_t1_t2.py` step in chunks as §3 describes. EXT is the list of external baselines:
+
+```
+EXT="Degree Greedy Parity-Greedy Welfare-Greedy Maximin-Greedy FW-Disparity AGE Prior BSM MultiFW-MaxMin RFIM"
+T1="python -u -W ignore experiments/v2/run_t1_t2.py --test t1"
+```
+
+1. **Job A, §4 steps 1–3:** tests, datasets, tuning. Use `results/v2/parts/A/` for its logs. Do not open a pull request yet.
+2. **T1 headline, small graphs:**
+   ```
+   $T1 --datasets rice_facebook twitter_political --configs method --methods $EXT --job t1-small
+   ```
+   Then run `python -u -W ignore experiments/v2/summarize_v2.py` and commit `results/v2/summary_v2.md`, so the first results are visible early.
+3. **T2, the adversary's test:**
+   ```
+   python -u -W ignore experiments/v2/run_t1_t2.py --test t2 --t2-seeds 1 2 3 4 5 6 --job t2
+   ```
+   Then run the summary again.
+4. **T1 headline, Pokec-n:** three runs, one for each `<a>` in region, gender and age:
+   ```
+   $T1 --datasets pokec_n --attributes <a> --configs method --methods $EXT --job t1-pokec-n-<a>
+   ```
+   Then run the summary again.
+5. **T1 ablations**, into the same job folders:
+   ```
+   $T1 --datasets rice_facebook twitter_political --configs ablation --methods LocalSearch Simple-v2 --job t1-small
+   ```
+   Then the same three runs with `--datasets pokec_n --attributes <a> ... --job t1-pokec-n-<a>`.
+6. **Certificate-size sensitivity:** the `certsens` row of §5.
+7. **Supplements**, with every configuration and the whole suite (no `--configs`, no `--methods`):
+   ```
+   $T1 --datasets epinions --job t1-epinions
+   $T1 --datasets twitter_ego --job t1-twitter-ego
+   ```
+   Then `--datasets instagram --job t1-instagram` and `--datasets snap_youtube --job t1-youtube`. The last two are large graphs: if one runs out of memory, record it and go on.
+8. **Finish:**
+   - run job C's two commands (§6);
+   - write the final `status.md`;
+   - push, and open one pull request titled "Cloud job ALL".
+
+Your final message (§7) covers the whole list: each step, and whether it finished or what remains.
 
 ## 5. B jobs: the experiments (start after job A is done; they can run in parallel)
 
