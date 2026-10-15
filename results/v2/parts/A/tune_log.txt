@@ -1,0 +1,111 @@
+tuning on pokec_t / region: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+plan: 35 method queries (0 constructor checkpoints), plus the W3 measurements (4 states x 5 budgets)
+  load              0.4s
+  reference        44.4s
+  rr_sample         1.3s
+  cert_sample      11.5s
+  cover_index       0.1s
+  pokec_t: n=39,076 m=522,321 groups=2; A: R=16 roots=39,076 nnz=6,947,708; B: R=138 roots=39,076 nnz=59,641,011
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2942.11 disp=0.0312 es FAIL (ratio 0.9896, lower 0.9827) (3.5s)  [v2-b/greedy/simple s-1: select 0.0s search 3.5s (6 rounds) certify 9.5s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4354.09 disp=0.0450 es FAIL (ratio 0.9921, lower 0.9876) (2.9s)  [v2-b/greedy/simple s-1: select 0.0s search 2.9s (6 rounds) certify 11.3s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6106.96 disp=0.0481 es FAIL (ratio 0.9924, lower 0.9898) (4.8s)  [v2-b/greedy/simple s-1: select 0.0s search 4.8s (13 rounds) certify 10.4s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7249.29 disp=0.0432 es FAIL (ratio 0.9904, lower 0.9884) (5.0s)  [v2-b/greedy/simple s-1: select 0.0s search 5.0s (25 rounds) certify 11.6s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8134.72 disp=0.0405 es pass (ratio 0.9927, lower 0.9911) (6.9s)  [v2-b/greedy/simple s-1: select 0.0s search 6.9s (30 rounds) certify 11.2s, deployed the path set (path rule: the path set), certificate pass]
+  delta=0.0025: mean labelled disparity 0.04162 (reference deployed in 0% of budgets)
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2957.37 disp=0.0313 es FAIL (ratio 0.9947, lower 0.9879) (2.6s)  [v2-b/greedy/simple s-1: select 0.0s search 2.6s (6 rounds) certify 9.2s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4350.53 disp=0.0447 es FAIL (ratio 0.9913, lower 0.9867) (2.6s)  [v2-b/greedy/simple s-1: select 0.0s search 2.6s (6 rounds) certify 11.5s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6097.57 disp=0.0419 es FAIL (ratio 0.9909, lower 0.9882) (5.0s)  [v2-b/greedy/simple s-1: select 0.0s search 5.0s (13 rounds) certify 14.0s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7253.35 disp=0.0365 es FAIL (ratio 0.9910, lower 0.9890) (7.5s)  [v2-b/greedy/simple s-1: select 0.0s search 7.5s (28 rounds) certify 13.3s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8132.94 disp=0.0296 es pass (ratio 0.9925, lower 0.9909) (9.0s)  [v2-b/greedy/simple s-1: select 0.0s search 9.0s (34 rounds) certify 10.2s, deployed the path set (path rule: the path set), certificate pass]
+  delta=0.005: mean labelled disparity 0.03678 (reference deployed in 0% of budgets)
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2965.15 disp=0.0371 es pass (ratio 0.9974, lower 0.9904) (3.0s)  [v2-b/greedy/simple s-1: select 0.0s search 3.0s (5 rounds) certify 6.3s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4377.94 disp=0.0461 es pass (ratio 0.9975, lower 0.9931) (2.2s)  [v2-b/greedy/simple s-1: select 0.0s search 2.2s (5 rounds) certify 7.4s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6140.73 disp=0.0442 es pass (ratio 0.9979, lower 0.9953) (6.5s)  [v2-b/greedy/simple s-1: select 0.0s search 6.5s (15 rounds) certify 13.9s, deployed the path set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7277.68 disp=0.0336 es pass (ratio 0.9943, lower 0.9922) (6.4s)  [v2-b/greedy/simple s-1: select 0.0s search 6.4s (26 rounds) certify 15.1s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8160.69 disp=0.0294 es pass (ratio 0.9959, lower 0.9943) (6.0s)  [v2-b/greedy/simple s-1: select 0.0s search 6.0s (28 rounds) certify 10.5s, deployed the final set (path rule: the final set), certificate pass]
+  delta=0.01: mean labelled disparity 0.03808 (reference deployed in 0% of budgets)
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2965.15 disp=0.0371 es pass (ratio 0.9974, lower 0.9904) (2.5s)  [v2-b/greedy/simple s-1: select 0.0s search 2.5s (5 rounds) certify 7.4s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4377.94 disp=0.0461 es pass (ratio 0.9975, lower 0.9931) (1.9s)  [v2-b/greedy/simple s-1: select 0.0s search 1.9s (5 rounds) certify 5.6s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6140.73 disp=0.0442 es pass (ratio 0.9979, lower 0.9953) (6.1s)  [v2-b/greedy/simple s-1: select 0.0s search 6.1s (15 rounds) certify 10.3s, deployed the path set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7277.68 disp=0.0336 es pass (ratio 0.9943, lower 0.9922) (5.2s)  [v2-b/greedy/simple s-1: select 0.0s search 5.2s (26 rounds) certify 11.2s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8160.69 disp=0.0294 es pass (ratio 0.9959, lower 0.9943) (5.8s)  [v2-b/greedy/simple s-1: select 0.0s search 5.8s (28 rounds) certify 12.4s, deployed the final set (path rule: the final set), certificate pass]
+  delta=0.02: mean labelled disparity 0.03808 (reference deployed in 0% of budgets)
+  -> delta = 0.005
+    pokec_t          k=25   rho=0.97 FIM-GAT v2       infl=  2879.93 disp=0.0226 es FAIL (ratio 0.9687, lower 0.9618) (2.4s)  [v2-b/greedy/simple s-1: select 0.0s search 2.4s (8 rounds) certify 10.9s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=50   rho=0.97 FIM-GAT v2       infl=  4279.28 disp=0.0381 es pass (ratio 0.9750, lower 0.9707) (2.6s)  [v2-b/greedy/simple s-1: select 0.0s search 2.6s (6 rounds) certify 9.3s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.97 FIM-GAT v2       infl=  5987.81 disp=0.0388 es pass (ratio 0.9731, lower 0.9704) (5.1s)  [v2-b/greedy/simple s-1: select 0.0s search 5.1s (13 rounds) certify 10.4s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.97 FIM-GAT v2       infl=  7109.25 disp=0.0261 es FAIL (ratio 0.9713, lower 0.9693) (5.9s)  [v2-b/greedy/simple s-1: select 0.0s search 5.9s (26 rounds) certify 11.3s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=200  rho=0.97 FIM-GAT v2       infl=  7973.42 disp=0.0197 es pass (ratio 0.9730, lower 0.9714) (10.6s)  [v2-b/greedy/simple s-1: select 0.0s search 10.6s (35 rounds) certify 11.7s, deployed the final set (path rule: the final set), certificate pass]
+  phi0=0.3: mean held-out-attribute disparity 0.04315
+    pokec_t          k=25   rho=0.97 FIM-GAT v2       infl=  2879.93 disp=0.0226 es FAIL (ratio 0.9687, lower 0.9618) (3.1s)  [v2-b/greedy/simple s-1: select 0.0s search 3.1s (9 rounds) certify 12.4s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=50   rho=0.97 FIM-GAT v2       infl=  4279.28 disp=0.0381 es pass (ratio 0.9750, lower 0.9707) (2.6s)  [v2-b/greedy/simple s-1: select 0.0s search 2.6s (6 rounds) certify 7.3s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.97 FIM-GAT v2       infl=  5987.81 disp=0.0388 es pass (ratio 0.9731, lower 0.9704) (4.7s)  [v2-b/greedy/simple s-1: select 0.0s search 4.7s (13 rounds) certify 11.4s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.97 FIM-GAT v2       infl=  7117.47 disp=0.0247 es pass (ratio 0.9724, lower 0.9704) (25.0s)  [v2-b/greedy/simple s-1: select 0.0s search 25.0s (62 rounds) certify 12.9s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=200  rho=0.97 FIM-GAT v2       infl=  7973.42 disp=0.0197 es pass (ratio 0.9730, lower 0.9714) (17.5s)  [v2-b/greedy/simple s-1: select 0.0s search 17.5s (56 rounds) certify 12.7s, deployed the path set (path rule: the path set), certificate pass]
+  phi0=0.4: mean held-out-attribute disparity 0.04117
+    pokec_t          k=25   rho=0.97 FIM-GAT v2       infl=  2879.93 disp=0.0226 es FAIL (ratio 0.9687, lower 0.9618) (3.1s)  [v2-b/greedy/simple s-1: select 0.0s search 3.1s (9 rounds) certify 10.9s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=50   rho=0.97 FIM-GAT v2       infl=  4279.28 disp=0.0381 es pass (ratio 0.9750, lower 0.9707) (2.2s)  [v2-b/greedy/simple s-1: select 0.0s search 2.2s (6 rounds) certify 7.9s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.97 FIM-GAT v2       infl=  5992.36 disp=0.0378 es pass (ratio 0.9738, lower 0.9711) (6.0s)  [v2-b/greedy/simple s-1: select 0.0s search 6.0s (16 rounds) certify 10.5s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.97 FIM-GAT v2       infl=  7153.30 disp=0.0248 es pass (ratio 0.9773, lower 0.9753) (14.6s)  [v2-b/greedy/simple s-1: select 0.0s search 14.6s (46 rounds) certify 14.1s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=200  rho=0.97 FIM-GAT v2       infl=  7973.42 disp=0.0197 es pass (ratio 0.9730, lower 0.9714) (11.7s)  [v2-b/greedy/simple s-1: select 0.0s search 11.7s (42 rounds) certify 11.2s, deployed the path set (path rule: the path set), certificate pass]
+  phi0=0.5: mean held-out-attribute disparity 0.04365
+  -> phi0 = 0.4
+  -> W3: train a learned proposer = True (headroom H / cost_ratio = 8.12 >= 1.5)
+wrote /home/user/fim-gat/results/v2/tuning.json:
+{
+ "validation": {
+  "dataset": "pokec_t",
+  "attribute": "region",
+  "ks": [
+   25,
+   50,
+   100,
+   150,
+   200
+  ],
+  "rho_phi0": 0.97,
+  "rho_start": 0.99,
+  "graph_n": 39076,
+  "R": 16,
+  "cert_R": 138
+ },
+ "delta": 0.005,
+ "phi0": 0.4,
+ "start": "greedy",
+ "delta_scores": {
+  "0.0025": 0.0416179968150321,
+  "0.005": 0.036780585895819534,
+  "0.01": 0.038076615959405896,
+  "0.02": 0.038076615959405896
+ },
+ "phi0_scores": {
+  "0.3": 0.04315392665399102,
+  "0.4": 0.04116988995171842,
+  "0.5": 0.04364892884857661
+ },
+ "code_tag": "f53a3e10824a",
+ "when": "2026-10-15 18:01:33",
+ "tuned": true,
+ "steps": [
+  "delta",
+  "phi0",
+  "w3"
+ ],
+ "gpu": "cpu",
+ "preset": "8gb",
+ "history": [
+  {
+   "steps": [
+    "delta",
+    "phi0",
+    "w3"
+   ],
+   "code_tag": "f53a3e10824a",
+   "when": "2026-10-15 18:01:33",
+   "gpu": "cpu",
+   "preset": "8gb"
+  }
+ ],
+ "start_reason": "provisional: the start step has not run (it waits for the constructor; cloud runbook)"
+}
+exit 0

@@ -1,0 +1,72 @@
+{
+ "validation": {
+  "dataset": "pokec_t",
+  "attribute": "region",
+  "ks": [
+   25,
+   50,
+   100,
+   150,
+   200
+  ],
+  "rho_phi0": 0.97,
+  "rho_start": 0.99,
+  "graph_n": 39076,
+  "R": 16,
+  "cert_R": 138
+ },
+ "delta": 0.005,
+ "phi0": 0.4,
+ "start": "greedy",
+ "delta_scores": {
+  "0.0025": 0.0416179968150321,
+  "0.005": 0.036780585895819534,
+  "0.01": 0.038076615959405896,
+  "0.02": 0.038076615959405896
+ },
+ "phi0_scores": {
+  "0.3": 0.04315392665399102,
+  "0.4": 0.04116988995171842,
+  "0.5": 0.04364892884857661
+ },
+ "w3": {
+  "train": true,
+  "H": 8.115072200058671,
+  "H_over_cost": 8.115072200058671,
+  "pi": 0.3888888888888889,
+  "q": 1.0,
+  "c_round": 0.029225778111216037,
+  "T_ex": 0.3402712167777761,
+  "n_states": 18,
+  "reason": "headroom H / cost_ratio = 8.12 >= 1.5",
+  "improve_share": 0.39943741991483883,
+  "n_measured": 18,
+  "secs": 27.34614366599999,
+  "graph_tier": "medium",
+  "note": "no large-tier validation graph exists; measured on pokec_t"
+ },
+ "code_tag": "f53a3e10824a",
+ "when": "2026-10-15 18:01:33",
+ "tuned": true,
+ "steps": [
+  "delta",
+  "phi0",
+  "w3"
+ ],
+ "gpu": "cpu",
+ "preset": "8gb",
+ "history": [
+  {
+   "steps": [
+    "delta",
+    "phi0",
+    "w3"
+   ],
+   "code_tag": "f53a3e10824a",
+   "when": "2026-10-15 18:01:33",
+   "gpu": "cpu",
+   "preset": "8gb"
+  }
+ ],
+ "start_reason": "provisional: the start step has not run (it waits for the constructor; cloud runbook)"
+}
