@@ -21,3 +21,4 @@ Branch `claude/fimgat-all`. VM: 4 vCPU, 15 GB RAM, no GPU. Python 3.13 (`.venv`)
 - Plan (dry run): 4 attribute runs (rice_facebook college/age/major, twitter_political leaning), 240 queries each (20 FIM-GAT, 220 baseline), BSM sweep at 5 budgets (laptop estimate 0.6 h total, UNVERIFIED; the dry run does not list the rho values).
 - Measured: ~173 rows in the first 30 min (rice_facebook / college, where FW-Disparity costs ~16 s per query); extrapolated total ~2-3 h on this VM. Chunks are cut at 6900 s by `timeout`; each chunk is committed and pushed (`chunks.log`).
 - Memory: ~1-3 GB used of 15 GB.
+- Chunk 1 (115 min, `timeout` 6900 s, rc=124 as designed) wrote 625 rows (~5.4 rows/min); chunk 2 resumed automatically (rows are skipped when their key exists). Committed and pushed after each chunk.
