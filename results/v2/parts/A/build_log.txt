@@ -1,0 +1,58 @@
+note: pokec_full is missing; build it with python experiments/build_pokec.py --raw-dir "C:\Users\Odwitiyo\Desktop\xAI Project\Baseline_Test/data"
+estimates (UNVERIFIED):
+  rice_facebook: seconds
+  twitter_political: seconds
+  epinions: about 10 s
+  twitter_ego: under 1 min
+  pokec_t: 3-6 min (reads the 30.6M-line Pokec dump; RAM about 4 GB)
+  instagram: under 1 min (about 13 MB download)
+  snap_youtube: 1-3 min (tens of MB download)
+rice_facebook:
+  downloading https://raw.githubusercontent.com/redfox-codder/fair_influen_max/master/data/edges.txt
+    0.4 MB in 1 s -> /home/user/fim-gat/data/v2/raw/rice_facebook/edges.txt
+  downloading https://raw.githubusercontent.com/redfox-codder/fair_influen_max/master/data/attr.txt
+    0.0 MB in 0 s -> /home/user/fim-gat/data/v2/raw/rice_facebook/attr.txt
+  n=1216, arcs=84886, edges=42443, undirected=True, source_edges=42443, dropped_unattributed=0, isolated=11, groups={'college': {'1': 132, '2': 132, '3': 134, '4': 126, '5': 135, '6': 134, '7': 142, '8': 142, '9': 139}, 'age': {'18': 6, '19': 94, '20': 345, '21': 375, '22': 396}, 'major': {'1': 39, '2': 12, '3': 49, '5': 104, '6': 31, '7': 13, '8': 102, '9': 70, '10': 70, '11': 18, '12': 2, '14': 20, '15': 5, '16': 3, '17': 46, '18': 46, '20': 9, '21': 62, '22': 61, '23': 23, '24': 26, '25': 17, '26': 18, '27': 1, '28': 14, '29': 6, '30': 28, '31': 40, '32': 9, '33': 28, '34': 35, '35': 37, '36': 2, '37': 12, '38': 6, '39': 15, '40': 34, '41': 1, '42': 2, '43': 1, '44': 7, '45': 6, '46': 1, '48': 8, '49': 5, '50': 1, '51': 2, '53': 25, '54': 40, '55': 2, '57': 1, '60': 1}}
+  WARNING rice_facebook: n = 1,216, source reports 1,205
+  1 s -> /home/user/fim-gat/data/v2/rice_facebook.npz
+twitter_political:
+  downloading https://raw.githubusercontent.com/ahmadkhajehnejad/CrossWalk/master/data/twitter/sample_4000.links
+    0.3 MB in 0 s -> /home/user/fim-gat/data/v2/raw/twitter_political/sample_4000.links
+  downloading https://raw.githubusercontent.com/ahmadkhajehnejad/CrossWalk/master/data/twitter/sample_4000.attr
+    0.0 MB in 0 s -> /home/user/fim-gat/data/v2/raw/twitter_political/sample_4000.attr
+  n=3753, arcs=13986, edges=6993, undirected=True, source_edges=6993, dropped_unattributed=0, isolated=0, groups={'leaning': {'0': 812, '1': 2755, '2': 186}}
+  1 s -> /home/user/fim-gat/data/v2/twitter_political.npz
+epinions:
+  downloading https://snap.stanford.edu/data/soc-Epinions1.txt.gz
+    1.6 MB in 2 s -> /home/user/fim-gat/data/v2/raw/epinions/soc-Epinions1.txt.gz
+  n=75879, arcs=508837, edges=508837, undirected=False, source_edges=508837
+  3 s -> /home/user/fim-gat/data/v2/epinions.npz
+twitter_ego:
+  downloading https://snap.stanford.edu/data/twitter_combined.txt.gz
+    10.1 MB in 3 s -> /home/user/fim-gat/data/v2/raw/twitter_ego/twitter_combined.txt.gz
+  n=81306, arcs=1768135, edges=1768135, undirected=False, source_edges=2420766
+  7 s -> /home/user/fim-gat/data/v2/twitter_ego.npz
+pokec_t:
+  downloading https://snap.stanford.edu/data/soc-pokec-profiles.txt.gz
+    415.3 MB in 91 s -> /home/user/fim-gat/data/v2/raw/pokec_t/soc-pokec-profiles.txt.gz
+  downloading https://snap.stanford.edu/data/soc-pokec-relationships.txt.gz
+    126.3 MB in 30 s -> /home/user/fim-gat/data/v2/raw/pokec_t/soc-pokec-relationships.txt.gz
+  profiles per district: [29567, 15596]
+pokec_t: n=39076 m=522321 region sizes=[24827, 14249]
+  149 s -> /home/user/fim-gat/data/pokec/pokec_t.npz
+instagram:
+  downloading https://raw.githubusercontent.com/nicolaslanzetti/fairness-sim-ot/main/data/instagram_ds/raw/graph_edges_anon.csv
+    8.5 MB in 1 s -> /home/user/fim-gat/data/v2/raw/instagram/graph_edges_anon.csv
+  downloading https://raw.githubusercontent.com/nicolaslanzetti/fairness-sim-ot/main/data/instagram_ds/raw/graph_gender_anon.csv
+    4.6 MB in 0 s -> /home/user/fim-gat/data/v2/raw/instagram/graph_gender_anon.csv
+  n=553628, arcs=1305660, edges=652830, undirected=True, source_edges=652931, dropped_unattributed=0, isolated=0, groups={'gender': {'F': 301444, 'M': 252184}}
+  4 s -> /home/user/fim-gat/data/v2/instagram.npz
+snap_youtube:
+  downloading https://snap.stanford.edu/data/bigdata/communities/com-youtube.ungraph.txt.gz
+    10.1 MB in 3 s -> /home/user/fim-gat/data/v2/raw/snap_youtube/com-youtube.ungraph.txt.gz
+  downloading https://snap.stanford.edu/data/bigdata/communities/com-youtube.top5000.cmty.txt.gz
+    0.2 MB in 1 s -> /home/user/fim-gat/data/v2/raw/snap_youtube/com-youtube.top5000.cmty.txt.gz
+  downloading https://snap.stanford.edu/data/bigdata/communities/com-youtube.all.cmty.txt.gz
+    0.3 MB in 1 s -> /home/user/fim-gat/data/v2/raw/snap_youtube/com-youtube.all.cmty.txt.gz
+  n=1134890, arcs=5975248, edges=2987624, undirected=True, communities_top5000=3355, communities_all=8385
+  17 s -> /home/user/fim-gat/data/v2/snap_youtube.npz
