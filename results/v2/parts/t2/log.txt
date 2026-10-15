@@ -1,0 +1,15 @@
+T2: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple, v2-a/greedy/simple, v2-b0/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+snap_youtube_bfs100000_s1 / degree (medium): 30 queries (30 FIM-GAT, 0 baseline); rough estimate 0.5 h
+snap_youtube_bfs100000_s2 / degree (medium): 30 queries (30 FIM-GAT, 0 baseline); rough estimate 0.5 h
+snap_youtube_bfs100000_s3 / degree (medium): 30 queries (30 FIM-GAT, 0 baseline); rough estimate 0.5 h
+snap_youtube_bfs100000_s4 / degree (medium): 30 queries (30 FIM-GAT, 0 baseline); rough estimate 0.5 h
+snap_youtube_bfs100000_s5 / degree (medium): 30 queries (30 FIM-GAT, 0 baseline); rough estimate 0.5 h
+snap_youtube_bfs100000_s6 / degree (medium): 30 queries (30 FIM-GAT, 0 baseline); rough estimate 0.5 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 3.0 h of queries, plus the cached stages per graph
+
+=== snap_youtube_bfs100000_s1 / degree: 30 pending queries ===
+  load             10.8s  peak GPU nan / nan GB
+  reference      1418.5s  peak GPU nan / nan GB
