@@ -22,3 +22,10 @@ Branch `claude/fimgat-all`. VM: 4 vCPU, 15 GB RAM, no GPU. Python 3.13 (`.venv`)
 - Measured: ~173 rows in the first 30 min (rice_facebook / college, where FW-Disparity costs ~16 s per query); extrapolated total ~2-3 h on this VM. Chunks are cut at 6900 s by `timeout`; each chunk is committed and pushed (`chunks.log`).
 - Memory: ~1-3 GB used of 15 GB.
 - Chunk 1 (115 min, `timeout` 6900 s, rc=124 as designed) wrote 625 rows (~5.4 rows/min); chunk 2 resumed automatically (rows are skipped when their key exists). Committed and pushed after each chunk.
+
+## Step 2 result: T1 headline, small graphs: DONE
+- `t1-small`: 1,120 rows, all status ok, none missing (rice_facebook college/age/major, twitter_political leaning; 280 rows each). 2 chunks (115 min + 106 min), exit 0. Peak RAM small (a few GB). AGE is the slow baseline: ~60 s per k on Rice, ~490 s per k on twitter_political (computed once per k, reused across rho).
+- `summarize_v2.py` ran (1.5 s); `results/v2/summary_v2.md` committed.
+
+## Step 3: T2 (running; job `t2`)
+- Dry-run plan: 6 BFS samples of snap_youtube (100,000 nodes each, seeds 1-6), attribute `degree`; 30 FIM-GAT queries per sample (configs v2-b, v2-a, v2-b0 with greedy start, simple proposer); laptop estimate 0.5 h per sample (3.0 h total, UNVERIFIED). R = 64 RR sets per node (pre-registered, not lowered).

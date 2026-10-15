@@ -1,0 +1,121 @@
+rho,dataset,attribute,method,disparity,n_budgets
+0.97,rice_facebook,age,BSM,0.17684093818181817,5
+0.97,rice_facebook,age,Degree,0.08697448518487372,5
+0.97,rice_facebook,age,FIM-GAT v2,0.015557322651865579,5
+0.97,rice_facebook,age,FW-Disparity,0.02857001069940852,5
+0.97,rice_facebook,age,Greedy,0.07195065186555662,5
+0.97,rice_facebook,age,Maximin-Greedy,0.03567282330551897,3
+0.97,rice_facebook,age,MultiFW-MaxMin,0.08525111111111111,5
+0.97,rice_facebook,age,Parity-Greedy,0.03199728096281969,5
+0.97,rice_facebook,age,Welfare-Greedy,0.06625829910576629,5
+0.97,rice_facebook,college,BSM,0.015971430191802593,5
+0.97,rice_facebook,college,Degree,0.04992494802495059,5
+0.97,rice_facebook,college,FIM-GAT v2,0.00583131367735773,5
+0.97,rice_facebook,college,FW-Disparity,0.01989870569601594,5
+0.97,rice_facebook,college,Greedy,0.04221332100674698,5
+0.97,rice_facebook,college,Maximin-Greedy,0.015989771021498254,5
+0.97,rice_facebook,college,MultiFW-MaxMin,0.018841841910501145,5
+0.97,rice_facebook,college,Parity-Greedy,0.01977938990473318,5
+0.97,rice_facebook,college,RFIM,0.16506684551754977,3
+0.97,rice_facebook,college,Welfare-Greedy,0.03310270341576451,5
+0.97,rice_facebook,major,BSM,0.38754115932309474,5
+0.97,rice_facebook,major,Degree,0.3424583193277311,5
+0.97,rice_facebook,major,FIM-GAT v2,0.14742666666666665,5
+0.97,rice_facebook,major,FW-Disparity,0.14075660000000004,5
+0.97,rice_facebook,major,Greedy,0.322965,5
+0.97,rice_facebook,major,Maximin-Greedy,0.2998656512605042,4
+0.97,rice_facebook,major,MultiFW-MaxMin,0.5423915714285714,5
+0.97,rice_facebook,major,Parity-Greedy,0.15922576923076925,4
+0.97,rice_facebook,major,RFIM,0.5271904761904761,3
+0.97,rice_facebook,major,Welfare-Greedy,0.3040942857142857,5
+0.97,twitter_political,leaning,BSM,0.06409856690669945,5
+0.97,twitter_political,leaning,Degree,0.10327919637804187,5
+0.97,twitter_political,leaning,FIM-GAT v2,0.0269793196952336,5
+0.97,twitter_political,leaning,FW-Disparity,0.0562765185209966,5
+0.97,twitter_political,leaning,Greedy,0.09203264094050474,5
+0.97,twitter_political,leaning,Maximin-Greedy,0.032420663505259295,1
+0.97,twitter_political,leaning,MultiFW-MaxMin,0.0907558713580392,5
+0.97,twitter_political,leaning,Parity-Greedy,0.0339797932330827,4
+0.97,twitter_political,leaning,Prior,0.09516715452424168,2
+0.97,twitter_political,leaning,Welfare-Greedy,0.08423292633697703,5
+0.98,rice_facebook,age,BSM,0.1591000290909091,5
+0.98,rice_facebook,age,Degree,0.08697448518487372,5
+0.98,rice_facebook,age,FIM-GAT v2,0.018640776671058446,5
+0.98,rice_facebook,age,FW-Disparity,0.031096012805950358,5
+0.98,rice_facebook,age,Greedy,0.07195065186555662,5
+0.98,rice_facebook,age,Maximin-Greedy,0.0385604525252525,1
+0.98,rice_facebook,age,MultiFW-MaxMin,0.08525111111111111,5
+0.98,rice_facebook,age,Parity-Greedy,0.034402788072211476,4
+0.98,rice_facebook,age,Welfare-Greedy,0.06625829910576629,5
+0.98,rice_facebook,college,BSM,0.015971430191802593,5
+0.98,rice_facebook,college,Degree,0.04992494802495059,5
+0.98,rice_facebook,college,FIM-GAT v2,0.007091160106222516,5
+0.98,rice_facebook,college,FW-Disparity,0.019985085475471585,5
+0.98,rice_facebook,college,Greedy,0.04221332100674698,5
+0.98,rice_facebook,college,Maximin-Greedy,0.028385181069835258,2
+0.98,rice_facebook,college,MultiFW-MaxMin,0.018841841910501145,5
+0.98,rice_facebook,college,Parity-Greedy,0.01977938990473318,5
+0.98,rice_facebook,college,RFIM,0.1952381846635368,2
+0.98,rice_facebook,college,Welfare-Greedy,0.03310270341576451,5
+0.98,rice_facebook,major,BSM,0.4209323640552995,5
+0.98,rice_facebook,major,Degree,0.3424583193277311,5
+0.98,rice_facebook,major,FIM-GAT v2,0.13984547619047616,5
+0.98,rice_facebook,major,FW-Disparity,0.1417043777777778,5
+0.98,rice_facebook,major,Greedy,0.322965,5
+0.98,rice_facebook,major,Maximin-Greedy,0.3248857142857142,2
+0.98,rice_facebook,major,MultiFW-MaxMin,0.459952619047619,3
+0.98,rice_facebook,major,Parity-Greedy,0.18386000000000002,3
+0.98,rice_facebook,major,RFIM,0.5966,2
+0.98,rice_facebook,major,Welfare-Greedy,0.3040942857142857,5
+0.98,twitter_political,leaning,BSM,0.07164303417052084,5
+0.98,twitter_political,leaning,Degree,0.10327919637804187,5
+0.98,twitter_political,leaning,FIM-GAT v2,0.03526543074594162,5
+0.98,twitter_political,leaning,FW-Disparity,0.05967518880070029,5
+0.98,twitter_political,leaning,Greedy,0.09203264094050474,5
+0.98,twitter_political,leaning,Maximin-Greedy,0.032420663505259295,1
+0.98,twitter_political,leaning,Parity-Greedy,0.0339797932330827,4
+0.98,twitter_political,leaning,Welfare-Greedy,0.08423292633697703,5
+0.99,rice_facebook,age,BSM,0.13494437066315323,5
+0.99,rice_facebook,age,Degree,0.08697448518487372,5
+0.99,rice_facebook,age,FIM-GAT v2,0.02448293686167876,5
+0.99,rice_facebook,age,FW-Disparity,0.03666365359123146,5
+0.99,rice_facebook,age,Greedy,0.07195065186555662,5
+0.99,rice_facebook,age,MultiFW-MaxMin,0.08322373737373734,1
+0.99,rice_facebook,age,Parity-Greedy,0.03375242854072641,3
+0.99,rice_facebook,age,Welfare-Greedy,0.06625829910576629,5
+0.99,rice_facebook,college,BSM,0.015971430191802593,5
+0.99,rice_facebook,college,Degree,0.04992494802495059,5
+0.99,rice_facebook,college,FIM-GAT v2,0.00874874352861622,5
+0.99,rice_facebook,college,FW-Disparity,0.01895199660646176,5
+0.99,rice_facebook,college,Greedy,0.04221332100674698,5
+0.99,rice_facebook,college,Maximin-Greedy,0.03363056114464563,1
+0.99,rice_facebook,college,MultiFW-MaxMin,0.018841841910501145,5
+0.99,rice_facebook,college,Parity-Greedy,0.01977938990473318,5
+0.99,rice_facebook,college,Welfare-Greedy,0.03310270341576451,5
+0.99,rice_facebook,major,BSM,0.4334218571428572,5
+0.99,rice_facebook,major,Degree,0.3424583193277311,5
+0.99,rice_facebook,major,FIM-GAT v2,0.17233192307692308,5
+0.99,rice_facebook,major,FW-Disparity,0.22535238095238097,5
+0.99,rice_facebook,major,Greedy,0.322965,5
+0.99,rice_facebook,major,Maximin-Greedy,0.31448571428571426,1
+0.99,rice_facebook,major,MultiFW-MaxMin,0.22145785714285712,1
+0.99,rice_facebook,major,Parity-Greedy,0.20680666666666672,2
+0.99,rice_facebook,major,Welfare-Greedy,0.3040942857142857,5
+0.99,twitter_political,leaning,BSM,0.09105516700538892,5
+0.99,twitter_political,leaning,Degree,0.11852125909880373,2
+0.99,twitter_political,leaning,FIM-GAT v2,0.055707171872952675,5
+0.99,twitter_political,leaning,FW-Disparity,0.08903533955021033,5
+0.99,twitter_political,leaning,Greedy,0.09203264094050474,5
+0.99,twitter_political,leaning,Parity-Greedy,0.026910080373347172,3
+0.99,twitter_political,leaning,Welfare-Greedy,0.08423292633697703,5
+1.0,rice_facebook,age,FIM-GAT v2,0.06904839469626892,5
+1.0,rice_facebook,age,FW-Disparity,0.07790043632439102,4
+1.0,rice_facebook,college,FIM-GAT v2,0.037670780802353,5
+1.0,rice_facebook,college,FW-Disparity,0.03448141022699058,4
+1.0,rice_facebook,major,FIM-GAT v2,0.304035756302521,5
+1.0,rice_facebook,major,FW-Disparity,0.304035756302521,5
+1.0,twitter_political,leaning,BSM,0.13487924516519326,1
+1.0,twitter_political,leaning,FIM-GAT v2,0.09307630865818606,5
+1.0,twitter_political,leaning,FW-Disparity,0.09307630865818606,5
+1.0,twitter_political,leaning,Greedy,0.13487924516519326,1
+1.0,twitter_political,leaning,Welfare-Greedy,0.13487924516519326,1
