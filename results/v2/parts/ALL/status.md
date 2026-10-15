@@ -16,3 +16,8 @@ Branch `claude/fimgat-all`. VM: 4 vCPU, 15 GB RAM, no GPU. Python 3.13 (`.venv`)
 - start = "greedy" (provisional: the start step waits for the constructor on a GPU).
 - **W3 decision: train = true** (H = 8.12, H/cost = 8.12 ≥ 1.5; π = 0.389, q = 1.0, c_round = 0.0292, T_ex = 0.340, 18 states; note: no large-tier validation graph, measured on pokec_t). So the learned proposer should be trained (`train_proposer.py`, then `run_t3.py`) on the GPU machine; neither is run here (rule 3).
 - Job A's pull request is not opened separately: job ALL opens one at the end.
+
+## Step 2: T1 headline, small graphs (running; job `t1-small`)
+- Plan (dry run): 4 attribute runs (rice_facebook college/age/major, twitter_political leaning), 240 queries each (20 FIM-GAT, 220 baseline), BSM sweep at 5 budgets (laptop estimate 0.6 h total, UNVERIFIED; the dry run does not list the rho values).
+- Measured: ~173 rows in the first 30 min (rice_facebook / college, where FW-Disparity costs ~16 s per query); extrapolated total ~2-3 h on this VM. Chunks are cut at 6900 s by `timeout`; each chunk is committed and pushed (`chunks.log`).
+- Memory: ~1-3 GB used of 15 GB.
