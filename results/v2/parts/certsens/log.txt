@@ -168,3 +168,56 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.0 h of queries, plus the cached stag
     rice_facebook    k=200  rho=0.99 BSM              infl=   682.34 disp=0.0101 es pass (ratio 0.9985, lower 0.9978) (2.5s)  [certificate pass]
     rice_facebook    k=200  rho=0.99 MultiFW-MaxMin   infl=   679.09 disp=0.0126 es pass (ratio 0.9938, lower 0.9929) (3.5s)  [certificate FAIL]
     rice_facebook    k=200  rho=0.99 RFIM             infl=   672.04 disp=0.2243 es FAIL (ratio 0.9834, lower 0.9826) (2.5s)  [certificate FAIL]
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+rice_facebook / college (small): 70 queries (5 FIM-GAT, 65 baseline); rough estimate 0.0 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.0 h of queries, plus the cached stages per graph
+
+=== rice_facebook / college: 70 pending queries ===
+  load              0.0s  peak GPU nan / nan GB
+  reference        52.5s  peak GPU nan / nan GB
+  rr_sample         3.5s  peak GPU nan / nan GB
+  cert_sample       1.6s  peak GPU nan / nan GB
+  cover_index       0.1s  peak GPU nan / nan GB
+  rice_facebook: n=1,216 m=84,886 groups=9; A: R=512 roots=1,216 nnz=8,936,198; B: R=256 roots=1,216 nnz=4,497,869
+    rice_facebook    k=25   rho=0.99 FIM-GAT v2       infl=   330.03 disp=0.0211 es pass (ratio 0.9947, lower 0.9910) (2.5s)  [v2-b/greedy/simple s-1: select 0.0s search 2.5s (10 rounds) certify 0.4s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=25   rho=0.99 Degree           infl=   331.36 disp=0.0415 es pass (ratio 0.9987, lower 0.9951) (0.0s)  [certificate pass]
+  suite_index       1.6s  peak GPU nan / nan GB
+    rice_facebook    k=25   rho=0.99 Greedy           infl=   331.21 disp=0.0496 es pass (ratio 0.9983, lower 0.9946) (0.3s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 Parity-Greedy    infl=   329.80 disp=0.0249 es pass (ratio 0.9940, lower 0.9904) (0.3s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 Welfare-Greedy   infl=   331.72 disp=0.0408 es pass (ratio 0.9998, lower 0.9963) (0.3s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 Maximin-Greedy   infl=   328.31 disp=0.0336 es FAIL (ratio 0.9895, lower 0.9856) (0.3s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 FW-Disparity     infl=   331.74 disp=0.0381 es pass (ratio 0.9999, lower 0.9961) (15.2s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 LocalSearch      infl=   329.43 disp=0.0210 es FAIL (ratio 0.9929, lower 0.9893) (1.5s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 Simple-v2        infl=   329.49 disp=0.0238 es FAIL (ratio 0.9931, lower 0.9894) (1.2s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 AGE              infl=   228.85 disp=0.0626 es FAIL (ratio 0.6898, lower 0.6846) (56.9s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 Prior            infl=   261.65 disp=0.0502 es FAIL (ratio 0.7886, lower 0.7836) (313.9s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 BSM              infl=   328.84 disp=0.0333 es FAIL (ratio 0.9911, lower 0.9873) (1.3s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 MultiFW-MaxMin   infl=   331.09 disp=0.0334 es pass (ratio 0.9979, lower 0.9943) (3.4s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 RFIM             infl=   290.97 disp=0.0430 es FAIL (ratio 0.8770, lower 0.8720) (1.7s)  [certificate FAIL]
+    rice_facebook    k=50   rho=0.99 FIM-GAT v2       infl=   427.35 disp=0.0075 es pass (ratio 0.9949, lower 0.9928) (2.4s)  [v2-b/greedy/simple s-1: select 0.0s search 2.4s (12 rounds) certify 0.3s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=50   rho=0.99 Degree           infl=   427.57 disp=0.0348 es pass (ratio 0.9954, lower 0.9932) (0.0s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 Greedy           infl=   429.52 disp=0.0237 es pass (ratio 0.9999, lower 0.9981) (0.5s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 Parity-Greedy    infl=   427.84 disp=0.0233 es pass (ratio 0.9960, lower 0.9941) (0.6s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 Welfare-Greedy   infl=   429.52 disp=0.0237 es pass (ratio 0.9999, lower 0.9981) (0.5s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 Maximin-Greedy   infl=   424.30 disp=0.0231 es FAIL (ratio 0.9878, lower 0.9854) (0.5s)  [certificate FAIL]
+    rice_facebook    k=50   rho=0.99 FW-Disparity     infl=   429.30 disp=0.0151 es pass (ratio 0.9994, lower 0.9975) (15.8s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 LocalSearch      infl=   427.66 disp=0.0099 es pass (ratio 0.9956, lower 0.9935) (4.4s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 Simple-v2        infl=   427.27 disp=0.0094 es pass (ratio 0.9947, lower 0.9927) (2.7s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 AGE              infl=   328.27 disp=0.0470 es FAIL (ratio 0.7642, lower 0.7609) (56.6s)  [certificate FAIL]
+    rice_facebook    k=50   rho=0.99 Prior            infl=   409.02 disp=0.0655 es FAIL (ratio 0.9522, lower 0.9492) (325.7s)  [certificate FAIL]
+    rice_facebook    k=50   rho=0.99 BSM              infl=   428.08 disp=0.0146 es pass (ratio 0.9966, lower 0.9947) (1.5s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 MultiFW-MaxMin   infl=   428.72 disp=0.0142 es pass (ratio 0.9981, lower 0.9962) (3.4s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 RFIM             infl=   406.76 disp=0.0630 es FAIL (ratio 0.9470, lower 0.9439) (2.1s)  [certificate FAIL]
+    rice_facebook    k=100  rho=0.99 FIM-GAT v2       infl=   541.46 disp=0.0061 es pass (ratio 0.9944, lower 0.9933) (2.9s)  [v2-b/greedy/simple s-1: select 0.0s search 2.9s (15 rounds) certify 0.4s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=100  rho=0.99 Degree           infl=   543.66 disp=0.0577 es pass (ratio 0.9984, lower 0.9973) (0.0s)  [certificate pass]
+    rice_facebook    k=100  rho=0.99 Greedy           infl=   544.13 disp=0.0536 es pass (ratio 0.9993, lower 0.9982) (0.8s)  [certificate pass]
+    rice_facebook    k=100  rho=0.99 Parity-Greedy    infl=   543.88 disp=0.0158 es pass (ratio 0.9988, lower 0.9977) (0.9s)  [certificate pass]
+    rice_facebook    k=100  rho=0.99 Welfare-Greedy   infl=   544.17 disp=0.0452 es pass (ratio 0.9994, lower 0.9983) (0.9s)  [certificate pass]
+    rice_facebook    k=100  rho=0.99 Maximin-Greedy   infl=   532.86 disp=0.0060 es FAIL (ratio 0.9786, lower 0.9772) (0.8s)  [certificate FAIL]
+    rice_facebook    k=100  rho=0.99 FW-Disparity     infl=   542.14 disp=0.0129 es pass (ratio 0.9956, lower 0.9945) (16.7s)  [certificate pass]
+    rice_facebook    k=100  rho=0.99 LocalSearch      infl=   541.31 disp=0.0055 es pass (ratio 0.9941, lower 0.9929) (7.2s)  [certificate pass]
+    rice_facebook    k=100  rho=0.99 Simple-v2        infl=   540.67 disp=0.0045 es pass (ratio 0.9929, lower 0.9917) (4.8s)  [certificate pass]
+    rice_facebook    k=100  rho=0.99 AGE              infl=   460.39 disp=0.0833 es FAIL (ratio 0.8455, lower 0.8435) (56.8s)  [certificate FAIL]
