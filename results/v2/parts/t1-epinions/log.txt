@@ -365,3 +365,23 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 2.6 h of queries, plus the cached stag
     epinions         k=200  rho=1.0 MultiFW-MaxMin   infl= 22529.48 disp=0.0621 es FAIL (ratio 0.9921, lower 0.9912) (6.0s)  [certificate FAIL]
     epinions         k=200  rho=1.0 RFIM             infl= 20156.92 disp=0.0518 es FAIL (ratio 0.8876, lower 0.8864) (5.1s)  [certificate FAIL]
     BSM sweep k=200: 10 sets in 1.5s -> t1_pareto.csv
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple, v2-b/learned/simple, v2-b/greedy/exhaustive, v2-a/greedy/simple, v2-b0/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+  no constructor checkpoint for train seed 0: /home/user/fim-gat/results/v2/models/constructor_s0.pt
+  no constructor checkpoint for train seed 1: /home/user/fim-gat/results/v2/models/constructor_s1.pt
+  no constructor checkpoint for train seed 2: /home/user/fim-gat/results/v2/models/constructor_s2.pt
+  no constructor checkpoint for train seed 3: /home/user/fim-gat/results/v2/models/constructor_s3.pt
+  no constructor checkpoint for train seed 4: /home/user/fim-gat/results/v2/models/constructor_s4.pt
+note: no checkpoints for ['v2-b/learned/simple']; those configurations are not run
+epinions / degree (medium): 20 queries (0 FIM-GAT, 20 baseline); rough estimate 0.1 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.1 h of queries, plus the cached stages per graph
+
+=== epinions / degree: 20 pending queries ===
+  load              0.3s  peak GPU nan / nan GB
+  reference       100.0s  peak GPU nan / nan GB
+  rr_sample         4.0s  peak GPU nan / nan GB
+  cert_sample      24.0s  peak GPU nan / nan GB
+  cover_index       0.2s  peak GPU nan / nan GB
+  epinions: n=75,879 m=508,837 groups=2; A: R=16 roots=75,879 nnz=10,722,518; B: R=89 roots=75,879 nnz=59,769,106

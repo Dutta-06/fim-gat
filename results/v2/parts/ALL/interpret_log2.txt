@@ -9,3 +9,4 @@ pokec_n_age_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/pokec_n_age_k
 pokec_full: not built; skipped
 pokec_full: not built; skipped
 pokec_full: not built; skipped
+instagram_gender_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/instagram_gender_k50_rho0.99
