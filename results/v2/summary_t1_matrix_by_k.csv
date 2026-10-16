@@ -1,4 +1,104 @@
 rho,dataset,attribute,method,k,disparity,certified
+0.97,epinions,degree,BSM,25,0.04718675771517403,True
+0.97,epinions,degree,BSM,50,0.05147723678692295,True
+0.97,epinions,degree,BSM,100,0.053570069312719154,True
+0.97,epinions,degree,BSM,150,0.0536321465032637,True
+0.97,epinions,degree,BSM,200,0.055258409007509,True
+0.97,epinions,degree,Degree,25,0.03764565078343102,False
+0.97,epinions,degree,Degree,50,0.042787448982767345,False
+0.97,epinions,degree,Degree,100,0.050153086716418244,True
+0.97,epinions,degree,Degree,150,0.051299873291408005,True
+0.97,epinions,degree,Degree,200,0.052935615477805675,True
+0.97,epinions,degree,FIM-GAT v2,25,0.04203840830876174,True
+0.97,epinions,degree,FIM-GAT v2,50,0.04845377920330757,True
+0.97,epinions,degree,FIM-GAT v2,100,0.05269542050291873,True
+0.97,epinions,degree,FIM-GAT v2,150,0.05223874709976012,True
+0.97,epinions,degree,FIM-GAT v2,200,0.05247439243788743,True
+0.97,epinions,degree,FW-Disparity,25,0.04884767627834677,True
+0.97,epinions,degree,FW-Disparity,50,0.05624225279461187,True
+0.97,epinions,degree,FW-Disparity,100,0.058723611076954896,True
+0.97,epinions,degree,FW-Disparity,150,0.060254958062199604,True
+0.97,epinions,degree,FW-Disparity,200,0.06107814643591797,True
+0.97,epinions,degree,Greedy,25,0.04816941863166707,True
+0.97,epinions,degree,Greedy,50,0.05422392272303131,True
+0.97,epinions,degree,Greedy,100,0.057997047892255904,True
+0.97,epinions,degree,Greedy,150,0.05889392445515912,True
+0.97,epinions,degree,Greedy,200,0.05947595745529305,True
+0.97,epinions,degree,Maximin-Greedy,25,0.045959616777299234,True
+0.97,epinions,degree,Maximin-Greedy,50,0.05147723678692295,True
+0.97,epinions,degree,Maximin-Greedy,100,0.05362800489687353,True
+0.97,epinions,degree,Maximin-Greedy,150,0.05359457140447321,True
+0.97,epinions,degree,Maximin-Greedy,200,0.055301535984555616,True
+0.97,epinions,degree,MultiFW-MaxMin,25,0.04730695312864466,True
+0.97,epinions,degree,MultiFW-MaxMin,50,0.05449887462450648,True
+0.97,epinions,degree,MultiFW-MaxMin,100,0.059401201584926316,True
+0.97,epinions,degree,MultiFW-MaxMin,150,0.06040906280080183,True
+0.97,epinions,degree,MultiFW-MaxMin,200,0.06205335787378036,True
+0.97,epinions,degree,Parity-Greedy,25,0.03637418216771482,False
+0.97,epinions,degree,Parity-Greedy,50,0.042758405917032144,False
+0.97,epinions,degree,Parity-Greedy,100,0.050257467404724365,False
+0.97,epinions,degree,Parity-Greedy,150,0.05219756305254106,False
+0.97,epinions,degree,Parity-Greedy,200,0.05238811859636541,False
+0.97,epinions,degree,RFIM,25,0.04252593644263264,False
+0.97,epinions,degree,RFIM,50,0.04775824227927061,False
+0.97,epinions,degree,RFIM,100,0.05157194373119728,False
+0.97,epinions,degree,RFIM,150,0.05218500720275873,False
+0.97,epinions,degree,RFIM,200,0.051796015300638876,False
+0.97,epinions,degree,Welfare-Greedy,25,0.04816941863166707,True
+0.97,epinions,degree,Welfare-Greedy,50,0.05422392272303131,True
+0.97,epinions,degree,Welfare-Greedy,100,0.057997047892255904,True
+0.97,epinions,degree,Welfare-Greedy,150,0.058718015331854945,True
+0.97,epinions,degree,Welfare-Greedy,200,0.05912228942954795,True
+0.97,instagram,gender,BSM,25,0.007598625757408856,True
+0.97,instagram,gender,BSM,50,0.004708816305167229,True
+0.97,instagram,gender,BSM,100,0.00461915400712587,True
+0.97,instagram,gender,BSM,150,0.002408711136538233,True
+0.97,instagram,gender,BSM,200,0.007214994962958465,True
+0.97,instagram,gender,Degree,25,0.01099100851361176,True
+0.97,instagram,gender,Degree,50,0.022684719242525464,True
+0.97,instagram,gender,Degree,100,0.015283852481491611,True
+0.97,instagram,gender,Degree,150,0.016341711374341317,True
+0.97,instagram,gender,Degree,200,0.013740886845910683,True
+0.97,instagram,gender,FIM-GAT v2,25,1.1032824500906147e-05,True
+0.97,instagram,gender,FIM-GAT v2,50,0.00018190527569200698,True
+0.97,instagram,gender,FIM-GAT v2,100,0.0007423728082940895,True
+0.97,instagram,gender,FIM-GAT v2,150,0.00030886727637668976,True
+0.97,instagram,gender,FIM-GAT v2,200,0.0012009310776447957,True
+0.97,instagram,gender,FW-Disparity,25,0.01181058571524321,True
+0.97,instagram,gender,FW-Disparity,50,0.012043514408307476,True
+0.97,instagram,gender,FW-Disparity,100,0.012999944713605216,True
+0.97,instagram,gender,FW-Disparity,150,0.005185889088040796,True
+0.97,instagram,gender,FW-Disparity,200,0.012620637594745576,True
+0.97,instagram,gender,Greedy,25,0.01181058571524321,True
+0.97,instagram,gender,Greedy,50,0.016721860566605795,True
+0.97,instagram,gender,Greedy,100,0.01386227139744084,True
+0.97,instagram,gender,Greedy,150,0.006486403975912047,True
+0.97,instagram,gender,Greedy,200,0.013155026905478928,True
+0.97,instagram,gender,Maximin-Greedy,25,0.00060429573079121,True
+0.97,instagram,gender,Maximin-Greedy,50,3.737207047777025e-05,True
+0.97,instagram,gender,Maximin-Greedy,100,0.000873240488855842,False
+0.97,instagram,gender,Maximin-Greedy,150,0.0021748201462110095,False
+0.97,instagram,gender,Maximin-Greedy,200,0.0020714272006799317,False
+0.97,instagram,gender,MultiFW-MaxMin,25,0.007598625757408856,True
+0.97,instagram,gender,MultiFW-MaxMin,50,0.0015012448490469565,True
+0.97,instagram,gender,MultiFW-MaxMin,100,0.0007670273973279795,True
+0.97,instagram,gender,MultiFW-MaxMin,150,0.0007942467325551261,True
+0.97,instagram,gender,MultiFW-MaxMin,200,0.002405824115413735,True
+0.97,instagram,gender,Parity-Greedy,25,0.009624159530923437,True
+0.97,instagram,gender,Parity-Greedy,50,0.011708259352471079,True
+0.97,instagram,gender,Parity-Greedy,100,0.008039753466414445,True
+0.97,instagram,gender,Parity-Greedy,150,0.0041004144442285395,True
+0.97,instagram,gender,Parity-Greedy,200,0.006420377753904527,True
+0.97,instagram,gender,RFIM,25,0.028602389396772912,False
+0.97,instagram,gender,RFIM,50,0.019721430166577236,True
+0.97,instagram,gender,RFIM,100,0.024454213038354433,True
+0.97,instagram,gender,RFIM,150,0.021435411129228588,True
+0.97,instagram,gender,RFIM,200,0.01979357560004058,True
+0.97,instagram,gender,Welfare-Greedy,25,0.01181058571524321,True
+0.97,instagram,gender,Welfare-Greedy,50,0.016721860566605795,True
+0.97,instagram,gender,Welfare-Greedy,100,0.01386227139744084,True
+0.97,instagram,gender,Welfare-Greedy,150,0.006486403975912047,True
+0.97,instagram,gender,Welfare-Greedy,200,0.01140299215616214,True
 0.97,pokec_n,age,BSM,25,0.009911956951430642,True
 0.97,pokec_n,age,BSM,50,0.019427182999624343,True
 0.97,pokec_n,age,BSM,100,0.038194972693626095,True
@@ -329,6 +429,106 @@ rho,dataset,attribute,method,k,disparity,certified
 0.97,rice_facebook,major,Welfare-Greedy,100,0.3853428571428571,True
 0.97,rice_facebook,major,Welfare-Greedy,150,0.3586571428571428,True
 0.97,rice_facebook,major,Welfare-Greedy,200,0.3415142857142857,True
+0.97,snap_youtube,degree,BSM,25,0.011197144199001988,True
+0.97,snap_youtube,degree,BSM,50,0.018907593858211183,True
+0.97,snap_youtube,degree,BSM,100,0.031829542948502154,True
+0.97,snap_youtube,degree,BSM,150,0.03896463457570731,True
+0.97,snap_youtube,degree,BSM,200,0.04561846407116241,True
+0.97,snap_youtube,degree,Degree,25,0.02097850568610435,True
+0.97,snap_youtube,degree,Degree,50,0.03290338084494497,True
+0.97,snap_youtube,degree,Degree,100,0.04667630184457025,True
+0.97,snap_youtube,degree,Degree,150,0.056538186809783036,True
+0.97,snap_youtube,degree,Degree,200,0.06340448023434753,True
+0.97,snap_youtube,degree,FIM-GAT v2,25,0.008224075612976514,True
+0.97,snap_youtube,degree,FIM-GAT v2,50,0.01509555983508376,True
+0.97,snap_youtube,degree,FIM-GAT v2,100,0.03086470408718081,True
+0.97,snap_youtube,degree,FIM-GAT v2,150,0.04343012443189642,True
+0.97,snap_youtube,degree,FIM-GAT v2,200,0.04910725712313577,True
+0.97,snap_youtube,degree,FW-Disparity,25,0.011415722307111811,True
+0.97,snap_youtube,degree,FW-Disparity,50,0.02338050992776329,True
+0.97,snap_youtube,degree,FW-Disparity,100,0.036365856219824105,True
+0.97,snap_youtube,degree,FW-Disparity,150,0.04565053328376367,True
+0.97,snap_youtube,degree,FW-Disparity,200,0.052702063632706186,True
+0.97,snap_youtube,degree,Greedy,25,0.01573203698247551,True
+0.97,snap_youtube,degree,Greedy,50,0.02740384553357504,True
+0.97,snap_youtube,degree,Greedy,100,0.04041720652552294,True
+0.97,snap_youtube,degree,Greedy,150,0.05084731186893812,True
+0.97,snap_youtube,degree,Greedy,200,0.05855872166817744,True
+0.97,snap_youtube,degree,Maximin-Greedy,25,0.009382105833513593,True
+0.97,snap_youtube,degree,Maximin-Greedy,50,0.015141130728397012,True
+0.97,snap_youtube,degree,Maximin-Greedy,100,0.026846635805637897,True
+0.97,snap_youtube,degree,Maximin-Greedy,150,0.03614401370812784,True
+0.97,snap_youtube,degree,Maximin-Greedy,200,0.040733648508855,False
+0.97,snap_youtube,degree,MultiFW-MaxMin,25,0.008816085855978067,True
+0.97,snap_youtube,degree,MultiFW-MaxMin,50,0.015141130728397012,True
+0.97,snap_youtube,degree,MultiFW-MaxMin,100,0.027353740799290732,False
+0.97,snap_youtube,degree,MultiFW-MaxMin,150,0.03622287752142758,True
+0.97,snap_youtube,degree,MultiFW-MaxMin,200,0.04097167060975143,False
+0.97,snap_youtube,degree,Parity-Greedy,25,0.008566839155935882,False
+0.97,snap_youtube,degree,Parity-Greedy,50,0.013845292583960417,False
+0.97,snap_youtube,degree,Parity-Greedy,100,0.02643891547539373,False
+0.97,snap_youtube,degree,Parity-Greedy,150,0.030373404043025243,False
+0.97,snap_youtube,degree,Parity-Greedy,200,0.038354324121465666,False
+0.97,snap_youtube,degree,RFIM,25,0.0193687451153136,False
+0.97,snap_youtube,degree,RFIM,50,0.028701344141357735,False
+0.97,snap_youtube,degree,RFIM,100,0.04418808778803124,False
+0.97,snap_youtube,degree,RFIM,150,0.05358670587254852,False
+0.97,snap_youtube,degree,RFIM,200,0.059701525754187745,False
+0.97,snap_youtube,degree,Welfare-Greedy,25,0.013278344937489334,True
+0.97,snap_youtube,degree,Welfare-Greedy,50,0.02740384553357504,True
+0.97,snap_youtube,degree,Welfare-Greedy,100,0.04035777027257059,True
+0.97,snap_youtube,degree,Welfare-Greedy,150,0.05034410630453909,True
+0.97,snap_youtube,degree,Welfare-Greedy,200,0.05812002944529987,True
+0.97,twitter_ego,degree,BSM,25,0.005115966151469309,True
+0.97,twitter_ego,degree,BSM,50,0.006405171145446531,True
+0.97,twitter_ego,degree,BSM,100,0.008067866110487765,True
+0.97,twitter_ego,degree,BSM,150,0.00974772238297314,True
+0.97,twitter_ego,degree,BSM,200,0.01276883712280058,True
+0.97,twitter_ego,degree,Degree,25,0.007580000268140333,True
+0.97,twitter_ego,degree,Degree,50,0.008932592749040125,True
+0.97,twitter_ego,degree,Degree,100,0.008602409773936615,True
+0.97,twitter_ego,degree,Degree,150,0.013117971329398959,True
+0.97,twitter_ego,degree,Degree,200,0.015320687536928418,True
+0.97,twitter_ego,degree,FIM-GAT v2,25,0.002107096829724639,True
+0.97,twitter_ego,degree,FIM-GAT v2,50,0.0034371428482207755,True
+0.97,twitter_ego,degree,FIM-GAT v2,100,0.004274954830566502,True
+0.97,twitter_ego,degree,FIM-GAT v2,150,0.008092283480706536,True
+0.97,twitter_ego,degree,FIM-GAT v2,200,0.01101357546471926,True
+0.97,twitter_ego,degree,FW-Disparity,25,0.0012810612070762173,True
+0.97,twitter_ego,degree,FW-Disparity,50,0.010717542723634399,True
+0.97,twitter_ego,degree,FW-Disparity,100,0.014198801038584341,True
+0.97,twitter_ego,degree,FW-Disparity,150,0.017159447144194095,True
+0.97,twitter_ego,degree,FW-Disparity,200,0.019051331980984076,True
+0.97,twitter_ego,degree,Greedy,25,0.007386529076934004,True
+0.97,twitter_ego,degree,Greedy,50,0.010944712165517262,True
+0.97,twitter_ego,degree,Greedy,100,0.012430169541548491,True
+0.97,twitter_ego,degree,Greedy,150,0.01576748559876226,True
+0.97,twitter_ego,degree,Greedy,200,0.021529114066844657,True
+0.97,twitter_ego,degree,Maximin-Greedy,25,0.0037341673123337804,True
+0.97,twitter_ego,degree,Maximin-Greedy,50,0.0043882574424904675,True
+0.97,twitter_ego,degree,Maximin-Greedy,100,0.00708905838235438,True
+0.97,twitter_ego,degree,Maximin-Greedy,150,0.005838963635312444,True
+0.97,twitter_ego,degree,Maximin-Greedy,200,0.009556712637249415,True
+0.97,twitter_ego,degree,MultiFW-MaxMin,25,0.006188798269497253,True
+0.97,twitter_ego,degree,MultiFW-MaxMin,50,0.011482350906879296,True
+0.97,twitter_ego,degree,MultiFW-MaxMin,100,0.01287881394741891,True
+0.97,twitter_ego,degree,MultiFW-MaxMin,150,0.01669606573623425,True
+0.97,twitter_ego,degree,MultiFW-MaxMin,200,0.019533594409910704,True
+0.97,twitter_ego,degree,Parity-Greedy,25,0.0031820038890674335,False
+0.97,twitter_ego,degree,Parity-Greedy,50,0.006009779557518108,False
+0.97,twitter_ego,degree,Parity-Greedy,100,0.00771099965388955,False
+0.97,twitter_ego,degree,Parity-Greedy,150,0.006434835539812833,False
+0.97,twitter_ego,degree,Parity-Greedy,200,0.0058598274679741436,False
+0.97,twitter_ego,degree,RFIM,25,0.008195053948121561,True
+0.97,twitter_ego,degree,RFIM,50,0.011355768306282349,True
+0.97,twitter_ego,degree,RFIM,100,0.01309950399198298,True
+0.97,twitter_ego,degree,RFIM,150,0.017525400299436028,True
+0.97,twitter_ego,degree,RFIM,200,0.02265676406668396,True
+0.97,twitter_ego,degree,Welfare-Greedy,25,0.007386529076934004,True
+0.97,twitter_ego,degree,Welfare-Greedy,50,0.010944712165517262,True
+0.97,twitter_ego,degree,Welfare-Greedy,100,0.012430169541548491,True
+0.97,twitter_ego,degree,Welfare-Greedy,150,0.015542845962518231,True
+0.97,twitter_ego,degree,Welfare-Greedy,200,0.021529114066844657,True
 0.97,twitter_political,leaning,AGE,25,0.011994274061126124,False
 0.97,twitter_political,leaning,AGE,50,0.08360667937920441,False
 0.97,twitter_political,leaning,AGE,100,0.15276934722791405,False
@@ -389,6 +589,106 @@ rho,dataset,attribute,method,k,disparity,certified
 0.97,twitter_political,leaning,Welfare-Greedy,100,0.06306383199377752,True
 0.97,twitter_political,leaning,Welfare-Greedy,150,0.059214443868291444,True
 0.97,twitter_political,leaning,Welfare-Greedy,200,0.05073391236712477,True
+0.98,epinions,degree,BSM,25,0.04718675771517403,True
+0.98,epinions,degree,BSM,50,0.05147723678692295,True
+0.98,epinions,degree,BSM,100,0.053570069312719154,True
+0.98,epinions,degree,BSM,150,0.0536321465032637,True
+0.98,epinions,degree,BSM,200,0.055258409007509,True
+0.98,epinions,degree,Degree,25,0.03764565078343102,False
+0.98,epinions,degree,Degree,50,0.042787448982767345,False
+0.98,epinions,degree,Degree,100,0.050153086716418244,True
+0.98,epinions,degree,Degree,150,0.051299873291408005,True
+0.98,epinions,degree,Degree,200,0.052935615477805675,True
+0.98,epinions,degree,FIM-GAT v2,25,0.04325708393992028,True
+0.98,epinions,degree,FIM-GAT v2,50,0.04984105292055099,True
+0.98,epinions,degree,FIM-GAT v2,100,0.05393545998565291,True
+0.98,epinions,degree,FIM-GAT v2,150,0.051789293443392004,True
+0.98,epinions,degree,FIM-GAT v2,200,0.05175721165319386,True
+0.98,epinions,degree,FW-Disparity,25,0.04884767627834677,True
+0.98,epinions,degree,FW-Disparity,50,0.05699754760554243,True
+0.98,epinions,degree,FW-Disparity,100,0.058723611076954896,True
+0.98,epinions,degree,FW-Disparity,150,0.06082847476385583,True
+0.98,epinions,degree,FW-Disparity,200,0.06107814643591797,True
+0.98,epinions,degree,Greedy,25,0.04816941863166707,True
+0.98,epinions,degree,Greedy,50,0.05422392272303131,True
+0.98,epinions,degree,Greedy,100,0.057997047892255904,True
+0.98,epinions,degree,Greedy,150,0.05889392445515912,True
+0.98,epinions,degree,Greedy,200,0.05947595745529305,True
+0.98,epinions,degree,Maximin-Greedy,25,0.045959616777299234,True
+0.98,epinions,degree,Maximin-Greedy,50,0.05147723678692295,True
+0.98,epinions,degree,Maximin-Greedy,100,0.05362800489687353,True
+0.98,epinions,degree,Maximin-Greedy,150,0.05359457140447321,True
+0.98,epinions,degree,Maximin-Greedy,200,0.055301535984555616,True
+0.98,epinions,degree,MultiFW-MaxMin,25,0.04730695312864466,True
+0.98,epinions,degree,MultiFW-MaxMin,50,0.05449887462450648,True
+0.98,epinions,degree,MultiFW-MaxMin,100,0.059401201584926316,True
+0.98,epinions,degree,MultiFW-MaxMin,150,0.06040906280080183,True
+0.98,epinions,degree,MultiFW-MaxMin,200,0.06205335787378036,True
+0.98,epinions,degree,Parity-Greedy,25,0.03637418216771482,False
+0.98,epinions,degree,Parity-Greedy,50,0.042758405917032144,False
+0.98,epinions,degree,Parity-Greedy,100,0.050257467404724365,False
+0.98,epinions,degree,Parity-Greedy,150,0.05219756305254106,False
+0.98,epinions,degree,Parity-Greedy,200,0.05238811859636541,False
+0.98,epinions,degree,RFIM,25,0.04252593644263264,False
+0.98,epinions,degree,RFIM,50,0.04775824227927061,False
+0.98,epinions,degree,RFIM,100,0.05157194373119728,False
+0.98,epinions,degree,RFIM,150,0.05218500720275873,False
+0.98,epinions,degree,RFIM,200,0.051796015300638876,False
+0.98,epinions,degree,Welfare-Greedy,25,0.04816941863166707,True
+0.98,epinions,degree,Welfare-Greedy,50,0.05422392272303131,True
+0.98,epinions,degree,Welfare-Greedy,100,0.057997047892255904,True
+0.98,epinions,degree,Welfare-Greedy,150,0.058718015331854945,True
+0.98,epinions,degree,Welfare-Greedy,200,0.05912228942954795,True
+0.98,instagram,gender,BSM,25,0.007598625757408856,True
+0.98,instagram,gender,BSM,50,0.004708816305167229,True
+0.98,instagram,gender,BSM,100,0.00461915400712587,True
+0.98,instagram,gender,BSM,150,0.002408711136538233,True
+0.98,instagram,gender,BSM,200,0.007214994962958465,True
+0.98,instagram,gender,Degree,25,0.01099100851361176,True
+0.98,instagram,gender,Degree,50,0.022684719242525464,True
+0.98,instagram,gender,Degree,100,0.015283852481491611,True
+0.98,instagram,gender,Degree,150,0.016341711374341317,True
+0.98,instagram,gender,Degree,200,0.013740886845910683,True
+0.98,instagram,gender,FIM-GAT v2,25,0.0023324740506617814,True
+0.98,instagram,gender,FIM-GAT v2,50,0.0009128246902690151,True
+0.98,instagram,gender,FIM-GAT v2,100,0.00030466159978964624,True
+0.98,instagram,gender,FIM-GAT v2,150,0.00030886727637668976,True
+0.98,instagram,gender,FIM-GAT v2,200,0.0019512786970168894,True
+0.98,instagram,gender,FW-Disparity,25,0.01181058571524321,True
+0.98,instagram,gender,FW-Disparity,50,0.01497993534959402,True
+0.98,instagram,gender,FW-Disparity,100,0.012999944713605216,True
+0.98,instagram,gender,FW-Disparity,150,0.005185889088040796,True
+0.98,instagram,gender,FW-Disparity,200,0.012620637594745576,True
+0.98,instagram,gender,Greedy,25,0.01181058571524321,True
+0.98,instagram,gender,Greedy,50,0.016721860566605795,True
+0.98,instagram,gender,Greedy,100,0.01386227139744084,True
+0.98,instagram,gender,Greedy,150,0.006486403975912047,True
+0.98,instagram,gender,Greedy,200,0.013155026905478928,True
+0.98,instagram,gender,Maximin-Greedy,25,0.00060429573079121,False
+0.98,instagram,gender,Maximin-Greedy,50,3.737207047777025e-05,True
+0.98,instagram,gender,Maximin-Greedy,100,0.000873240488855842,False
+0.98,instagram,gender,Maximin-Greedy,150,0.0021748201462110095,False
+0.98,instagram,gender,Maximin-Greedy,200,0.0020714272006799317,False
+0.98,instagram,gender,MultiFW-MaxMin,25,0.007598625757408856,True
+0.98,instagram,gender,MultiFW-MaxMin,50,0.0015012448490469565,True
+0.98,instagram,gender,MultiFW-MaxMin,100,0.0007670273973279795,True
+0.98,instagram,gender,MultiFW-MaxMin,150,0.0007942467325551261,True
+0.98,instagram,gender,MultiFW-MaxMin,200,0.002405824115413735,True
+0.98,instagram,gender,Parity-Greedy,25,0.009624159530923437,True
+0.98,instagram,gender,Parity-Greedy,50,0.011708259352471079,True
+0.98,instagram,gender,Parity-Greedy,100,0.008039753466414445,True
+0.98,instagram,gender,Parity-Greedy,150,0.0041004144442285395,True
+0.98,instagram,gender,Parity-Greedy,200,0.006420377753904527,True
+0.98,instagram,gender,RFIM,25,0.028602389396772912,False
+0.98,instagram,gender,RFIM,50,0.019721430166577236,False
+0.98,instagram,gender,RFIM,100,0.024454213038354433,True
+0.98,instagram,gender,RFIM,150,0.021435411129228588,False
+0.98,instagram,gender,RFIM,200,0.01979357560004058,True
+0.98,instagram,gender,Welfare-Greedy,25,0.01181058571524321,True
+0.98,instagram,gender,Welfare-Greedy,50,0.016721860566605795,True
+0.98,instagram,gender,Welfare-Greedy,100,0.01386227139744084,True
+0.98,instagram,gender,Welfare-Greedy,150,0.006486403975912047,True
+0.98,instagram,gender,Welfare-Greedy,200,0.01140299215616214,True
 0.98,pokec_n,age,BSM,25,0.015726754822435053,True
 0.98,pokec_n,age,BSM,50,0.03847522648242793,True
 0.98,pokec_n,age,BSM,100,0.05637065351323012,True
@@ -719,6 +1019,106 @@ rho,dataset,attribute,method,k,disparity,certified
 0.98,rice_facebook,major,Welfare-Greedy,100,0.3853428571428571,True
 0.98,rice_facebook,major,Welfare-Greedy,150,0.3586571428571428,True
 0.98,rice_facebook,major,Welfare-Greedy,200,0.3415142857142857,True
+0.98,snap_youtube,degree,BSM,25,0.011197144199001988,True
+0.98,snap_youtube,degree,BSM,50,0.018907593858211183,True
+0.98,snap_youtube,degree,BSM,100,0.031829542948502154,True
+0.98,snap_youtube,degree,BSM,150,0.04912422004205899,True
+0.98,snap_youtube,degree,BSM,200,0.05694081306785048,True
+0.98,snap_youtube,degree,Degree,25,0.02097850568610435,False
+0.98,snap_youtube,degree,Degree,50,0.03290338084494497,False
+0.98,snap_youtube,degree,Degree,100,0.04667630184457025,False
+0.98,snap_youtube,degree,Degree,150,0.056538186809783036,False
+0.98,snap_youtube,degree,Degree,200,0.06340448023434753,True
+0.98,snap_youtube,degree,FIM-GAT v2,25,0.009286623912304809,True
+0.98,snap_youtube,degree,FIM-GAT v2,50,0.01718048855431792,True
+0.98,snap_youtube,degree,FIM-GAT v2,100,0.032762371610032065,True
+0.98,snap_youtube,degree,FIM-GAT v2,150,0.04358865455885455,True
+0.98,snap_youtube,degree,FIM-GAT v2,200,0.048601894600739576,True
+0.98,snap_youtube,degree,FW-Disparity,25,0.011415722307111811,True
+0.98,snap_youtube,degree,FW-Disparity,50,0.02338050992776329,True
+0.98,snap_youtube,degree,FW-Disparity,100,0.036365856219824105,True
+0.98,snap_youtube,degree,FW-Disparity,150,0.04623350600845463,True
+0.98,snap_youtube,degree,FW-Disparity,200,0.05309400769468453,True
+0.98,snap_youtube,degree,Greedy,25,0.01573203698247551,True
+0.98,snap_youtube,degree,Greedy,50,0.02740384553357504,True
+0.98,snap_youtube,degree,Greedy,100,0.04041720652552294,True
+0.98,snap_youtube,degree,Greedy,150,0.05084731186893812,True
+0.98,snap_youtube,degree,Greedy,200,0.05855872166817744,True
+0.98,snap_youtube,degree,Maximin-Greedy,25,0.009382105833513593,True
+0.98,snap_youtube,degree,Maximin-Greedy,50,0.015141130728397012,False
+0.98,snap_youtube,degree,Maximin-Greedy,100,0.026846635805637897,False
+0.98,snap_youtube,degree,Maximin-Greedy,150,0.03614401370812784,False
+0.98,snap_youtube,degree,Maximin-Greedy,200,0.040733648508855,False
+0.98,snap_youtube,degree,MultiFW-MaxMin,25,0.008816085855978067,True
+0.98,snap_youtube,degree,MultiFW-MaxMin,50,0.015141130728397012,False
+0.98,snap_youtube,degree,MultiFW-MaxMin,100,0.027353740799290732,False
+0.98,snap_youtube,degree,MultiFW-MaxMin,150,0.03622287752142758,False
+0.98,snap_youtube,degree,MultiFW-MaxMin,200,0.04097167060975143,False
+0.98,snap_youtube,degree,Parity-Greedy,25,0.008566839155935882,False
+0.98,snap_youtube,degree,Parity-Greedy,50,0.013845292583960417,False
+0.98,snap_youtube,degree,Parity-Greedy,100,0.02643891547539373,False
+0.98,snap_youtube,degree,Parity-Greedy,150,0.030373404043025243,False
+0.98,snap_youtube,degree,Parity-Greedy,200,0.038354324121465666,False
+0.98,snap_youtube,degree,RFIM,25,0.0193687451153136,False
+0.98,snap_youtube,degree,RFIM,50,0.028701344141357735,False
+0.98,snap_youtube,degree,RFIM,100,0.04418808778803124,False
+0.98,snap_youtube,degree,RFIM,150,0.05358670587254852,False
+0.98,snap_youtube,degree,RFIM,200,0.059701525754187745,False
+0.98,snap_youtube,degree,Welfare-Greedy,25,0.013278344937489334,True
+0.98,snap_youtube,degree,Welfare-Greedy,50,0.02740384553357504,True
+0.98,snap_youtube,degree,Welfare-Greedy,100,0.04035777027257059,True
+0.98,snap_youtube,degree,Welfare-Greedy,150,0.05034410630453909,True
+0.98,snap_youtube,degree,Welfare-Greedy,200,0.05812002944529987,True
+0.98,twitter_ego,degree,BSM,25,0.005115966151469309,True
+0.98,twitter_ego,degree,BSM,50,0.006405171145446531,True
+0.98,twitter_ego,degree,BSM,100,0.008067866110487765,True
+0.98,twitter_ego,degree,BSM,150,0.00974772238297314,True
+0.98,twitter_ego,degree,BSM,200,0.01276883712280058,True
+0.98,twitter_ego,degree,Degree,25,0.007580000268140333,False
+0.98,twitter_ego,degree,Degree,50,0.008932592749040125,True
+0.98,twitter_ego,degree,Degree,100,0.008602409773936615,True
+0.98,twitter_ego,degree,Degree,150,0.013117971329398959,True
+0.98,twitter_ego,degree,Degree,200,0.015320687536928418,True
+0.98,twitter_ego,degree,FIM-GAT v2,25,0.004677788952594519,True
+0.98,twitter_ego,degree,FIM-GAT v2,50,0.004102652728865314,True
+0.98,twitter_ego,degree,FIM-GAT v2,100,0.006689857656519971,True
+0.98,twitter_ego,degree,FIM-GAT v2,150,0.010376446609163925,True
+0.98,twitter_ego,degree,FIM-GAT v2,200,0.012218996218072375,True
+0.98,twitter_ego,degree,FW-Disparity,25,0.0075414479356152725,True
+0.98,twitter_ego,degree,FW-Disparity,50,0.010717542723634399,True
+0.98,twitter_ego,degree,FW-Disparity,100,0.01429861931206386,True
+0.98,twitter_ego,degree,FW-Disparity,150,0.017159447144194095,True
+0.98,twitter_ego,degree,FW-Disparity,200,0.019409685315056963,True
+0.98,twitter_ego,degree,Greedy,25,0.007386529076934004,True
+0.98,twitter_ego,degree,Greedy,50,0.010944712165517262,True
+0.98,twitter_ego,degree,Greedy,100,0.012430169541548491,True
+0.98,twitter_ego,degree,Greedy,150,0.01576748559876226,True
+0.98,twitter_ego,degree,Greedy,200,0.021529114066844657,True
+0.98,twitter_ego,degree,Maximin-Greedy,25,0.0037341673123337804,True
+0.98,twitter_ego,degree,Maximin-Greedy,50,0.0043882574424904675,True
+0.98,twitter_ego,degree,Maximin-Greedy,100,0.00708905838235438,True
+0.98,twitter_ego,degree,Maximin-Greedy,150,0.005838963635312444,True
+0.98,twitter_ego,degree,Maximin-Greedy,200,0.009556712637249415,True
+0.98,twitter_ego,degree,MultiFW-MaxMin,25,0.006188798269497253,True
+0.98,twitter_ego,degree,MultiFW-MaxMin,50,0.011482350906879296,True
+0.98,twitter_ego,degree,MultiFW-MaxMin,100,0.01287881394741891,True
+0.98,twitter_ego,degree,MultiFW-MaxMin,150,0.01669606573623425,True
+0.98,twitter_ego,degree,MultiFW-MaxMin,200,0.019533594409910704,True
+0.98,twitter_ego,degree,Parity-Greedy,25,0.0031820038890674335,False
+0.98,twitter_ego,degree,Parity-Greedy,50,0.006009779557518108,False
+0.98,twitter_ego,degree,Parity-Greedy,100,0.00771099965388955,False
+0.98,twitter_ego,degree,Parity-Greedy,150,0.006434835539812833,False
+0.98,twitter_ego,degree,Parity-Greedy,200,0.0058598274679741436,False
+0.98,twitter_ego,degree,RFIM,25,0.008195053948121561,True
+0.98,twitter_ego,degree,RFIM,50,0.011355768306282349,True
+0.98,twitter_ego,degree,RFIM,100,0.01309950399198298,True
+0.98,twitter_ego,degree,RFIM,150,0.017525400299436028,True
+0.98,twitter_ego,degree,RFIM,200,0.02265676406668396,True
+0.98,twitter_ego,degree,Welfare-Greedy,25,0.007386529076934004,True
+0.98,twitter_ego,degree,Welfare-Greedy,50,0.010944712165517262,True
+0.98,twitter_ego,degree,Welfare-Greedy,100,0.012430169541548491,True
+0.98,twitter_ego,degree,Welfare-Greedy,150,0.015542845962518231,True
+0.98,twitter_ego,degree,Welfare-Greedy,200,0.021529114066844657,True
 0.98,twitter_political,leaning,AGE,25,0.011994274061126124,False
 0.98,twitter_political,leaning,AGE,50,0.08360667937920441,False
 0.98,twitter_political,leaning,AGE,100,0.15276934722791405,False
@@ -779,6 +1179,106 @@ rho,dataset,attribute,method,k,disparity,certified
 0.98,twitter_political,leaning,Welfare-Greedy,100,0.06306383199377752,True
 0.98,twitter_political,leaning,Welfare-Greedy,150,0.059214443868291444,True
 0.98,twitter_political,leaning,Welfare-Greedy,200,0.05073391236712477,True
+0.99,epinions,degree,BSM,25,0.04718675771517403,True
+0.99,epinions,degree,BSM,50,0.05147723678692295,True
+0.99,epinions,degree,BSM,100,0.053570069312719154,True
+0.99,epinions,degree,BSM,150,0.0536321465032637,True
+0.99,epinions,degree,BSM,200,0.055258409007509,True
+0.99,epinions,degree,Degree,25,0.03764565078343102,False
+0.99,epinions,degree,Degree,50,0.042787448982767345,False
+0.99,epinions,degree,Degree,100,0.050153086716418244,False
+0.99,epinions,degree,Degree,150,0.051299873291408005,False
+0.99,epinions,degree,Degree,200,0.052935615477805675,False
+0.99,epinions,degree,FIM-GAT v2,25,0.045843976025840866,True
+0.99,epinions,degree,FIM-GAT v2,50,0.05193537365924267,True
+0.99,epinions,degree,FIM-GAT v2,100,0.05407006507022996,True
+0.99,epinions,degree,FIM-GAT v2,150,0.055054729744129005,True
+0.99,epinions,degree,FIM-GAT v2,200,0.0554865790933583,True
+0.99,epinions,degree,FW-Disparity,25,0.048113657413037275,True
+0.99,epinions,degree,FW-Disparity,50,0.05639120369089193,True
+0.99,epinions,degree,FW-Disparity,100,0.058723611076954896,True
+0.99,epinions,degree,FW-Disparity,150,0.06082847476385583,True
+0.99,epinions,degree,FW-Disparity,200,0.06101810857240486,True
+0.99,epinions,degree,Greedy,25,0.04816941863166707,True
+0.99,epinions,degree,Greedy,50,0.05422392272303131,True
+0.99,epinions,degree,Greedy,100,0.057997047892255904,True
+0.99,epinions,degree,Greedy,150,0.05889392445515912,True
+0.99,epinions,degree,Greedy,200,0.05947595745529305,True
+0.99,epinions,degree,Maximin-Greedy,25,0.045959616777299234,True
+0.99,epinions,degree,Maximin-Greedy,50,0.05147723678692295,True
+0.99,epinions,degree,Maximin-Greedy,100,0.05362800489687353,True
+0.99,epinions,degree,Maximin-Greedy,150,0.05359457140447321,True
+0.99,epinions,degree,Maximin-Greedy,200,0.055301535984555616,True
+0.99,epinions,degree,MultiFW-MaxMin,25,0.04730695312864466,True
+0.99,epinions,degree,MultiFW-MaxMin,50,0.05449887462450648,True
+0.99,epinions,degree,MultiFW-MaxMin,100,0.059401201584926316,True
+0.99,epinions,degree,MultiFW-MaxMin,150,0.06040906280080183,True
+0.99,epinions,degree,MultiFW-MaxMin,200,0.06205335787378036,True
+0.99,epinions,degree,Parity-Greedy,25,0.03637418216771482,False
+0.99,epinions,degree,Parity-Greedy,50,0.042758405917032144,False
+0.99,epinions,degree,Parity-Greedy,100,0.050257467404724365,False
+0.99,epinions,degree,Parity-Greedy,150,0.05219756305254106,False
+0.99,epinions,degree,Parity-Greedy,200,0.05238811859636541,False
+0.99,epinions,degree,RFIM,25,0.04252593644263264,False
+0.99,epinions,degree,RFIM,50,0.04775824227927061,False
+0.99,epinions,degree,RFIM,100,0.05157194373119728,False
+0.99,epinions,degree,RFIM,150,0.05218500720275873,False
+0.99,epinions,degree,RFIM,200,0.051796015300638876,False
+0.99,epinions,degree,Welfare-Greedy,25,0.04816941863166707,True
+0.99,epinions,degree,Welfare-Greedy,50,0.05422392272303131,True
+0.99,epinions,degree,Welfare-Greedy,100,0.057997047892255904,True
+0.99,epinions,degree,Welfare-Greedy,150,0.058718015331854945,True
+0.99,epinions,degree,Welfare-Greedy,200,0.05912228942954795,True
+0.99,instagram,gender,BSM,25,0.007598625757408856,True
+0.99,instagram,gender,BSM,50,0.01616834675210707,True
+0.99,instagram,gender,BSM,100,0.00461915400712587,True
+0.99,instagram,gender,BSM,150,0.002408711136538233,True
+0.99,instagram,gender,BSM,200,0.007214994962958465,True
+0.99,instagram,gender,Degree,25,0.01099100851361176,True
+0.99,instagram,gender,Degree,50,0.022684719242525464,True
+0.99,instagram,gender,Degree,100,0.015283852481491611,True
+0.99,instagram,gender,Degree,150,0.016341711374341317,True
+0.99,instagram,gender,Degree,200,0.013740886845910683,True
+0.99,instagram,gender,FIM-GAT v2,25,0.007305866471859018,True
+0.99,instagram,gender,FIM-GAT v2,50,0.00017940484817247082,True
+0.99,instagram,gender,FIM-GAT v2,100,0.0006413696245692879,True
+0.99,instagram,gender,FIM-GAT v2,150,0.0001164271321142385,True
+0.99,instagram,gender,FIM-GAT v2,200,0.0018335794571130992,True
+0.99,instagram,gender,FW-Disparity,25,0.01181058571524321,True
+0.99,instagram,gender,FW-Disparity,50,0.01497993534959402,True
+0.99,instagram,gender,FW-Disparity,100,0.012999944713605216,True
+0.99,instagram,gender,FW-Disparity,150,0.005185889088040796,True
+0.99,instagram,gender,FW-Disparity,200,0.012620637594745576,True
+0.99,instagram,gender,Greedy,25,0.01181058571524321,True
+0.99,instagram,gender,Greedy,50,0.016721860566605795,True
+0.99,instagram,gender,Greedy,100,0.01386227139744084,True
+0.99,instagram,gender,Greedy,150,0.006486403975912047,True
+0.99,instagram,gender,Greedy,200,0.013155026905478928,True
+0.99,instagram,gender,Maximin-Greedy,25,0.00060429573079121,False
+0.99,instagram,gender,Maximin-Greedy,50,3.737207047777025e-05,False
+0.99,instagram,gender,Maximin-Greedy,100,0.000873240488855842,False
+0.99,instagram,gender,Maximin-Greedy,150,0.0021748201462110095,False
+0.99,instagram,gender,Maximin-Greedy,200,0.0020714272006799317,False
+0.99,instagram,gender,MultiFW-MaxMin,25,0.007598625757408856,True
+0.99,instagram,gender,MultiFW-MaxMin,50,0.0015012448490469565,True
+0.99,instagram,gender,MultiFW-MaxMin,100,0.0007670273973279795,True
+0.99,instagram,gender,MultiFW-MaxMin,150,0.0007942467325551261,True
+0.99,instagram,gender,MultiFW-MaxMin,200,0.002405824115413735,True
+0.99,instagram,gender,Parity-Greedy,25,0.009624159530923437,False
+0.99,instagram,gender,Parity-Greedy,50,0.011708259352471079,True
+0.99,instagram,gender,Parity-Greedy,100,0.008039753466414445,True
+0.99,instagram,gender,Parity-Greedy,150,0.0041004144442285395,True
+0.99,instagram,gender,Parity-Greedy,200,0.006420377753904527,True
+0.99,instagram,gender,RFIM,25,0.028602389396772912,False
+0.99,instagram,gender,RFIM,50,0.019721430166577236,False
+0.99,instagram,gender,RFIM,100,0.024454213038354433,False
+0.99,instagram,gender,RFIM,150,0.021435411129228588,False
+0.99,instagram,gender,RFIM,200,0.01979357560004058,False
+0.99,instagram,gender,Welfare-Greedy,25,0.01181058571524321,True
+0.99,instagram,gender,Welfare-Greedy,50,0.016721860566605795,True
+0.99,instagram,gender,Welfare-Greedy,100,0.01386227139744084,True
+0.99,instagram,gender,Welfare-Greedy,150,0.006486403975912047,True
+0.99,instagram,gender,Welfare-Greedy,200,0.01140299215616214,True
 0.99,pokec_n,age,BSM,25,0.022394925137290432,True
 0.99,pokec_n,age,BSM,50,0.05025455560235027,True
 0.99,pokec_n,age,BSM,100,0.05637065351323012,True
@@ -1109,6 +1609,106 @@ rho,dataset,attribute,method,k,disparity,certified
 0.99,rice_facebook,major,Welfare-Greedy,100,0.3853428571428571,True
 0.99,rice_facebook,major,Welfare-Greedy,150,0.3586571428571428,True
 0.99,rice_facebook,major,Welfare-Greedy,200,0.3415142857142857,True
+0.99,snap_youtube,degree,BSM,25,0.015189551314991834,True
+0.99,snap_youtube,degree,BSM,50,0.026767930856000363,True
+0.99,snap_youtube,degree,BSM,100,0.04011247497334541,True
+0.99,snap_youtube,degree,BSM,150,0.04912422004205899,True
+0.99,snap_youtube,degree,BSM,200,0.05694081306785048,True
+0.99,snap_youtube,degree,Degree,25,0.02097850568610435,False
+0.99,snap_youtube,degree,Degree,50,0.03290338084494497,False
+0.99,snap_youtube,degree,Degree,100,0.04667630184457025,False
+0.99,snap_youtube,degree,Degree,150,0.056538186809783036,False
+0.99,snap_youtube,degree,Degree,200,0.06340448023434753,False
+0.99,snap_youtube,degree,FIM-GAT v2,25,0.012351835291234209,True
+0.99,snap_youtube,degree,FIM-GAT v2,50,0.020076114124136707,True
+0.99,snap_youtube,degree,FIM-GAT v2,100,0.0356679180912276,True
+0.99,snap_youtube,degree,FIM-GAT v2,150,0.04643595111824744,True
+0.99,snap_youtube,degree,FIM-GAT v2,200,0.05138157354473974,True
+0.99,snap_youtube,degree,FW-Disparity,25,0.01240636704469504,True
+0.99,snap_youtube,degree,FW-Disparity,50,0.02338050992776329,True
+0.99,snap_youtube,degree,FW-Disparity,100,0.036365856219824105,True
+0.99,snap_youtube,degree,FW-Disparity,150,0.04662030050046434,True
+0.99,snap_youtube,degree,FW-Disparity,200,0.05322840485541325,True
+0.99,snap_youtube,degree,Greedy,25,0.01573203698247551,True
+0.99,snap_youtube,degree,Greedy,50,0.02740384553357504,True
+0.99,snap_youtube,degree,Greedy,100,0.04041720652552294,True
+0.99,snap_youtube,degree,Greedy,150,0.05084731186893812,True
+0.99,snap_youtube,degree,Greedy,200,0.05855872166817744,True
+0.99,snap_youtube,degree,Maximin-Greedy,25,0.009382105833513593,False
+0.99,snap_youtube,degree,Maximin-Greedy,50,0.015141130728397012,False
+0.99,snap_youtube,degree,Maximin-Greedy,100,0.026846635805637897,False
+0.99,snap_youtube,degree,Maximin-Greedy,150,0.03614401370812784,False
+0.99,snap_youtube,degree,Maximin-Greedy,200,0.040733648508855,False
+0.99,snap_youtube,degree,MultiFW-MaxMin,25,0.008816085855978067,False
+0.99,snap_youtube,degree,MultiFW-MaxMin,50,0.015141130728397012,False
+0.99,snap_youtube,degree,MultiFW-MaxMin,100,0.027353740799290732,False
+0.99,snap_youtube,degree,MultiFW-MaxMin,150,0.03622287752142758,False
+0.99,snap_youtube,degree,MultiFW-MaxMin,200,0.04097167060975143,False
+0.99,snap_youtube,degree,Parity-Greedy,25,0.008566839155935882,False
+0.99,snap_youtube,degree,Parity-Greedy,50,0.013845292583960417,False
+0.99,snap_youtube,degree,Parity-Greedy,100,0.02643891547539373,False
+0.99,snap_youtube,degree,Parity-Greedy,150,0.030373404043025243,False
+0.99,snap_youtube,degree,Parity-Greedy,200,0.038354324121465666,False
+0.99,snap_youtube,degree,RFIM,25,0.0193687451153136,False
+0.99,snap_youtube,degree,RFIM,50,0.028701344141357735,False
+0.99,snap_youtube,degree,RFIM,100,0.04418808778803124,False
+0.99,snap_youtube,degree,RFIM,150,0.05358670587254852,False
+0.99,snap_youtube,degree,RFIM,200,0.059701525754187745,False
+0.99,snap_youtube,degree,Welfare-Greedy,25,0.013278344937489334,True
+0.99,snap_youtube,degree,Welfare-Greedy,50,0.02740384553357504,True
+0.99,snap_youtube,degree,Welfare-Greedy,100,0.04035777027257059,True
+0.99,snap_youtube,degree,Welfare-Greedy,150,0.05034410630453909,True
+0.99,snap_youtube,degree,Welfare-Greedy,200,0.05812002944529987,True
+0.99,twitter_ego,degree,BSM,25,0.005115966151469309,True
+0.99,twitter_ego,degree,BSM,50,0.01153707137515006,True
+0.99,twitter_ego,degree,BSM,100,0.008067866110487765,True
+0.99,twitter_ego,degree,BSM,150,0.01576748559876226,True
+0.99,twitter_ego,degree,BSM,200,0.020211365536770637,True
+0.99,twitter_ego,degree,Degree,25,0.007580000268140333,False
+0.99,twitter_ego,degree,Degree,50,0.008932592749040125,False
+0.99,twitter_ego,degree,Degree,100,0.008602409773936615,False
+0.99,twitter_ego,degree,Degree,150,0.013117971329398959,False
+0.99,twitter_ego,degree,Degree,200,0.015320687536928418,False
+0.99,twitter_ego,degree,FIM-GAT v2,25,0.004817871247178446,True
+0.99,twitter_ego,degree,FIM-GAT v2,50,0.006750506027653896,True
+0.99,twitter_ego,degree,FIM-GAT v2,100,0.007545671318727132,True
+0.99,twitter_ego,degree,FIM-GAT v2,150,0.010881106152938247,True
+0.99,twitter_ego,degree,FIM-GAT v2,200,0.014440512095637903,True
+0.99,twitter_ego,degree,FW-Disparity,25,0.0075414479356152725,True
+0.99,twitter_ego,degree,FW-Disparity,50,0.010206653464608084,True
+0.99,twitter_ego,degree,FW-Disparity,100,0.013261607432370481,True
+0.99,twitter_ego,degree,FW-Disparity,150,0.015964240162313903,True
+0.99,twitter_ego,degree,FW-Disparity,200,0.02127394735574717,True
+0.99,twitter_ego,degree,Greedy,25,0.007386529076934004,True
+0.99,twitter_ego,degree,Greedy,50,0.010944712165517262,True
+0.99,twitter_ego,degree,Greedy,100,0.012430169541548491,True
+0.99,twitter_ego,degree,Greedy,150,0.01576748559876226,True
+0.99,twitter_ego,degree,Greedy,200,0.021529114066844657,True
+0.99,twitter_ego,degree,Maximin-Greedy,25,0.0037341673123337804,True
+0.99,twitter_ego,degree,Maximin-Greedy,50,0.0043882574424904675,False
+0.99,twitter_ego,degree,Maximin-Greedy,100,0.00708905838235438,True
+0.99,twitter_ego,degree,Maximin-Greedy,150,0.005838963635312444,False
+0.99,twitter_ego,degree,Maximin-Greedy,200,0.009556712637249415,False
+0.99,twitter_ego,degree,MultiFW-MaxMin,25,0.006188798269497253,True
+0.99,twitter_ego,degree,MultiFW-MaxMin,50,0.011482350906879296,True
+0.99,twitter_ego,degree,MultiFW-MaxMin,100,0.01287881394741891,False
+0.99,twitter_ego,degree,MultiFW-MaxMin,150,0.01669606573623425,True
+0.99,twitter_ego,degree,MultiFW-MaxMin,200,0.019533594409910704,False
+0.99,twitter_ego,degree,Parity-Greedy,25,0.0031820038890674335,False
+0.99,twitter_ego,degree,Parity-Greedy,50,0.006009779557518108,False
+0.99,twitter_ego,degree,Parity-Greedy,100,0.00771099965388955,False
+0.99,twitter_ego,degree,Parity-Greedy,150,0.006434835539812833,False
+0.99,twitter_ego,degree,Parity-Greedy,200,0.0058598274679741436,False
+0.99,twitter_ego,degree,RFIM,25,0.008195053948121561,True
+0.99,twitter_ego,degree,RFIM,50,0.011355768306282349,True
+0.99,twitter_ego,degree,RFIM,100,0.01309950399198298,True
+0.99,twitter_ego,degree,RFIM,150,0.017525400299436028,True
+0.99,twitter_ego,degree,RFIM,200,0.02265676406668396,True
+0.99,twitter_ego,degree,Welfare-Greedy,25,0.007386529076934004,True
+0.99,twitter_ego,degree,Welfare-Greedy,50,0.010944712165517262,True
+0.99,twitter_ego,degree,Welfare-Greedy,100,0.012430169541548491,True
+0.99,twitter_ego,degree,Welfare-Greedy,150,0.015542845962518231,True
+0.99,twitter_ego,degree,Welfare-Greedy,200,0.021529114066844657,True
 0.99,twitter_political,leaning,AGE,25,0.011994274061126124,False
 0.99,twitter_political,leaning,AGE,50,0.08360667937920441,False
 0.99,twitter_political,leaning,AGE,100,0.15276934722791405,False
@@ -1169,6 +1769,106 @@ rho,dataset,attribute,method,k,disparity,certified
 0.99,twitter_political,leaning,Welfare-Greedy,100,0.06306383199377752,True
 0.99,twitter_political,leaning,Welfare-Greedy,150,0.059214443868291444,True
 0.99,twitter_political,leaning,Welfare-Greedy,200,0.05073391236712477,True
+1.0,epinions,degree,BSM,25,0.04816941863166707,False
+1.0,epinions,degree,BSM,50,0.05453360563100196,False
+1.0,epinions,degree,BSM,100,0.057997047892255904,False
+1.0,epinions,degree,BSM,150,0.05889392445515912,False
+1.0,epinions,degree,BSM,200,0.0594780536215721,False
+1.0,epinions,degree,Degree,25,0.03764565078343102,False
+1.0,epinions,degree,Degree,50,0.042787448982767345,False
+1.0,epinions,degree,Degree,100,0.050153086716418244,False
+1.0,epinions,degree,Degree,150,0.051299873291408005,False
+1.0,epinions,degree,Degree,200,0.052935615477805675,False
+1.0,epinions,degree,FIM-GAT v2,25,0.04848860188976911,True
+1.0,epinions,degree,FIM-GAT v2,50,0.05639120369089193,True
+1.0,epinions,degree,FIM-GAT v2,100,0.057996853111060453,True
+1.0,epinions,degree,FIM-GAT v2,150,0.058892449016947734,True
+1.0,epinions,degree,FIM-GAT v2,200,0.05933629931932771,True
+1.0,epinions,degree,FW-Disparity,25,0.04848860188976911,True
+1.0,epinions,degree,FW-Disparity,50,0.05639120369089193,True
+1.0,epinions,degree,FW-Disparity,100,0.057996853111060453,True
+1.0,epinions,degree,FW-Disparity,150,0.058892449016947734,True
+1.0,epinions,degree,FW-Disparity,200,0.05933629931932771,True
+1.0,epinions,degree,Greedy,25,0.04816941863166707,False
+1.0,epinions,degree,Greedy,50,0.05422392272303131,False
+1.0,epinions,degree,Greedy,100,0.057997047892255904,False
+1.0,epinions,degree,Greedy,150,0.05889392445515912,False
+1.0,epinions,degree,Greedy,200,0.05947595745529305,True
+1.0,epinions,degree,Maximin-Greedy,25,0.045959616777299234,False
+1.0,epinions,degree,Maximin-Greedy,50,0.05147723678692295,False
+1.0,epinions,degree,Maximin-Greedy,100,0.05362800489687353,False
+1.0,epinions,degree,Maximin-Greedy,150,0.05359457140447321,False
+1.0,epinions,degree,Maximin-Greedy,200,0.055301535984555616,False
+1.0,epinions,degree,MultiFW-MaxMin,25,0.04730695312864466,False
+1.0,epinions,degree,MultiFW-MaxMin,50,0.05449887462450648,False
+1.0,epinions,degree,MultiFW-MaxMin,100,0.059401201584926316,False
+1.0,epinions,degree,MultiFW-MaxMin,150,0.06040906280080183,False
+1.0,epinions,degree,MultiFW-MaxMin,200,0.06205335787378036,False
+1.0,epinions,degree,Parity-Greedy,25,0.03637418216771482,False
+1.0,epinions,degree,Parity-Greedy,50,0.042758405917032144,False
+1.0,epinions,degree,Parity-Greedy,100,0.050257467404724365,False
+1.0,epinions,degree,Parity-Greedy,150,0.05219756305254106,False
+1.0,epinions,degree,Parity-Greedy,200,0.05238811859636541,False
+1.0,epinions,degree,RFIM,25,0.04252593644263264,False
+1.0,epinions,degree,RFIM,50,0.04775824227927061,False
+1.0,epinions,degree,RFIM,100,0.05157194373119728,False
+1.0,epinions,degree,RFIM,150,0.05218500720275873,False
+1.0,epinions,degree,RFIM,200,0.051796015300638876,False
+1.0,epinions,degree,Welfare-Greedy,25,0.04816941863166707,False
+1.0,epinions,degree,Welfare-Greedy,50,0.05422392272303131,False
+1.0,epinions,degree,Welfare-Greedy,100,0.057997047892255904,False
+1.0,epinions,degree,Welfare-Greedy,150,0.058718015331854945,False
+1.0,epinions,degree,Welfare-Greedy,200,0.05912228942954795,True
+1.0,instagram,gender,BSM,25,0.01181058571524321,False
+1.0,instagram,gender,BSM,50,0.016721860566605795,False
+1.0,instagram,gender,BSM,100,0.007792867467948106,False
+1.0,instagram,gender,BSM,150,0.002408711136538233,False
+1.0,instagram,gender,BSM,200,0.007214994962958465,False
+1.0,instagram,gender,Degree,25,0.01099100851361176,False
+1.0,instagram,gender,Degree,50,0.022684719242525464,False
+1.0,instagram,gender,Degree,100,0.015283852481491611,False
+1.0,instagram,gender,Degree,150,0.016341711374341317,True
+1.0,instagram,gender,Degree,200,0.013740886845910683,True
+1.0,instagram,gender,FIM-GAT v2,25,0.011640544398663605,True
+1.0,instagram,gender,FIM-GAT v2,50,0.01831435453376204,True
+1.0,instagram,gender,FIM-GAT v2,100,0.016491159733787175,True
+1.0,instagram,gender,FIM-GAT v2,150,0.0038883420571300675,True
+1.0,instagram,gender,FIM-GAT v2,200,0.014836144835724152,True
+1.0,instagram,gender,FW-Disparity,25,0.01181058571524321,False
+1.0,instagram,gender,FW-Disparity,50,0.01831435453376204,True
+1.0,instagram,gender,FW-Disparity,100,0.01392230444889575,False
+1.0,instagram,gender,FW-Disparity,150,0.005185889088040796,False
+1.0,instagram,gender,FW-Disparity,200,0.012620637594745576,False
+1.0,instagram,gender,Greedy,25,0.01181058571524321,False
+1.0,instagram,gender,Greedy,50,0.016721860566605795,False
+1.0,instagram,gender,Greedy,100,0.01386227139744084,False
+1.0,instagram,gender,Greedy,150,0.006486403975912047,False
+1.0,instagram,gender,Greedy,200,0.013155026905478928,False
+1.0,instagram,gender,Maximin-Greedy,25,0.00060429573079121,False
+1.0,instagram,gender,Maximin-Greedy,50,3.737207047777025e-05,False
+1.0,instagram,gender,Maximin-Greedy,100,0.000873240488855842,False
+1.0,instagram,gender,Maximin-Greedy,150,0.0021748201462110095,False
+1.0,instagram,gender,Maximin-Greedy,200,0.0020714272006799317,False
+1.0,instagram,gender,MultiFW-MaxMin,25,0.007598625757408856,False
+1.0,instagram,gender,MultiFW-MaxMin,50,0.0015012448490469565,False
+1.0,instagram,gender,MultiFW-MaxMin,100,0.0007670273973279795,False
+1.0,instagram,gender,MultiFW-MaxMin,150,0.0007942467325551261,False
+1.0,instagram,gender,MultiFW-MaxMin,200,0.002405824115413735,False
+1.0,instagram,gender,Parity-Greedy,25,0.009624159530923437,False
+1.0,instagram,gender,Parity-Greedy,50,0.011708259352471079,False
+1.0,instagram,gender,Parity-Greedy,100,0.008039753466414445,False
+1.0,instagram,gender,Parity-Greedy,150,0.0041004144442285395,False
+1.0,instagram,gender,Parity-Greedy,200,0.006420377753904527,False
+1.0,instagram,gender,RFIM,25,0.028602389396772912,False
+1.0,instagram,gender,RFIM,50,0.019721430166577236,False
+1.0,instagram,gender,RFIM,100,0.024454213038354433,False
+1.0,instagram,gender,RFIM,150,0.021435411129228588,False
+1.0,instagram,gender,RFIM,200,0.01979357560004058,False
+1.0,instagram,gender,Welfare-Greedy,25,0.01181058571524321,False
+1.0,instagram,gender,Welfare-Greedy,50,0.016721860566605795,False
+1.0,instagram,gender,Welfare-Greedy,100,0.01386227139744084,False
+1.0,instagram,gender,Welfare-Greedy,150,0.006486403975912047,False
+1.0,instagram,gender,Welfare-Greedy,200,0.01140299215616214,False
 1.0,pokec_n,age,BSM,25,0.022394925137290432,False
 1.0,pokec_n,age,BSM,50,0.05025455560235027,False
 1.0,pokec_n,age,BSM,100,0.058884509960697926,False
@@ -1499,6 +2199,106 @@ rho,dataset,attribute,method,k,disparity,certified
 1.0,rice_facebook,major,Welfare-Greedy,100,0.3853428571428571,False
 1.0,rice_facebook,major,Welfare-Greedy,150,0.3586571428571428,False
 1.0,rice_facebook,major,Welfare-Greedy,200,0.3415142857142857,False
+1.0,snap_youtube,degree,BSM,25,0.01573203698247551,False
+1.0,snap_youtube,degree,BSM,50,0.026767930856000363,False
+1.0,snap_youtube,degree,BSM,100,0.04011247497334541,False
+1.0,snap_youtube,degree,BSM,150,0.05084731186893812,False
+1.0,snap_youtube,degree,BSM,200,0.05694081306785048,False
+1.0,snap_youtube,degree,Degree,25,0.02097850568610435,False
+1.0,snap_youtube,degree,Degree,50,0.03290338084494497,False
+1.0,snap_youtube,degree,Degree,100,0.04667630184457025,False
+1.0,snap_youtube,degree,Degree,150,0.056538186809783036,False
+1.0,snap_youtube,degree,Degree,200,0.06340448023434753,False
+1.0,snap_youtube,degree,FIM-GAT v2,25,0.014330681354177421,True
+1.0,snap_youtube,degree,FIM-GAT v2,50,0.02503438837433264,True
+1.0,snap_youtube,degree,FIM-GAT v2,100,0.0416007906910216,True
+1.0,snap_youtube,degree,FIM-GAT v2,150,0.05229169271736464,True
+1.0,snap_youtube,degree,FIM-GAT v2,200,0.06023840442204276,True
+1.0,snap_youtube,degree,FW-Disparity,25,0.013278344937489334,False
+1.0,snap_youtube,degree,FW-Disparity,50,0.02338050992776329,False
+1.0,snap_youtube,degree,FW-Disparity,100,0.0416007906910216,True
+1.0,snap_youtube,degree,FW-Disparity,150,0.05229169271736464,True
+1.0,snap_youtube,degree,FW-Disparity,200,0.06023840442204276,True
+1.0,snap_youtube,degree,Greedy,25,0.01573203698247551,False
+1.0,snap_youtube,degree,Greedy,50,0.02740384553357504,False
+1.0,snap_youtube,degree,Greedy,100,0.04041720652552294,False
+1.0,snap_youtube,degree,Greedy,150,0.05084731186893812,False
+1.0,snap_youtube,degree,Greedy,200,0.05855872166817744,False
+1.0,snap_youtube,degree,Maximin-Greedy,25,0.009382105833513593,False
+1.0,snap_youtube,degree,Maximin-Greedy,50,0.015141130728397012,False
+1.0,snap_youtube,degree,Maximin-Greedy,100,0.026846635805637897,False
+1.0,snap_youtube,degree,Maximin-Greedy,150,0.03614401370812784,False
+1.0,snap_youtube,degree,Maximin-Greedy,200,0.040733648508855,False
+1.0,snap_youtube,degree,MultiFW-MaxMin,25,0.008816085855978067,False
+1.0,snap_youtube,degree,MultiFW-MaxMin,50,0.015141130728397012,False
+1.0,snap_youtube,degree,MultiFW-MaxMin,100,0.027353740799290732,False
+1.0,snap_youtube,degree,MultiFW-MaxMin,150,0.03622287752142758,False
+1.0,snap_youtube,degree,MultiFW-MaxMin,200,0.04097167060975143,False
+1.0,snap_youtube,degree,Parity-Greedy,25,0.008566839155935882,False
+1.0,snap_youtube,degree,Parity-Greedy,50,0.013845292583960417,False
+1.0,snap_youtube,degree,Parity-Greedy,100,0.02643891547539373,False
+1.0,snap_youtube,degree,Parity-Greedy,150,0.030373404043025243,False
+1.0,snap_youtube,degree,Parity-Greedy,200,0.038354324121465666,False
+1.0,snap_youtube,degree,RFIM,25,0.0193687451153136,False
+1.0,snap_youtube,degree,RFIM,50,0.028701344141357735,False
+1.0,snap_youtube,degree,RFIM,100,0.04418808778803124,False
+1.0,snap_youtube,degree,RFIM,150,0.05358670587254852,False
+1.0,snap_youtube,degree,RFIM,200,0.059701525754187745,False
+1.0,snap_youtube,degree,Welfare-Greedy,25,0.013278344937489334,False
+1.0,snap_youtube,degree,Welfare-Greedy,50,0.02740384553357504,False
+1.0,snap_youtube,degree,Welfare-Greedy,100,0.04035777027257059,False
+1.0,snap_youtube,degree,Welfare-Greedy,150,0.05034410630453909,False
+1.0,snap_youtube,degree,Welfare-Greedy,200,0.05812002944529987,False
+1.0,twitter_ego,degree,BSM,25,0.007386529076934004,True
+1.0,twitter_ego,degree,BSM,50,0.010944712165517262,False
+1.0,twitter_ego,degree,BSM,100,0.012430169541548491,False
+1.0,twitter_ego,degree,BSM,150,0.01576748559876226,False
+1.0,twitter_ego,degree,BSM,200,0.020211365536770637,False
+1.0,twitter_ego,degree,Degree,25,0.007580000268140333,False
+1.0,twitter_ego,degree,Degree,50,0.008932592749040125,False
+1.0,twitter_ego,degree,Degree,100,0.008602409773936615,False
+1.0,twitter_ego,degree,Degree,150,0.013117971329398959,False
+1.0,twitter_ego,degree,Degree,200,0.015320687536928418,False
+1.0,twitter_ego,degree,FIM-GAT v2,25,0.007386529076934004,True
+1.0,twitter_ego,degree,FIM-GAT v2,50,0.010206653464608084,True
+1.0,twitter_ego,degree,FIM-GAT v2,100,0.013261607432370481,True
+1.0,twitter_ego,degree,FIM-GAT v2,150,0.015964240162313903,True
+1.0,twitter_ego,degree,FIM-GAT v2,200,0.02127394735574717,True
+1.0,twitter_ego,degree,FW-Disparity,25,0.007386529076934004,True
+1.0,twitter_ego,degree,FW-Disparity,50,0.010206653464608084,True
+1.0,twitter_ego,degree,FW-Disparity,100,0.013261607432370481,True
+1.0,twitter_ego,degree,FW-Disparity,150,0.015964240162313903,True
+1.0,twitter_ego,degree,FW-Disparity,200,0.02127394735574717,True
+1.0,twitter_ego,degree,Greedy,25,0.007386529076934004,True
+1.0,twitter_ego,degree,Greedy,50,0.010944712165517262,False
+1.0,twitter_ego,degree,Greedy,100,0.012430169541548491,False
+1.0,twitter_ego,degree,Greedy,150,0.01576748559876226,False
+1.0,twitter_ego,degree,Greedy,200,0.021529114066844657,False
+1.0,twitter_ego,degree,Maximin-Greedy,25,0.0037341673123337804,False
+1.0,twitter_ego,degree,Maximin-Greedy,50,0.0043882574424904675,False
+1.0,twitter_ego,degree,Maximin-Greedy,100,0.00708905838235438,False
+1.0,twitter_ego,degree,Maximin-Greedy,150,0.005838963635312444,False
+1.0,twitter_ego,degree,Maximin-Greedy,200,0.009556712637249415,False
+1.0,twitter_ego,degree,MultiFW-MaxMin,25,0.006188798269497253,False
+1.0,twitter_ego,degree,MultiFW-MaxMin,50,0.011482350906879296,False
+1.0,twitter_ego,degree,MultiFW-MaxMin,100,0.01287881394741891,False
+1.0,twitter_ego,degree,MultiFW-MaxMin,150,0.01669606573623425,False
+1.0,twitter_ego,degree,MultiFW-MaxMin,200,0.019533594409910704,False
+1.0,twitter_ego,degree,Parity-Greedy,25,0.0031820038890674335,False
+1.0,twitter_ego,degree,Parity-Greedy,50,0.006009779557518108,False
+1.0,twitter_ego,degree,Parity-Greedy,100,0.00771099965388955,False
+1.0,twitter_ego,degree,Parity-Greedy,150,0.006434835539812833,False
+1.0,twitter_ego,degree,Parity-Greedy,200,0.0058598274679741436,False
+1.0,twitter_ego,degree,RFIM,25,0.008195053948121561,False
+1.0,twitter_ego,degree,RFIM,50,0.011355768306282349,False
+1.0,twitter_ego,degree,RFIM,100,0.01309950399198298,False
+1.0,twitter_ego,degree,RFIM,150,0.017525400299436028,False
+1.0,twitter_ego,degree,RFIM,200,0.02265676406668396,False
+1.0,twitter_ego,degree,Welfare-Greedy,25,0.007386529076934004,True
+1.0,twitter_ego,degree,Welfare-Greedy,50,0.010944712165517262,False
+1.0,twitter_ego,degree,Welfare-Greedy,100,0.012430169541548491,False
+1.0,twitter_ego,degree,Welfare-Greedy,150,0.015542845962518231,False
+1.0,twitter_ego,degree,Welfare-Greedy,200,0.021529114066844657,False
 1.0,twitter_political,leaning,AGE,25,0.011994274061126124,False
 1.0,twitter_political,leaning,AGE,50,0.08360667937920441,False
 1.0,twitter_political,leaning,AGE,100,0.15276934722791405,False

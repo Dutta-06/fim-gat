@@ -1,4 +1,22 @@
 rho,dataset,attribute,method,disparity,n_budgets
+0.97,epinions,degree,BSM,0.05222492386511777,5
+0.97,epinions,degree,Degree,0.051462858495210644,3
+0.97,epinions,degree,FIM-GAT v2,0.04958014951052712,5
+0.97,epinions,degree,FW-Disparity,0.057029328929606216,5
+0.97,epinions,degree,Greedy,0.05575205423148129,5
+0.97,epinions,degree,Maximin-Greedy,0.0519921931700249,5
+0.97,epinions,degree,MultiFW-MaxMin,0.05673389000253193,5
+0.97,epinions,degree,Welfare-Greedy,0.05564613880167144,5
+0.97,instagram,gender,BSM,0.005310060433839731,5
+0.97,instagram,gender,Degree,0.015808435691576167,5
+0.97,instagram,gender,FIM-GAT v2,0.0004890218525016976,5
+0.97,instagram,gender,FW-Disparity,0.010932114303988456,5
+0.97,instagram,gender,Greedy,0.012407229712136165,5
+0.97,instagram,gender,Maximin-Greedy,0.00032083390063449013,2
+0.97,instagram,gender,MultiFW-MaxMin,0.0026133937703505306,5
+0.97,instagram,gender,Parity-Greedy,0.007978592909588406,5
+0.97,instagram,gender,RFIM,0.02135115748355021,4
+0.97,instagram,gender,Welfare-Greedy,0.012056822762272806,5
 0.97,pokec_n,age,BSM,0.030934839370462496,5
 0.97,pokec_n,age,FIM-GAT v2,0.014743306134952547,5
 0.97,pokec_n,age,FW-Disparity,0.03821168911607566,5
@@ -50,6 +68,23 @@ rho,dataset,attribute,method,disparity,n_budgets
 0.97,rice_facebook,major,Parity-Greedy,0.15922576923076925,4
 0.97,rice_facebook,major,RFIM,0.5271904761904761,3
 0.97,rice_facebook,major,Welfare-Greedy,0.3040942857142857,5
+0.97,snap_youtube,degree,BSM,0.02930347593051701,5
+0.97,snap_youtube,degree,Degree,0.04410017108395002,5
+0.97,snap_youtube,degree,FIM-GAT v2,0.029344344218054652,5
+0.97,snap_youtube,degree,FW-Disparity,0.033902937074233815,5
+0.97,snap_youtube,degree,Greedy,0.03859182451573781,5
+0.97,snap_youtube,degree,Maximin-Greedy,0.021878471518919085,4
+0.97,snap_youtube,degree,MultiFW-MaxMin,0.02006003136860089,3
+0.97,snap_youtube,degree,Welfare-Greedy,0.037900819298694786,5
+0.97,twitter_ego,degree,BSM,0.008421112582635466,5
+0.97,twitter_ego,degree,Degree,0.010710732331488889,5
+0.97,twitter_ego,degree,FIM-GAT v2,0.005785010690787543,5
+0.97,twitter_ego,degree,FW-Disparity,0.012481636818894627,5
+0.97,twitter_ego,degree,Greedy,0.013611602089921335,5
+0.97,twitter_ego,degree,Maximin-Greedy,0.006121431881948097,5
+0.97,twitter_ego,degree,MultiFW-MaxMin,0.013355924653988082,5
+0.97,twitter_ego,degree,RFIM,0.014566498122501376,5
+0.97,twitter_ego,degree,Welfare-Greedy,0.013566674162672529,5
 0.97,twitter_political,leaning,BSM,0.06409856690669945,5
 0.97,twitter_political,leaning,Degree,0.10327919637804187,5
 0.97,twitter_political,leaning,FIM-GAT v2,0.0269793196952336,5
@@ -60,6 +95,24 @@ rho,dataset,attribute,method,disparity,n_budgets
 0.97,twitter_political,leaning,Parity-Greedy,0.0339797932330827,4
 0.97,twitter_political,leaning,Prior,0.09516715452424168,2
 0.97,twitter_political,leaning,Welfare-Greedy,0.08423292633697703,5
+0.98,epinions,degree,BSM,0.05222492386511777,5
+0.98,epinions,degree,Degree,0.051462858495210644,3
+0.98,epinions,degree,FIM-GAT v2,0.050116020388542015,5
+0.98,epinions,degree,FW-Disparity,0.05729509123212358,5
+0.98,epinions,degree,Greedy,0.05575205423148129,5
+0.98,epinions,degree,Maximin-Greedy,0.0519921931700249,5
+0.98,epinions,degree,MultiFW-MaxMin,0.05673389000253193,5
+0.98,epinions,degree,Welfare-Greedy,0.05564613880167144,5
+0.98,instagram,gender,BSM,0.005310060433839731,5
+0.98,instagram,gender,Degree,0.015808435691576167,5
+0.98,instagram,gender,FIM-GAT v2,0.0011620212628228044,5
+0.98,instagram,gender,FW-Disparity,0.011519398492245763,5
+0.98,instagram,gender,Greedy,0.012407229712136165,5
+0.98,instagram,gender,Maximin-Greedy,3.737207047777025e-05,1
+0.98,instagram,gender,MultiFW-MaxMin,0.0026133937703505306,5
+0.98,instagram,gender,Parity-Greedy,0.007978592909588406,5
+0.98,instagram,gender,RFIM,0.022123894319197507,2
+0.98,instagram,gender,Welfare-Greedy,0.012056822762272806,5
 0.98,pokec_n,age,BSM,0.0395425438051449,5
 0.98,pokec_n,age,FIM-GAT v2,0.023441217267296116,5
 0.98,pokec_n,age,FW-Disparity,0.03911928513096377,5
@@ -110,6 +163,23 @@ rho,dataset,attribute,method,disparity,n_budgets
 0.98,rice_facebook,major,Parity-Greedy,0.18386000000000002,3
 0.98,rice_facebook,major,RFIM,0.5966,2
 0.98,rice_facebook,major,Welfare-Greedy,0.3040942857142857,5
+0.98,snap_youtube,degree,BSM,0.03359986282312496,5
+0.98,snap_youtube,degree,Degree,0.06340448023434753,1
+0.98,snap_youtube,degree,FIM-GAT v2,0.030284006647249784,5
+0.98,snap_youtube,degree,FW-Disparity,0.034097920431567674,5
+0.98,snap_youtube,degree,Greedy,0.03859182451573781,5
+0.98,snap_youtube,degree,Maximin-Greedy,0.009382105833513593,1
+0.98,snap_youtube,degree,MultiFW-MaxMin,0.008816085855978067,1
+0.98,snap_youtube,degree,Welfare-Greedy,0.037900819298694786,5
+0.98,twitter_ego,degree,BSM,0.008421112582635466,5
+0.98,twitter_ego,degree,Degree,0.011493415347326029,4
+0.98,twitter_ego,degree,FIM-GAT v2,0.007613148433043221,5
+0.98,twitter_ego,degree,FW-Disparity,0.013825348486112918,5
+0.98,twitter_ego,degree,Greedy,0.013611602089921335,5
+0.98,twitter_ego,degree,Maximin-Greedy,0.006121431881948097,5
+0.98,twitter_ego,degree,MultiFW-MaxMin,0.013355924653988082,5
+0.98,twitter_ego,degree,RFIM,0.014566498122501376,5
+0.98,twitter_ego,degree,Welfare-Greedy,0.013566674162672529,5
 0.98,twitter_political,leaning,BSM,0.07164303417052084,5
 0.98,twitter_political,leaning,Degree,0.10327919637804187,5
 0.98,twitter_political,leaning,FIM-GAT v2,0.03526543074594162,5
@@ -118,6 +188,21 @@ rho,dataset,attribute,method,disparity,n_budgets
 0.98,twitter_political,leaning,Maximin-Greedy,0.032420663505259295,1
 0.98,twitter_political,leaning,Parity-Greedy,0.0339797932330827,4
 0.98,twitter_political,leaning,Welfare-Greedy,0.08423292633697703,5
+0.99,epinions,degree,BSM,0.05222492386511777,5
+0.99,epinions,degree,FIM-GAT v2,0.05247814471856016,5
+0.99,epinions,degree,FW-Disparity,0.05701501110342896,5
+0.99,epinions,degree,Greedy,0.05575205423148129,5
+0.99,epinions,degree,Maximin-Greedy,0.0519921931700249,5
+0.99,epinions,degree,MultiFW-MaxMin,0.05673389000253193,5
+0.99,epinions,degree,Welfare-Greedy,0.05564613880167144,5
+0.99,instagram,gender,BSM,0.007601966523227699,5
+0.99,instagram,gender,Degree,0.015808435691576167,5
+0.99,instagram,gender,FIM-GAT v2,0.002015329506765623,5
+0.99,instagram,gender,FW-Disparity,0.011519398492245763,5
+0.99,instagram,gender,Greedy,0.012407229712136165,5
+0.99,instagram,gender,MultiFW-MaxMin,0.0026133937703505306,5
+0.99,instagram,gender,Parity-Greedy,0.007567201254254648,4
+0.99,instagram,gender,Welfare-Greedy,0.012056822762272806,5
 0.99,pokec_n,age,BSM,0.0477848113477686,5
 0.99,pokec_n,age,FIM-GAT v2,0.03510461544756885,5
 0.99,pokec_n,age,FW-Disparity,0.04537208568794806,5
@@ -163,6 +248,19 @@ rho,dataset,attribute,method,disparity,n_budgets
 0.99,rice_facebook,major,MultiFW-MaxMin,0.22145785714285712,1
 0.99,rice_facebook,major,Parity-Greedy,0.20680666666666672,2
 0.99,rice_facebook,major,Welfare-Greedy,0.3040942857142857,5
+0.99,snap_youtube,degree,BSM,0.03762699805084942,5
+0.99,snap_youtube,degree,FIM-GAT v2,0.03318267843391714,5
+0.99,snap_youtube,degree,FW-Disparity,0.03440028770963201,5
+0.99,snap_youtube,degree,Greedy,0.03859182451573781,5
+0.99,snap_youtube,degree,Welfare-Greedy,0.037900819298694786,5
+0.99,twitter_ego,degree,BSM,0.012139950954528005,5
+0.99,twitter_ego,degree,FIM-GAT v2,0.008887133368427124,5
+0.99,twitter_ego,degree,FW-Disparity,0.013649579270130982,5
+0.99,twitter_ego,degree,Greedy,0.013611602089921335,5
+0.99,twitter_ego,degree,Maximin-Greedy,0.00541161284734408,2
+0.99,twitter_ego,degree,MultiFW-MaxMin,0.0114557383042036,3
+0.99,twitter_ego,degree,RFIM,0.014566498122501376,5
+0.99,twitter_ego,degree,Welfare-Greedy,0.013566674162672529,5
 0.99,twitter_political,leaning,BSM,0.09105516700538892,5
 0.99,twitter_political,leaning,Degree,0.11852125909880373,2
 0.99,twitter_political,leaning,FIM-GAT v2,0.055707171872952675,5
@@ -170,6 +268,13 @@ rho,dataset,attribute,method,disparity,n_budgets
 0.99,twitter_political,leaning,Greedy,0.09203264094050474,5
 0.99,twitter_political,leaning,Parity-Greedy,0.026910080373347172,3
 0.99,twitter_political,leaning,Welfare-Greedy,0.08423292633697703,5
+1.0,epinions,degree,FIM-GAT v2,0.05622108140559938,5
+1.0,epinions,degree,FW-Disparity,0.05622108140559938,5
+1.0,epinions,degree,Greedy,0.05947595745529305,1
+1.0,epinions,degree,Welfare-Greedy,0.05912228942954795,1
+1.0,instagram,gender,Degree,0.015041299110126,2
+1.0,instagram,gender,FIM-GAT v2,0.013034109111813408,5
+1.0,instagram,gender,FW-Disparity,0.01831435453376204,1
 1.0,pokec_n,age,FIM-GAT v2,0.04892767689653131,5
 1.0,pokec_n,age,FW-Disparity,0.04892767689653131,5
 1.0,pokec_n,gender,FIM-GAT v2,0.029552122398688402,5
@@ -182,6 +287,13 @@ rho,dataset,attribute,method,disparity,n_budgets
 1.0,rice_facebook,college,FW-Disparity,0.03448141022699058,4
 1.0,rice_facebook,major,FIM-GAT v2,0.304035756302521,5
 1.0,rice_facebook,major,FW-Disparity,0.304035756302521,5
+1.0,snap_youtube,degree,FIM-GAT v2,0.038699191511787814,5
+1.0,snap_youtube,degree,FW-Disparity,0.051376962610143,3
+1.0,twitter_ego,degree,BSM,0.007386529076934004,1
+1.0,twitter_ego,degree,FIM-GAT v2,0.013618595498394729,5
+1.0,twitter_ego,degree,FW-Disparity,0.013618595498394729,5
+1.0,twitter_ego,degree,Greedy,0.007386529076934004,1
+1.0,twitter_ego,degree,Welfare-Greedy,0.007386529076934004,1
 1.0,twitter_political,leaning,BSM,0.13487924516519326,1
 1.0,twitter_political,leaning,FIM-GAT v2,0.09307630865818606,5
 1.0,twitter_political,leaning,FW-Disparity,0.09307630865818606,5
