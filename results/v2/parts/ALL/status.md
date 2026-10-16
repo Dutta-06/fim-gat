@@ -58,3 +58,4 @@ Branch `claude/fimgat-all`. VM: 4 vCPU, 15 GB RAM, no GPU. Python 3.13 (`.venv`)
 
 ## Step 7: supplements (started 10:25 UTC)
 - Dry runs (laptop estimates, UNVERIFIED): epinions 2.8 h, twitter_ego 2.8 h, instagram 42.1 h, snap_youtube 42.1 h (340 queries each: 80 FIM-GAT over 4 configs, `v2-b/learned/simple` not run for lack of a checkpoint; 260 baseline).
+- Certificate-size sensitivity as printed by `summarize_v2.py` (both graphs pooled, rho = 0.99): cert R = 16 / 64 / 256 -> share of queries where the *searched* set was deployed 80% / 90% / 100%; method mean disparity 0.0206 / 0.0166 / 0.0121; share of baseline sets certified 32% / 56% / 60%. A larger certificate sample lets more sets pass (both the method's searched set and the baselines'), and the method's mean disparity falls as R grows; the two graphs are not separated in this table.

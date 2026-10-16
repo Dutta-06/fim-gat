@@ -1,0 +1,34 @@
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple, v2-b/learned/simple, v2-b/greedy/exhaustive, v2-a/greedy/simple, v2-b0/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+  no constructor checkpoint for train seed 0: /home/user/fim-gat/results/v2/models/constructor_s0.pt
+  no constructor checkpoint for train seed 1: /home/user/fim-gat/results/v2/models/constructor_s1.pt
+  no constructor checkpoint for train seed 2: /home/user/fim-gat/results/v2/models/constructor_s2.pt
+  no constructor checkpoint for train seed 3: /home/user/fim-gat/results/v2/models/constructor_s3.pt
+  no constructor checkpoint for train seed 4: /home/user/fim-gat/results/v2/models/constructor_s4.pt
+note: no checkpoints for ['v2-b/learned/simple']; those configurations are not run
+epinions / degree (medium): 340 queries (80 FIM-GAT, 260 baseline), BSM sweep at 5 budgets; rough estimate 2.8 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 2.8 h of queries, plus the cached stages per graph
+
+=== epinions / degree: 340 pending queries ===
+  load              0.6s  peak GPU nan / nan GB
+  reference       100.0s  peak GPU nan / nan GB
+  rr_sample         4.0s  peak GPU nan / nan GB
+  cert_sample      20.4s  peak GPU nan / nan GB
+  cover_index       0.2s  peak GPU nan / nan GB
+  epinions: n=75,879 m=508,837 groups=2; A: R=16 roots=75,879 nnz=10,722,518; B: R=89 roots=75,879 nnz=59,769,106
+    epinions         k=25   rho=0.97 FIM-GAT v2       infl= 12215.80 disp=0.0420 es FAIL (ratio 0.9736, lower 0.9694) (9.0s)  [v2-b/greedy/simple s-1: select 0.0s search 9.0s (12 rounds) certify 10.5s, deployed the final set (path rule: the final set), certificate pass]
+    epinions         k=25   rho=0.97 FIM-GAT v2       infl= 12215.80 disp=0.0420 es FAIL (ratio 0.9736, lower 0.9694) (8.7s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 8.7s (12 rounds) certify 11.2s, deployed the final set (path rule: the final set), certificate pass]
+    epinions         k=25   rho=0.97 FIM-GAT v2       infl= 12232.45 disp=0.0429 es pass (ratio 0.9750, lower 0.9707) (0.8s)  [v2-a/greedy/simple s-1: select 0.0s search 0.8s (5 rounds) certify 10.2s, deployed the final set (path rule: the final set), certificate pass]
+    epinions         k=25   rho=0.97 FIM-GAT v2       infl= 12232.79 disp=0.0431 es pass (ratio 0.9750, lower 0.9709) (2.3s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.3s (5 rounds) certify 10.6s, deployed the final set (path rule: the final set), certificate pass]
+    epinions         k=25   rho=0.97 Degree           infl= 11846.47 disp=0.0376 es FAIL (ratio 0.9442, lower 0.9398) (0.0s)  [certificate FAIL]
+  suite_index       2.0s  peak GPU nan / nan GB
+    epinions         k=25   rho=0.97 Greedy           infl= 12538.98 disp=0.0482 es pass (ratio 0.9994, lower 0.9953) (0.6s)  [certificate pass]
+    epinions         k=25   rho=0.97 Parity-Greedy    infl=  8817.71 disp=0.0364 es FAIL (ratio 0.7028, lower 0.6979) (0.6s)  [certificate FAIL]
+    epinions         k=25   rho=0.97 Welfare-Greedy   infl= 12538.98 disp=0.0482 es pass (ratio 0.9994, lower 0.9953) (0.7s)  [certificate pass]
+    epinions         k=25   rho=0.97 Maximin-Greedy   infl= 12469.57 disp=0.0460 es pass (ratio 0.9938, lower 0.9897) (0.6s)  [certificate pass]
+    epinions         k=25   rho=0.97 FW-Disparity     infl= 12481.76 disp=0.0488 es pass (ratio 0.9948, lower 0.9908) (14.8s)  [certificate pass]
+    epinions         k=25   rho=0.97 LocalSearch      infl= 12254.74 disp=0.0429 es pass (ratio 0.9767, lower 0.9724) (4.9s)  [certificate pass]
+    epinions         k=25   rho=0.97 Simple-v2        infl= 12232.45 disp=0.0429 es pass (ratio 0.9750, lower 0.9707) (4.8s)  [certificate pass]
+    epinions         k=25   rho=0.97 AGE              missing: not run: n=75879 > 5000

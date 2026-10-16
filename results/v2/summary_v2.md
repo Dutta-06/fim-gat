@@ -123,27 +123,27 @@ Holds across the range (a significant win at every rho in [0.97, 0.98, 0.99]; rh
 | rho | row | test graphs | mean disparity (row) | median of mean difference | p | verdict |
 |---|---|---|---|---|---|---|
 | 0.97 | start: learned | 0 | n/a | n/a | n/a | not run |
-| 0.97 | proposer: exhaustive | 1 | 0.0070 | +0.0019 | nan | n/a |
-| 0.97 | acceptance: (a) labelled only | 1 | 0.0089 | +0.0000 | nan | n/a |
-| 0.97 | acceptance: (b0) published rule | 1 | 0.0105 | -0.0016 | nan | n/a |
+| 0.97 | proposer: exhaustive | 7 | 0.0314 | -0.0005 | 0.578 | no difference |
+| 0.97 | acceptance: (a) labelled only | 7 | 0.0346 | -0.0002 | 0.438 | no difference |
+| 0.97 | acceptance: (b0) published rule | 7 | 0.0395 | -0.0040 | 0.0156 | win |
 | 0.97 | deployment: final search set | 7 | 0.0317 | +0.0001 | 0.156 | no difference |
 | 0.97 | deployment: path rule (T2's) | 7 | 0.0336 | -0.0000 | 0.312 | no difference |
 | 0.98 | start: learned | 0 | n/a | n/a | n/a | not run |
-| 0.98 | proposer: exhaustive | 1 | 0.0264 | -0.0137 | nan | n/a |
-| 0.98 | acceptance: (a) labelled only | 1 | 0.0127 | +0.0000 | nan | n/a |
-| 0.98 | acceptance: (b0) published rule | 1 | 0.0291 | -0.0163 | nan | n/a |
+| 0.98 | proposer: exhaustive | 7 | 0.0336 | -0.0002 | 0.938 | no difference |
+| 0.98 | acceptance: (a) labelled only | 7 | 0.0379 | -0.0010 | 0.0469 | win |
+| 0.98 | acceptance: (b0) published rule | 7 | 0.0420 | -0.0038 | 0.0156 | win |
 | 0.98 | deployment: final search set | 7 | 0.0346 | +0.0000 | 0.469 | no difference |
 | 0.98 | deployment: path rule (T2's) | 7 | 0.0350 | +0.0000 | 0.438 | no difference |
 | 0.99 | start: learned | 0 | n/a | n/a | n/a | not run |
-| 0.99 | proposer: exhaustive | 0 | n/a | n/a | n/a | not run |
-| 0.99 | acceptance: (a) labelled only | 0 | n/a | n/a | n/a | not run |
-| 0.99 | acceptance: (b0) published rule | 0 | n/a | n/a | n/a | not run |
+| 0.99 | proposer: exhaustive | 7 | 0.0458 | -0.0001 | 0.812 | no difference |
+| 0.99 | acceptance: (a) labelled only | 7 | 0.0495 | -0.0001 | 0.125 | no difference |
+| 0.99 | acceptance: (b0) published rule | 7 | 0.0512 | -0.0037 | 0.0469 | win |
 | 0.99 | deployment: final search set | 7 | 0.0467 | +0.0000 | 0.562 | no difference |
 | 0.99 | deployment: path rule (T2's) | 7 | 0.0468 | +0.0000 | 0.812 | no difference |
 | 1 | start: learned | 0 | n/a | n/a | n/a | not run |
-| 1 | proposer: exhaustive | 0 | n/a | n/a | n/a | not run |
-| 1 | acceptance: (a) labelled only | 0 | n/a | n/a | n/a | not run |
-| 1 | acceptance: (b0) published rule | 0 | n/a | n/a | n/a | not run |
+| 1 | proposer: exhaustive | 7 | 0.0873 | +0.0000 | nan | n/a |
+| 1 | acceptance: (a) labelled only | 7 | 0.0873 | +0.0000 | nan | n/a |
+| 1 | acceptance: (b0) published rule | 7 | 0.0873 | +0.0000 | nan | n/a |
 | 1 | deployment: final search set | 7 | 0.0706 | +0.0091 | 0.0156 | loss |
 | 1 | deployment: path rule (T2's) | 7 | 0.0873 | +0.0000 | nan | n/a |
 
@@ -266,8 +266,8 @@ T2 pass (pre-registered rule): no (hidden communities: n/a; labelled disparity: 
 
 Secondary, held-out attributes (T1 rows, path-rule deployments):
 
-- rho 0.97: v2-b - v2-a held-out-attribute disparity over 1 cases: median +0.0000, p nan (n/a)
-- rho 0.99: v2-b - v2-a held-out-attribute disparity over 0 cases: median +nan, p nan (n/a)
+- rho 0.97: v2-b - v2-a held-out-attribute disparity over 35 cases: median +0.0000, p 0.145 (no difference)
+- rho 0.99: v2-b - v2-a held-out-attribute disparity over 35 cases: median +0.0000, p 0.799 (no difference)
 
 ## T3: does the learning add anything?
 
@@ -279,5 +279,9 @@ No T4 rows yet.
 
 ## Certificate-size sensitivity
 
-No t1_certsens.csv rows yet.
+| cert R | method: searched set deployed | method: mean disparity | baselines certified |
+|---|---|---|---|
+| 16 | 80% | 0.0206 | 32% |
+| 64 | 90% | 0.0166 | 56% |
+| 256 | 100% | 0.0121 | 60% |
 

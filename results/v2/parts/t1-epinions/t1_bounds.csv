@@ -1,0 +1,2 @@
+dataset,attribute,graph,k,rho,floor_total,work,lb,mean_floor,maximin_ub,n_groups,secs,status,reason,code_tag,when
+epinions,degree,epinions,25,0.97,12136.189773071941,557570936.0,0.0,0.15994135100715534,0.1854445245496795,2,4.7058136710002145,ok,,f53a3e10824a,2026-10-16 10:26:08
