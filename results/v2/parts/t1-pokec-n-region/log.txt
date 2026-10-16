@@ -1,0 +1,11 @@
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+pokec_n / region (medium): 240 queries (20 FIM-GAT, 220 baseline), BSM sweep at 5 budgets; rough estimate 1.6 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 1.6 h of queries, plus the cached stages per graph
+
+=== pokec_n / region: 240 pending queries ===
+  load              0.8s  peak GPU nan / nan GB
+  reference        59.4s  peak GPU nan / nan GB
+  rr_sample         1.6s  peak GPU nan / nan GB

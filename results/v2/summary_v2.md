@@ -217,7 +217,42 @@ Per test graph, over budgets: the external baselines' sets (T1 rows and BSM's wh
 
 ## T2 (C2): hidden-community disparity, (b) against (a)
 
-No T2 rows yet.
+Primary: rho 0.97, sets deployed by the path rule (certified-path); every other row is secondary.
+
+| rho | sets | comparison | metric | cases | median difference | p | verdict |
+|---|---|---|---|---|---|---|---|
+| 0.97 | certified-path | v2-b - v2-a | comm_disparity | 30 | +0.0000 | nan | n/a |
+| 0.97 | certified-path | v2-b - v2-a | disparity | 30 | +0.0000 | nan | no significant rise |
+| 0.97 | certified-path | v2-b0 - v2-a | comm_disparity | 30 | +0.0000 | 0.455 | no difference |
+| 0.97 | certified-path | v2-b0 - v2-a | disparity | 30 | +0.0000 | 0.122 | no significant rise |
+| 0.97 | certified | v2-b - v2-a | comm_disparity | 30 | +0.0000 | 0.317 | no difference |
+| 0.97 | certified | v2-b - v2-a | disparity | 30 | +0.0000 | 0.317 | no significant rise |
+| 0.97 | certified | v2-b0 - v2-a | comm_disparity | 30 | +0.0000 | 0.414 | no difference |
+| 0.97 | certified | v2-b0 - v2-a | disparity | 30 | +0.0000 | 0.122 | no significant rise |
+| 0.97 | final | v2-b - v2-a | comm_disparity | 30 | +0.0000 | nan | n/a |
+| 0.97 | final | v2-b - v2-a | disparity | 30 | +0.0000 | nan | no significant rise |
+| 0.97 | final | v2-b0 - v2-a | comm_disparity | 30 | +0.0000 | 0.455 | no difference |
+| 0.97 | final | v2-b0 - v2-a | disparity | 30 | +0.0000 | 0.122 | no significant rise |
+| 0.99 | certified-path | v2-b - v2-a | comm_disparity | 30 | +0.0000 | nan | n/a |
+| 0.99 | certified-path | v2-b - v2-a | disparity | 30 | +0.0000 | nan | no significant rise |
+| 0.99 | certified-path | v2-b0 - v2-a | comm_disparity | 30 | +0.0000 | 0.566 | no difference |
+| 0.99 | certified-path | v2-b0 - v2-a | disparity | 30 | +0.0001 | 0.0037 | significant rise |
+| 0.99 | certified | v2-b - v2-a | comm_disparity | 30 | +0.0000 | 0.317 | no difference |
+| 0.99 | certified | v2-b - v2-a | disparity | 30 | +0.0000 | 0.317 | no significant rise |
+| 0.99 | certified | v2-b0 - v2-a | comm_disparity | 30 | +0.0000 | 0.37 | no difference |
+| 0.99 | certified | v2-b0 - v2-a | disparity | 30 | +0.0001 | 0.00359 | significant rise |
+| 0.99 | final | v2-b - v2-a | comm_disparity | 30 | +0.0000 | nan | n/a |
+| 0.99 | final | v2-b - v2-a | disparity | 30 | +0.0000 | nan | no significant rise |
+| 0.99 | final | v2-b0 - v2-a | comm_disparity | 30 | +0.0000 | 0.566 | no difference |
+| 0.99 | final | v2-b0 - v2-a | disparity | 30 | +0.0001 | 0.0037 | significant rise |
+
+T2 pass (pre-registered rule): no (hidden communities: n/a; labelled disparity: no significant rise; 30 cases).
+
+
+Secondary, held-out attributes (T1 rows, path-rule deployments):
+
+- rho 0.97: v2-b - v2-a held-out-attribute disparity over 0 cases: median +nan, p nan (n/a)
+- rho 0.99: v2-b - v2-a held-out-attribute disparity over 0 cases: median +nan, p nan (n/a)
 
 ## T3: does the learning add anything?
 
