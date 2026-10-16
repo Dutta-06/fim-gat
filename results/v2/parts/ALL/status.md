@@ -52,3 +52,9 @@ Branch `claude/fimgat-all`. VM: 4 vCPU, 15 GB RAM, no GPU. Python 3.13 (`.venv`)
 
 ## Step 6: certificate-size sensitivity (running; job `certsens`)
 - Dry run: rice_facebook / college and pokec_n / region at rho 0.99, `--cert-R` in {16, 64, 256} (6 runs), 70 queries each (5 FIM-GAT, 65 baseline); the file is `results/v2/parts/certsens/t1_certsens.csv`.
+
+## Step 6 result: certificate-size sensitivity: DONE (job `certsens`)
+- 480 rows (6 runs x 80: rice_facebook / college and pokec_n / region at rho 0.99, `--cert-R` in {16, 64, 256}), all exit 0 in one chunk each (Rice 37-39 min each because AGE is rerun in every process; Pokec-n 9, 11 and 21 min). Peak job RSS 6.5 GB (Pokec-n at R = 256). File: `results/v2/parts/certsens/t1_certsens.csv`.
+
+## Step 7: supplements (started 10:25 UTC)
+- Dry runs (laptop estimates, UNVERIFIED): epinions 2.8 h, twitter_ego 2.8 h, instagram 42.1 h, snap_youtube 42.1 h (340 queries each: 80 FIM-GAT over 4 configs, `v2-b/learned/simple` not run for lack of a checkpoint; 260 baseline).

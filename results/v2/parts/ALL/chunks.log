@@ -29,3 +29,4 @@ DONE certsens-pokec_n-R16 rc=0
 [2026-10-16T10:01:08Z] certsens-pokec_n-R64 chunk 1 rc=0 11min peak_mem_used_gb=0
 DONE certsens-pokec_n-R64 rc=0
 [2026-10-16T10:22:56Z] certsens-pokec_n-R256 chunk 1 rc=0 21min peak_mem_used_gb=0
+DONE certsens-pokec_n-R256 rc=0
