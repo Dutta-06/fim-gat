@@ -9,3 +9,6 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 1.6 h of queries, plus the cached stag
   load              0.8s  peak GPU nan / nan GB
   reference        59.4s  peak GPU nan / nan GB
   rr_sample         1.6s  peak GPU nan / nan GB
+  cert_sample      10.3s  peak GPU nan / nan GB
+  cover_index       0.1s  peak GPU nan / nan GB
+  pokec_n: n=66,082 m=728,806 groups=2; A: R=16 roots=66,082 nnz=10,241,327; B: R=93 roots=66,082 nnz=59,441,418

@@ -1,0 +1,2 @@
+dataset,attribute,graph,k,rho,floor_total,work,lb,mean_floor,maximin_ub,n_groups,secs,status,reason,code_tag,when
+pokec_n,region,pokec_n,25,0.97,3278.674867865676,532549004.0,0.0,0.04961524874951841,0.07259581653464749,2,2.8898217079999995,ok,,f53a3e10824a,2026-10-16 03:00:52
