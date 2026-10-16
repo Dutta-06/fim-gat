@@ -18,3 +18,154 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 2.8 h of queries, plus the cached stag
   cert_sample      23.4s  peak GPU nan / nan GB
   cover_index       0.1s  peak GPU nan / nan GB
   twitter_ego: n=81,306 m=1,768,135 groups=2; A: R=16 roots=81,306 nnz=9,970,205; B: R=96 roots=81,306 nnz=59,787,675
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple, v2-b/learned/simple, v2-b/greedy/exhaustive, v2-a/greedy/simple, v2-b0/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+  no constructor checkpoint for train seed 0: /home/user/fim-gat/results/v2/models/constructor_s0.pt
+  no constructor checkpoint for train seed 1: /home/user/fim-gat/results/v2/models/constructor_s1.pt
+  no constructor checkpoint for train seed 2: /home/user/fim-gat/results/v2/models/constructor_s2.pt
+  no constructor checkpoint for train seed 3: /home/user/fim-gat/results/v2/models/constructor_s3.pt
+  no constructor checkpoint for train seed 4: /home/user/fim-gat/results/v2/models/constructor_s4.pt
+note: no checkpoints for ['v2-b/learned/simple']; those configurations are not run
+twitter_ego / degree (medium): 340 queries (80 FIM-GAT, 260 baseline), BSM sweep at 5 budgets; rough estimate 2.8 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 2.8 h of queries, plus the cached stages per graph
+
+=== twitter_ego / degree: 340 pending queries ===
+  load              4.6s  peak GPU nan / nan GB
+  reference       164.4s  peak GPU nan / nan GB
+  rr_sample         4.7s  peak GPU nan / nan GB
+  cert_sample      24.0s  peak GPU nan / nan GB
+  cover_index       0.4s  peak GPU nan / nan GB
+  twitter_ego: n=81,306 m=1,768,135 groups=2; A: R=16 roots=81,306 nnz=9,970,205; B: R=96 roots=81,306 nnz=59,787,675
+    twitter_ego      k=25   rho=0.97 FIM-GAT v2       infl= 10147.75 disp=0.0021 es FAIL (ratio 0.9721, lower 0.9685) (6.6s)  [v2-b/greedy/simple s-1: select 0.0s search 6.6s (5 rounds) certify 10.4s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.97 FIM-GAT v2       infl= 10147.75 disp=0.0021 es FAIL (ratio 0.9721, lower 0.9685) (4.8s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 4.8s (5 rounds) certify 9.8s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.97 FIM-GAT v2       infl= 10147.75 disp=0.0021 es FAIL (ratio 0.9721, lower 0.9685) (0.6s)  [v2-a/greedy/simple s-1: select 0.0s search 0.6s (3 rounds) certify 8.1s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.97 FIM-GAT v2       infl= 10161.05 disp=0.0015 es FAIL (ratio 0.9734, lower 0.9697) (6.1s)  [v2-b0/greedy/simple s-1: select 0.0s search 6.1s (12 rounds) certify 13.8s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.97 Degree           infl= 10155.85 disp=0.0076 es FAIL (ratio 0.9729, lower 0.9693) (0.0s)  [certificate pass]
+  suite_index       2.4s  peak GPU nan / nan GB
+    twitter_ego      k=25   rho=0.97 Greedy           infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.8s)  [certificate pass]
+    twitter_ego      k=25   rho=0.97 Parity-Greedy    infl=  7903.72 disp=0.0032 es FAIL (ratio 0.7571, lower 0.7534) (1.0s)  [certificate FAIL]
+    twitter_ego      k=25   rho=0.97 Welfare-Greedy   infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.9s)  [certificate pass]
+    twitter_ego      k=25   rho=0.97 Maximin-Greedy   infl= 10386.57 disp=0.0037 es pass (ratio 0.9950, lower 0.9914) (0.8s)  [certificate pass]
+    twitter_ego      k=25   rho=0.97 FW-Disparity     infl= 10255.26 disp=0.0013 es pass (ratio 0.9824, lower 0.9787) (12.7s)  [certificate pass]
+    twitter_ego      k=25   rho=0.97 LocalSearch      infl= 10183.26 disp=0.0018 es pass (ratio 0.9755, lower 0.9719) (5.6s)  [certificate pass]
+    twitter_ego      k=25   rho=0.97 Simple-v2        infl= 10156.43 disp=0.0023 es FAIL (ratio 0.9730, lower 0.9693) (6.7s)  [certificate pass]
+    twitter_ego      k=25   rho=0.97 AGE              missing: not run: n=81306 > 5000
+    twitter_ego      k=25   rho=0.97 Prior            missing: skipped: estimated 14345s > 3 x time_limit 1800s
+    twitter_ego      k=25   rho=0.97 BSM              infl= 10385.46 disp=0.0051 es pass (ratio 0.9949, lower 0.9912) (2.1s)  [certificate pass]
+    twitter_ego      k=25   rho=0.97 MultiFW-MaxMin   infl= 10433.89 disp=0.0062 es pass (ratio 0.9995, lower 0.9960) (5.2s)  [certificate pass]
+    twitter_ego      k=25   rho=0.97 RFIM             infl= 10421.71 disp=0.0082 es pass (ratio 0.9984, lower 0.9948) (5.8s)  [certificate pass]
+    twitter_ego      k=25   rho=0.98 FIM-GAT v2       infl= 10293.50 disp=0.0047 es pass (ratio 0.9861, lower 0.9826) (3.0s)  [v2-b/greedy/simple s-1: select 0.0s search 3.0s (5 rounds) certify 9.3s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.98 FIM-GAT v2       infl= 10293.50 disp=0.0047 es pass (ratio 0.9861, lower 0.9826) (3.8s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 3.8s (5 rounds) certify 8.3s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.98 FIM-GAT v2       infl= 10293.50 disp=0.0047 es pass (ratio 0.9861, lower 0.9826) (0.6s)  [v2-a/greedy/simple s-1: select 0.0s search 0.6s (3 rounds) certify 6.0s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.98 FIM-GAT v2       infl= 10270.21 disp=0.0023 es pass (ratio 0.9839, lower 0.9802) (4.4s)  [v2-b0/greedy/simple s-1: select 0.0s search 4.4s (9 rounds) certify 12.2s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.98 Degree           infl= 10155.85 disp=0.0076 es FAIL (ratio 0.9729, lower 0.9693) (0.0s)  [certificate FAIL]
+    twitter_ego      k=25   rho=0.98 Greedy           infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.8s)  [certificate pass]
+    twitter_ego      k=25   rho=0.98 Parity-Greedy    infl=  7903.72 disp=0.0032 es FAIL (ratio 0.7571, lower 0.7534) (1.0s)  [certificate FAIL]
+    twitter_ego      k=25   rho=0.98 Welfare-Greedy   infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.9s)  [certificate pass]
+    twitter_ego      k=25   rho=0.98 Maximin-Greedy   infl= 10386.57 disp=0.0037 es pass (ratio 0.9950, lower 0.9914) (0.8s)  [certificate pass]
+    twitter_ego      k=25   rho=0.98 FW-Disparity     infl= 10415.25 disp=0.0075 es pass (ratio 0.9977, lower 0.9942) (11.6s)  [certificate pass]
+    twitter_ego      k=25   rho=0.98 LocalSearch      infl= 10293.50 disp=0.0047 es pass (ratio 0.9861, lower 0.9826) (4.7s)  [certificate pass]
+    twitter_ego      k=25   rho=0.98 Simple-v2        infl= 10303.26 disp=0.0030 es pass (ratio 0.9870, lower 0.9834) (7.2s)  [certificate pass]
+    twitter_ego      k=25   rho=0.98 AGE              missing: not run: n=81306 > 5000
+    twitter_ego      k=25   rho=0.98 Prior            missing: skipped: estimated 14345s > 3 x time_limit 1800s
+    twitter_ego      k=25   rho=0.98 BSM              infl= 10385.46 disp=0.0051 es pass (ratio 0.9949, lower 0.9912) (0.1s)  [certificate pass]
+    twitter_ego      k=25   rho=0.98 MultiFW-MaxMin   infl= 10433.89 disp=0.0062 es pass (ratio 0.9995, lower 0.9960) (5.2s)  [certificate pass]
+    twitter_ego      k=25   rho=0.98 RFIM             infl= 10421.71 disp=0.0082 es pass (ratio 0.9984, lower 0.9948) (5.8s)  [certificate pass]
+    twitter_ego      k=25   rho=0.99 FIM-GAT v2       infl= 10365.98 disp=0.0048 es FAIL (ratio 0.9930, lower 0.9895) (3.2s)  [v2-b/greedy/simple s-1: select 0.0s search 3.2s (5 rounds) certify 7.2s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.99 FIM-GAT v2       infl= 10365.98 disp=0.0048 es FAIL (ratio 0.9930, lower 0.9895) (3.9s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 3.9s (5 rounds) certify 8.4s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.99 FIM-GAT v2       infl= 10365.98 disp=0.0048 es FAIL (ratio 0.9930, lower 0.9895) (0.7s)  [v2-a/greedy/simple s-1: select 0.0s search 0.7s (3 rounds) certify 8.3s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.99 FIM-GAT v2       infl= 10379.34 disp=0.0057 es pass (ratio 0.9943, lower 0.9908) (2.5s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.5s (3 rounds) certify 5.4s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=25   rho=0.99 Degree           infl= 10155.85 disp=0.0076 es FAIL (ratio 0.9729, lower 0.9693) (0.0s)  [certificate FAIL]
+    twitter_ego      k=25   rho=0.99 Greedy           infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.8s)  [certificate pass]
+    twitter_ego      k=25   rho=0.99 Parity-Greedy    infl=  7903.72 disp=0.0032 es FAIL (ratio 0.7571, lower 0.7534) (1.0s)  [certificate FAIL]
+    twitter_ego      k=25   rho=0.99 Welfare-Greedy   infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.9s)  [certificate pass]
+    twitter_ego      k=25   rho=0.99 Maximin-Greedy   infl= 10386.57 disp=0.0037 es pass (ratio 0.9950, lower 0.9914) (0.8s)  [certificate pass]
+    twitter_ego      k=25   rho=0.99 FW-Disparity     infl= 10415.25 disp=0.0075 es pass (ratio 0.9977, lower 0.9942) (12.4s)  [certificate pass]
+    twitter_ego      k=25   rho=0.99 LocalSearch      infl= 10365.98 disp=0.0048 es FAIL (ratio 0.9930, lower 0.9895) (4.7s)  [certificate pass]
+    twitter_ego      k=25   rho=0.99 Simple-v2        infl= 10379.34 disp=0.0057 es pass (ratio 0.9943, lower 0.9908) (5.0s)  [certificate pass]
+    twitter_ego      k=25   rho=0.99 AGE              missing: not run: n=81306 > 5000
+    twitter_ego      k=25   rho=0.99 Prior            missing: skipped: estimated 14345s > 3 x time_limit 1800s
+    twitter_ego      k=25   rho=0.99 BSM              infl= 10385.46 disp=0.0051 es pass (ratio 0.9949, lower 0.9912) (0.1s)  [certificate pass]
+    twitter_ego      k=25   rho=0.99 MultiFW-MaxMin   infl= 10433.89 disp=0.0062 es pass (ratio 0.9995, lower 0.9960) (5.2s)  [certificate pass]
+    twitter_ego      k=25   rho=0.99 RFIM             infl= 10421.71 disp=0.0082 es pass (ratio 0.9984, lower 0.9948) (5.8s)  [certificate pass]
+    twitter_ego      k=25   rho=1.0 FIM-GAT v2       infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (3.6s)  [v2-b/greedy/simple s-1: select 0.0s search 3.6s (3 rounds) certify 3.4s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_ego      k=25   rho=1.0 FIM-GAT v2       infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (2.9s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 2.9s (3 rounds) certify 3.0s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_ego      k=25   rho=1.0 FIM-GAT v2       infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.4s)  [v2-a/greedy/simple s-1: select 0.0s search 0.4s (1 rounds) certify 2.8s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_ego      k=25   rho=1.0 FIM-GAT v2       infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (2.0s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.0s (2 rounds) certify 2.4s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_ego      k=25   rho=1.0 Degree           infl= 10155.85 disp=0.0076 es FAIL (ratio 0.9729, lower 0.9693) (0.0s)  [certificate FAIL]
+    twitter_ego      k=25   rho=1.0 Greedy           infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.8s)  [certificate pass]
+    twitter_ego      k=25   rho=1.0 Parity-Greedy    infl=  7903.72 disp=0.0032 es FAIL (ratio 0.7571, lower 0.7534) (1.0s)  [certificate FAIL]
+    twitter_ego      k=25   rho=1.0 Welfare-Greedy   infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.9s)  [certificate pass]
+    twitter_ego      k=25   rho=1.0 Maximin-Greedy   infl= 10386.57 disp=0.0037 es FAIL (ratio 0.9950, lower 0.9914) (0.8s)  [certificate FAIL]
+    twitter_ego      k=25   rho=1.0 FW-Disparity     infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (13.9s)  [certificate pass]
+    twitter_ego      k=25   rho=1.0 LocalSearch      infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (3.5s)  [certificate pass]
+    twitter_ego      k=25   rho=1.0 Simple-v2        infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (4.5s)  [certificate pass]
+    twitter_ego      k=25   rho=1.0 AGE              missing: not run: n=81306 > 5000
+    twitter_ego      k=25   rho=1.0 Prior            missing: skipped: estimated 14345s > 3 x time_limit 1800s
+    twitter_ego      k=25   rho=1.0 BSM              infl= 10438.78 disp=0.0074 es pass (ratio 1.0000, lower 1.0000) (0.6s)  [certificate pass]
+    twitter_ego      k=25   rho=1.0 MultiFW-MaxMin   infl= 10433.89 disp=0.0062 es FAIL (ratio 0.9995, lower 0.9960) (5.2s)  [certificate FAIL]
+    twitter_ego      k=25   rho=1.0 RFIM             infl= 10421.71 disp=0.0082 es FAIL (ratio 0.9984, lower 0.9948) (5.8s)  [certificate FAIL]
+    BSM sweep k=25: 10 sets in 0.9s -> t1_pareto.csv
+    twitter_ego      k=50   rho=0.97 FIM-GAT v2       infl= 13116.12 disp=0.0034 es pass (ratio 0.9780, lower 0.9757) (4.5s)  [v2-b/greedy/simple s-1: select 0.0s search 4.5s (12 rounds) certify 13.7s, deployed the path set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.97 FIM-GAT v2       infl= 13107.38 disp=0.0033 es pass (ratio 0.9773, lower 0.9750) (7.3s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 7.3s (9 rounds) certify 13.3s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.97 FIM-GAT v2       infl= 13099.76 disp=0.0035 es pass (ratio 0.9767, lower 0.9745) (1.5s)  [v2-a/greedy/simple s-1: select 0.0s search 1.5s (10 rounds) certify 11.7s, deployed the path set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.97 FIM-GAT v2       infl= 13097.17 disp=0.0043 es pass (ratio 0.9766, lower 0.9743) (3.0s)  [v2-b0/greedy/simple s-1: select 0.0s search 3.0s (6 rounds) certify 13.1s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.97 Degree           infl= 13315.25 disp=0.0089 es pass (ratio 0.9928, lower 0.9907) (0.0s)  [certificate pass]
+    twitter_ego      k=50   rho=0.97 Greedy           infl= 13433.85 disp=0.0109 es pass (ratio 1.0017, lower 0.9995) (1.6s)  [certificate pass]
+    twitter_ego      k=50   rho=0.97 Parity-Greedy    infl= 10791.60 disp=0.0060 es FAIL (ratio 0.8046, lower 0.8022) (1.6s)  [certificate FAIL]
+    twitter_ego      k=50   rho=0.97 Welfare-Greedy   infl= 13433.85 disp=0.0109 es pass (ratio 1.0017, lower 0.9995) (1.6s)  [certificate pass]
+    twitter_ego      k=50   rho=0.97 Maximin-Greedy   infl= 13297.65 disp=0.0044 es pass (ratio 0.9915, lower 0.9892) (1.5s)  [certificate pass]
+    twitter_ego      k=50   rho=0.97 FW-Disparity     infl= 13332.45 disp=0.0107 es pass (ratio 0.9941, lower 0.9920) (14.5s)  [certificate pass]
+    twitter_ego      k=50   rho=0.97 LocalSearch      infl= 13101.70 disp=0.0034 es pass (ratio 0.9769, lower 0.9746) (14.2s)  [certificate pass]
+    twitter_ego      k=50   rho=0.97 Simple-v2        infl= 13092.68 disp=0.0043 es pass (ratio 0.9762, lower 0.9739) (8.4s)  [certificate pass]
+    twitter_ego      k=50   rho=0.97 AGE              missing: not run: n=81306 > 5000
+    twitter_ego      k=50   rho=0.97 Prior            missing: skipped: estimated 14345s > 3 x time_limit 1800s
+    twitter_ego      k=50   rho=0.97 BSM              infl= 13350.50 disp=0.0064 es pass (ratio 0.9954, lower 0.9933) (3.2s)  [certificate pass]
+    twitter_ego      k=50   rho=0.97 MultiFW-MaxMin   infl= 13400.94 disp=0.0115 es pass (ratio 0.9992, lower 0.9971) (5.3s)  [certificate pass]
+    twitter_ego      k=50   rho=0.97 RFIM             infl= 13418.84 disp=0.0114 es pass (ratio 1.0005, lower 0.9984) (6.3s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 FIM-GAT v2       infl= 13243.82 disp=0.0041 es pass (ratio 0.9875, lower 0.9852) (4.2s)  [v2-b/greedy/simple s-1: select 0.0s search 4.2s (8 rounds) certify 12.6s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.98 FIM-GAT v2       infl= 13209.91 disp=0.0047 es pass (ratio 0.9850, lower 0.9828) (6.3s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 6.3s (8 rounds) certify 14.5s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.98 FIM-GAT v2       infl= 13243.82 disp=0.0041 es pass (ratio 0.9875, lower 0.9852) (0.9s)  [v2-a/greedy/simple s-1: select 0.0s search 0.9s (6 rounds) certify 14.4s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.98 FIM-GAT v2       infl= 13233.41 disp=0.0045 es pass (ratio 0.9867, lower 0.9845) (3.2s)  [v2-b0/greedy/simple s-1: select 0.0s search 3.2s (7 rounds) certify 14.2s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.98 Degree           infl= 13315.25 disp=0.0089 es pass (ratio 0.9928, lower 0.9907) (0.0s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 Greedy           infl= 13433.85 disp=0.0109 es pass (ratio 1.0017, lower 0.9995) (1.6s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 Parity-Greedy    infl= 10791.60 disp=0.0060 es FAIL (ratio 0.8046, lower 0.8022) (1.6s)  [certificate FAIL]
+    twitter_ego      k=50   rho=0.98 Welfare-Greedy   infl= 13433.85 disp=0.0109 es pass (ratio 1.0017, lower 0.9995) (1.6s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 Maximin-Greedy   infl= 13297.65 disp=0.0044 es pass (ratio 0.9915, lower 0.9892) (1.5s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 FW-Disparity     infl= 13332.45 disp=0.0107 es pass (ratio 0.9941, lower 0.9920) (15.2s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 LocalSearch      infl= 13203.61 disp=0.0048 es pass (ratio 0.9845, lower 0.9822) (10.5s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 Simple-v2        infl= 13203.61 disp=0.0048 es pass (ratio 0.9845, lower 0.9822) (8.0s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 AGE              missing: not run: n=81306 > 5000
+    twitter_ego      k=50   rho=0.98 Prior            missing: skipped: estimated 14345s > 3 x time_limit 1800s
+    twitter_ego      k=50   rho=0.98 BSM              infl= 13350.50 disp=0.0064 es pass (ratio 0.9954, lower 0.9933) (0.2s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 MultiFW-MaxMin   infl= 13400.94 disp=0.0115 es pass (ratio 0.9992, lower 0.9971) (5.3s)  [certificate pass]
+    twitter_ego      k=50   rho=0.98 RFIM             infl= 13418.84 disp=0.0114 es pass (ratio 1.0005, lower 0.9984) (6.3s)  [certificate pass]
+    twitter_ego      k=50   rho=0.99 FIM-GAT v2       infl= 13369.22 disp=0.0068 es pass (ratio 0.9968, lower 0.9947) (4.3s)  [v2-b/greedy/simple s-1: select 0.0s search 4.3s (8 rounds) certify 13.7s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.99 FIM-GAT v2       infl= 13369.22 disp=0.0068 es pass (ratio 0.9968, lower 0.9947) (5.8s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 5.8s (8 rounds) certify 14.2s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.99 FIM-GAT v2       infl= 13369.22 disp=0.0068 es pass (ratio 0.9968, lower 0.9947) (0.9s)  [v2-a/greedy/simple s-1: select 0.0s search 0.9s (6 rounds) certify 11.9s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.99 FIM-GAT v2       infl= 13362.61 disp=0.0070 es pass (ratio 0.9963, lower 0.9941) (3.8s)  [v2-b0/greedy/simple s-1: select 0.0s search 3.8s (7 rounds) certify 13.5s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_ego      k=50   rho=0.99 Degree           infl= 13315.25 disp=0.0089 es pass (ratio 0.9928, lower 0.9907) (0.0s)  [certificate FAIL]
+    twitter_ego      k=50   rho=0.99 Greedy           infl= 13433.85 disp=0.0109 es pass (ratio 1.0017, lower 0.9995) (1.6s)  [certificate pass]
+    twitter_ego      k=50   rho=0.99 Parity-Greedy    infl= 10791.60 disp=0.0060 es FAIL (ratio 0.8046, lower 0.8022) (1.6s)  [certificate FAIL]
+    twitter_ego      k=50   rho=0.99 Welfare-Greedy   infl= 13433.85 disp=0.0109 es pass (ratio 1.0017, lower 0.9995) (1.6s)  [certificate pass]
+    twitter_ego      k=50   rho=0.99 Maximin-Greedy   infl= 13297.65 disp=0.0044 es FAIL (ratio 0.9915, lower 0.9892) (1.5s)  [certificate FAIL]
+    twitter_ego      k=50   rho=0.99 FW-Disparity     infl= 13411.65 disp=0.0102 es pass (ratio 1.0000, lower 1.0000) (14.0s)  [certificate pass]
+    twitter_ego      k=50   rho=0.99 LocalSearch      infl= 13361.98 disp=0.0074 es pass (ratio 0.9963, lower 0.9941) (8.4s)  [certificate pass]
+    twitter_ego      k=50   rho=0.99 Simple-v2        infl= 13361.98 disp=0.0074 es pass (ratio 0.9963, lower 0.9941) (7.5s)  [certificate pass]
+    twitter_ego      k=50   rho=0.99 AGE              missing: not run: n=81306 > 5000
+    twitter_ego      k=50   rho=0.99 Prior            missing: skipped: estimated 14345s > 3 x time_limit 1800s
+    twitter_ego      k=50   rho=0.99 BSM              infl= 13382.57 disp=0.0115 es pass (ratio 0.9978, lower 0.9957) (0.3s)  [certificate pass]
+    twitter_ego      k=50   rho=0.99 MultiFW-MaxMin   infl= 13400.94 disp=0.0115 es pass (ratio 0.9992, lower 0.9971) (5.3s)  [certificate pass]
+    twitter_ego      k=50   rho=0.99 RFIM             infl= 13418.84 disp=0.0114 es pass (ratio 1.0005, lower 0.9984) (6.3s)  [certificate pass]
+    twitter_ego      k=50   rho=1.0 FIM-GAT v2       infl= 13411.65 disp=0.0102 es pass (ratio 1.0000, lower 1.0000) (4.1s)  [v2-b/greedy/simple s-1: select 0.0s search 4.1s (8 rounds) certify 13.7s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_ego      k=50   rho=1.0 FIM-GAT v2       infl= 13411.65 disp=0.0102 es pass (ratio 1.0000, lower 1.0000) (5.9s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 5.9s (8 rounds) certify 15.1s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_ego      k=50   rho=1.0 FIM-GAT v2       infl= 13411.65 disp=0.0102 es pass (ratio 1.0000, lower 1.0000) (0.9s)  [v2-a/greedy/simple s-1: select 0.0s search 0.9s (6 rounds) certify 13.0s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_ego      k=50   rho=1.0 FIM-GAT v2       infl= 13411.65 disp=0.0102 es pass (ratio 1.0000, lower 1.0000) (3.6s)  [v2-b0/greedy/simple s-1: select 0.0s search 3.6s (6 rounds) certify 11.7s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_ego      k=50   rho=1.0 Degree           infl= 13315.25 disp=0.0089 es FAIL (ratio 0.9928, lower 0.9907) (0.0s)  [certificate FAIL]
+    twitter_ego      k=50   rho=1.0 Greedy           infl= 13433.85 disp=0.0109 es FAIL (ratio 1.0017, lower 0.9995) (1.6s)  [certificate FAIL]
+    twitter_ego      k=50   rho=1.0 Parity-Greedy    infl= 10791.60 disp=0.0060 es FAIL (ratio 0.8046, lower 0.8022) (1.6s)  [certificate FAIL]
+    twitter_ego      k=50   rho=1.0 Welfare-Greedy   infl= 13433.85 disp=0.0109 es FAIL (ratio 1.0017, lower 0.9995) (1.6s)  [certificate FAIL]
+    twitter_ego      k=50   rho=1.0 Maximin-Greedy   infl= 13297.65 disp=0.0044 es FAIL (ratio 0.9915, lower 0.9892) (1.5s)  [certificate FAIL]
+    twitter_ego      k=50   rho=1.0 FW-Disparity     infl= 13411.65 disp=0.0102 es pass (ratio 1.0000, lower 1.0000) (14.5s)  [certificate pass]
