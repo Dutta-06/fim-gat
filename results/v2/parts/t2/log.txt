@@ -226,3 +226,19 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 2.0 h of queries, plus the cached stag
     snap_youtube_bfs100000_s5 k=100  rho=0.97 FIM-GAT v2       infl= 56030.43 disp=0.3924 es pass (ratio 0.9752, lower 0.9746) (12.7s)  [v2-b0/greedy/simple s-1: select 0.0s search 12.7s (6 rounds) certify 15.2s, deployed the final set (path rule: the final set), certificate pass]
     snap_youtube_bfs100000_s5 k=100  rho=0.99 FIM-GAT v2       infl= 57171.53 disp=0.4202 es pass (ratio 0.9950, lower 0.9946) (24.5s)  [v2-b/greedy/simple s-1: select 0.0s search 24.5s (7 rounds) certify 7.3s, deployed the final set (path rule: the final set), certificate pass]
     snap_youtube_bfs100000_s5 k=100  rho=0.99 FIM-GAT v2       infl= 57171.53 disp=0.4202 es pass (ratio 0.9950, lower 0.9946) (8.1s)  [v2-a/greedy/simple s-1: select 0.0s search 8.1s (5 rounds) certify 13.4s, deployed the final set (path rule: the final set), certificate pass]
+T2: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple, v2-a/greedy/simple, v2-b0/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+snap_youtube_bfs100000_s1 / degree: every query already in /home/user/fim-gat/results/v2/parts/t2/t2.csv
+snap_youtube_bfs100000_s2 / degree: every query already in /home/user/fim-gat/results/v2/parts/t2/t2.csv
+snap_youtube_bfs100000_s3 / degree: every query already in /home/user/fim-gat/results/v2/parts/t2/t2.csv
+snap_youtube_bfs100000_s4 / degree: every query already in /home/user/fim-gat/results/v2/parts/t2/t2.csv
+snap_youtube_bfs100000_s5 / degree (medium): 13 queries (13 FIM-GAT, 0 baseline); rough estimate 0.2 h
+snap_youtube_bfs100000_s6 / degree (medium): 30 queries (30 FIM-GAT, 0 baseline); rough estimate 0.5 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.7 h of queries, plus the cached stages per graph
+
+=== snap_youtube_bfs100000_s5 / degree: 13 pending queries ===
+  load             10.9s  peak GPU nan / nan GB
+  reference      1405.0s  peak GPU nan / nan GB
+  rr_sample       225.0s  peak GPU nan / nan GB
