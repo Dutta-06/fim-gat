@@ -1,0 +1,25 @@
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+rice_facebook / college (small): 70 queries (5 FIM-GAT, 65 baseline); rough estimate 0.0 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.0 h of queries, plus the cached stages per graph
+
+=== rice_facebook / college: 70 pending queries ===
+  load              0.0s  peak GPU nan / nan GB
+  reference        52.5s  peak GPU nan / nan GB
+  rr_sample         3.6s  peak GPU nan / nan GB
+  cert_sample       0.1s  peak GPU nan / nan GB
+  cover_index       0.1s  peak GPU nan / nan GB
+  rice_facebook: n=1,216 m=84,886 groups=9; A: R=512 roots=1,216 nnz=8,936,198; B: R=16 roots=1,216 nnz=283,670
+    rice_facebook    k=25   rho=0.99 FIM-GAT v2       infl=   331.78 disp=0.0504 es pass (ratio 1.0000, lower 1.0000) (3.0s)  [v2-b/greedy/simple s-1: select 0.0s search 3.0s (10 rounds) certify 0.1s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=25   rho=0.99 Degree           infl=   331.36 disp=0.0415 es pass (ratio 0.9987, lower 0.9951) (0.0s)  [certificate FAIL]
+  suite_index       1.6s  peak GPU nan / nan GB
+    rice_facebook    k=25   rho=0.99 Greedy           infl=   331.21 disp=0.0496 es pass (ratio 0.9983, lower 0.9946) (0.4s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 Parity-Greedy    infl=   329.80 disp=0.0249 es pass (ratio 0.9940, lower 0.9904) (0.4s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 Welfare-Greedy   infl=   331.72 disp=0.0408 es pass (ratio 0.9998, lower 0.9963) (0.4s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 Maximin-Greedy   infl=   328.31 disp=0.0336 es FAIL (ratio 0.9895, lower 0.9856) (0.3s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 FW-Disparity     infl=   331.74 disp=0.0381 es pass (ratio 0.9999, lower 0.9961) (15.6s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 LocalSearch      infl=   329.43 disp=0.0210 es FAIL (ratio 0.9929, lower 0.9893) (1.7s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 Simple-v2        infl=   329.49 disp=0.0238 es FAIL (ratio 0.9931, lower 0.9894) (1.5s)  [certificate FAIL]
+    rice_facebook    k=25   rho=0.99 AGE              infl=   228.85 disp=0.0626 es FAIL (ratio 0.6898, lower 0.6846) (59.9s)  [certificate FAIL]
