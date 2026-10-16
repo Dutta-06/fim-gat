@@ -10,3 +10,4 @@ DONE t1-pokec-n-region rc=0
 DONE t1-pokec-n-gender rc=0
 [2026-10-16T05:05:47Z] t1-pokec-n-age chunk 1 rc=0 42min peak_mem_used_gb=0
 DONE t1-pokec-n-age rc=0
+[2026-10-16T05:56:20Z] abl-small chunk 1 rc=0 33min peak_mem_used_gb=0
