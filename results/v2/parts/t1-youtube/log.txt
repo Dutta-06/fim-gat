@@ -262,3 +262,59 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 42.1 h of queries, plus the cached sta
     snap_youtube     k=150  rho=0.98 MultiFW-MaxMin   infl=220696.97 disp=0.0362 es FAIL (ratio 0.9755, lower 0.9743) (14.5s)  [certificate FAIL]
     snap_youtube     k=150  rho=0.98 RFIM             infl=219646.13 disp=0.0536 es FAIL (ratio 0.9708, lower 0.9696) (33.1s)  [certificate FAIL]
     snap_youtube     k=150  rho=0.99 FIM-GAT v2       infl=224692.84 disp=0.0464 es pass (ratio 0.9931, lower 0.9920) (13.5s)  [v2-b/greedy/simple s-1: select 0.0s search 13.5s (15 rounds) certify 15.2s, deployed the final set (path rule: the final set), certificate pass]
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple, v2-b/learned/simple, v2-b/greedy/exhaustive, v2-a/greedy/simple, v2-b0/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+  no constructor checkpoint for train seed 0: /home/user/fim-gat/results/v2/models/constructor_s0.pt
+  no constructor checkpoint for train seed 1: /home/user/fim-gat/results/v2/models/constructor_s1.pt
+  no constructor checkpoint for train seed 2: /home/user/fim-gat/results/v2/models/constructor_s2.pt
+  no constructor checkpoint for train seed 3: /home/user/fim-gat/results/v2/models/constructor_s3.pt
+  no constructor checkpoint for train seed 4: /home/user/fim-gat/results/v2/models/constructor_s4.pt
+note: no checkpoints for ['v2-b/learned/simple']; those configurations are not run
+snap_youtube / degree (large): 101 queries (23 FIM-GAT, 78 baseline), BSM sweep at 2 budgets; rough estimate 12.4 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 12.4 h of queries, plus the cached stages per graph
+
+=== snap_youtube / degree: 101 pending queries ===
+  load             10.1s  peak GPU nan / nan GB
+  reference       349.9s  peak GPU nan / nan GB
+  rr_sample        13.7s  peak GPU nan / nan GB
+  cert_sample      95.6s  peak GPU nan / nan GB
+  cover_index       0.1s  peak GPU nan / nan GB
+  evaluation communities: 2087 with >= 10 members
+  snap_youtube: n=1,134,890 m=5,975,248 groups=2; A: R=8 roots=150,000 nnz=7,109,102; B: R=8 roots=1,134,890 nnz=53,796,102
+    snap_youtube     k=150  rho=0.99 FIM-GAT v2       infl=224692.84 disp=0.0464 es pass (ratio 0.9931, lower 0.9920) (49.8s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 49.8s (15 rounds) certify 14.6s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube     k=150  rho=0.99 FIM-GAT v2       infl=224692.84 disp=0.0464 es pass (ratio 0.9931, lower 0.9920) (3.3s)  [v2-a/greedy/simple s-1: select 0.0s search 3.3s (13 rounds) certify 13.5s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube     k=150  rho=0.99 FIM-GAT v2       infl=224692.84 disp=0.0464 es pass (ratio 0.9931, lower 0.9920) (13.4s)  [v2-b0/greedy/simple s-1: select 0.0s search 13.4s (14 rounds) certify 13.7s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube     k=150  rho=0.99 Degree           infl=221343.19 disp=0.0565 es FAIL (ratio 0.9783, lower 0.9771) (0.1s)  [certificate FAIL]
+  suite_index       1.3s  peak GPU nan / nan GB
+    snap_youtube     k=150  rho=0.99 Greedy           infl=226219.54 disp=0.0508 es pass (ratio 0.9999, lower 0.9988) (7.8s)  [certificate pass]
+    snap_youtube     k=150  rho=0.99 Parity-Greedy    infl=172029.80 disp=0.0304 es FAIL (ratio 0.7604, lower 0.7590) (8.9s)  [certificate FAIL]
+    snap_youtube     k=150  rho=0.99 Welfare-Greedy   infl=226150.76 disp=0.0503 es pass (ratio 0.9996, lower 0.9984) (8.5s)  [certificate pass]
+    snap_youtube     k=150  rho=0.99 Maximin-Greedy   infl=220546.03 disp=0.0361 es FAIL (ratio 0.9748, lower 0.9736) (9.5s)  [certificate FAIL]
+    snap_youtube     k=150  rho=0.99 FW-Disparity     infl=224928.31 disp=0.0466 es pass (ratio 0.9942, lower 0.9930) (11.3s)  [certificate pass]
+    snap_youtube     k=150  rho=0.99 LocalSearch      infl=224565.45 disp=0.0475 es pass (ratio 0.9926, lower 0.9914) (47.7s)  [certificate pass]
+    snap_youtube     k=150  rho=0.99 Simple-v2        infl=224674.79 disp=0.0477 es pass (ratio 0.9931, lower 0.9920) (34.7s)  [certificate pass]
+    snap_youtube     k=150  rho=0.99 AGE              missing: not run: n=1134890 > 5000
+    snap_youtube     k=150  rho=0.99 Prior            missing: not run: n=1134890 > 100000
+    snap_youtube     k=150  rho=0.99 BSM              infl=225692.84 disp=0.0491 es pass (ratio 0.9976, lower 0.9964) (12.2s)  [certificate pass]
+    snap_youtube     k=150  rho=0.99 MultiFW-MaxMin   infl=220696.97 disp=0.0362 es FAIL (ratio 0.9755, lower 0.9743) (14.4s)  [certificate FAIL]
+    snap_youtube     k=150  rho=0.99 RFIM             infl=219646.13 disp=0.0536 es FAIL (ratio 0.9708, lower 0.9696) (32.9s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 FIM-GAT v2       infl=226244.92 disp=0.0523 es pass (ratio 1.0000, lower 1.0000) (13.4s)  [v2-b/greedy/simple s-1: select 0.0s search 13.4s (12 rounds) certify 18.2s, deployed the reference set (path rule: the reference set), certificate pass]
+    snap_youtube     k=150  rho=1.0 FIM-GAT v2       infl=226244.92 disp=0.0523 es pass (ratio 1.0000, lower 1.0000) (38.0s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 38.0s (12 rounds) certify 13.5s, deployed the reference set (path rule: the reference set), certificate pass]
+    snap_youtube     k=150  rho=1.0 FIM-GAT v2       infl=226244.92 disp=0.0523 es pass (ratio 1.0000, lower 1.0000) (3.4s)  [v2-a/greedy/simple s-1: select 0.0s search 3.4s (10 rounds) certify 15.0s, deployed the reference set (path rule: the reference set), certificate pass]
+    snap_youtube     k=150  rho=1.0 FIM-GAT v2       infl=226244.92 disp=0.0523 es pass (ratio 1.0000, lower 1.0000) (13.2s)  [v2-b0/greedy/simple s-1: select 0.0s search 13.2s (11 rounds) certify 16.0s, deployed the reference set (path rule: the reference set), certificate pass]
+    snap_youtube     k=150  rho=1.0 Degree           infl=221343.19 disp=0.0565 es FAIL (ratio 0.9783, lower 0.9771) (0.1s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 Greedy           infl=226219.54 disp=0.0508 es FAIL (ratio 0.9999, lower 0.9988) (7.8s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 Parity-Greedy    infl=172029.80 disp=0.0304 es FAIL (ratio 0.7604, lower 0.7590) (8.9s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 Welfare-Greedy   infl=226150.76 disp=0.0503 es FAIL (ratio 0.9996, lower 0.9984) (8.5s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 Maximin-Greedy   infl=220546.03 disp=0.0361 es FAIL (ratio 0.9748, lower 0.9736) (9.5s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 FW-Disparity     infl=226244.92 disp=0.0523 es pass (ratio 1.0000, lower 1.0000) (10.8s)  [certificate pass]
+    snap_youtube     k=150  rho=1.0 LocalSearch      infl=225871.20 disp=0.0494 es FAIL (ratio 0.9983, lower 0.9972) (38.8s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 Simple-v2        infl=225724.26 disp=0.0495 es FAIL (ratio 0.9977, lower 0.9966) (34.5s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 AGE              missing: not run: n=1134890 > 5000
+    snap_youtube     k=150  rho=1.0 Prior            missing: not run: n=1134890 > 100000
+    snap_youtube     k=150  rho=1.0 BSM              infl=226219.54 disp=0.0508 es FAIL (ratio 0.9999, lower 0.9988) (0.9s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 MultiFW-MaxMin   infl=220696.97 disp=0.0362 es FAIL (ratio 0.9755, lower 0.9743) (14.4s)  [certificate FAIL]
+    snap_youtube     k=150  rho=1.0 RFIM             infl=219646.13 disp=0.0536 es FAIL (ratio 0.9708, lower 0.9696) (32.9s)  [certificate FAIL]
+    BSM sweep k=150: 10 sets in 1.6s -> t1_pareto.csv
