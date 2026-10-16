@@ -1,4 +1,154 @@
 rho,dataset,attribute,method,k,disparity,certified
+0.97,pokec_n,age,BSM,25,0.009911956951430642,True
+0.97,pokec_n,age,BSM,50,0.019427182999624343,True
+0.97,pokec_n,age,BSM,100,0.038194972693626095,True
+0.97,pokec_n,age,BSM,150,0.043373041534550766,True
+0.97,pokec_n,age,BSM,200,0.04376704267308065,True
+0.97,pokec_n,age,Degree,25,0.07306482894998804,False
+0.97,pokec_n,age,Degree,50,0.07832905462298007,False
+0.97,pokec_n,age,Degree,100,0.08388719754062146,False
+0.97,pokec_n,age,Degree,150,0.08255138588675923,False
+0.97,pokec_n,age,Degree,200,0.07878338228122184,False
+0.97,pokec_n,age,FIM-GAT v2,25,0.011384361922190861,True
+0.97,pokec_n,age,FIM-GAT v2,50,0.008912320531563961,True
+0.97,pokec_n,age,FIM-GAT v2,100,0.01976350669289502,True
+0.97,pokec_n,age,FIM-GAT v2,150,0.01829355767484353,True
+0.97,pokec_n,age,FIM-GAT v2,200,0.015362783853269363,True
+0.97,pokec_n,age,FW-Disparity,25,0.0342262191816546,True
+0.97,pokec_n,age,FW-Disparity,50,0.017707649986597906,True
+0.97,pokec_n,age,FW-Disparity,100,0.045805832497470014,True
+0.97,pokec_n,age,FW-Disparity,150,0.04756117172167573,True
+0.97,pokec_n,age,FW-Disparity,200,0.04575757219298007,True
+0.97,pokec_n,age,Greedy,25,0.027738422492596955,True
+0.97,pokec_n,age,Greedy,50,0.05025455560235027,True
+0.97,pokec_n,age,Greedy,100,0.05901405213198567,True
+0.97,pokec_n,age,Greedy,150,0.05856303056993309,True
+0.97,pokec_n,age,Greedy,200,0.05607836646944142,True
+0.97,pokec_n,age,Maximin-Greedy,25,0.008786330750146537,False
+0.97,pokec_n,age,Maximin-Greedy,50,0.01029396848886982,False
+0.97,pokec_n,age,Maximin-Greedy,100,0.007331010424760406,False
+0.97,pokec_n,age,Maximin-Greedy,150,0.008058588797898003,False
+0.97,pokec_n,age,Maximin-Greedy,200,0.006779281255651276,False
+0.97,pokec_n,age,MultiFW-MaxMin,25,0.009503542723115092,True
+0.97,pokec_n,age,MultiFW-MaxMin,50,0.012771070395248038,True
+0.97,pokec_n,age,MultiFW-MaxMin,100,0.013308592418789789,False
+0.97,pokec_n,age,MultiFW-MaxMin,150,0.018538793926620334,False
+0.97,pokec_n,age,MultiFW-MaxMin,200,0.020445545967513357,False
+0.97,pokec_n,age,Parity-Greedy,25,0.01845471973944538,False
+0.97,pokec_n,age,Parity-Greedy,50,0.016374855810632666,False
+0.97,pokec_n,age,Parity-Greedy,100,0.053388813507837876,True
+0.97,pokec_n,age,Parity-Greedy,150,0.05832917761871498,True
+0.97,pokec_n,age,Parity-Greedy,200,0.05823784579671129,True
+0.97,pokec_n,age,RFIM,25,0.018128078286496485,False
+0.97,pokec_n,age,RFIM,50,0.051251382733079325,False
+0.97,pokec_n,age,RFIM,100,0.06357955386276867,False
+0.97,pokec_n,age,RFIM,150,0.06685763476292668,False
+0.97,pokec_n,age,RFIM,200,0.06457262698680546,False
+0.97,pokec_n,age,Welfare-Greedy,25,0.016616799596616855,True
+0.97,pokec_n,age,Welfare-Greedy,50,0.034478622955355795,True
+0.97,pokec_n,age,Welfare-Greedy,100,0.055567944473065956,True
+0.97,pokec_n,age,Welfare-Greedy,150,0.056025495777810075,True
+0.97,pokec_n,age,Welfare-Greedy,200,0.05495324616188299,True
+0.97,pokec_n,gender,BSM,25,0.002002858921872304,True
+0.97,pokec_n,gender,BSM,50,0.016400908667381253,True
+0.97,pokec_n,gender,BSM,100,0.02412906823392376,True
+0.97,pokec_n,gender,BSM,150,0.028137714599884817,True
+0.97,pokec_n,gender,BSM,200,0.029357992468450306,True
+0.97,pokec_n,gender,Degree,25,0.029253724109225585,False
+0.97,pokec_n,gender,Degree,50,0.043722262443046084,False
+0.97,pokec_n,gender,Degree,100,0.04592697753278127,False
+0.97,pokec_n,gender,Degree,150,0.04585842619269602,False
+0.97,pokec_n,gender,Degree,200,0.04516968505514779,False
+0.97,pokec_n,gender,FIM-GAT v2,25,0.0002761062937900044,True
+0.97,pokec_n,gender,FIM-GAT v2,50,0.015439729752615844,True
+0.97,pokec_n,gender,FIM-GAT v2,100,0.023185920644026095,True
+0.97,pokec_n,gender,FIM-GAT v2,150,0.023850368471482752,True
+0.97,pokec_n,gender,FIM-GAT v2,200,0.024052308715740073,True
+0.97,pokec_n,gender,FW-Disparity,25,0.0029774355220549553,True
+0.97,pokec_n,gender,FW-Disparity,50,0.016717996666119964,True
+0.97,pokec_n,gender,FW-Disparity,100,0.032810178233633996,True
+0.97,pokec_n,gender,FW-Disparity,150,0.036635719757252286,True
+0.97,pokec_n,gender,FW-Disparity,200,0.03522995426957584,True
+0.97,pokec_n,gender,Greedy,25,0.004570308260022228,True
+0.97,pokec_n,gender,Greedy,50,0.026237169935420065,True
+0.97,pokec_n,gender,Greedy,100,0.03790311000133069,True
+0.97,pokec_n,gender,Greedy,150,0.038270487719235274,True
+0.97,pokec_n,gender,Greedy,200,0.038499437814326604,True
+0.97,pokec_n,gender,Maximin-Greedy,25,0.0002450744125080881,True
+0.97,pokec_n,gender,Maximin-Greedy,50,0.0004380420104916488,False
+0.97,pokec_n,gender,Maximin-Greedy,100,0.0007297076918630213,False
+0.97,pokec_n,gender,Maximin-Greedy,150,0.001480300395110934,False
+0.97,pokec_n,gender,Maximin-Greedy,200,0.0029251883217381314,False
+0.97,pokec_n,gender,MultiFW-MaxMin,25,0.001708195316832549,True
+0.97,pokec_n,gender,MultiFW-MaxMin,50,0.0013430069443540193,False
+0.97,pokec_n,gender,MultiFW-MaxMin,100,0.004617267406074793,False
+0.97,pokec_n,gender,MultiFW-MaxMin,150,0.009481722156078815,False
+0.97,pokec_n,gender,MultiFW-MaxMin,200,0.01504994943574453,False
+0.97,pokec_n,gender,Parity-Greedy,25,0.005845814891171482,True
+0.97,pokec_n,gender,Parity-Greedy,50,0.020051658963435456,True
+0.97,pokec_n,gender,Parity-Greedy,100,0.03339108050156345,True
+0.97,pokec_n,gender,Parity-Greedy,150,0.0384125767305826,True
+0.97,pokec_n,gender,Parity-Greedy,200,0.039086082255920696,True
+0.97,pokec_n,gender,RFIM,25,0.0029919460201592515,False
+0.97,pokec_n,gender,RFIM,50,0.01103794528693823,False
+0.97,pokec_n,gender,RFIM,100,0.027002607562498407,False
+0.97,pokec_n,gender,RFIM,150,0.03237595175035814,False
+0.97,pokec_n,gender,RFIM,200,0.035939110220922305,False
+0.97,pokec_n,gender,Welfare-Greedy,25,0.004570308260022228,True
+0.97,pokec_n,gender,Welfare-Greedy,50,0.02372549730869747,True
+0.97,pokec_n,gender,Welfare-Greedy,100,0.036647564367958615,True
+0.97,pokec_n,gender,Welfare-Greedy,150,0.03744014101671128,True
+0.97,pokec_n,gender,Welfare-Greedy,200,0.038116388801290785,True
+0.97,pokec_n,region,BSM,25,0.0041222684850590816,True
+0.97,pokec_n,region,BSM,50,0.007515953688532209,True
+0.97,pokec_n,region,BSM,100,0.0013858444624597066,True
+0.97,pokec_n,region,BSM,150,0.0014192138604569582,True
+0.97,pokec_n,region,BSM,200,0.0015642812326008837,True
+0.97,pokec_n,region,Degree,25,0.0362074550295554,False
+0.97,pokec_n,region,Degree,50,0.049644751415610124,False
+0.97,pokec_n,region,Degree,100,0.055039702195130574,False
+0.97,pokec_n,region,Degree,150,0.053696504940226125,False
+0.97,pokec_n,region,Degree,200,0.04329161804579913,False
+0.97,pokec_n,region,FIM-GAT v2,25,0.0007644728396251355,True
+0.97,pokec_n,region,FIM-GAT v2,50,0.01063524139093766,True
+0.97,pokec_n,region,FIM-GAT v2,100,0.016464770271803375,True
+0.97,pokec_n,region,FIM-GAT v2,150,0.0027069798722095806,True
+0.97,pokec_n,region,FIM-GAT v2,200,0.00276693498763253,True
+0.97,pokec_n,region,FW-Disparity,25,0.006194132921596381,True
+0.97,pokec_n,region,FW-Disparity,50,0.020751971481620446,True
+0.97,pokec_n,region,FW-Disparity,100,0.024883925082189506,True
+0.97,pokec_n,region,FW-Disparity,150,0.02297641270071271,True
+0.97,pokec_n,region,FW-Disparity,200,0.015976151871975375,True
+0.97,pokec_n,region,Greedy,25,0.010811617470398667,True
+0.97,pokec_n,region,Greedy,50,0.02844934887324279,True
+0.97,pokec_n,region,Greedy,100,0.037071732836914895,True
+0.97,pokec_n,region,Greedy,150,0.0321085615266834,True
+0.97,pokec_n,region,Greedy,200,0.03193924669479653,True
+0.97,pokec_n,region,Maximin-Greedy,25,0.0008237001407872119,False
+0.97,pokec_n,region,Maximin-Greedy,50,0.0003683273271107568,False
+0.97,pokec_n,region,Maximin-Greedy,100,0.00032293946001597795,False
+0.97,pokec_n,region,Maximin-Greedy,150,0.00014835497772539008,False
+0.97,pokec_n,region,Maximin-Greedy,200,0.0004986943401681654,False
+0.97,pokec_n,region,MultiFW-MaxMin,25,0.0007901671699806698,True
+0.97,pokec_n,region,MultiFW-MaxMin,50,0.0005708813822373066,False
+0.97,pokec_n,region,MultiFW-MaxMin,100,0.0009017451671716747,False
+0.97,pokec_n,region,MultiFW-MaxMin,150,0.0011290589437569498,True
+0.97,pokec_n,region,MultiFW-MaxMin,200,0.001847862200479139,True
+0.97,pokec_n,region,Parity-Greedy,25,0.002149756323907598,True
+0.97,pokec_n,region,Parity-Greedy,50,0.010553900682882589,True
+0.97,pokec_n,region,Parity-Greedy,100,0.024535461260377853,True
+0.97,pokec_n,region,Parity-Greedy,150,0.02746204707798941,True
+0.97,pokec_n,region,Parity-Greedy,200,0.02866831883079779,True
+0.97,pokec_n,region,RFIM,25,0.006604552525411721,False
+0.97,pokec_n,region,RFIM,50,0.008860451998060917,False
+0.97,pokec_n,region,RFIM,100,0.0006104735850409188,False
+0.97,pokec_n,region,RFIM,150,0.0016597489319205155,False
+0.97,pokec_n,region,RFIM,200,0.002683278706187592,False
+0.97,pokec_n,region,Welfare-Greedy,25,0.007197623024399219,True
+0.97,pokec_n,region,Welfare-Greedy,50,0.022160436490967883,True
+0.97,pokec_n,region,Welfare-Greedy,100,0.028400020718981345,True
+0.97,pokec_n,region,Welfare-Greedy,150,0.02561016582259293,True
+0.97,pokec_n,region,Welfare-Greedy,200,0.026118045447387467,True
 0.97,rice_facebook,age,AGE,25,0.04412979358805447,False
 0.97,rice_facebook,age,AGE,50,0.0805503331184182,False
 0.97,rice_facebook,age,AGE,100,0.10759234519104088,False
@@ -239,6 +389,156 @@ rho,dataset,attribute,method,k,disparity,certified
 0.97,twitter_political,leaning,Welfare-Greedy,100,0.06306383199377752,True
 0.97,twitter_political,leaning,Welfare-Greedy,150,0.059214443868291444,True
 0.97,twitter_political,leaning,Welfare-Greedy,200,0.05073391236712477,True
+0.98,pokec_n,age,BSM,25,0.015726754822435053,True
+0.98,pokec_n,age,BSM,50,0.03847522648242793,True
+0.98,pokec_n,age,BSM,100,0.05637065351323012,True
+0.98,pokec_n,age,BSM,150,0.043373041534550766,True
+0.98,pokec_n,age,BSM,200,0.04376704267308065,True
+0.98,pokec_n,age,Degree,25,0.07306482894998804,False
+0.98,pokec_n,age,Degree,50,0.07832905462298007,False
+0.98,pokec_n,age,Degree,100,0.08388719754062146,False
+0.98,pokec_n,age,Degree,150,0.08255138588675923,False
+0.98,pokec_n,age,Degree,200,0.07878338228122184,False
+0.98,pokec_n,age,FIM-GAT v2,25,0.013595608538471311,True
+0.98,pokec_n,age,FIM-GAT v2,50,0.017641253679782185,True
+0.98,pokec_n,age,FIM-GAT v2,100,0.029640937609147336,True
+0.98,pokec_n,age,FIM-GAT v2,150,0.03129517939402113,True
+0.98,pokec_n,age,FIM-GAT v2,200,0.025033107115058628,True
+0.98,pokec_n,age,FW-Disparity,25,0.0342262191816546,True
+0.98,pokec_n,age,FW-Disparity,50,0.022135045710587498,True
+0.98,pokec_n,age,FW-Disparity,100,0.045805832497470014,True
+0.98,pokec_n,age,FW-Disparity,150,0.0476092187248858,True
+0.98,pokec_n,age,FW-Disparity,200,0.04582010954022095,True
+0.98,pokec_n,age,Greedy,25,0.027738422492596955,True
+0.98,pokec_n,age,Greedy,50,0.05025455560235027,True
+0.98,pokec_n,age,Greedy,100,0.05901405213198567,True
+0.98,pokec_n,age,Greedy,150,0.05856303056993309,True
+0.98,pokec_n,age,Greedy,200,0.05607836646944142,True
+0.98,pokec_n,age,Maximin-Greedy,25,0.008786330750146537,False
+0.98,pokec_n,age,Maximin-Greedy,50,0.01029396848886982,False
+0.98,pokec_n,age,Maximin-Greedy,100,0.007331010424760406,False
+0.98,pokec_n,age,Maximin-Greedy,150,0.008058588797898003,False
+0.98,pokec_n,age,Maximin-Greedy,200,0.006779281255651276,False
+0.98,pokec_n,age,MultiFW-MaxMin,25,0.009503542723115092,False
+0.98,pokec_n,age,MultiFW-MaxMin,50,0.012771070395248038,False
+0.98,pokec_n,age,MultiFW-MaxMin,100,0.013308592418789789,False
+0.98,pokec_n,age,MultiFW-MaxMin,150,0.018538793926620334,False
+0.98,pokec_n,age,MultiFW-MaxMin,200,0.020445545967513357,False
+0.98,pokec_n,age,Parity-Greedy,25,0.01845471973944538,False
+0.98,pokec_n,age,Parity-Greedy,50,0.016374855810632666,False
+0.98,pokec_n,age,Parity-Greedy,100,0.053388813507837876,False
+0.98,pokec_n,age,Parity-Greedy,150,0.05832917761871498,True
+0.98,pokec_n,age,Parity-Greedy,200,0.05823784579671129,True
+0.98,pokec_n,age,RFIM,25,0.018128078286496485,False
+0.98,pokec_n,age,RFIM,50,0.051251382733079325,False
+0.98,pokec_n,age,RFIM,100,0.06357955386276867,False
+0.98,pokec_n,age,RFIM,150,0.06685763476292668,False
+0.98,pokec_n,age,RFIM,200,0.06457262698680546,False
+0.98,pokec_n,age,Welfare-Greedy,25,0.016616799596616855,True
+0.98,pokec_n,age,Welfare-Greedy,50,0.034478622955355795,True
+0.98,pokec_n,age,Welfare-Greedy,100,0.055567944473065956,True
+0.98,pokec_n,age,Welfare-Greedy,150,0.056025495777810075,True
+0.98,pokec_n,age,Welfare-Greedy,200,0.05495324616188299,True
+0.98,pokec_n,gender,BSM,25,0.002002858921872304,True
+0.98,pokec_n,gender,BSM,50,0.02071575822274123,True
+0.98,pokec_n,gender,BSM,100,0.03261772546299016,True
+0.98,pokec_n,gender,BSM,150,0.028137714599884817,True
+0.98,pokec_n,gender,BSM,200,0.029357992468450306,True
+0.98,pokec_n,gender,Degree,25,0.029253724109225585,False
+0.98,pokec_n,gender,Degree,50,0.043722262443046084,False
+0.98,pokec_n,gender,Degree,100,0.04592697753278127,False
+0.98,pokec_n,gender,Degree,150,0.04585842619269602,False
+0.98,pokec_n,gender,Degree,200,0.04516968505514779,False
+0.98,pokec_n,gender,FIM-GAT v2,25,0.0004699982857511373,True
+0.98,pokec_n,gender,FIM-GAT v2,50,0.01820146794134661,True
+0.98,pokec_n,gender,FIM-GAT v2,100,0.027773370708893186,True
+0.98,pokec_n,gender,FIM-GAT v2,150,0.027698190381703708,True
+0.98,pokec_n,gender,FIM-GAT v2,200,0.02793368103845717,True
+0.98,pokec_n,gender,FW-Disparity,25,0.0029774355220549553,True
+0.98,pokec_n,gender,FW-Disparity,50,0.016717996666119964,True
+0.98,pokec_n,gender,FW-Disparity,100,0.03288065838323492,True
+0.98,pokec_n,gender,FW-Disparity,150,0.036635719757252286,True
+0.98,pokec_n,gender,FW-Disparity,200,0.03542165539188202,True
+0.98,pokec_n,gender,Greedy,25,0.004570308260022228,True
+0.98,pokec_n,gender,Greedy,50,0.026237169935420065,True
+0.98,pokec_n,gender,Greedy,100,0.03790311000133069,True
+0.98,pokec_n,gender,Greedy,150,0.038270487719235274,True
+0.98,pokec_n,gender,Greedy,200,0.038499437814326604,True
+0.98,pokec_n,gender,Maximin-Greedy,25,0.0002450744125080881,True
+0.98,pokec_n,gender,Maximin-Greedy,50,0.0004380420104916488,False
+0.98,pokec_n,gender,Maximin-Greedy,100,0.0007297076918630213,False
+0.98,pokec_n,gender,Maximin-Greedy,150,0.001480300395110934,False
+0.98,pokec_n,gender,Maximin-Greedy,200,0.0029251883217381314,False
+0.98,pokec_n,gender,MultiFW-MaxMin,25,0.001708195316832549,True
+0.98,pokec_n,gender,MultiFW-MaxMin,50,0.0013430069443540193,False
+0.98,pokec_n,gender,MultiFW-MaxMin,100,0.004617267406074793,False
+0.98,pokec_n,gender,MultiFW-MaxMin,150,0.009481722156078815,False
+0.98,pokec_n,gender,MultiFW-MaxMin,200,0.01504994943574453,False
+0.98,pokec_n,gender,Parity-Greedy,25,0.005845814891171482,True
+0.98,pokec_n,gender,Parity-Greedy,50,0.020051658963435456,True
+0.98,pokec_n,gender,Parity-Greedy,100,0.03339108050156345,True
+0.98,pokec_n,gender,Parity-Greedy,150,0.0384125767305826,True
+0.98,pokec_n,gender,Parity-Greedy,200,0.039086082255920696,True
+0.98,pokec_n,gender,RFIM,25,0.0029919460201592515,False
+0.98,pokec_n,gender,RFIM,50,0.01103794528693823,False
+0.98,pokec_n,gender,RFIM,100,0.027002607562498407,False
+0.98,pokec_n,gender,RFIM,150,0.03237595175035814,False
+0.98,pokec_n,gender,RFIM,200,0.035939110220922305,False
+0.98,pokec_n,gender,Welfare-Greedy,25,0.004570308260022228,True
+0.98,pokec_n,gender,Welfare-Greedy,50,0.02372549730869747,True
+0.98,pokec_n,gender,Welfare-Greedy,100,0.036647564367958615,True
+0.98,pokec_n,gender,Welfare-Greedy,150,0.03744014101671128,True
+0.98,pokec_n,gender,Welfare-Greedy,200,0.038116388801290785,True
+0.98,pokec_n,region,BSM,25,0.007084030227193186,True
+0.98,pokec_n,region,BSM,50,0.021236181659775907,True
+0.98,pokec_n,region,BSM,100,0.013425577114075382,True
+0.98,pokec_n,region,BSM,150,0.0014192138604569582,True
+0.98,pokec_n,region,BSM,200,0.0015642812326008837,True
+0.98,pokec_n,region,Degree,25,0.0362074550295554,False
+0.98,pokec_n,region,Degree,50,0.049644751415610124,False
+0.98,pokec_n,region,Degree,100,0.055039702195130574,False
+0.98,pokec_n,region,Degree,150,0.053696504940226125,False
+0.98,pokec_n,region,Degree,200,0.04329161804579913,False
+0.98,pokec_n,region,FIM-GAT v2,25,0.0012473477714104314,True
+0.98,pokec_n,region,FIM-GAT v2,50,0.010920804015139868,True
+0.98,pokec_n,region,FIM-GAT v2,100,0.021951949361151024,True
+0.98,pokec_n,region,FIM-GAT v2,150,0.008797278942926645,True
+0.98,pokec_n,region,FIM-GAT v2,200,0.00920151513221168,True
+0.98,pokec_n,region,FW-Disparity,25,0.006194132921596381,True
+0.98,pokec_n,region,FW-Disparity,50,0.02046111266222858,True
+0.98,pokec_n,region,FW-Disparity,100,0.025630827372959686,True
+0.98,pokec_n,region,FW-Disparity,150,0.023774674321686035,True
+0.98,pokec_n,region,FW-Disparity,200,0.016611315770861695,True
+0.98,pokec_n,region,Greedy,25,0.010811617470398667,True
+0.98,pokec_n,region,Greedy,50,0.02844934887324279,True
+0.98,pokec_n,region,Greedy,100,0.037071732836914895,True
+0.98,pokec_n,region,Greedy,150,0.0321085615266834,True
+0.98,pokec_n,region,Greedy,200,0.03193924669479653,True
+0.98,pokec_n,region,Maximin-Greedy,25,0.0008237001407872119,False
+0.98,pokec_n,region,Maximin-Greedy,50,0.0003683273271107568,False
+0.98,pokec_n,region,Maximin-Greedy,100,0.00032293946001597795,False
+0.98,pokec_n,region,Maximin-Greedy,150,0.00014835497772539008,False
+0.98,pokec_n,region,Maximin-Greedy,200,0.0004986943401681654,False
+0.98,pokec_n,region,MultiFW-MaxMin,25,0.0007901671699806698,True
+0.98,pokec_n,region,MultiFW-MaxMin,50,0.0005708813822373066,False
+0.98,pokec_n,region,MultiFW-MaxMin,100,0.0009017451671716747,False
+0.98,pokec_n,region,MultiFW-MaxMin,150,0.0011290589437569498,False
+0.98,pokec_n,region,MultiFW-MaxMin,200,0.001847862200479139,False
+0.98,pokec_n,region,Parity-Greedy,25,0.002149756323907598,True
+0.98,pokec_n,region,Parity-Greedy,50,0.010553900682882589,True
+0.98,pokec_n,region,Parity-Greedy,100,0.024535461260377853,True
+0.98,pokec_n,region,Parity-Greedy,150,0.02746204707798941,True
+0.98,pokec_n,region,Parity-Greedy,200,0.02866831883079779,True
+0.98,pokec_n,region,RFIM,25,0.006604552525411721,False
+0.98,pokec_n,region,RFIM,50,0.008860451998060917,False
+0.98,pokec_n,region,RFIM,100,0.0006104735850409188,False
+0.98,pokec_n,region,RFIM,150,0.0016597489319205155,False
+0.98,pokec_n,region,RFIM,200,0.002683278706187592,False
+0.98,pokec_n,region,Welfare-Greedy,25,0.007197623024399219,True
+0.98,pokec_n,region,Welfare-Greedy,50,0.022160436490967883,True
+0.98,pokec_n,region,Welfare-Greedy,100,0.028400020718981345,True
+0.98,pokec_n,region,Welfare-Greedy,150,0.02561016582259293,True
+0.98,pokec_n,region,Welfare-Greedy,200,0.026118045447387467,True
 0.98,rice_facebook,age,AGE,25,0.04412979358805447,False
 0.98,rice_facebook,age,AGE,50,0.0805503331184182,False
 0.98,rice_facebook,age,AGE,100,0.10759234519104088,False
@@ -479,6 +779,156 @@ rho,dataset,attribute,method,k,disparity,certified
 0.98,twitter_political,leaning,Welfare-Greedy,100,0.06306383199377752,True
 0.98,twitter_political,leaning,Welfare-Greedy,150,0.059214443868291444,True
 0.98,twitter_political,leaning,Welfare-Greedy,200,0.05073391236712477,True
+0.99,pokec_n,age,BSM,25,0.022394925137290432,True
+0.99,pokec_n,age,BSM,50,0.05025455560235027,True
+0.99,pokec_n,age,BSM,100,0.05637065351323012,True
+0.99,pokec_n,age,BSM,150,0.056200928421033775,True
+0.99,pokec_n,age,BSM,200,0.05370299406493842,True
+0.99,pokec_n,age,Degree,25,0.07306482894998804,False
+0.99,pokec_n,age,Degree,50,0.07832905462298007,False
+0.99,pokec_n,age,Degree,100,0.08388719754062146,False
+0.99,pokec_n,age,Degree,150,0.08255138588675923,False
+0.99,pokec_n,age,Degree,200,0.07878338228122184,False
+0.99,pokec_n,age,FIM-GAT v2,25,0.014401868693502524,True
+0.99,pokec_n,age,FIM-GAT v2,50,0.03303281890080596,True
+0.99,pokec_n,age,FIM-GAT v2,100,0.045155963710432595,True
+0.99,pokec_n,age,FIM-GAT v2,150,0.043815767339803746,True
+0.99,pokec_n,age,FIM-GAT v2,200,0.03911665859329941,True
+0.99,pokec_n,age,FW-Disparity,25,0.0342262191816546,True
+0.99,pokec_n,age,FW-Disparity,50,0.026700049959330216,True
+0.99,pokec_n,age,FW-Disparity,100,0.05983091919373913,True
+0.99,pokec_n,age,FW-Disparity,150,0.059636010451708715,True
+0.99,pokec_n,age,FW-Disparity,200,0.04646722965330763,True
+0.99,pokec_n,age,Greedy,25,0.027738422492596955,True
+0.99,pokec_n,age,Greedy,50,0.05025455560235027,True
+0.99,pokec_n,age,Greedy,100,0.05901405213198567,True
+0.99,pokec_n,age,Greedy,150,0.05856303056993309,True
+0.99,pokec_n,age,Greedy,200,0.05607836646944142,True
+0.99,pokec_n,age,Maximin-Greedy,25,0.008786330750146537,False
+0.99,pokec_n,age,Maximin-Greedy,50,0.01029396848886982,False
+0.99,pokec_n,age,Maximin-Greedy,100,0.007331010424760406,False
+0.99,pokec_n,age,Maximin-Greedy,150,0.008058588797898003,False
+0.99,pokec_n,age,Maximin-Greedy,200,0.006779281255651276,False
+0.99,pokec_n,age,MultiFW-MaxMin,25,0.009503542723115092,False
+0.99,pokec_n,age,MultiFW-MaxMin,50,0.012771070395248038,False
+0.99,pokec_n,age,MultiFW-MaxMin,100,0.013308592418789789,False
+0.99,pokec_n,age,MultiFW-MaxMin,150,0.018538793926620334,False
+0.99,pokec_n,age,MultiFW-MaxMin,200,0.020445545967513357,False
+0.99,pokec_n,age,Parity-Greedy,25,0.01845471973944538,False
+0.99,pokec_n,age,Parity-Greedy,50,0.016374855810632666,False
+0.99,pokec_n,age,Parity-Greedy,100,0.053388813507837876,False
+0.99,pokec_n,age,Parity-Greedy,150,0.05832917761871498,False
+0.99,pokec_n,age,Parity-Greedy,200,0.05823784579671129,True
+0.99,pokec_n,age,RFIM,25,0.018128078286496485,False
+0.99,pokec_n,age,RFIM,50,0.051251382733079325,False
+0.99,pokec_n,age,RFIM,100,0.06357955386276867,False
+0.99,pokec_n,age,RFIM,150,0.06685763476292668,False
+0.99,pokec_n,age,RFIM,200,0.06457262698680546,False
+0.99,pokec_n,age,Welfare-Greedy,25,0.016616799596616855,True
+0.99,pokec_n,age,Welfare-Greedy,50,0.034478622955355795,True
+0.99,pokec_n,age,Welfare-Greedy,100,0.055567944473065956,True
+0.99,pokec_n,age,Welfare-Greedy,150,0.056025495777810075,True
+0.99,pokec_n,age,Welfare-Greedy,200,0.05495324616188299,True
+0.99,pokec_n,gender,BSM,25,0.004489452608934387,True
+0.99,pokec_n,gender,BSM,50,0.022725734432158112,True
+0.99,pokec_n,gender,BSM,100,0.03261772546299016,True
+0.99,pokec_n,gender,BSM,150,0.03551327982943331,True
+0.99,pokec_n,gender,BSM,200,0.03540060280422047,True
+0.99,pokec_n,gender,Degree,25,0.029253724109225585,False
+0.99,pokec_n,gender,Degree,50,0.043722262443046084,False
+0.99,pokec_n,gender,Degree,100,0.04592697753278127,False
+0.99,pokec_n,gender,Degree,150,0.04585842619269602,False
+0.99,pokec_n,gender,Degree,200,0.04516968505514779,False
+0.99,pokec_n,gender,FIM-GAT v2,25,0.00265826015183028,True
+0.99,pokec_n,gender,FIM-GAT v2,50,0.020080728789046515,True
+0.99,pokec_n,gender,FIM-GAT v2,100,0.03209693196766675,True
+0.99,pokec_n,gender,FIM-GAT v2,150,0.03162579351743072,True
+0.99,pokec_n,gender,FIM-GAT v2,200,0.03141324108633853,True
+0.99,pokec_n,gender,FW-Disparity,25,0.0029774355220549553,True
+0.99,pokec_n,gender,FW-Disparity,50,0.01857852590978741,True
+0.99,pokec_n,gender,FW-Disparity,100,0.03882894320205703,True
+0.99,pokec_n,gender,FW-Disparity,150,0.036635719757252286,True
+0.99,pokec_n,gender,FW-Disparity,200,0.03895557591245932,True
+0.99,pokec_n,gender,Greedy,25,0.004570308260022228,True
+0.99,pokec_n,gender,Greedy,50,0.026237169935420065,True
+0.99,pokec_n,gender,Greedy,100,0.03790311000133069,True
+0.99,pokec_n,gender,Greedy,150,0.038270487719235274,True
+0.99,pokec_n,gender,Greedy,200,0.038499437814326604,True
+0.99,pokec_n,gender,Maximin-Greedy,25,0.0002450744125080881,False
+0.99,pokec_n,gender,Maximin-Greedy,50,0.0004380420104916488,False
+0.99,pokec_n,gender,Maximin-Greedy,100,0.0007297076918630213,False
+0.99,pokec_n,gender,Maximin-Greedy,150,0.001480300395110934,False
+0.99,pokec_n,gender,Maximin-Greedy,200,0.0029251883217381314,False
+0.99,pokec_n,gender,MultiFW-MaxMin,25,0.001708195316832549,True
+0.99,pokec_n,gender,MultiFW-MaxMin,50,0.0013430069443540193,False
+0.99,pokec_n,gender,MultiFW-MaxMin,100,0.004617267406074793,False
+0.99,pokec_n,gender,MultiFW-MaxMin,150,0.009481722156078815,False
+0.99,pokec_n,gender,MultiFW-MaxMin,200,0.01504994943574453,False
+0.99,pokec_n,gender,Parity-Greedy,25,0.005845814891171482,True
+0.99,pokec_n,gender,Parity-Greedy,50,0.020051658963435456,True
+0.99,pokec_n,gender,Parity-Greedy,100,0.03339108050156345,True
+0.99,pokec_n,gender,Parity-Greedy,150,0.0384125767305826,True
+0.99,pokec_n,gender,Parity-Greedy,200,0.039086082255920696,True
+0.99,pokec_n,gender,RFIM,25,0.0029919460201592515,False
+0.99,pokec_n,gender,RFIM,50,0.01103794528693823,False
+0.99,pokec_n,gender,RFIM,100,0.027002607562498407,False
+0.99,pokec_n,gender,RFIM,150,0.03237595175035814,False
+0.99,pokec_n,gender,RFIM,200,0.035939110220922305,False
+0.99,pokec_n,gender,Welfare-Greedy,25,0.004570308260022228,True
+0.99,pokec_n,gender,Welfare-Greedy,50,0.02372549730869747,True
+0.99,pokec_n,gender,Welfare-Greedy,100,0.036647564367958615,True
+0.99,pokec_n,gender,Welfare-Greedy,150,0.03744014101671128,True
+0.99,pokec_n,gender,Welfare-Greedy,200,0.038116388801290785,True
+0.99,pokec_n,region,BSM,25,0.007084030227193186,True
+0.99,pokec_n,region,BSM,50,0.02549414639881368,True
+0.99,pokec_n,region,BSM,100,0.02645374896149759,True
+0.99,pokec_n,region,BSM,150,0.015335511785193129,True
+0.99,pokec_n,region,BSM,200,0.016733248514359977,True
+0.99,pokec_n,region,Degree,25,0.0362074550295554,False
+0.99,pokec_n,region,Degree,50,0.049644751415610124,False
+0.99,pokec_n,region,Degree,100,0.055039702195130574,False
+0.99,pokec_n,region,Degree,150,0.053696504940226125,False
+0.99,pokec_n,region,Degree,200,0.04329161804579913,False
+0.99,pokec_n,region,FIM-GAT v2,25,0.0023924028017762236,True
+0.99,pokec_n,region,FIM-GAT v2,50,0.02049655061159565,True
+0.99,pokec_n,region,FIM-GAT v2,100,0.02520613506931292,True
+0.99,pokec_n,region,FIM-GAT v2,150,0.01737202636574281,True
+0.99,pokec_n,region,FIM-GAT v2,200,0.010739209940520272,True
+0.99,pokec_n,region,FW-Disparity,25,0.006194132921596381,True
+0.99,pokec_n,region,FW-Disparity,50,0.02910047569556625,True
+0.99,pokec_n,region,FW-Disparity,100,0.0355901664375111,True
+0.99,pokec_n,region,FW-Disparity,150,0.023774674321686035,True
+0.99,pokec_n,region,FW-Disparity,200,0.03334442201080162,True
+0.99,pokec_n,region,Greedy,25,0.010811617470398667,True
+0.99,pokec_n,region,Greedy,50,0.02844934887324279,True
+0.99,pokec_n,region,Greedy,100,0.037071732836914895,True
+0.99,pokec_n,region,Greedy,150,0.0321085615266834,True
+0.99,pokec_n,region,Greedy,200,0.03193924669479653,True
+0.99,pokec_n,region,Maximin-Greedy,25,0.0008237001407872119,False
+0.99,pokec_n,region,Maximin-Greedy,50,0.0003683273271107568,False
+0.99,pokec_n,region,Maximin-Greedy,100,0.00032293946001597795,False
+0.99,pokec_n,region,Maximin-Greedy,150,0.00014835497772539008,False
+0.99,pokec_n,region,Maximin-Greedy,200,0.0004986943401681654,False
+0.99,pokec_n,region,MultiFW-MaxMin,25,0.0007901671699806698,False
+0.99,pokec_n,region,MultiFW-MaxMin,50,0.0005708813822373066,False
+0.99,pokec_n,region,MultiFW-MaxMin,100,0.0009017451671716747,False
+0.99,pokec_n,region,MultiFW-MaxMin,150,0.0011290589437569498,False
+0.99,pokec_n,region,MultiFW-MaxMin,200,0.001847862200479139,False
+0.99,pokec_n,region,Parity-Greedy,25,0.002149756323907598,True
+0.99,pokec_n,region,Parity-Greedy,50,0.010553900682882589,True
+0.99,pokec_n,region,Parity-Greedy,100,0.024535461260377853,True
+0.99,pokec_n,region,Parity-Greedy,150,0.02746204707798941,True
+0.99,pokec_n,region,Parity-Greedy,200,0.02866831883079779,True
+0.99,pokec_n,region,RFIM,25,0.006604552525411721,False
+0.99,pokec_n,region,RFIM,50,0.008860451998060917,False
+0.99,pokec_n,region,RFIM,100,0.0006104735850409188,False
+0.99,pokec_n,region,RFIM,150,0.0016597489319205155,False
+0.99,pokec_n,region,RFIM,200,0.002683278706187592,False
+0.99,pokec_n,region,Welfare-Greedy,25,0.007197623024399219,True
+0.99,pokec_n,region,Welfare-Greedy,50,0.022160436490967883,True
+0.99,pokec_n,region,Welfare-Greedy,100,0.028400020718981345,True
+0.99,pokec_n,region,Welfare-Greedy,150,0.02561016582259293,True
+0.99,pokec_n,region,Welfare-Greedy,200,0.026118045447387467,True
 0.99,rice_facebook,age,AGE,25,0.04412979358805447,False
 0.99,rice_facebook,age,AGE,50,0.0805503331184182,False
 0.99,rice_facebook,age,AGE,100,0.10759234519104088,False
@@ -719,6 +1169,156 @@ rho,dataset,attribute,method,k,disparity,certified
 0.99,twitter_political,leaning,Welfare-Greedy,100,0.06306383199377752,True
 0.99,twitter_political,leaning,Welfare-Greedy,150,0.059214443868291444,True
 0.99,twitter_political,leaning,Welfare-Greedy,200,0.05073391236712477,True
+1.0,pokec_n,age,BSM,25,0.022394925137290432,False
+1.0,pokec_n,age,BSM,50,0.05025455560235027,False
+1.0,pokec_n,age,BSM,100,0.058884509960697926,False
+1.0,pokec_n,age,BSM,150,0.05696972149470428,False
+1.0,pokec_n,age,BSM,200,0.05370299406493842,False
+1.0,pokec_n,age,Degree,25,0.07306482894998804,False
+1.0,pokec_n,age,Degree,50,0.07832905462298007,False
+1.0,pokec_n,age,Degree,100,0.08388719754062146,False
+1.0,pokec_n,age,Degree,150,0.08255138588675923,False
+1.0,pokec_n,age,Degree,200,0.07878338228122184,False
+1.0,pokec_n,age,FIM-GAT v2,25,0.02142351600327415,True
+1.0,pokec_n,age,FIM-GAT v2,50,0.048634782365035975,True
+1.0,pokec_n,age,FIM-GAT v2,100,0.05983091919373913,True
+1.0,pokec_n,age,FIM-GAT v2,150,0.059636010451708715,True
+1.0,pokec_n,age,FIM-GAT v2,200,0.05511315646889858,True
+1.0,pokec_n,age,FW-Disparity,25,0.02142351600327415,True
+1.0,pokec_n,age,FW-Disparity,50,0.048634782365035975,True
+1.0,pokec_n,age,FW-Disparity,100,0.05983091919373913,True
+1.0,pokec_n,age,FW-Disparity,150,0.059636010451708715,True
+1.0,pokec_n,age,FW-Disparity,200,0.05511315646889858,True
+1.0,pokec_n,age,Greedy,25,0.027738422492596955,False
+1.0,pokec_n,age,Greedy,50,0.05025455560235027,False
+1.0,pokec_n,age,Greedy,100,0.05901405213198567,False
+1.0,pokec_n,age,Greedy,150,0.05856303056993309,False
+1.0,pokec_n,age,Greedy,200,0.05607836646944142,False
+1.0,pokec_n,age,Maximin-Greedy,25,0.008786330750146537,False
+1.0,pokec_n,age,Maximin-Greedy,50,0.01029396848886982,False
+1.0,pokec_n,age,Maximin-Greedy,100,0.007331010424760406,False
+1.0,pokec_n,age,Maximin-Greedy,150,0.008058588797898003,False
+1.0,pokec_n,age,Maximin-Greedy,200,0.006779281255651276,False
+1.0,pokec_n,age,MultiFW-MaxMin,25,0.009503542723115092,False
+1.0,pokec_n,age,MultiFW-MaxMin,50,0.012771070395248038,False
+1.0,pokec_n,age,MultiFW-MaxMin,100,0.013308592418789789,False
+1.0,pokec_n,age,MultiFW-MaxMin,150,0.018538793926620334,False
+1.0,pokec_n,age,MultiFW-MaxMin,200,0.020445545967513357,False
+1.0,pokec_n,age,Parity-Greedy,25,0.01845471973944538,False
+1.0,pokec_n,age,Parity-Greedy,50,0.016374855810632666,False
+1.0,pokec_n,age,Parity-Greedy,100,0.053388813507837876,False
+1.0,pokec_n,age,Parity-Greedy,150,0.05832917761871498,False
+1.0,pokec_n,age,Parity-Greedy,200,0.05823784579671129,False
+1.0,pokec_n,age,RFIM,25,0.018128078286496485,False
+1.0,pokec_n,age,RFIM,50,0.051251382733079325,False
+1.0,pokec_n,age,RFIM,100,0.06357955386276867,False
+1.0,pokec_n,age,RFIM,150,0.06685763476292668,False
+1.0,pokec_n,age,RFIM,200,0.06457262698680546,False
+1.0,pokec_n,age,Welfare-Greedy,25,0.016616799596616855,False
+1.0,pokec_n,age,Welfare-Greedy,50,0.034478622955355795,False
+1.0,pokec_n,age,Welfare-Greedy,100,0.055567944473065956,False
+1.0,pokec_n,age,Welfare-Greedy,150,0.056025495777810075,False
+1.0,pokec_n,age,Welfare-Greedy,200,0.05495324616188299,False
+1.0,pokec_n,gender,BSM,25,0.004570308260022228,False
+1.0,pokec_n,gender,BSM,50,0.026237169935420065,False
+1.0,pokec_n,gender,BSM,100,0.038007176900202236,False
+1.0,pokec_n,gender,BSM,150,0.03783260820639578,False
+1.0,pokec_n,gender,BSM,200,0.03711136430939743,False
+1.0,pokec_n,gender,Degree,25,0.029253724109225585,False
+1.0,pokec_n,gender,Degree,50,0.043722262443046084,False
+1.0,pokec_n,gender,Degree,100,0.04592697753278127,False
+1.0,pokec_n,gender,Degree,150,0.04585842619269602,False
+1.0,pokec_n,gender,Degree,200,0.04516968505514779,False
+1.0,pokec_n,gender,FIM-GAT v2,25,0.005949817053849782,True
+1.0,pokec_n,gender,FIM-GAT v2,50,0.02579529680896596,True
+1.0,pokec_n,gender,FIM-GAT v2,100,0.03882894320205703,True
+1.0,pokec_n,gender,FIM-GAT v2,150,0.03823097901610992,True
+1.0,pokec_n,gender,FIM-GAT v2,200,0.03895557591245932,True
+1.0,pokec_n,gender,FW-Disparity,25,0.004570308260022228,False
+1.0,pokec_n,gender,FW-Disparity,50,0.02579529680896596,True
+1.0,pokec_n,gender,FW-Disparity,100,0.03882894320205703,True
+1.0,pokec_n,gender,FW-Disparity,150,0.03823097901610992,True
+1.0,pokec_n,gender,FW-Disparity,200,0.03895557591245932,True
+1.0,pokec_n,gender,Greedy,25,0.004570308260022228,False
+1.0,pokec_n,gender,Greedy,50,0.026237169935420065,False
+1.0,pokec_n,gender,Greedy,100,0.03790311000133069,False
+1.0,pokec_n,gender,Greedy,150,0.038270487719235274,False
+1.0,pokec_n,gender,Greedy,200,0.038499437814326604,False
+1.0,pokec_n,gender,Maximin-Greedy,25,0.0002450744125080881,False
+1.0,pokec_n,gender,Maximin-Greedy,50,0.0004380420104916488,False
+1.0,pokec_n,gender,Maximin-Greedy,100,0.0007297076918630213,False
+1.0,pokec_n,gender,Maximin-Greedy,150,0.001480300395110934,False
+1.0,pokec_n,gender,Maximin-Greedy,200,0.0029251883217381314,False
+1.0,pokec_n,gender,MultiFW-MaxMin,25,0.001708195316832549,False
+1.0,pokec_n,gender,MultiFW-MaxMin,50,0.0013430069443540193,False
+1.0,pokec_n,gender,MultiFW-MaxMin,100,0.004617267406074793,False
+1.0,pokec_n,gender,MultiFW-MaxMin,150,0.009481722156078815,False
+1.0,pokec_n,gender,MultiFW-MaxMin,200,0.01504994943574453,False
+1.0,pokec_n,gender,Parity-Greedy,25,0.005845814891171482,False
+1.0,pokec_n,gender,Parity-Greedy,50,0.020051658963435456,False
+1.0,pokec_n,gender,Parity-Greedy,100,0.03339108050156345,False
+1.0,pokec_n,gender,Parity-Greedy,150,0.0384125767305826,False
+1.0,pokec_n,gender,Parity-Greedy,200,0.039086082255920696,False
+1.0,pokec_n,gender,RFIM,25,0.0029919460201592515,False
+1.0,pokec_n,gender,RFIM,50,0.01103794528693823,False
+1.0,pokec_n,gender,RFIM,100,0.027002607562498407,False
+1.0,pokec_n,gender,RFIM,150,0.03237595175035814,False
+1.0,pokec_n,gender,RFIM,200,0.035939110220922305,False
+1.0,pokec_n,gender,Welfare-Greedy,25,0.004570308260022228,False
+1.0,pokec_n,gender,Welfare-Greedy,50,0.02372549730869747,False
+1.0,pokec_n,gender,Welfare-Greedy,100,0.036647564367958615,False
+1.0,pokec_n,gender,Welfare-Greedy,150,0.03744014101671128,False
+1.0,pokec_n,gender,Welfare-Greedy,200,0.038116388801290785,False
+1.0,pokec_n,region,BSM,25,0.010811617470398667,False
+1.0,pokec_n,region,BSM,50,0.02844934887324279,False
+1.0,pokec_n,region,BSM,100,0.03224700056247093,False
+1.0,pokec_n,region,BSM,150,0.02684484348358314,False
+1.0,pokec_n,region,BSM,200,0.026732359109855552,False
+1.0,pokec_n,region,Degree,25,0.0362074550295554,False
+1.0,pokec_n,region,Degree,50,0.049644751415610124,False
+1.0,pokec_n,region,Degree,100,0.055039702195130574,False
+1.0,pokec_n,region,Degree,150,0.053696504940226125,False
+1.0,pokec_n,region,Degree,200,0.04329161804579913,False
+1.0,pokec_n,region,FIM-GAT v2,25,0.010981001417690386,True
+1.0,pokec_n,region,FIM-GAT v2,50,0.02910047569556625,True
+1.0,pokec_n,region,FIM-GAT v2,100,0.0355901664375111,True
+1.0,pokec_n,region,FIM-GAT v2,150,0.03493702290273691,True
+1.0,pokec_n,region,FIM-GAT v2,200,0.03334442201080162,True
+1.0,pokec_n,region,FW-Disparity,25,0.010981001417690386,True
+1.0,pokec_n,region,FW-Disparity,50,0.02910047569556625,True
+1.0,pokec_n,region,FW-Disparity,100,0.0355901664375111,True
+1.0,pokec_n,region,FW-Disparity,150,0.03493702290273691,True
+1.0,pokec_n,region,FW-Disparity,200,0.03334442201080162,True
+1.0,pokec_n,region,Greedy,25,0.010811617470398667,False
+1.0,pokec_n,region,Greedy,50,0.02844934887324279,False
+1.0,pokec_n,region,Greedy,100,0.037071732836914895,False
+1.0,pokec_n,region,Greedy,150,0.0321085615266834,False
+1.0,pokec_n,region,Greedy,200,0.03193924669479653,False
+1.0,pokec_n,region,Maximin-Greedy,25,0.0008237001407872119,False
+1.0,pokec_n,region,Maximin-Greedy,50,0.0003683273271107568,False
+1.0,pokec_n,region,Maximin-Greedy,100,0.00032293946001597795,False
+1.0,pokec_n,region,Maximin-Greedy,150,0.00014835497772539008,False
+1.0,pokec_n,region,Maximin-Greedy,200,0.0004986943401681654,False
+1.0,pokec_n,region,MultiFW-MaxMin,25,0.0007901671699806698,False
+1.0,pokec_n,region,MultiFW-MaxMin,50,0.0005708813822373066,False
+1.0,pokec_n,region,MultiFW-MaxMin,100,0.0009017451671716747,False
+1.0,pokec_n,region,MultiFW-MaxMin,150,0.0011290589437569498,False
+1.0,pokec_n,region,MultiFW-MaxMin,200,0.001847862200479139,False
+1.0,pokec_n,region,Parity-Greedy,25,0.002149756323907598,False
+1.0,pokec_n,region,Parity-Greedy,50,0.010553900682882589,False
+1.0,pokec_n,region,Parity-Greedy,100,0.024535461260377853,False
+1.0,pokec_n,region,Parity-Greedy,150,0.02746204707798941,False
+1.0,pokec_n,region,Parity-Greedy,200,0.02866831883079779,False
+1.0,pokec_n,region,RFIM,25,0.006604552525411721,False
+1.0,pokec_n,region,RFIM,50,0.008860451998060917,False
+1.0,pokec_n,region,RFIM,100,0.0006104735850409188,False
+1.0,pokec_n,region,RFIM,150,0.0016597489319205155,False
+1.0,pokec_n,region,RFIM,200,0.002683278706187592,False
+1.0,pokec_n,region,Welfare-Greedy,25,0.007197623024399219,False
+1.0,pokec_n,region,Welfare-Greedy,50,0.022160436490967883,False
+1.0,pokec_n,region,Welfare-Greedy,100,0.028400020718981345,False
+1.0,pokec_n,region,Welfare-Greedy,150,0.02561016582259293,False
+1.0,pokec_n,region,Welfare-Greedy,200,0.026118045447387467,False
 1.0,rice_facebook,age,AGE,25,0.04412979358805447,False
 1.0,rice_facebook,age,AGE,50,0.0805503331184182,False
 1.0,rice_facebook,age,AGE,100,0.10759234519104088,False

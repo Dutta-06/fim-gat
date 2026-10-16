@@ -1,4 +1,64 @@
 dataset,attribute,k,rho,es_ratio,disparity,source,method,tau,rhos,dominated_by_method,dominates_method
+pokec_n,age,25,0.97,0.9741375725087643,0.011384361922190861,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,age,25,0.98,0.983194794657725,0.013595608538471311,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,age,25,0.99,0.9958057288306524,0.014401868693502524,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,age,25,1.0,1.0,0.02142351600327415,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,age,50,0.97,0.9779868902128632,0.008912320531563961,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,age,50,0.98,0.9839147797501733,0.017641253679782185,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,age,50,0.99,0.995208062568119,0.03303281890080596,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,age,50,1.0,1.0,0.048634782365035975,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,age,100,0.97,0.9741072009904324,0.01976350669289502,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,age,100,0.98,0.9858003913884262,0.029640937609147336,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,age,100,0.99,0.9917659572539873,0.045155963710432595,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,age,100,1.0,1.0,0.05983091919373913,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,age,150,0.97,0.9692073809793118,0.01829355767484353,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,age,150,0.98,0.980259591113239,0.03129517939402113,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,age,150,0.99,0.9905063036648077,0.043815767339803746,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,age,150,1.0,1.0,0.059636010451708715,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,age,200,0.97,0.9698588219000458,0.015362783853269363,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,age,200,0.98,0.9805355714256142,0.025033107115058628,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,age,200,0.99,0.990747186522936,0.03911665859329941,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,age,200,1.0,1.0,0.05511315646889858,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,gender,25,0.97,0.9718291619287046,0.0002761062937900044,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,gender,25,0.98,0.9906580191182041,0.0004699982857511373,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,gender,25,0.99,0.9954657647925428,0.00265826015183028,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,gender,25,1.0,1.0,0.005949817053849782,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,gender,50,0.97,0.9751933478736997,0.015439729752615844,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,gender,50,0.98,0.9840439875725917,0.01820146794134661,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,gender,50,0.99,0.9970040897544445,0.020080728789046515,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,gender,50,1.0,1.0,0.02579529680896596,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,gender,100,0.97,0.9749596634164943,0.023185920644026095,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,gender,100,0.98,0.9836434294223393,0.027773370708893186,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,gender,100,0.99,0.992425405681296,0.03209693196766675,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,gender,100,1.0,1.0,0.03882894320205703,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,gender,150,0.97,0.9722459215189998,0.023850368471482752,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,gender,150,0.98,0.9794819269319437,0.027698190381703708,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,gender,150,0.99,0.9884308614662177,0.03162579351743072,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,gender,150,1.0,1.0,0.03823097901610992,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,gender,200,0.97,0.9702899196504027,0.024052308715740073,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,gender,200,0.98,0.9818995649726058,0.02793368103845717,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,gender,200,0.99,0.9905579812281609,0.03141324108633853,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,gender,200,1.0,1.0,0.03895557591245932,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,region,25,0.97,0.9774017896879154,0.0007644728396251355,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,region,25,0.98,0.9866278838296854,0.0012473477714104314,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,region,25,0.99,1.0010718413426167,0.0023924028017762236,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,region,25,1.0,1.0,0.010981001417690386,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,region,50,0.97,0.9742601482217533,0.01063524139093766,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,region,50,0.98,0.9858597227973072,0.010920804015139868,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,region,50,0.99,0.9939904903427247,0.02049655061159565,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,region,50,1.0,1.0,0.02910047569556625,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,region,100,0.97,0.9731326184852391,0.016464770271803375,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,region,100,0.98,0.983690349242216,0.021951949361151024,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,region,100,0.99,0.9935609938697648,0.02520613506931292,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,region,100,1.0,1.0,0.0355901664375111,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,region,150,0.97,0.9698285932476901,0.0027069798722095806,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,region,150,0.98,0.981996593776577,0.008797278942926645,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,region,150,0.99,0.9897540185321365,0.01737202636574281,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,region,150,1.0,1.0,0.03493702290273691,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,region,200,0.97,0.9715019367269017,0.00276693498763253,method,FIM-GAT v2,,[0.97],False,False
+pokec_n,region,200,0.98,0.9807490509163491,0.00920151513221168,method,FIM-GAT v2,,[0.98],False,False
+pokec_n,region,200,0.99,0.9902608616486125,0.010739209940520272,method,FIM-GAT v2,,[0.99],False,False
+pokec_n,region,200,1.0,1.0,0.03334442201080162,method,FIM-GAT v2,,[1.0],False,False
 rice_facebook,age,25,0.97,0.9742122001972362,0.011964266666666667,method,FIM-GAT v2,,[0.97],False,False
 rice_facebook,age,25,0.98,0.9843187511905307,0.00788814545454547,method,FIM-GAT v2,,[0.98],False,False
 rice_facebook,age,25,0.99,0.9996461561831644,0.029841528326745748,method,FIM-GAT v2,,[0.99],False,False
@@ -79,6 +139,211 @@ twitter_political,leaning,200,0.97,0.9785983713469877,0.0008323645320196249,meth
 twitter_political,leaning,200,0.98,0.9849971546414595,0.000995110969860713,method,FIM-GAT v2,,[0.98],False,False
 twitter_political,leaning,200,0.99,0.9953783319652111,0.030278120300751832,method,FIM-GAT v2,,[0.99],False,False
 twitter_political,leaning,200,1.0,1.0,0.058616816178376885,method,FIM-GAT v2,,[1.0],False,False
+pokec_n,age,25,,1.0014129894087216,0.022394925137290432,baseline,BSM,,"[0.99, 1.0]",False,False
+pokec_n,age,25,,0.9739373237740834,0.009911956951430642,baseline,BSM,,[0.97],False,False
+pokec_n,age,25,,0.9890746776816792,0.015726754822435053,baseline,BSM,,[0.98],True,False
+pokec_n,age,25,,0.7108921843348065,0.07306482894998804,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,25,,1.00065047537984,0.0342262191816546,baseline,FW-Disparity,,[0.97],False,False
+pokec_n,age,25,,1.00065047537984,0.0342262191816546,baseline,FW-Disparity,,[0.99],False,False
+pokec_n,age,25,,1.00065047537984,0.0342262191816546,baseline,FW-Disparity,,[0.98],False,False
+pokec_n,age,25,,1.0,0.02142351600327415,baseline,FW-Disparity,,[1.0],False,False
+pokec_n,age,25,,1.0022574973762681,0.027738422492596955,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,age,25,,0.9465547523405643,0.008786330750146537,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,age,25,,0.9824824538151381,0.009503542723115092,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,age,25,,0.9484082001634847,0.01845471973944538,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,25,,0.9397044103710788,0.018128078286496485,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,25,,1.0038964881285652,0.016616799596616855,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,age,50,,1.0033475785598462,0.05025455560235027,baseline,BSM,,"[0.99, 1.0]",False,False
+pokec_n,age,50,,0.987665363660896,0.03847522648242793,baseline,BSM,,[0.98],True,False
+pokec_n,age,50,,0.9797420592708199,0.019427182999624343,baseline,BSM,,[0.97],True,False
+pokec_n,age,50,,0.8526281918970736,0.07832905462298007,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,50,,0.9932999399049035,0.022135045710587498,baseline,FW-Disparity,,[0.98],False,False
+pokec_n,age,50,,0.9950599158014918,0.026700049959330216,baseline,FW-Disparity,,[0.99],False,False
+pokec_n,age,50,,0.9910871598092147,0.017707649986597906,baseline,FW-Disparity,,[0.97],False,False
+pokec_n,age,50,,1.0,0.048634782365035975,baseline,FW-Disparity,,[1.0],False,False
+pokec_n,age,50,,1.0033475785598462,0.05025455560235027,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,age,50,,0.9392870323895361,0.01029396848886982,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,50,,0.9720636152406394,0.012771070395248038,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,50,,0.9712954824273036,0.016374855810632666,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,50,,0.8999420006850706,0.051251382733079325,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,50,,1.0007138155367985,0.034478622955355795,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,age,100,,0.9982383214479431,0.058884509960697926,baseline,BSM,,[1.0],False,False
+pokec_n,age,100,,0.982522559917092,0.038194972693626095,baseline,BSM,,[0.97],True,False
+pokec_n,age,100,,0.9966810976178422,0.05637065351323012,baseline,BSM,,"[0.98, 0.99]",False,False
+pokec_n,age,100,,0.8881284950043568,0.08388719754062146,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,100,,0.9927985146599049,0.045805832497470014,baseline,FW-Disparity,,[0.97],False,False
+pokec_n,age,100,,0.9927985146599049,0.045805832497470014,baseline,FW-Disparity,,[0.98],False,False
+pokec_n,age,100,,1.0,0.05983091919373913,baseline,FW-Disparity,,"[0.99, 1.0]",False,False
+pokec_n,age,100,,1.0021072141022724,0.05901405213198567,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,age,100,,0.9247504427977659,0.007331010424760406,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,age,100,,0.9488123404525269,0.013308592418789789,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,age,100,,0.9815641101170893,0.053388813507837876,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,100,,0.8989973748682147,0.06357955386276867,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,100,,1.0002450757166987,0.055567944473065956,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,age,150,,0.9827219332526844,0.043373041534550766,baseline,BSM,,"[0.97, 0.98]",False,False
+pokec_n,age,150,,0.9950281086018579,0.056200928421033775,baseline,BSM,,[0.99],False,False
+pokec_n,age,150,,0.9972548329071638,0.05696972149470428,baseline,BSM,,[1.0],False,False
+pokec_n,age,150,,0.9194682577554666,0.08255138588675923,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,150,,0.9904595143076736,0.0476092187248858,baseline,FW-Disparity,,[0.98],True,False
+pokec_n,age,150,,1.0,0.059636010451708715,baseline,FW-Disparity,,"[0.99, 1.0]",False,False
+pokec_n,age,150,,0.9894922383454031,0.04756117172167573,baseline,FW-Disparity,,[0.97],True,False
+pokec_n,age,150,,0.9974061150138797,0.05856303056993309,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,age,150,,0.9267037931860285,0.008058588797898003,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,age,150,,0.9620607766594635,0.018538793926620334,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,150,,0.9857271050432557,0.05832917761871498,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,150,,0.9001149054703548,0.06685763476292668,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,150,,0.9984177782011101,0.056025495777810075,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,age,200,,0.9878660185683716,0.04376704267308065,baseline,BSM,,"[0.97, 0.98]",True,False
+pokec_n,age,200,,0.997667503810933,0.05370299406493842,baseline,BSM,,"[0.99, 1.0]",False,False
+pokec_n,age,200,,0.939893466079536,0.07878338228122184,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,200,,0.9919823849799868,0.04646722965330763,baseline,FW-Disparity,,[0.99],False,False
+pokec_n,age,200,,0.9926212807336339,0.04575757219298007,baseline,FW-Disparity,,[0.97],False,False
+pokec_n,age,200,,1.0,0.05511315646889858,baseline,FW-Disparity,,[1.0],False,False
+pokec_n,age,200,,0.9889073041493692,0.04582010954022095,baseline,FW-Disparity,,[0.98],True,False
+pokec_n,age,200,,0.9983549922810402,0.05607836646944142,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,200,,0.939409279276127,0.006779281255651276,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,age,200,,0.9633947998373954,0.020445545967513357,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,200,,0.9917472072240744,0.05823784579671129,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,200,,0.9059425457307384,0.06457262698680546,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,age,200,,0.9993772712858541,0.05495324616188299,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,25,,0.9858526414998556,0.002002858921872304,baseline,BSM,,"[0.97, 0.98]",True,False
+pokec_n,gender,25,,1.0001385312754336,0.004489452608934387,baseline,BSM,,[0.99],False,True
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,baseline,BSM,,[1.0],False,True
+pokec_n,gender,25,,0.7108921843348065,0.029253724109225585,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,25,,1.00065047537984,0.0029774355220549553,baseline,FW-Disparity,,[0.99],False,True
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,baseline,FW-Disparity,,[1.0],False,True
+pokec_n,gender,25,,1.00065047537984,0.0029774355220549553,baseline,FW-Disparity,,[0.98],False,True
+pokec_n,gender,25,,1.00065047537984,0.0029774355220549553,baseline,FW-Disparity,,[0.97],False,True
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,gender,25,,0.9808439070733389,0.0002450744125080881,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,gender,25,,0.994307637409779,0.001708195316832549,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,25,,1.0014129894087216,0.005845814891171482,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,gender,25,,0.8378325657131838,0.0029919460201592515,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,gender,50,,0.9826064544114137,0.016400908667381253,baseline,BSM,,[0.97],False,False
+pokec_n,gender,50,,0.9929799967255815,0.02071575822274123,baseline,BSM,,[0.98],True,False
+pokec_n,gender,50,,0.9964977373729876,0.022725734432158112,baseline,BSM,,[0.99],True,False
+pokec_n,gender,50,,1.0033475785598462,0.026237169935420065,baseline,BSM,,[1.0],False,False
+pokec_n,gender,50,,0.8526281918970736,0.043722262443046084,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,50,,0.9950599158014918,0.01857852590978741,baseline,FW-Disparity,,[0.99],False,False
+pokec_n,gender,50,,0.9910871598092147,0.016717996666119964,baseline,FW-Disparity,,[0.98],False,True
+pokec_n,gender,50,,0.9910871598092147,0.016717996666119964,baseline,FW-Disparity,,[0.97],False,True
+pokec_n,gender,50,,1.0,0.02579529680896596,baseline,FW-Disparity,,[1.0],False,False
+pokec_n,gender,50,,1.0033475785598462,0.026237169935420065,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,50,,0.9387844293422121,0.0004380420104916488,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,50,,0.9442896054902558,0.0013430069443540193,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,50,,0.9973502782726952,0.020051658963435456,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,gender,50,,0.8433402260194752,0.01103794528693823,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,50,,1.0001881396640424,0.02372549730869747,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,gender,100,,0.9982383214479431,0.038007176900202236,baseline,BSM,,[1.0],False,False
+pokec_n,gender,100,,0.9966749916138856,0.03261772546299016,baseline,BSM,,"[0.98, 0.99]",False,False
+pokec_n,gender,100,,0.984717700476339,0.02412906823392376,baseline,BSM,,[0.97],False,True
+pokec_n,gender,100,,0.8881284950043568,0.04592697753278127,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,100,,0.9908435650141912,0.032810178233633996,baseline,FW-Disparity,,[0.97],True,False
+pokec_n,gender,100,,0.9921265328560538,0.03288065838323492,baseline,FW-Disparity,,[0.98],True,False
+pokec_n,gender,100,,1.0,0.03882894320205703,baseline,FW-Disparity,,"[0.99, 1.0]",False,False
+pokec_n,gender,100,,1.0021072141022724,0.03790311000133069,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,gender,100,,0.9138620879949727,0.0007297076918630213,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,100,,0.9256154386003701,0.004617267406074793,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,100,,0.9973114300473369,0.03339108050156345,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,100,,0.8433212882228617,0.027002607562498407,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,100,,0.9993698603916827,0.036647564367958615,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,150,,0.9974259064941854,0.03783260820639578,baseline,BSM,,[1.0],False,False
+pokec_n,gender,150,,0.9821960751875727,0.028137714599884817,baseline,BSM,,"[0.97, 0.98]",False,False
+pokec_n,gender,150,,0.9927611746927647,0.03551327982943331,baseline,BSM,,[0.99],False,False
+pokec_n,gender,150,,0.9194682577554666,0.04585842619269602,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,150,,0.9920054952428907,0.036635719757252286,baseline,FW-Disparity,,[0.97],False,False
+pokec_n,gender,150,,0.9920054952428907,0.036635719757252286,baseline,FW-Disparity,,[0.98],False,False
+pokec_n,gender,150,,0.9920054952428907,0.036635719757252286,baseline,FW-Disparity,,[0.99],False,False
+pokec_n,gender,150,,1.0,0.03823097901610992,baseline,FW-Disparity,,[1.0],False,False
+pokec_n,gender,150,,0.9974061150138797,0.038270487719235274,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,150,,0.9099394171821592,0.001480300395110934,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,150,,0.9318801791405736,0.009481722156078815,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,150,,0.9962696453941153,0.0384125767305826,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,150,,0.848683689010778,0.03237595175035814,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,150,,0.996931015046016,0.03744014101671128,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,200,,0.9968958605948638,0.03711136430939743,baseline,BSM,,[1.0],False,False
+pokec_n,gender,200,,0.986069314041199,0.029357992468450306,baseline,BSM,,"[0.97, 0.98]",False,False
+pokec_n,gender,200,,0.9940399772379291,0.03540060280422047,baseline,BSM,,[0.99],False,False
+pokec_n,gender,200,,0.9398169362373505,0.04516968505514779,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,200,,0.9859376984937851,0.03522995426957584,baseline,FW-Disparity,,[0.97],True,False
+pokec_n,gender,200,,0.9887870331300237,0.03542165539188202,baseline,FW-Disparity,,[0.98],True,False
+pokec_n,gender,200,,1.0,0.03895557591245932,baseline,FW-Disparity,,"[0.99, 1.0]",False,False
+pokec_n,gender,200,,0.9982737022702446,0.038499437814326604,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,200,,0.9260621040370985,0.0029251883217381314,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,200,,0.9472217075345001,0.01504994943574453,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,gender,200,,0.9992483167727025,0.039086082255920696,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,200,,0.8567674342286334,0.035939110220922305,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,gender,200,,0.9997018729249599,0.038116388801290785,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,25,,1.0022574973762681,0.010811617470398667,baseline,BSM,,[1.0],False,True
+pokec_n,region,25,,0.997177425263043,0.007084030227193186,baseline,BSM,,"[0.98, 0.99]",True,False
+pokec_n,region,25,,0.9862945799490483,0.0041222684850590816,baseline,BSM,,[0.97],True,False
+pokec_n,region,25,,0.7108921843348065,0.0362074550295554,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,region,25,,0.9978859180146455,0.006194132921596381,baseline,FW-Disparity,,[0.99],True,False
+pokec_n,region,25,,0.9978859180146455,0.006194132921596381,baseline,FW-Disparity,,[0.98],True,False
+pokec_n,region,25,,0.9978859180146455,0.006194132921596381,baseline,FW-Disparity,,[0.97],True,False
+pokec_n,region,25,,1.0,0.010981001417690386,baseline,FW-Disparity,,[1.0],True,False
+pokec_n,region,25,,1.0022574973762681,0.010811617470398667,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,region,25,,0.9060290261502943,0.0008237001407872119,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,region,25,,0.9908841684652793,0.0007901671699806698,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,region,25,,1.0001650239018252,0.002149756323907598,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,region,25,,0.8495190700288918,0.006604552525411721,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,region,25,,0.998906254139473,0.007197623024399219,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,region,50,,1.0033475785598462,0.02844934887324279,baseline,BSM,,[1.0],False,True
+pokec_n,region,50,,0.9988070387883998,0.02549414639881368,baseline,BSM,,[0.99],False,False
+pokec_n,region,50,,0.9901649197493484,0.021236181659775907,baseline,BSM,,[0.98],True,False
+pokec_n,region,50,,0.9849064305598804,0.007515953688532209,baseline,BSM,,[0.97],False,True
+pokec_n,region,50,,0.8526281918970736,0.049644751415610124,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,region,50,,0.9903711331266457,0.020751971481620446,baseline,FW-Disparity,,[0.97],True,False
+pokec_n,region,50,,0.9893372782737527,0.02046111266222858,baseline,FW-Disparity,,[0.98],False,False
+pokec_n,region,50,,1.0,0.02910047569556625,baseline,FW-Disparity,,"[0.99, 1.0]",False,False
+pokec_n,region,50,,1.0033475785598462,0.02844934887324279,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,region,50,,0.8833417757442501,0.0003683273271107568,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,50,,0.971726559715789,0.0005708813822373066,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,50,,0.9923213636962744,0.010553900682882589,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,region,50,,0.8413287563256795,0.008860451998060917,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,50,,0.9990320949731332,0.022160436490967883,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,100,,0.9980732665199382,0.02645374896149759,baseline,BSM,,[0.99],False,False
+pokec_n,region,100,,0.990725558453515,0.013425577114075382,baseline,BSM,,[0.98],False,True
+pokec_n,region,100,,0.9763986235910155,0.0013858444624597066,baseline,BSM,,[0.97],False,True
+pokec_n,region,100,,1.0000106051647666,0.03224700056247093,baseline,BSM,,[1.0],False,True
+pokec_n,region,100,,0.8881284950043568,0.055039702195130574,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,region,100,,0.991292645536765,0.025630827372959686,baseline,FW-Disparity,,[0.98],True,False
+pokec_n,region,100,,0.9915898472451349,0.024883925082189506,baseline,FW-Disparity,,[0.97],False,False
+pokec_n,region,100,,1.0,0.0355901664375111,baseline,FW-Disparity,,"[0.99, 1.0]",False,False
+pokec_n,region,100,,1.0021072141022724,0.037071732836914895,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,100,,0.8493280535466982,0.00032293946001597795,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,100,,0.9682659405106817,0.0009017451671716747,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,100,,0.9977900122100797,0.024535461260377853,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,region,100,,0.846275115842143,0.0006104735850409188,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,100,,1.0001066943849253,0.028400020718981345,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,region,150,,0.9941794770808914,0.02684484348358314,baseline,BSM,,[1.0],False,False
+pokec_n,region,150,,0.9939729981544315,0.015335511785193129,baseline,BSM,,[0.99],False,True
+pokec_n,region,150,,0.9810756371890583,0.0014192138604569582,baseline,BSM,,"[0.97, 0.98]",False,True
+pokec_n,region,150,,0.9194682577554666,0.053696504940226125,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,region,150,,1.0,0.03493702290273691,baseline,FW-Disparity,,[1.0],False,False
+pokec_n,region,150,,0.9918985481408699,0.023774674321686035,baseline,FW-Disparity,,[0.98],False,False
+pokec_n,region,150,,0.9917570834439098,0.02297641270071271,baseline,FW-Disparity,,[0.97],False,False
+pokec_n,region,150,,0.9918985481408699,0.023774674321686035,baseline,FW-Disparity,,[0.99],False,False
+pokec_n,region,150,,0.9974061150138797,0.0321085615266834,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,150,,0.8476737490922813,0.00014835497772539008,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,150,,0.9722497335983199,0.0011290589437569498,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,region,150,,0.9965981630790822,0.02746204707798941,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,150,,0.8501454386591006,0.0016597489319205155,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,150,,0.9967214029036765,0.02561016582259293,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,200,,0.9967692367296586,0.026732359109855552,baseline,BSM,,[1.0],False,False
+pokec_n,region,200,,0.9885908004853929,0.0015642812326008837,baseline,BSM,,"[0.97, 0.98]",False,True
+pokec_n,region,200,,0.9950744003363936,0.016733248514359977,baseline,BSM,,[0.99],False,False
+pokec_n,region,200,,0.9398169362373505,0.04329161804579913,baseline,Degree,,"[0.97, 0.98, 0.99, 1.0]",True,False
+pokec_n,region,200,,0.9867550979042903,0.016611315770861695,baseline,FW-Disparity,,[0.98],True,False
+pokec_n,region,200,,0.9838265832814549,0.015976151871975375,baseline,FW-Disparity,,[0.97],True,False
+pokec_n,region,200,,1.0,0.03334442201080162,baseline,FW-Disparity,,"[0.99, 1.0]",False,False
+pokec_n,region,200,,0.9982737022702446,0.03193924669479653,baseline,Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,200,,0.8629305131275289,0.0004986943401681654,baseline,Maximin-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,200,,0.9778150408635591,0.001847862200479139,baseline,MultiFW-MaxMin,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,region,200,,0.998842387680052,0.02866831883079779,baseline,Parity-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,200,,0.8621105491830449,0.002683278706187592,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",False,False
+pokec_n,region,200,,0.9987329828287047,0.026118045447387467,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,False
 rice_facebook,age,25,,0.5148505899004415,0.04412979358805447,baseline,AGE,,"[0.97, 0.98, 0.99, 1.0]",True,False
 rice_facebook,age,25,,0.9941546448179662,0.04085872200263502,baseline,BSM,,[0.99],True,False
 rice_facebook,age,25,,0.9982729769416802,0.0360376749922911,baseline,BSM,,[1.0],True,False
@@ -390,6 +655,156 @@ twitter_political,leaning,200,,0.9972594916628477,0.021631620430386356,baseline,
 twitter_political,leaning,200,,0.9714767159022808,0.09288245527612138,baseline,Prior,,"[0.97, 0.98, 0.99, 1.0]",True,False
 twitter_political,leaning,200,,0.9267139382280215,0.22873754731656726,baseline,RFIM,,"[0.97, 0.98, 0.99, 1.0]",True,False
 twitter_political,leaning,200,,1.0000935694896989,0.05073391236712477,baseline,Welfare-Greedy,,"[0.97, 0.98, 0.99, 1.0]",False,True
+pokec_n,age,25,,0.9739373237740834,0.009911956951430642,bsm_sweep,BSM (every tau),1.0,[],False,False
+pokec_n,age,25,,0.9668102152607296,0.014166255801946595,bsm_sweep,BSM (every tau),0.9,[],True,False
+pokec_n,age,25,,0.9890746776816792,0.015726754822435053,bsm_sweep,BSM (every tau),0.8,[],True,False
+pokec_n,age,25,,0.9782195090220714,0.015876146237526888,bsm_sweep,BSM (every tau),0.7,[],True,False
+pokec_n,age,25,,0.9784947955309455,0.021068943229444664,bsm_sweep,BSM (every tau),0.6,[],True,False
+pokec_n,age,25,,1.0014129894087216,0.022394925137290432,bsm_sweep,BSM (every tau),0.5,[],False,False
+pokec_n,age,25,,1.0022574973762681,0.027738422492596955,bsm_sweep,BSM (every tau),0.4,[],False,False
+pokec_n,age,25,,1.0048398624337074,0.022674901071647706,bsm_sweep,BSM (every tau),0.3,[],False,False
+pokec_n,age,25,,0.9953387777900621,0.02417084760341582,bsm_sweep,BSM (every tau),0.2,[],True,False
+pokec_n,age,25,,1.0022574973762681,0.027738422492596955,bsm_sweep,BSM (every tau),0.1,[],False,False
+pokec_n,age,50,,0.9797420592708199,0.019427182999624343,bsm_sweep,BSM (every tau),1.0,[],True,False
+pokec_n,age,50,,0.9811470982028481,0.03347169634452778,bsm_sweep,BSM (every tau),0.9,[],True,False
+pokec_n,age,50,,0.987665363660896,0.03847522648242793,bsm_sweep,BSM (every tau),0.8,[],True,False
+pokec_n,age,50,,1.0033475785598462,0.05025455560235027,bsm_sweep,BSM (every tau),0.7,[],False,False
+pokec_n,age,50,,0.9988070387883998,0.04571504848164329,bsm_sweep,BSM (every tau),0.6,[],False,False
+pokec_n,age,50,,0.9921570659518449,0.04650107618874452,bsm_sweep,BSM (every tau),0.5,[],True,False
+pokec_n,age,50,,1.0033475785598462,0.05025455560235027,bsm_sweep,BSM (every tau),0.4,[],False,False
+pokec_n,age,50,,1.0033475785598462,0.05025455560235027,bsm_sweep,BSM (every tau),0.3,[],False,False
+pokec_n,age,50,,1.0033475785598462,0.05025455560235027,bsm_sweep,BSM (every tau),0.2,[],False,False
+pokec_n,age,50,,0.9956873043796933,0.046760323154949573,bsm_sweep,BSM (every tau),0.1,[],False,False
+pokec_n,age,100,,0.982522559917092,0.038194972693626095,bsm_sweep,BSM (every tau),1.0,[],True,False
+pokec_n,age,100,,0.9966810976178422,0.05637065351323012,bsm_sweep,BSM (every tau),0.9,[],False,False
+pokec_n,age,100,,0.9948707638553104,0.05839592710527575,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,age,100,,0.9961708285082511,0.05840686450241307,bsm_sweep,BSM (every tau),0.7,[],False,False
+pokec_n,age,100,,0.9982383214479431,0.058884509960697926,bsm_sweep,BSM (every tau),0.6,[],False,False
+pokec_n,age,100,,0.9982383214479431,0.058884509960697926,bsm_sweep,BSM (every tau),0.5,[],False,False
+pokec_n,age,100,,0.9943932100721813,0.059010761317895635,bsm_sweep,BSM (every tau),0.4,[],False,False
+pokec_n,age,100,,0.9982383214479431,0.058884509960697926,bsm_sweep,BSM (every tau),0.3,[],False,False
+pokec_n,age,100,,1.0021072141022724,0.05901405213198567,bsm_sweep,BSM (every tau),0.2,[],False,True
+pokec_n,age,100,,1.0021072141022724,0.05901405213198567,bsm_sweep,BSM (every tau),0.1,[],False,True
+pokec_n,age,150,,0.9827219332526844,0.043373041534550766,bsm_sweep,BSM (every tau),1.0,[],False,False
+pokec_n,age,150,,0.9950281086018579,0.056200928421033775,bsm_sweep,BSM (every tau),0.9,[],False,False
+pokec_n,age,150,,0.9935740353324399,0.056195206253200264,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,age,150,,0.9972548329071638,0.05696972149470428,bsm_sweep,BSM (every tau),0.7,[],False,False
+pokec_n,age,150,,0.9971768680520287,0.05833921887355792,bsm_sweep,BSM (every tau),0.6,[],False,False
+pokec_n,age,150,,0.9971768680520287,0.05833921887355792,bsm_sweep,BSM (every tau),0.5,[],False,False
+pokec_n,age,150,,0.9957693752586861,0.05854761924927612,bsm_sweep,BSM (every tau),0.4,[],False,False
+pokec_n,age,150,,0.9971042818841532,0.05865442712911828,bsm_sweep,BSM (every tau),0.3,[],False,False
+pokec_n,age,150,,0.9974061150138797,0.05856303056993309,bsm_sweep,BSM (every tau),0.2,[],False,False
+pokec_n,age,150,,0.9969229731252586,0.05893664539801077,bsm_sweep,BSM (every tau),0.1,[],False,False
+pokec_n,age,200,,0.9878660185683716,0.04376704267308065,bsm_sweep,BSM (every tau),1.0,[],True,False
+pokec_n,age,200,,0.997667503810933,0.05370299406493842,bsm_sweep,BSM (every tau),0.9,[],False,False
+pokec_n,age,200,,0.996959543197322,0.054663060042167116,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,age,200,,1.0002290864917378,0.055414260773268637,bsm_sweep,BSM (every tau),0.7,[],False,False
+pokec_n,age,200,,0.9968928140852745,0.05640695366149373,bsm_sweep,BSM (every tau),0.6,[],True,False
+pokec_n,age,200,,0.9987018279471598,0.056343291031304504,bsm_sweep,BSM (every tau),0.5,[],True,False
+pokec_n,age,200,,0.9981143644466559,0.05631846004567473,bsm_sweep,BSM (every tau),0.4,[],True,False
+pokec_n,age,200,,0.9983549922810402,0.05607836646944142,bsm_sweep,BSM (every tau),0.3,[],True,False
+pokec_n,age,200,,0.9983549922810402,0.05607836646944142,bsm_sweep,BSM (every tau),0.2,[],True,False
+pokec_n,age,200,,0.9983549922810402,0.05607836646944142,bsm_sweep,BSM (every tau),0.1,[],True,False
+pokec_n,gender,25,,0.9858526414998556,0.002002858921872304,bsm_sweep,BSM (every tau),1.0,[],True,False
+pokec_n,gender,25,,1.0001385312754336,0.004489452608934387,bsm_sweep,BSM (every tau),0.9,[],False,True
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,bsm_sweep,BSM (every tau),0.8,[],False,True
+pokec_n,gender,25,,0.9736392447263024,0.004526510686481765,bsm_sweep,BSM (every tau),0.7,[],True,False
+pokec_n,gender,25,,0.9787290850704874,0.004508003090025407,bsm_sweep,BSM (every tau),0.6,[],True,False
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,bsm_sweep,BSM (every tau),0.5,[],False,True
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,bsm_sweep,BSM (every tau),0.4,[],False,True
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,bsm_sweep,BSM (every tau),0.3,[],False,True
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,bsm_sweep,BSM (every tau),0.2,[],False,True
+pokec_n,gender,25,,1.0022574973762681,0.004570308260022228,bsm_sweep,BSM (every tau),0.1,[],False,True
+pokec_n,gender,50,,0.9755007932725794,0.009962336399367028,bsm_sweep,BSM (every tau),1.0,[],False,True
+pokec_n,gender,50,,0.9826064544114137,0.016400908667381253,bsm_sweep,BSM (every tau),0.9,[],False,False
+pokec_n,gender,50,,0.9929799967255815,0.02071575822274123,bsm_sweep,BSM (every tau),0.8,[],True,False
+pokec_n,gender,50,,0.9964977373729876,0.022725734432158112,bsm_sweep,BSM (every tau),0.7,[],True,False
+pokec_n,gender,50,,1.0033475785598462,0.026237169935420065,bsm_sweep,BSM (every tau),0.6,[],False,False
+pokec_n,gender,50,,1.0033475785598462,0.026237169935420065,bsm_sweep,BSM (every tau),0.5,[],False,False
+pokec_n,gender,50,,1.0033475785598462,0.026237169935420065,bsm_sweep,BSM (every tau),0.4,[],False,False
+pokec_n,gender,50,,0.9922484920226188,0.02491280784420012,bsm_sweep,BSM (every tau),0.3,[],True,False
+pokec_n,gender,50,,1.0033475785598462,0.026237169935420065,bsm_sweep,BSM (every tau),0.2,[],False,False
+pokec_n,gender,50,,0.9888503455203678,0.02499761596663662,bsm_sweep,BSM (every tau),0.1,[],True,False
+pokec_n,gender,100,,0.984717700476339,0.02412906823392376,bsm_sweep,BSM (every tau),1.0,[],False,True
+pokec_n,gender,100,,0.9966749916138856,0.03261772546299016,bsm_sweep,BSM (every tau),0.9,[],False,False
+pokec_n,gender,100,,0.995683762213695,0.03621194042980448,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,gender,100,,0.9975458363255431,0.0372101627380092,bsm_sweep,BSM (every tau),0.7,[],False,False
+pokec_n,gender,100,,0.9982383214479431,0.038007176900202236,bsm_sweep,BSM (every tau),0.6,[],False,False
+pokec_n,gender,100,,0.9982383214479431,0.038007176900202236,bsm_sweep,BSM (every tau),0.5,[],False,False
+pokec_n,gender,100,,1.0021072141022724,0.03790311000133069,bsm_sweep,BSM (every tau),0.4,[],False,True
+pokec_n,gender,100,,1.0021072141022724,0.03790311000133069,bsm_sweep,BSM (every tau),0.3,[],False,True
+pokec_n,gender,100,,1.0021072141022724,0.03790311000133069,bsm_sweep,BSM (every tau),0.2,[],False,True
+pokec_n,gender,100,,1.0021072141022724,0.03790311000133069,bsm_sweep,BSM (every tau),0.1,[],False,True
+pokec_n,gender,150,,0.9821960751875727,0.028137714599884817,bsm_sweep,BSM (every tau),1.0,[],False,False
+pokec_n,gender,150,,0.9927611746927647,0.03551327982943331,bsm_sweep,BSM (every tau),0.9,[],False,False
+pokec_n,gender,150,,0.9974259064941854,0.03783260820639578,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,gender,150,,0.9971768680520287,0.038392233127513484,bsm_sweep,BSM (every tau),0.7,[],True,False
+pokec_n,gender,150,,0.9971768680520287,0.038392233127513484,bsm_sweep,BSM (every tau),0.6,[],True,False
+pokec_n,gender,150,,0.9974061150138797,0.038270487719235274,bsm_sweep,BSM (every tau),0.5,[],True,False
+pokec_n,gender,150,,0.9971768680520287,0.038392233127513484,bsm_sweep,BSM (every tau),0.4,[],True,False
+pokec_n,gender,150,,0.9974061150138797,0.038270487719235274,bsm_sweep,BSM (every tau),0.3,[],True,False
+pokec_n,gender,150,,0.9957693752586861,0.03838411450221833,bsm_sweep,BSM (every tau),0.2,[],True,False
+pokec_n,gender,150,,0.9974061150138797,0.038270487719235274,bsm_sweep,BSM (every tau),0.1,[],True,False
+pokec_n,gender,200,,0.986069314041199,0.029357992468450306,bsm_sweep,BSM (every tau),1.0,[],False,False
+pokec_n,gender,200,,0.9940399772379291,0.03540060280422047,bsm_sweep,BSM (every tau),0.9,[],False,False
+pokec_n,gender,200,,0.9968958605948638,0.03711136430939743,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,gender,200,,0.9995879801391498,0.038387797921038996,bsm_sweep,BSM (every tau),0.7,[],False,False
+pokec_n,gender,200,,0.9982737022702446,0.038499437814326604,bsm_sweep,BSM (every tau),0.6,[],False,False
+pokec_n,gender,200,,0.9986205096956329,0.03840371361156855,bsm_sweep,BSM (every tau),0.5,[],False,False
+pokec_n,gender,200,,0.9980330940287299,0.03846275796369378,bsm_sweep,BSM (every tau),0.4,[],False,False
+pokec_n,gender,200,,0.9982737022702446,0.038499437814326604,bsm_sweep,BSM (every tau),0.3,[],False,False
+pokec_n,gender,200,,0.9980330940287299,0.03846275796369378,bsm_sweep,BSM (every tau),0.2,[],False,False
+pokec_n,gender,200,,0.9982737022702446,0.038499437814326604,bsm_sweep,BSM (every tau),0.1,[],False,False
+pokec_n,region,25,,0.9862945799490483,0.0041222684850590816,bsm_sweep,BSM (every tau),1.0,[],True,False
+pokec_n,region,25,,0.9804115888516068,0.0022923277292120695,bsm_sweep,BSM (every tau),0.9,[],True,False
+pokec_n,region,25,,0.997177425263043,0.007084030227193186,bsm_sweep,BSM (every tau),0.8,[],True,False
+pokec_n,region,25,,0.9787290850704874,0.009803478796278006,bsm_sweep,BSM (every tau),0.7,[],True,False
+pokec_n,region,25,,1.0022574973762681,0.010811617470398667,bsm_sweep,BSM (every tau),0.6,[],False,True
+pokec_n,region,25,,1.0022574973762681,0.010811617470398667,bsm_sweep,BSM (every tau),0.5,[],False,True
+pokec_n,region,25,,1.0022574973762681,0.010811617470398667,bsm_sweep,BSM (every tau),0.4,[],False,True
+pokec_n,region,25,,1.0022574973762681,0.010811617470398667,bsm_sweep,BSM (every tau),0.3,[],False,True
+pokec_n,region,25,,1.0022574973762681,0.010811617470398667,bsm_sweep,BSM (every tau),0.2,[],False,True
+pokec_n,region,25,,1.0022574973762681,0.010811617470398667,bsm_sweep,BSM (every tau),0.1,[],False,True
+pokec_n,region,50,,0.9738347430028533,0.0028350533995078336,bsm_sweep,BSM (every tau),1.0,[],False,False
+pokec_n,region,50,,0.9849064305598804,0.007515953688532209,bsm_sweep,BSM (every tau),0.9,[],False,True
+pokec_n,region,50,,0.9890422345185428,0.012398963482101066,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,region,50,,0.9901649197493484,0.021236181659775907,bsm_sweep,BSM (every tau),0.7,[],True,False
+pokec_n,region,50,,0.9988070387883998,0.02549414639881368,bsm_sweep,BSM (every tau),0.6,[],False,False
+pokec_n,region,50,,1.0033475785598462,0.02844934887324279,bsm_sweep,BSM (every tau),0.5,[],False,True
+pokec_n,region,50,,1.0033475785598462,0.02844934887324279,bsm_sweep,BSM (every tau),0.4,[],False,True
+pokec_n,region,50,,1.0033475785598462,0.02844934887324279,bsm_sweep,BSM (every tau),0.3,[],False,True
+pokec_n,region,50,,1.0033475785598462,0.02844934887324279,bsm_sweep,BSM (every tau),0.2,[],False,True
+pokec_n,region,50,,1.0033475785598462,0.02844934887324279,bsm_sweep,BSM (every tau),0.1,[],False,True
+pokec_n,region,100,,0.9763986235910155,0.0013858444624597066,bsm_sweep,BSM (every tau),1.0,[],False,True
+pokec_n,region,100,,0.990725558453515,0.013425577114075382,bsm_sweep,BSM (every tau),0.9,[],False,True
+pokec_n,region,100,,0.9980732665199382,0.02645374896149759,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,region,100,,1.0000106051647666,0.03224700056247093,bsm_sweep,BSM (every tau),0.7,[],False,True
+pokec_n,region,100,,0.9952841081863065,0.036598026696389355,bsm_sweep,BSM (every tau),0.6,[],True,False
+pokec_n,region,100,,0.9976710415435155,0.03661768790316888,bsm_sweep,BSM (every tau),0.5,[],True,False
+pokec_n,region,100,,1.0012798827030214,0.036810397762752994,bsm_sweep,BSM (every tau),0.4,[],False,False
+pokec_n,region,100,,1.0021072141022724,0.037071732836914895,bsm_sweep,BSM (every tau),0.3,[],False,False
+pokec_n,region,100,,0.9945749118951834,0.0366263456282635,bsm_sweep,BSM (every tau),0.2,[],True,False
+pokec_n,region,100,,1.0021072141022724,0.037071732836914895,bsm_sweep,BSM (every tau),0.1,[],False,False
+pokec_n,region,150,,0.9810756371890583,0.0014192138604569582,bsm_sweep,BSM (every tau),1.0,[],False,True
+pokec_n,region,150,,0.9939729981544315,0.015335511785193129,bsm_sweep,BSM (every tau),0.9,[],False,True
+pokec_n,region,150,,0.9941794770808914,0.02684484348358314,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,region,150,,0.9966661538636679,0.03325176629997603,bsm_sweep,BSM (every tau),0.7,[],False,False
+pokec_n,region,150,,0.997060260201046,0.033941375312009886,bsm_sweep,BSM (every tau),0.6,[],False,False
+pokec_n,region,150,,0.997060260201046,0.033941375312009886,bsm_sweep,BSM (every tau),0.5,[],False,False
+pokec_n,region,150,,0.9957693752586861,0.03339709717359199,bsm_sweep,BSM (every tau),0.4,[],False,False
+pokec_n,region,150,,0.9974061150138797,0.0321085615266834,bsm_sweep,BSM (every tau),0.3,[],False,False
+pokec_n,region,150,,0.9974061150138797,0.0321085615266834,bsm_sweep,BSM (every tau),0.2,[],False,False
+pokec_n,region,150,,0.9974061150138797,0.0321085615266834,bsm_sweep,BSM (every tau),0.1,[],False,False
+pokec_n,region,200,,0.9885908004853929,0.0015642812326008837,bsm_sweep,BSM (every tau),1.0,[],False,True
+pokec_n,region,200,,0.9950744003363936,0.016733248514359977,bsm_sweep,BSM (every tau),0.9,[],False,False
+pokec_n,region,200,,0.9967692367296586,0.026732359109855552,bsm_sweep,BSM (every tau),0.8,[],False,False
+pokec_n,region,200,,0.9980330940287299,0.031064631036909346,bsm_sweep,BSM (every tau),0.7,[],False,False
+pokec_n,region,200,,0.9982737022702446,0.03193924669479653,bsm_sweep,BSM (every tau),0.6,[],False,False
+pokec_n,region,200,,0.9982737022702446,0.03193924669479653,bsm_sweep,BSM (every tau),0.5,[],False,False
+pokec_n,region,200,,0.9982737022702446,0.03193924669479653,bsm_sweep,BSM (every tau),0.4,[],False,False
+pokec_n,region,200,,0.9980330940287299,0.031064631036909346,bsm_sweep,BSM (every tau),0.3,[],False,False
+pokec_n,region,200,,0.9982737022702446,0.03193924669479653,bsm_sweep,BSM (every tau),0.2,[],False,False
+pokec_n,region,200,,0.9980330940287299,0.031064631036909346,bsm_sweep,BSM (every tau),0.1,[],False,False
 rice_facebook,college,25,,0.9911189421576876,0.03330023691068462,bsm_sweep,BSM (every tau),1.0,[],True,False
 rice_facebook,college,25,,0.9954313760003471,0.03836373187164549,bsm_sweep,BSM (every tau),0.9,[],False,False
 rice_facebook,college,25,,0.9882007855694414,0.03849675324675317,bsm_sweep,BSM (every tau),0.8,[],True,False

@@ -4,61 +4,61 @@ Tuning (validation only): delta=0.005, phi0=0.4, start=greedy, W3 train=True (co
 
 ## T1 (C1): disparity at equal spread
 
-Method: v2-b, greedy start, simple hybrid, certified deployment. 4 test graphs (dataset x attribute), 80 cases.
+Method: v2-b, greedy start, simple hybrid, certified deployment. 7 test graphs (dataset x attribute), 140 cases.
 
 ### real-attribute graphs (headline)
 
 | rho | comparison | test graphs | median of mean difference | p | verdict | case wins / ties / losses |
 |---|---|---|---|---|---|---|
-| 0.97 | best_baseline | 4 | -0.0075 | 0.875 | no difference | 15 / 0 / 5 |
-| 0.97 | BSM | 4 | -0.0992 | 0.125 | no difference | 19 / 0 / 1 |
+| 0.97 | best_baseline | 7 | -0.0065 | 0.469 | no difference | 24 / 0 / 11 |
+| 0.97 | BSM | 7 | -0.0162 | 0.0469 | win | 29 / 0 / 6 |
 | 0.97 | Degree | 4 | -0.0739 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.97 | FW-Disparity | 4 | -0.0135 | 0.25 | no difference | 15 / 0 / 5 |
-| 0.97 | Greedy | 4 | -0.0607 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.97 | Maximin-Greedy | 4 | -0.0274 | 0.125 | no difference | 13 / 0 / 0 |
-| 0.97 | MultiFW-MaxMin | 4 | -0.0667 | 0.125 | no difference | 19 / 0 / 1 |
-| 0.97 | Parity-Greedy | 4 | -0.0152 | 0.125 | no difference | 16 / 0 / 2 |
+| 0.97 | FW-Disparity | 7 | -0.0130 | 0.0312 | win | 30 / 0 / 5 |
+| 0.97 | Greedy | 7 | -0.0364 | 0.0156 | win | 35 / 0 / 0 |
+| 0.97 | Maximin-Greedy | 5 | -0.0244 | 0.125 | no difference | 13 / 0 / 1 |
+| 0.97 | MultiFW-MaxMin | 7 | -0.0130 | 0.0312 | win | 22 / 0 / 4 |
+| 0.97 | Parity-Greedy | 7 | -0.0139 | 0.0156 | win | 28 / 0 / 3 |
 | 0.97 | Prior | 1 | -0.0940 | nan | n/a | 2 / 0 / 0 |
 | 0.97 | RFIM | 2 | -0.2637 | 0.5 | no difference | 6 / 0 / 0 |
-| 0.97 | Welfare-Greedy | 4 | -0.0540 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.98 | best_baseline | 4 | -0.0075 | 0.25 | no difference | 15 / 0 / 5 |
-| 0.98 | BSM | 4 | -0.0884 | 0.125 | no difference | 20 / 0 / 0 |
+| 0.97 | Welfare-Greedy | 7 | -0.0288 | 0.0156 | win | 35 / 0 / 0 |
+| 0.98 | best_baseline | 7 | -0.0071 | 0.156 | no difference | 23 / 0 / 12 |
+| 0.98 | BSM | 7 | -0.0161 | 0.0312 | win | 32 / 0 / 3 |
 | 0.98 | Degree | 4 | -0.0682 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.98 | FW-Disparity | 4 | -0.0127 | 0.125 | no difference | 16 / 0 / 4 |
-| 0.98 | Greedy | 4 | -0.0550 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.98 | Maximin-Greedy | 4 | -0.0271 | 0.125 | no difference | 6 / 0 / 0 |
-| 0.98 | MultiFW-MaxMin | 3 | -0.0666 | 0.25 | no difference | 12 / 0 / 1 |
-| 0.98 | Parity-Greedy | 4 | -0.0133 | 0.125 | no difference | 14 / 0 / 2 |
+| 0.98 | FW-Disparity | 7 | -0.0125 | 0.0156 | win | 30 / 0 / 5 |
+| 0.98 | Greedy | 7 | -0.0351 | 0.0156 | win | 35 / 0 / 0 |
+| 0.98 | Maximin-Greedy | 5 | -0.0236 | 0.125 | no difference | 6 / 0 / 1 |
+| 0.98 | MultiFW-MaxMin | 5 | -0.0118 | 0.125 | no difference | 13 / 0 / 2 |
+| 0.98 | Parity-Greedy | 7 | -0.0131 | 0.0156 | win | 25 / 0 / 3 |
 | 0.98 | RFIM | 2 | -0.3103 | 0.5 | no difference | 4 / 0 / 0 |
-| 0.98 | Welfare-Greedy | 4 | -0.0483 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.99 | best_baseline | 4 | -0.0077 | 0.125 | no difference | 14 / 0 / 6 |
-| 0.99 | BSM | 4 | -0.0729 | 0.125 | no difference | 20 / 0 / 0 |
+| 0.98 | Welfare-Greedy | 7 | -0.0260 | 0.0156 | win | 35 / 0 / 0 |
+| 0.99 | best_baseline | 7 | -0.0052 | 0.0469 | win | 22 / 0 / 13 |
+| 0.99 | BSM | 7 | -0.0127 | 0.0156 | win | 34 / 0 / 1 |
 | 0.99 | Degree | 4 | -0.0518 | 0.125 | no difference | 17 / 0 / 0 |
-| 0.99 | FW-Disparity | 4 | -0.0228 | 0.125 | no difference | 17 / 0 / 3 |
-| 0.99 | Greedy | 4 | -0.0419 | 0.125 | no difference | 20 / 0 / 0 |
+| 0.99 | FW-Disparity | 7 | -0.0104 | 0.0156 | win | 30 / 0 / 5 |
+| 0.99 | Greedy | 7 | -0.0335 | 0.0156 | win | 35 / 0 / 0 |
 | 0.99 | Maximin-Greedy | 2 | -0.0595 | 0.5 | no difference | 2 / 0 / 0 |
-| 0.99 | MultiFW-MaxMin | 3 | -0.0736 | 0.25 | no difference | 7 / 0 / 0 |
-| 0.99 | Parity-Greedy | 4 | -0.0117 | 0.25 | no difference | 9 / 0 / 4 |
-| 0.99 | Welfare-Greedy | 4 | -0.0352 | 0.125 | no difference | 20 / 0 / 0 |
-| 1 | best_baseline | 4 | +0.0000 | nan | n/a | 0 / 18 / 0 |
+| 0.99 | MultiFW-MaxMin | 4 | -0.0418 | 0.25 | no difference | 7 / 0 / 1 |
+| 0.99 | Parity-Greedy | 7 | -0.0110 | 0.0469 | win | 16 / 0 / 8 |
+| 0.99 | Welfare-Greedy | 7 | -0.0244 | 0.0156 | win | 35 / 0 / 0 |
+| 1 | best_baseline | 7 | +0.0000 | nan | n/a | 0 / 32 / 0 |
 | 1 | BSM | 1 | +0.0000 | nan | n/a | 0 / 1 / 0 |
-| 1 | FW-Disparity | 4 | +0.0000 | nan | n/a | 0 / 18 / 0 |
+| 1 | FW-Disparity | 7 | +0.0000 | nan | n/a | 0 / 32 / 0 |
 | 1 | Greedy | 1 | +0.0000 | nan | n/a | 0 / 1 / 0 |
 | 1 | Welfare-Greedy | 1 | +0.0000 | nan | n/a | 0 / 1 / 0 |
 
 Holds across the range (a significant win at every rho in [0.97, 0.98, 0.99]; rho = 1.0 is reported above but not required, design section 21):
 
 - best_baseline: no
-- BSM: no
+- BSM: yes
 - Degree: no
-- FW-Disparity: no
-- Greedy: no
+- FW-Disparity: yes
+- Greedy: yes
 - Maximin-Greedy: no
 - MultiFW-MaxMin: no
-- Parity-Greedy: no
+- Parity-Greedy: yes
 - Prior: no (no paired cases at rho [0.98, 0.99])
 - RFIM: no (no paired cases at rho [0.99])
-- Welfare-Greedy: no
+- Welfare-Greedy: yes
 
 ### degree-group graphs (supplement)
 
@@ -68,86 +68,86 @@ No rows yet.
 
 | rho | comparison | test graphs | median of mean difference | p | verdict | case wins / ties / losses |
 |---|---|---|---|---|---|---|
-| 0.97 | best_baseline | 4 | -0.0075 | 0.875 | no difference | 15 / 0 / 5 |
-| 0.97 | BSM | 4 | -0.0992 | 0.125 | no difference | 19 / 0 / 1 |
+| 0.97 | best_baseline | 7 | -0.0065 | 0.469 | no difference | 24 / 0 / 11 |
+| 0.97 | BSM | 7 | -0.0162 | 0.0469 | win | 29 / 0 / 6 |
 | 0.97 | Degree | 4 | -0.0739 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.97 | FW-Disparity | 4 | -0.0135 | 0.25 | no difference | 15 / 0 / 5 |
-| 0.97 | Greedy | 4 | -0.0607 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.97 | Maximin-Greedy | 4 | -0.0274 | 0.125 | no difference | 13 / 0 / 0 |
-| 0.97 | MultiFW-MaxMin | 4 | -0.0667 | 0.125 | no difference | 19 / 0 / 1 |
-| 0.97 | Parity-Greedy | 4 | -0.0152 | 0.125 | no difference | 16 / 0 / 2 |
+| 0.97 | FW-Disparity | 7 | -0.0130 | 0.0312 | win | 30 / 0 / 5 |
+| 0.97 | Greedy | 7 | -0.0364 | 0.0156 | win | 35 / 0 / 0 |
+| 0.97 | Maximin-Greedy | 5 | -0.0244 | 0.125 | no difference | 13 / 0 / 1 |
+| 0.97 | MultiFW-MaxMin | 7 | -0.0130 | 0.0312 | win | 22 / 0 / 4 |
+| 0.97 | Parity-Greedy | 7 | -0.0139 | 0.0156 | win | 28 / 0 / 3 |
 | 0.97 | Prior | 1 | -0.0940 | nan | n/a | 2 / 0 / 0 |
 | 0.97 | RFIM | 2 | -0.2637 | 0.5 | no difference | 6 / 0 / 0 |
-| 0.97 | Welfare-Greedy | 4 | -0.0540 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.98 | best_baseline | 4 | -0.0075 | 0.25 | no difference | 15 / 0 / 5 |
-| 0.98 | BSM | 4 | -0.0884 | 0.125 | no difference | 20 / 0 / 0 |
+| 0.97 | Welfare-Greedy | 7 | -0.0288 | 0.0156 | win | 35 / 0 / 0 |
+| 0.98 | best_baseline | 7 | -0.0071 | 0.156 | no difference | 23 / 0 / 12 |
+| 0.98 | BSM | 7 | -0.0161 | 0.0312 | win | 32 / 0 / 3 |
 | 0.98 | Degree | 4 | -0.0682 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.98 | FW-Disparity | 4 | -0.0127 | 0.125 | no difference | 16 / 0 / 4 |
-| 0.98 | Greedy | 4 | -0.0550 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.98 | Maximin-Greedy | 4 | -0.0271 | 0.125 | no difference | 6 / 0 / 0 |
-| 0.98 | MultiFW-MaxMin | 3 | -0.0666 | 0.25 | no difference | 12 / 0 / 1 |
-| 0.98 | Parity-Greedy | 4 | -0.0133 | 0.125 | no difference | 14 / 0 / 2 |
+| 0.98 | FW-Disparity | 7 | -0.0125 | 0.0156 | win | 30 / 0 / 5 |
+| 0.98 | Greedy | 7 | -0.0351 | 0.0156 | win | 35 / 0 / 0 |
+| 0.98 | Maximin-Greedy | 5 | -0.0236 | 0.125 | no difference | 6 / 0 / 1 |
+| 0.98 | MultiFW-MaxMin | 5 | -0.0118 | 0.125 | no difference | 13 / 0 / 2 |
+| 0.98 | Parity-Greedy | 7 | -0.0131 | 0.0156 | win | 25 / 0 / 3 |
 | 0.98 | RFIM | 2 | -0.3103 | 0.5 | no difference | 4 / 0 / 0 |
-| 0.98 | Welfare-Greedy | 4 | -0.0483 | 0.125 | no difference | 20 / 0 / 0 |
-| 0.99 | best_baseline | 4 | -0.0077 | 0.125 | no difference | 14 / 0 / 6 |
-| 0.99 | BSM | 4 | -0.0729 | 0.125 | no difference | 20 / 0 / 0 |
+| 0.98 | Welfare-Greedy | 7 | -0.0260 | 0.0156 | win | 35 / 0 / 0 |
+| 0.99 | best_baseline | 7 | -0.0052 | 0.0469 | win | 22 / 0 / 13 |
+| 0.99 | BSM | 7 | -0.0127 | 0.0156 | win | 34 / 0 / 1 |
 | 0.99 | Degree | 4 | -0.0518 | 0.125 | no difference | 17 / 0 / 0 |
-| 0.99 | FW-Disparity | 4 | -0.0228 | 0.125 | no difference | 17 / 0 / 3 |
-| 0.99 | Greedy | 4 | -0.0419 | 0.125 | no difference | 20 / 0 / 0 |
+| 0.99 | FW-Disparity | 7 | -0.0104 | 0.0156 | win | 30 / 0 / 5 |
+| 0.99 | Greedy | 7 | -0.0335 | 0.0156 | win | 35 / 0 / 0 |
 | 0.99 | Maximin-Greedy | 2 | -0.0595 | 0.5 | no difference | 2 / 0 / 0 |
-| 0.99 | MultiFW-MaxMin | 3 | -0.0736 | 0.25 | no difference | 7 / 0 / 0 |
-| 0.99 | Parity-Greedy | 4 | -0.0117 | 0.25 | no difference | 9 / 0 / 4 |
-| 0.99 | Welfare-Greedy | 4 | -0.0352 | 0.125 | no difference | 20 / 0 / 0 |
-| 1 | best_baseline | 4 | +0.0000 | nan | n/a | 0 / 18 / 0 |
+| 0.99 | MultiFW-MaxMin | 4 | -0.0418 | 0.25 | no difference | 7 / 0 / 1 |
+| 0.99 | Parity-Greedy | 7 | -0.0110 | 0.0469 | win | 16 / 0 / 8 |
+| 0.99 | Welfare-Greedy | 7 | -0.0244 | 0.0156 | win | 35 / 0 / 0 |
+| 1 | best_baseline | 7 | +0.0000 | nan | n/a | 0 / 32 / 0 |
 | 1 | BSM | 1 | +0.0000 | nan | n/a | 0 / 1 / 0 |
-| 1 | FW-Disparity | 4 | +0.0000 | nan | n/a | 0 / 18 / 0 |
+| 1 | FW-Disparity | 7 | +0.0000 | nan | n/a | 0 / 32 / 0 |
 | 1 | Greedy | 1 | +0.0000 | nan | n/a | 0 / 1 / 0 |
 | 1 | Welfare-Greedy | 1 | +0.0000 | nan | n/a | 0 / 1 / 0 |
 
 Holds across the range (a significant win at every rho in [0.97, 0.98, 0.99]; rho = 1.0 is reported above but not required, design section 21):
 
 - best_baseline: no
-- BSM: no
+- BSM: yes
 - Degree: no
-- FW-Disparity: no
-- Greedy: no
+- FW-Disparity: yes
+- Greedy: yes
 - Maximin-Greedy: no
 - MultiFW-MaxMin: no
-- Parity-Greedy: no
+- Parity-Greedy: yes
 - Prior: no (no paired cases at rho [0.98, 0.99])
 - RFIM: no (no paired cases at rho [0.99])
-- Welfare-Greedy: no
+- Welfare-Greedy: yes
 
 ### Ablation (one component changed; difference = method - row, negative favours the method)
 
 | rho | row | test graphs | mean disparity (row) | median of mean difference | p | verdict |
 |---|---|---|---|---|---|---|
 | 0.97 | start: learned | 0 | n/a | n/a | n/a | not run |
-| 0.97 | proposer: exhaustive | 0 | n/a | n/a | n/a | not run |
-| 0.97 | acceptance: (a) labelled only | 0 | n/a | n/a | n/a | not run |
-| 0.97 | acceptance: (b0) published rule | 0 | n/a | n/a | n/a | not run |
-| 0.97 | deployment: final search set | 4 | 0.0458 | +0.0021 | 0.25 | no difference |
-| 0.97 | deployment: path rule (T2's) | 4 | 0.0490 | -0.0001 | 0.625 | no difference |
+| 0.97 | proposer: exhaustive | 1 | 0.0070 | +0.0019 | nan | n/a |
+| 0.97 | acceptance: (a) labelled only | 1 | 0.0089 | +0.0000 | nan | n/a |
+| 0.97 | acceptance: (b0) published rule | 1 | 0.0105 | -0.0016 | nan | n/a |
+| 0.97 | deployment: final search set | 7 | 0.0317 | +0.0001 | 0.156 | no difference |
+| 0.97 | deployment: path rule (T2's) | 7 | 0.0336 | -0.0000 | 0.312 | no difference |
 | 0.98 | start: learned | 0 | n/a | n/a | n/a | not run |
-| 0.98 | proposer: exhaustive | 0 | n/a | n/a | n/a | not run |
-| 0.98 | acceptance: (a) labelled only | 0 | n/a | n/a | n/a | not run |
-| 0.98 | acceptance: (b0) published rule | 0 | n/a | n/a | n/a | not run |
-| 0.98 | deployment: final search set | 4 | 0.0469 | +0.0024 | 0.25 | no difference |
-| 0.98 | deployment: path rule (T2's) | 4 | 0.0476 | +0.0024 | 0.25 | no difference |
+| 0.98 | proposer: exhaustive | 1 | 0.0264 | -0.0137 | nan | n/a |
+| 0.98 | acceptance: (a) labelled only | 1 | 0.0127 | +0.0000 | nan | n/a |
+| 0.98 | acceptance: (b0) published rule | 1 | 0.0291 | -0.0163 | nan | n/a |
+| 0.98 | deployment: final search set | 7 | 0.0346 | +0.0000 | 0.469 | no difference |
+| 0.98 | deployment: path rule (T2's) | 7 | 0.0350 | +0.0000 | 0.438 | no difference |
 | 0.99 | start: learned | 0 | n/a | n/a | n/a | not run |
 | 0.99 | proposer: exhaustive | 0 | n/a | n/a | n/a | not run |
 | 0.99 | acceptance: (a) labelled only | 0 | n/a | n/a | n/a | not run |
 | 0.99 | acceptance: (b0) published rule | 0 | n/a | n/a | n/a | not run |
-| 0.99 | deployment: final search set | 4 | 0.0633 | +0.0014 | 0.375 | no difference |
-| 0.99 | deployment: path rule (T2's) | 4 | 0.0633 | +0.0014 | 0.5 | no difference |
+| 0.99 | deployment: final search set | 7 | 0.0467 | +0.0000 | 0.562 | no difference |
+| 0.99 | deployment: path rule (T2's) | 7 | 0.0468 | +0.0000 | 0.812 | no difference |
 | 1 | start: learned | 0 | n/a | n/a | n/a | not run |
 | 1 | proposer: exhaustive | 0 | n/a | n/a | n/a | not run |
 | 1 | acceptance: (a) labelled only | 0 | n/a | n/a | n/a | not run |
 | 1 | acceptance: (b0) published rule | 0 | n/a | n/a | n/a | not run |
-| 1 | deployment: final search set | 4 | 0.1008 | +0.0281 | 0.125 | no difference |
-| 1 | deployment: path rule (T2's) | 4 | 0.1260 | +0.0000 | nan | n/a |
+| 1 | deployment: final search set | 7 | 0.0706 | +0.0091 | 0.0156 | loss |
+| 1 | deployment: path rule (T2's) | 7 | 0.0873 | +0.0000 | nan | n/a |
 
-Final search sets below the floor by Monte Carlo (es_ratio < rho): 17 of 80; not certified: 19 of 80.
+Final search sets below the floor by Monte Carlo (es_ratio < rho): 35 of 140; not certified: 35 of 140.
 
 ### Results matrix (mean disparity over certified budgets; n = budgets certified; - = none; bold = lowest among the methods certified at every budget; the paired tests above are the formal comparison)
 
@@ -155,6 +155,9 @@ Final search sets below the floor by Monte Carlo (es_ratio < rho): 17 of 80; not
 
 | test graph | FIM-GAT v2 | AGE | BSM | Degree | FW-Disparity | Greedy | Maximin-Greedy | MultiFW-MaxMin | Parity-Greedy | Prior | RFIM | Welfare-Greedy | lower bound |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| pokec_n / age | **0.0147 (5/5)** | - | 0.0309 (5/5) | - | 0.0382 (5/5) | 0.0503 (5/5) | - | 0.0111 (2/5) | 0.0567 (3/5) | - | - | 0.0435 (5/5) | 0.0000 |
+| pokec_n / gender | **0.0174 (5/5)** | - | 0.0200 (5/5) | - | 0.0249 (5/5) | 0.0291 (5/5) | 0.0002 (1/5) | 0.0017 (1/5) | 0.0274 (5/5) | - | - | 0.0281 (5/5) | 0.0000 |
+| pokec_n / region | 0.0067 (5/5) | - | **0.0032 (5/5)** | - | 0.0182 (5/5) | 0.0281 (5/5) | - | 0.0013 (3/5) | 0.0187 (5/5) | - | - | 0.0219 (5/5) | 0.0000 |
 | rice_facebook / age | **0.0156 (5/5)** | - | 0.1768 (5/5) | 0.0870 (5/5) | 0.0286 (5/5) | 0.0720 (5/5) | 0.0357 (3/5) | 0.0853 (5/5) | 0.0320 (5/5) | - | - | 0.0663 (5/5) | 0.0000 |
 | rice_facebook / college | **0.0058 (5/5)** | - | 0.0160 (5/5) | 0.0499 (5/5) | 0.0199 (5/5) | 0.0422 (5/5) | 0.0160 (5/5) | 0.0188 (5/5) | 0.0198 (5/5) | - | 0.1651 (3/5) | 0.0331 (5/5) | 0.0000 |
 | rice_facebook / major | 0.1474 (5/5) | - | 0.3875 (5/5) | 0.3425 (5/5) | **0.1408 (5/5)** | 0.3230 (5/5) | 0.2999 (4/5) | 0.5424 (5/5) | 0.1592 (4/5) | - | 0.5272 (3/5) | 0.3041 (5/5) | 0.0000 |
@@ -164,6 +167,9 @@ Final search sets below the floor by Monte Carlo (es_ratio < rho): 17 of 80; not
 
 | test graph | FIM-GAT v2 | AGE | BSM | Degree | FW-Disparity | Greedy | Maximin-Greedy | MultiFW-MaxMin | Parity-Greedy | Prior | RFIM | Welfare-Greedy | lower bound |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| pokec_n / age | **0.0234 (5/5)** | - | 0.0395 (5/5) | - | 0.0391 (5/5) | 0.0503 (5/5) | - | - | 0.0583 (2/5) | - | - | 0.0435 (5/5) | 0.0000 |
+| pokec_n / gender | **0.0204 (5/5)** | - | 0.0226 (5/5) | - | 0.0249 (5/5) | 0.0291 (5/5) | 0.0002 (1/5) | 0.0017 (1/5) | 0.0274 (5/5) | - | - | 0.0281 (5/5) | 0.0000 |
+| pokec_n / region | 0.0104 (5/5) | - | **0.0089 (5/5)** | - | 0.0185 (5/5) | 0.0281 (5/5) | - | 0.0008 (1/5) | 0.0187 (5/5) | - | - | 0.0219 (5/5) | 0.0000 |
 | rice_facebook / age | **0.0186 (5/5)** | - | 0.1591 (5/5) | 0.0870 (5/5) | 0.0311 (5/5) | 0.0720 (5/5) | 0.0386 (1/5) | 0.0853 (5/5) | 0.0344 (4/5) | - | - | 0.0663 (5/5) | 0.0000 |
 | rice_facebook / college | **0.0071 (5/5)** | - | 0.0160 (5/5) | 0.0499 (5/5) | 0.0200 (5/5) | 0.0422 (5/5) | 0.0284 (2/5) | 0.0188 (5/5) | 0.0198 (5/5) | - | 0.1952 (2/5) | 0.0331 (5/5) | 0.0000 |
 | rice_facebook / major | **0.1398 (5/5)** | - | 0.4209 (5/5) | 0.3425 (5/5) | 0.1417 (5/5) | 0.3230 (5/5) | 0.3249 (2/5) | 0.4600 (3/5) | 0.1839 (3/5) | - | 0.5966 (2/5) | 0.3041 (5/5) | 0.0000 |
@@ -173,6 +179,9 @@ Final search sets below the floor by Monte Carlo (es_ratio < rho): 17 of 80; not
 
 | test graph | FIM-GAT v2 | AGE | BSM | Degree | FW-Disparity | Greedy | Maximin-Greedy | MultiFW-MaxMin | Parity-Greedy | Prior | RFIM | Welfare-Greedy | lower bound |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| pokec_n / age | **0.0351 (5/5)** | - | 0.0478 (5/5) | - | 0.0454 (5/5) | 0.0503 (5/5) | - | - | 0.0582 (1/5) | - | - | 0.0435 (5/5) | 0.0000 |
+| pokec_n / gender | **0.0236 (5/5)** | - | 0.0261 (5/5) | - | 0.0272 (5/5) | 0.0291 (5/5) | - | 0.0017 (1/5) | 0.0274 (5/5) | - | - | 0.0281 (5/5) | 0.0000 |
+| pokec_n / region | **0.0152 (5/5)** | - | 0.0182 (5/5) | - | 0.0256 (5/5) | 0.0281 (5/5) | - | - | 0.0187 (5/5) | - | - | 0.0219 (5/5) | 0.0000 |
 | rice_facebook / age | **0.0245 (5/5)** | - | 0.1349 (5/5) | 0.0870 (5/5) | 0.0367 (5/5) | 0.0720 (5/5) | - | 0.0832 (1/5) | 0.0338 (3/5) | - | - | 0.0663 (5/5) | 0.0000 |
 | rice_facebook / college | **0.0087 (5/5)** | - | 0.0160 (5/5) | 0.0499 (5/5) | 0.0190 (5/5) | 0.0422 (5/5) | 0.0336 (1/5) | 0.0188 (5/5) | 0.0198 (5/5) | - | - | 0.0331 (5/5) | 0.0000 |
 | rice_facebook / major | **0.1723 (5/5)** | - | 0.4334 (5/5) | 0.3425 (5/5) | 0.2254 (5/5) | 0.3230 (5/5) | 0.3145 (1/5) | 0.2215 (1/5) | 0.2068 (2/5) | - | - | 0.3041 (5/5) | 0.0000 |
@@ -182,6 +191,9 @@ Final search sets below the floor by Monte Carlo (es_ratio < rho): 17 of 80; not
 
 | test graph | FIM-GAT v2 | AGE | BSM | Degree | FW-Disparity | Greedy | Maximin-Greedy | MultiFW-MaxMin | Parity-Greedy | Prior | RFIM | Welfare-Greedy | lower bound |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| pokec_n / age | **0.0489 (5/5)** | - | - | - | **0.0489 (5/5)** | - | - | - | - | - | - | - | 0.0000 |
+| pokec_n / gender | **0.0296 (5/5)** | - | - | - | 0.0355 (4/5) | - | - | - | - | - | - | - | 0.0000 |
+| pokec_n / region | **0.0288 (5/5)** | - | - | - | **0.0288 (5/5)** | - | - | - | - | - | - | - | 0.0000 |
 | rice_facebook / age | **0.0690 (5/5)** | - | - | - | 0.0779 (4/5) | - | - | - | - | - | - | - | 0.0000 |
 | rice_facebook / college | **0.0377 (5/5)** | - | - | - | 0.0345 (4/5) | - | - | - | - | - | - | - | 0.0000 |
 | rice_facebook / major | **0.3040 (5/5)** | - | - | - | **0.3040 (5/5)** | - | - | - | - | - | - | - | 0.0000 |
@@ -192,17 +204,17 @@ Certificate pass rate per method (share of all its sets):
 | method | rho 0.97 | rho 0.98 | rho 0.99 | rho 1 |
 |---|---|---|---|---|
 | AGE | 0% | 0% | 0% | 0% |
-| BSM | 100% | 100% | 100% | 5% |
-| Degree | 100% | 100% | 85% | 0% |
+| BSM | 100% | 100% | 100% | 3% |
+| Degree | 57% | 57% | 49% | 0% |
 | FIM-GAT v2 | 100% | 100% | 100% | 100% |
-| FW-Disparity | 100% | 100% | 100% | 90% |
-| Greedy | 100% | 100% | 100% | 5% |
-| Maximin-Greedy | 65% | 30% | 10% | 0% |
-| MultiFW-MaxMin | 100% | 65% | 35% | 0% |
-| Parity-Greedy | 90% | 80% | 65% | 0% |
+| FW-Disparity | 100% | 100% | 100% | 91% |
+| Greedy | 100% | 100% | 100% | 3% |
+| Maximin-Greedy | 40% | 20% | 6% | 0% |
+| MultiFW-MaxMin | 74% | 43% | 23% | 0% |
+| Parity-Greedy | 89% | 80% | 69% | 0% |
 | Prior | 10% | 0% | 0% | 0% |
-| RFIM | 30% | 20% | 0% | 0% |
-| Welfare-Greedy | 100% | 100% | 100% | 5% |
+| RFIM | 17% | 11% | 0% | 0% |
+| Welfare-Greedy | 100% | 100% | 100% | 3% |
 
 ## Spread-disparity trade-off (descriptive)
 
@@ -210,6 +222,9 @@ Per test graph, over budgets: the external baselines' sets (T1 rows and BSM's wh
 
 | test graph | baseline sets | dominated by the method | dominate a method point | incomparable | of which below the method's least spread |
 |---|---|---|---|---|---|
+| pokec_n / age | 117 | 45 (38%) | 7 (6%) | 65 | 7 |
+| pokec_n / gender | 119 | 33 (28%) | 29 (24%) | 57 | 9 |
+| pokec_n / region | 119 | 27 (23%) | 36 (30%) | 56 | 11 |
 | rice_facebook / age | 132 | 99 (75%) | 6 (5%) | 27 | 0 |
 | rice_facebook / college | 123 | 57 (46%) | 7 (6%) | 59 | 0 |
 | rice_facebook / major | 131 | 87 (66%) | 14 (11%) | 32 | 2 |
@@ -251,7 +266,7 @@ T2 pass (pre-registered rule): no (hidden communities: n/a; labelled disparity: 
 
 Secondary, held-out attributes (T1 rows, path-rule deployments):
 
-- rho 0.97: v2-b - v2-a held-out-attribute disparity over 0 cases: median +nan, p nan (n/a)
+- rho 0.97: v2-b - v2-a held-out-attribute disparity over 1 cases: median +0.0000, p nan (n/a)
 - rho 0.99: v2-b - v2-a held-out-attribute disparity over 0 cases: median +nan, p nan (n/a)
 
 ## T3: does the learning add anything?
