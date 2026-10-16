@@ -79,3 +79,7 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.0 h of queries, plus the cached stag
     rice_facebook    k=200  rho=0.99 LocalSearch      infl=   679.14 disp=0.0047 es pass (ratio 0.9938, lower 0.9931) (12.0s)  [certificate FAIL]
     rice_facebook    k=200  rho=0.99 Simple-v2        infl=   678.93 disp=0.0035 es pass (ratio 0.9935, lower 0.9928) (7.7s)  [certificate FAIL]
     rice_facebook    k=200  rho=0.99 AGE              infl=   617.12 disp=0.0856 es FAIL (ratio 0.9031, lower 0.9023) (53.8s)  [certificate FAIL]
+    rice_facebook    k=200  rho=0.99 Prior            infl=   437.01 disp=0.1797 es FAIL (ratio 0.6395, lower 0.6377) (327.8s)  [certificate FAIL]
+    rice_facebook    k=200  rho=0.99 BSM              infl=   682.34 disp=0.0101 es pass (ratio 0.9985, lower 0.9978) (3.0s)  [certificate pass]
+    rice_facebook    k=200  rho=0.99 MultiFW-MaxMin   infl=   679.09 disp=0.0126 es pass (ratio 0.9938, lower 0.9929) (3.9s)  [certificate FAIL]
+    rice_facebook    k=200  rho=0.99 RFIM             infl=   672.04 disp=0.2243 es FAIL (ratio 0.9834, lower 0.9826) (2.5s)  [certificate FAIL]

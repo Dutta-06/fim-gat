@@ -18,3 +18,4 @@ DONE abl-pokec-n-region rc=0
 DONE abl-pokec-n-gender rc=0
 [2026-10-16T07:44:49Z] abl-pokec-n-age chunk 1 rc=0 37min peak_mem_used_gb=0
 DONE abl-pokec-n-age rc=0
+[2026-10-16T08:24:46Z] certsens-rice_facebook-R16 chunk 1 rc=0 39min peak_mem_used_gb=0
