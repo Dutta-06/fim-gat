@@ -413,3 +413,7 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.1 h of queries, plus the cached stag
     epinions         k=50   rho=0.98 Prior            missing: time_limit: took 3791.2s > 1800s
     epinions         k=50   rho=0.99 Prior            missing: time_limit: took 3791.2s > 1800s
     epinions         k=50   rho=1.0 Prior            missing: time_limit: took 3791.2s > 1800s
+    epinions         k=100  rho=0.97 Prior            missing: time_limit: took 3407.7s > 1800s
+    epinions         k=100  rho=0.98 Prior            missing: time_limit: took 3407.7s > 1800s
+    epinions         k=100  rho=0.99 Prior            missing: time_limit: took 3407.7s > 1800s
+    epinions         k=100  rho=1.0 Prior            missing: time_limit: took 3407.7s > 1800s
