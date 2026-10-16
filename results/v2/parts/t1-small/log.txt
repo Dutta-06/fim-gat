@@ -1260,3 +1260,209 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.4 h of queries, plus the cached stag
     rice_facebook    k=200  rho=0.97 LocalSearch      infl=   673.00 disp=0.0073 es pass (ratio 0.9839, lower 0.9831) (6.2s)  [certificate pass]
     rice_facebook    k=200  rho=0.97 Simple-v2        infl=   677.62 disp=0.0083 es pass (ratio 0.9906, lower 0.9899) (3.8s)  [certificate pass]
     rice_facebook    k=200  rho=0.98 FIM-GAT v2       infl=   673.66 disp=0.0103 es pass (ratio 0.9849, lower 0.9840) (5.2s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 5.2s (32 rounds) certify 0.7s, deployed the path set (path rule: the final set), certificate pass]
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/learned/simple, v2-b/greedy/exhaustive, v2-a/greedy/simple, v2-b0/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+  no constructor checkpoint for train seed 0: /home/user/fim-gat/results/v2/models/constructor_s0.pt
+  no constructor checkpoint for train seed 1: /home/user/fim-gat/results/v2/models/constructor_s1.pt
+  no constructor checkpoint for train seed 2: /home/user/fim-gat/results/v2/models/constructor_s2.pt
+  no constructor checkpoint for train seed 3: /home/user/fim-gat/results/v2/models/constructor_s3.pt
+  no constructor checkpoint for train seed 4: /home/user/fim-gat/results/v2/models/constructor_s4.pt
+note: no checkpoints for ['v2-b/learned/simple']; those configurations are not run
+rice_facebook / college: every query already in /home/user/fim-gat/results/v2/parts/t1-small/t1.csv
+rice_facebook / age (small): 13 queries (7 FIM-GAT, 6 baseline); rough estimate 0.0 h
+rice_facebook / major (small): 100 queries (60 FIM-GAT, 40 baseline); rough estimate 0.1 h
+twitter_political / leaning (small): 100 queries (60 FIM-GAT, 40 baseline); rough estimate 0.1 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.2 h of queries, plus the cached stages per graph
+
+=== rice_facebook / age: 13 pending queries ===
+  load              0.1s  peak GPU nan / nan GB
+  reference        54.0s  peak GPU nan / nan GB
+  rr_sample         4.4s  peak GPU nan / nan GB
+  cert_sample       3.4s  peak GPU nan / nan GB
+  cover_index       0.3s  peak GPU nan / nan GB
+  rice_facebook: n=1,216 m=84,886 groups=5; A: R=512 roots=1,216 nnz=8,936,198; B: R=512 roots=1,216 nnz=8,951,729
+    rice_facebook    k=200  rho=0.98 FIM-GAT v2       infl=   678.01 disp=0.0183 es pass (ratio 0.9912, lower 0.9905) (3.4s)  [v2-b0/greedy/simple s-1: select 0.0s search 3.4s (23 rounds) certify 1.4s, deployed the path set (path rule: the final set), certificate pass]
+  suite_index       1.8s  peak GPU nan / nan GB
+    rice_facebook    k=200  rho=0.98 LocalSearch      infl=   673.00 disp=0.0073 es pass (ratio 0.9839, lower 0.9831) (7.4s)  [certificate pass]
+    rice_facebook    k=200  rho=0.98 Simple-v2        infl=   677.62 disp=0.0083 es pass (ratio 0.9906, lower 0.9899) (4.2s)  [certificate pass]
+    rice_facebook    k=200  rho=0.99 FIM-GAT v2       infl=   680.05 disp=0.0074 es pass (ratio 0.9942, lower 0.9935) (15.7s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 15.7s (59 rounds) certify 1.0s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.99 FIM-GAT v2       infl=   680.24 disp=0.0090 es pass (ratio 0.9945, lower 0.9938) (1.2s)  [v2-a/greedy/simple s-1: select 0.0s search 1.2s (21 rounds) certify 1.3s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.99 FIM-GAT v2       infl=   680.01 disp=0.0093 es pass (ratio 0.9941, lower 0.9934) (2.7s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.7s (24 rounds) certify 1.3s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.99 LocalSearch      infl=   678.87 disp=0.0062 es pass (ratio 0.9925, lower 0.9918) (7.8s)  [certificate pass]
+    rice_facebook    k=200  rho=0.99 Simple-v2        infl=   678.90 disp=0.0135 es pass (ratio 0.9925, lower 0.9919) (4.3s)  [certificate pass]
+    rice_facebook    k=200  rho=1.0 FIM-GAT v2       infl=   684.02 disp=0.0709 es pass (ratio 1.0000, lower 1.0000) (7.8s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 7.8s (45 rounds) certify 1.2s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=200  rho=1.0 FIM-GAT v2       infl=   684.02 disp=0.0709 es pass (ratio 1.0000, lower 1.0000) (2.0s)  [v2-a/greedy/simple s-1: select 0.0s search 2.0s (26 rounds) certify 1.6s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=200  rho=1.0 FIM-GAT v2       infl=   684.02 disp=0.0709 es pass (ratio 1.0000, lower 1.0000) (3.3s)  [v2-b0/greedy/simple s-1: select 0.0s search 3.3s (22 rounds) certify 1.2s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=200  rho=1.0 LocalSearch      infl=   681.91 disp=0.0168 es FAIL (ratio 0.9969, lower 0.9963) (8.3s)  [certificate FAIL]
+    rice_facebook    k=200  rho=1.0 Simple-v2        infl=   682.13 disp=0.0225 es FAIL (ratio 0.9972, lower 0.9966) (6.2s)  [certificate FAIL]
+
+=== rice_facebook / major: 100 pending queries ===
+  load              0.0s  peak GPU nan / nan GB
+  reference        54.6s  peak GPU nan / nan GB
+  rr_sample         3.0s  peak GPU nan / nan GB
+  cert_sample       2.9s  peak GPU nan / nan GB
+  cover_index       0.1s  peak GPU nan / nan GB
+  rice_facebook: n=1,216 m=84,886 groups=52; A: R=512 roots=1,216 nnz=8,936,198; B: R=512 roots=1,216 nnz=8,951,729
+    rice_facebook    k=25   rho=0.97 FIM-GAT v2       infl=   322.51 disp=0.1262 es FAIL (ratio 0.9721, lower 0.9676) (6.7s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 6.7s (15 rounds) certify 1.1s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=25   rho=0.97 FIM-GAT v2       infl=   323.18 disp=0.1432 es FAIL (ratio 0.9741, lower 0.9697) (2.9s)  [v2-a/greedy/simple s-1: select 0.0s search 2.9s (20 rounds) certify 1.1s, deployed the path set (path rule: the path set), certificate pass]
+    rice_facebook    k=25   rho=0.97 FIM-GAT v2       infl=   324.48 disp=0.1268 es pass (ratio 0.9780, lower 0.9737) (3.1s)  [v2-b0/greedy/simple s-1: select 0.0s search 3.1s (11 rounds) certify 1.1s, deployed the path set (path rule: the final set), certificate pass]
+  suite_index       1.6s  peak GPU nan / nan GB
+    rice_facebook    k=25   rho=0.97 LocalSearch      infl=   323.64 disp=0.0703 es pass (ratio 0.9755, lower 0.9711) (4.7s)  [certificate pass]
+    rice_facebook    k=25   rho=0.97 Simple-v2        infl=   324.09 disp=0.1404 es pass (ratio 0.9768, lower 0.9725) (2.5s)  [certificate pass]
+    rice_facebook    k=25   rho=0.98 FIM-GAT v2       infl=   326.47 disp=0.0806 es FAIL (ratio 0.9840, lower 0.9800) (9.5s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 9.5s (21 rounds) certify 1.1s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=25   rho=0.98 FIM-GAT v2       infl=   325.98 disp=0.1253 es FAIL (ratio 0.9825, lower 0.9782) (1.0s)  [v2-a/greedy/simple s-1: select 0.0s search 1.0s (7 rounds) certify 1.1s, deployed the path set (path rule: the path set), certificate pass]
+    rice_facebook    k=25   rho=0.98 FIM-GAT v2       infl=   326.69 disp=0.1301 es pass (ratio 0.9847, lower 0.9806) (2.3s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.3s (9 rounds) certify 1.1s, deployed the path set (path rule: the path set), certificate pass]
+    rice_facebook    k=25   rho=0.98 LocalSearch      infl=   326.70 disp=0.1300 es pass (ratio 0.9847, lower 0.9805) (2.9s)  [certificate pass]
+    rice_facebook    k=25   rho=0.98 Simple-v2        infl=   325.72 disp=0.1293 es FAIL (ratio 0.9817, lower 0.9776) (2.2s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 FIM-GAT v2       infl=   330.07 disp=0.1509 es pass (ratio 0.9948, lower 0.9911) (2.1s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 2.1s (4 rounds) certify 0.3s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=25   rho=0.99 FIM-GAT v2       infl=   329.55 disp=0.1313 es FAIL (ratio 0.9933, lower 0.9895) (1.1s)  [v2-a/greedy/simple s-1: select 0.0s search 1.1s (7 rounds) certify 1.0s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=25   rho=0.99 FIM-GAT v2       infl=   329.82 disp=0.1240 es pass (ratio 0.9941, lower 0.9903) (2.4s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.4s (10 rounds) certify 1.2s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=25   rho=0.99 LocalSearch      infl=   329.77 disp=0.1216 es pass (ratio 0.9939, lower 0.9904) (1.8s)  [certificate pass]
+    rice_facebook    k=25   rho=0.99 Simple-v2        infl=   329.48 disp=0.1262 es FAIL (ratio 0.9931, lower 0.9893) (2.0s)  [certificate pass]
+    rice_facebook    k=25   rho=1.0 FIM-GAT v2       infl=   331.78 disp=0.2215 es pass (ratio 1.0000, lower 1.0000) (1.8s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 1.8s (4 rounds) certify 0.3s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=25   rho=1.0 FIM-GAT v2       infl=   331.78 disp=0.2215 es pass (ratio 1.0000, lower 1.0000) (0.5s)  [v2-a/greedy/simple s-1: select 0.0s search 0.5s (2 rounds) certify 0.6s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=25   rho=1.0 FIM-GAT v2       infl=   331.78 disp=0.2215 es pass (ratio 1.0000, lower 1.0000) (0.9s)  [v2-b0/greedy/simple s-1: select 0.0s search 0.9s (3 rounds) certify 0.5s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=25   rho=1.0 LocalSearch      infl=   331.47 disp=0.2155 es FAIL (ratio 0.9990, lower 0.9956) (1.5s)  [certificate FAIL]
+    rice_facebook    k=25   rho=1.0 Simple-v2        infl=   331.47 disp=0.2155 es FAIL (ratio 0.9990, lower 0.9956) (1.3s)  [certificate FAIL]
+    rice_facebook    k=50   rho=0.97 FIM-GAT v2       infl=   418.00 disp=0.1219 es pass (ratio 0.9731, lower 0.9704) (23.6s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 23.6s (55 rounds) certify 1.3s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=50   rho=0.97 FIM-GAT v2       infl=   419.34 disp=0.1164 es pass (ratio 0.9762, lower 0.9736) (2.5s)  [v2-a/greedy/simple s-1: select 0.0s search 2.5s (12 rounds) certify 1.3s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=50   rho=0.97 FIM-GAT v2       infl=   420.63 disp=0.1156 es pass (ratio 0.9792, lower 0.9767) (3.6s)  [v2-b0/greedy/simple s-1: select 0.0s search 3.6s (13 rounds) certify 1.0s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=50   rho=0.97 LocalSearch      infl=   418.36 disp=0.0814 es pass (ratio 0.9739, lower 0.9712) (7.3s)  [certificate pass]
+    rice_facebook    k=50   rho=0.97 Simple-v2        infl=   418.36 disp=0.0814 es pass (ratio 0.9739, lower 0.9712) (3.2s)  [certificate pass]
+    rice_facebook    k=50   rho=0.98 FIM-GAT v2       infl=   422.76 disp=0.1287 es pass (ratio 0.9842, lower 0.9818) (14.4s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 14.4s (32 rounds) certify 0.8s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=50   rho=0.98 FIM-GAT v2       infl=   422.41 disp=0.1130 es pass (ratio 0.9834, lower 0.9810) (2.8s)  [v2-a/greedy/simple s-1: select 0.0s search 2.8s (13 rounds) certify 1.0s, deployed the path set (path rule: the path set), certificate pass]
+    rice_facebook    k=50   rho=0.98 FIM-GAT v2       infl=   422.69 disp=0.1156 es pass (ratio 0.9840, lower 0.9816) (7.0s)  [v2-b0/greedy/simple s-1: select 0.0s search 7.0s (24 rounds) certify 1.0s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=50   rho=0.98 LocalSearch      infl=   422.87 disp=0.1101 es pass (ratio 0.9844, lower 0.9821) (6.0s)  [certificate pass]
+    rice_facebook    k=50   rho=0.98 Simple-v2        infl=   422.64 disp=0.1075 es pass (ratio 0.9839, lower 0.9815) (4.6s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 FIM-GAT v2       infl=   426.92 disp=0.1344 es pass (ratio 0.9939, lower 0.9917) (3.1s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 3.1s (8 rounds) certify 0.9s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=50   rho=0.99 FIM-GAT v2       infl=   427.39 disp=0.1934 es pass (ratio 0.9950, lower 0.9929) (1.0s)  [v2-a/greedy/simple s-1: select 0.0s search 1.0s (4 rounds) certify 0.7s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=50   rho=0.99 FIM-GAT v2       infl=   427.02 disp=0.2041 es pass (ratio 0.9941, lower 0.9921) (7.5s)  [v2-b0/greedy/simple s-1: select 0.0s search 7.5s (26 rounds) certify 1.0s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=50   rho=0.99 LocalSearch      infl=   426.47 disp=0.1403 es pass (ratio 0.9928, lower 0.9907) (3.7s)  [certificate pass]
+    rice_facebook    k=50   rho=0.99 Simple-v2        infl=   427.36 disp=0.1984 es pass (ratio 0.9949, lower 0.9930) (2.5s)  [certificate pass]
+    rice_facebook    k=50   rho=1.0 FIM-GAT v2       infl=   429.55 disp=0.2217 es pass (ratio 1.0000, lower 1.0000) (2.5s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 2.5s (7 rounds) certify 0.8s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=50   rho=1.0 FIM-GAT v2       infl=   429.55 disp=0.2217 es pass (ratio 1.0000, lower 1.0000) (0.8s)  [v2-a/greedy/simple s-1: select 0.0s search 0.8s (3 rounds) certify 0.6s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=50   rho=1.0 FIM-GAT v2       infl=   429.55 disp=0.2217 es pass (ratio 1.0000, lower 1.0000) (1.2s)  [v2-b0/greedy/simple s-1: select 0.0s search 1.2s (4 rounds) certify 0.6s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=50   rho=1.0 LocalSearch      infl=   429.08 disp=0.2112 es FAIL (ratio 0.9989, lower 0.9970) (2.5s)  [certificate FAIL]
+    rice_facebook    k=50   rho=1.0 Simple-v2        infl=   429.87 disp=0.2209 es FAIL (ratio 1.0007, lower 0.9988) (2.2s)  [certificate FAIL]
+    rice_facebook    k=100  rho=0.97 FIM-GAT v2       infl=   530.04 disp=0.1216 es pass (ratio 0.9734, lower 0.9718) (28.2s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 28.2s (77 rounds) certify 1.3s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=100  rho=0.97 FIM-GAT v2       infl=   530.26 disp=0.1238 es pass (ratio 0.9738, lower 0.9722) (12.0s)  [v2-a/greedy/simple s-1: select 0.0s search 12.0s (42 rounds) certify 0.9s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=100  rho=0.97 FIM-GAT v2       infl=   535.64 disp=0.1697 es pass (ratio 0.9837, lower 0.9823) (4.2s)  [v2-b0/greedy/simple s-1: select 0.0s search 4.2s (15 rounds) certify 1.0s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=100  rho=0.97 LocalSearch      infl=   530.01 disp=0.1151 es pass (ratio 0.9734, lower 0.9717) (29.2s)  [certificate pass]
+    rice_facebook    k=100  rho=0.97 Simple-v2        infl=   529.53 disp=0.1092 es pass (ratio 0.9725, lower 0.9709) (11.0s)  [certificate pass]
+    rice_facebook    k=100  rho=0.98 FIM-GAT v2       infl=   534.94 disp=0.1208 es pass (ratio 0.9824, lower 0.9810) (20.6s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 20.6s (60 rounds) certify 1.0s, deployed the path set (path rule: the path set), certificate pass]
+    rice_facebook    k=100  rho=0.98 FIM-GAT v2       infl=   536.27 disp=0.1197 es pass (ratio 0.9849, lower 0.9834) (7.1s)  [v2-a/greedy/simple s-1: select 0.0s search 7.1s (28 rounds) certify 1.0s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=100  rho=0.98 FIM-GAT v2       infl=   535.22 disp=0.1263 es pass (ratio 0.9829, lower 0.9815) (15.6s)  [v2-b0/greedy/simple s-1: select 0.0s search 15.6s (46 rounds) certify 0.9s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=100  rho=0.98 LocalSearch      infl=   534.86 disp=0.1079 es pass (ratio 0.9823, lower 0.9808) (23.5s)  [certificate pass]
+    rice_facebook    k=100  rho=0.98 Simple-v2        infl=   534.64 disp=0.1235 es pass (ratio 0.9819, lower 0.9805) (9.7s)  [certificate pass]
+    rice_facebook    k=100  rho=0.99 FIM-GAT v2       infl=   540.57 disp=0.1601 es pass (ratio 0.9927, lower 0.9915) (8.8s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 8.8s (32 rounds) certify 1.1s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=100  rho=0.99 FIM-GAT v2       infl=   540.49 disp=0.1877 es pass (ratio 0.9926, lower 0.9914) (5.7s)  [v2-a/greedy/simple s-1: select 0.0s search 5.7s (22 rounds) certify 0.9s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=100  rho=0.99 FIM-GAT v2       infl=   541.04 disp=0.1832 es pass (ratio 0.9936, lower 0.9925) (11.5s)  [v2-b0/greedy/simple s-1: select 0.0s search 11.5s (33 rounds) certify 0.8s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=100  rho=0.99 LocalSearch      infl=   540.79 disp=0.1392 es pass (ratio 0.9931, lower 0.9919) (8.8s)  [certificate pass]
+    rice_facebook    k=100  rho=0.99 Simple-v2        infl=   540.54 disp=0.1421 es pass (ratio 0.9927, lower 0.9915) (7.7s)  [certificate pass]
+    rice_facebook    k=100  rho=1.0 FIM-GAT v2       infl=   544.52 disp=0.3845 es pass (ratio 1.0000, lower 1.0000) (5.0s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 5.0s (16 rounds) certify 0.9s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=100  rho=1.0 FIM-GAT v2       infl=   544.52 disp=0.3845 es pass (ratio 1.0000, lower 1.0000) (3.3s)  [v2-a/greedy/simple s-1: select 0.0s search 3.3s (11 rounds) certify 1.2s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=100  rho=1.0 FIM-GAT v2       infl=   544.52 disp=0.3845 es pass (ratio 1.0000, lower 1.0000) (5.3s)  [v2-b0/greedy/simple s-1: select 0.0s search 5.3s (14 rounds) certify 0.8s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=100  rho=1.0 LocalSearch      infl=   543.42 disp=0.2069 es FAIL (ratio 0.9980, lower 0.9969) (4.7s)  [certificate FAIL]
+    rice_facebook    k=100  rho=1.0 Simple-v2        infl=   543.64 disp=0.2903 es FAIL (ratio 0.9984, lower 0.9972) (4.6s)  [certificate FAIL]
+    rice_facebook    k=150  rho=0.97 FIM-GAT v2       infl=   606.19 disp=0.1211 es pass (ratio 0.9736, lower 0.9727) (25.3s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 25.3s (80 rounds) certify 1.0s, deployed the path set (path rule: the path set), certificate pass]
+    rice_facebook    k=150  rho=0.97 FIM-GAT v2       infl=   606.92 disp=0.1432 es pass (ratio 0.9748, lower 0.9738) (15.0s)  [v2-a/greedy/simple s-1: select 0.0s search 15.0s (50 rounds) certify 0.9s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=150  rho=0.97 FIM-GAT v2       infl=   615.91 disp=0.1975 es pass (ratio 0.9892, lower 0.9884) (6.8s)  [v2-b0/greedy/simple s-1: select 0.0s search 6.8s (19 rounds) certify 0.8s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=150  rho=0.97 LocalSearch      infl=   605.71 disp=0.1050 es pass (ratio 0.9728, lower 0.9718) (43.8s)  [certificate pass]
+    rice_facebook    k=150  rho=0.97 Simple-v2        infl=   605.90 disp=0.1205 es pass (ratio 0.9731, lower 0.9722) (15.0s)  [certificate pass]
+    rice_facebook    k=150  rho=0.98 FIM-GAT v2       infl=   612.76 disp=0.1151 es pass (ratio 0.9842, lower 0.9833) (21.1s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 21.1s (61 rounds) certify 1.0s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=150  rho=0.98 FIM-GAT v2       infl=   612.06 disp=0.1318 es pass (ratio 0.9830, lower 0.9821) (15.7s)  [v2-a/greedy/simple s-1: select 0.0s search 15.7s (50 rounds) certify 1.5s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=150  rho=0.98 FIM-GAT v2       infl=   615.91 disp=0.1975 es pass (ratio 0.9892, lower 0.9884) (7.0s)  [v2-b0/greedy/simple s-1: select 0.0s search 7.0s (19 rounds) certify 1.1s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=150  rho=0.98 LocalSearch      infl=   612.13 disp=0.1081 es pass (ratio 0.9831, lower 0.9823) (32.6s)  [certificate pass]
+    rice_facebook    k=150  rho=0.98 Simple-v2        infl=   612.34 disp=0.1146 es pass (ratio 0.9835, lower 0.9826) (18.4s)  [certificate pass]
+    rice_facebook    k=150  rho=0.99 FIM-GAT v2       infl=   617.79 disp=0.1671 es pass (ratio 0.9922, lower 0.9914) (20.6s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 20.6s (52 rounds) certify 1.1s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=150  rho=0.99 FIM-GAT v2       infl=   619.06 disp=0.1652 es pass (ratio 0.9943, lower 0.9935) (14.1s)  [v2-a/greedy/simple s-1: select 0.0s search 14.1s (47 rounds) certify 0.9s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=150  rho=0.99 FIM-GAT v2       infl=   618.52 disp=0.1912 es pass (ratio 0.9934, lower 0.9926) (15.3s)  [v2-b0/greedy/simple s-1: select 0.0s search 15.3s (42 rounds) certify 0.8s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=150  rho=0.99 LocalSearch      infl=   618.40 disp=0.1597 es pass (ratio 0.9932, lower 0.9924) (13.0s)  [certificate pass]
+    rice_facebook    k=150  rho=0.99 Simple-v2        infl=   618.33 disp=0.1642 es pass (ratio 0.9931, lower 0.9923) (11.6s)  [certificate pass]
+    rice_facebook    k=150  rho=1.0 FIM-GAT v2       infl=   622.63 disp=0.3575 es pass (ratio 1.0000, lower 1.0000) (12.7s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 12.7s (33 rounds) certify 1.4s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=150  rho=1.0 FIM-GAT v2       infl=   622.63 disp=0.3575 es pass (ratio 1.0000, lower 1.0000) (7.8s)  [v2-a/greedy/simple s-1: select 0.0s search 7.8s (24 rounds) certify 0.9s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=150  rho=1.0 FIM-GAT v2       infl=   622.63 disp=0.3575 es pass (ratio 1.0000, lower 1.0000) (10.8s)  [v2-b0/greedy/simple s-1: select 0.0s search 10.8s (26 rounds) certify 1.0s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=150  rho=1.0 LocalSearch      infl=   621.41 disp=0.1901 es FAIL (ratio 0.9980, lower 0.9973) (12.2s)  [certificate FAIL]
+    rice_facebook    k=150  rho=1.0 Simple-v2        infl=   621.13 disp=0.1923 es FAIL (ratio 0.9976, lower 0.9968) (8.8s)  [certificate FAIL]
+    rice_facebook    k=200  rho=0.97 FIM-GAT v2       infl=   666.25 disp=0.1336 es pass (ratio 0.9750, lower 0.9741) (19.9s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 19.9s (69 rounds) certify 1.1s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.97 FIM-GAT v2       infl=   672.10 disp=0.2042 es pass (ratio 0.9835, lower 0.9828) (14.4s)  [v2-a/greedy/simple s-1: select 0.0s search 14.4s (49 rounds) certify 1.2s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.97 FIM-GAT v2       infl=   673.93 disp=0.1634 es pass (ratio 0.9862, lower 0.9855) (9.0s)  [v2-b0/greedy/simple s-1: select 0.0s search 9.0s (25 rounds) certify 0.9s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.97 LocalSearch      infl=   664.45 disp=0.1319 es pass (ratio 0.9723, lower 0.9716) (59.8s)  [certificate pass]
+    rice_facebook    k=200  rho=0.97 Simple-v2        infl=   665.17 disp=0.1183 es pass (ratio 0.9734, lower 0.9727) (15.9s)  [certificate pass]
+    rice_facebook    k=200  rho=0.98 FIM-GAT v2       infl=   672.18 disp=0.1439 es pass (ratio 0.9837, lower 0.9828) (27.6s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 27.6s (78 rounds) certify 1.0s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.98 FIM-GAT v2       infl=   674.13 disp=0.2159 es pass (ratio 0.9865, lower 0.9858) (10.5s)  [v2-a/greedy/simple s-1: select 0.0s search 10.5s (38 rounds) certify 0.9s, deployed the path set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.98 FIM-GAT v2       infl=   672.59 disp=0.1489 es pass (ratio 0.9843, lower 0.9835) (17.6s)  [v2-b0/greedy/simple s-1: select 0.0s search 17.6s (50 rounds) certify 1.1s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.98 LocalSearch      infl=   672.02 disp=0.1340 es pass (ratio 0.9834, lower 0.9827) (46.3s)  [certificate pass]
+    rice_facebook    k=200  rho=0.98 Simple-v2        infl=   672.05 disp=0.1189 es pass (ratio 0.9835, lower 0.9828) (16.9s)  [certificate pass]
+    rice_facebook    k=200  rho=0.99 FIM-GAT v2       infl=   678.87 disp=0.1722 es pass (ratio 0.9934, lower 0.9927) (24.7s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 24.7s (71 rounds) certify 1.2s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.99 FIM-GAT v2       infl=   679.65 disp=0.2358 es pass (ratio 0.9946, lower 0.9939) (6.9s)  [v2-a/greedy/simple s-1: select 0.0s search 6.9s (25 rounds) certify 0.8s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.99 FIM-GAT v2       infl=   679.26 disp=0.1786 es pass (ratio 0.9940, lower 0.9933) (11.2s)  [v2-b0/greedy/simple s-1: select 0.0s search 11.2s (34 rounds) certify 1.1s, deployed the final set (path rule: the final set), certificate pass]
+    rice_facebook    k=200  rho=0.99 LocalSearch      infl=   678.97 disp=0.1713 es pass (ratio 0.9936, lower 0.9928) (21.2s)  [certificate pass]
+    rice_facebook    k=200  rho=0.99 Simple-v2        infl=   678.99 disp=0.2132 es pass (ratio 0.9936, lower 0.9929) (13.6s)  [certificate pass]
+    rice_facebook    k=200  rho=1.0 FIM-GAT v2       infl=   683.35 disp=0.3350 es pass (ratio 1.0000, lower 1.0000) (17.3s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 17.3s (46 rounds) certify 1.1s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=200  rho=1.0 FIM-GAT v2       infl=   683.35 disp=0.3350 es pass (ratio 1.0000, lower 1.0000) (8.5s)  [v2-a/greedy/simple s-1: select 0.0s search 8.5s (28 rounds) certify 0.9s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=200  rho=1.0 FIM-GAT v2       infl=   683.35 disp=0.3350 es pass (ratio 1.0000, lower 1.0000) (8.9s)  [v2-b0/greedy/simple s-1: select 0.0s search 8.9s (25 rounds) certify 0.9s, deployed the reference set (path rule: the reference set), certificate pass]
+    rice_facebook    k=200  rho=1.0 LocalSearch      infl=   681.95 disp=0.1829 es FAIL (ratio 0.9980, lower 0.9973) (12.9s)  [certificate FAIL]
+    rice_facebook    k=200  rho=1.0 Simple-v2        infl=   682.73 disp=0.2217 es FAIL (ratio 0.9991, lower 0.9984) (8.9s)  [certificate FAIL]
+
+=== twitter_political / leaning: 100 pending queries ===
+  load              0.0s  peak GPU nan / nan GB
+  reference        37.6s  peak GPU nan / nan GB
+  rr_sample         0.7s  peak GPU nan / nan GB
+  cert_sample       0.9s  peak GPU nan / nan GB
+  cover_index       0.1s  peak GPU nan / nan GB
+  twitter_political: n=3,753 m=13,986 groups=3; A: R=512 roots=3,753 nnz=8,709,624; B: R=512 roots=3,753 nnz=8,706,428
+    twitter_political k=25   rho=0.97 FIM-GAT v2       infl=   963.74 disp=0.0879 es pass (ratio 0.9758, lower 0.9738) (2.5s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 2.5s (5 rounds) certify 0.7s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=25   rho=0.97 FIM-GAT v2       infl=   962.89 disp=0.0906 es pass (ratio 0.9749, lower 0.9728) (0.6s)  [v2-a/greedy/simple s-1: select 0.0s search 0.6s (4 rounds) certify 1.0s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=25   rho=0.97 FIM-GAT v2       infl=   964.72 disp=0.0983 es pass (ratio 0.9768, lower 0.9747) (2.1s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.1s (5 rounds) certify 1.2s, deployed the final set (path rule: the final set), certificate pass]
+  suite_index       1.5s  peak GPU nan / nan GB
+    twitter_political k=25   rho=0.97 LocalSearch      infl=   963.74 disp=0.0879 es pass (ratio 0.9758, lower 0.9738) (2.8s)  [certificate pass]
+    twitter_political k=25   rho=0.97 Simple-v2        infl=   962.60 disp=0.0916 es pass (ratio 0.9746, lower 0.9725) (5.2s)  [certificate pass]
+    twitter_political k=25   rho=0.98 FIM-GAT v2       infl=   975.02 disp=0.0969 es pass (ratio 0.9872, lower 0.9852) (1.9s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 1.9s (6 rounds) certify 1.0s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=25   rho=0.98 FIM-GAT v2       infl=   973.66 disp=0.0948 es pass (ratio 0.9858, lower 0.9838) (0.7s)  [v2-a/greedy/simple s-1: select 0.0s search 0.7s (4 rounds) certify 1.0s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=25   rho=0.98 FIM-GAT v2       infl=   973.77 disp=0.0993 es pass (ratio 0.9860, lower 0.9840) (1.9s)  [v2-b0/greedy/simple s-1: select 0.0s search 1.9s (5 rounds) certify 1.0s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=25   rho=0.98 LocalSearch      infl=   975.02 disp=0.0969 es pass (ratio 0.9872, lower 0.9852) (3.0s)  [certificate pass]
+    twitter_political k=25   rho=0.98 Simple-v2        infl=   973.66 disp=0.0948 es pass (ratio 0.9858, lower 0.9838) (4.7s)  [certificate pass]
+    twitter_political k=25   rho=0.99 FIM-GAT v2       infl=   983.14 disp=0.1039 es pass (ratio 0.9954, lower 0.9935) (1.6s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 1.6s (5 rounds) certify 0.8s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=25   rho=0.99 FIM-GAT v2       infl=   983.14 disp=0.1039 es pass (ratio 0.9954, lower 0.9935) (0.5s)  [v2-a/greedy/simple s-1: select 0.0s search 0.5s (3 rounds) certify 0.8s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=25   rho=0.99 FIM-GAT v2       infl=   984.81 disp=0.1062 es pass (ratio 0.9971, lower 0.9953) (1.6s)  [v2-b0/greedy/simple s-1: select 0.0s search 1.6s (4 rounds) certify 0.7s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=25   rho=0.99 LocalSearch      infl=   982.31 disp=0.1034 es pass (ratio 0.9946, lower 0.9926) (2.7s)  [certificate pass]
+    twitter_political k=25   rho=0.99 Simple-v2        infl=   983.29 disp=0.1289 es pass (ratio 0.9956, lower 0.9937) (3.3s)  [certificate pass]
+    twitter_political k=25   rho=1.0 FIM-GAT v2       infl=   987.65 disp=0.1349 es pass (ratio 1.0000, lower 1.0000) (2.1s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 2.1s (3 rounds) certify 0.2s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_political k=25   rho=1.0 FIM-GAT v2       infl=   987.65 disp=0.1349 es pass (ratio 1.0000, lower 1.0000) (0.2s)  [v2-a/greedy/simple s-1: select 0.0s search 0.2s (1 rounds) certify 0.2s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_political k=25   rho=1.0 FIM-GAT v2       infl=   987.65 disp=0.1349 es pass (ratio 1.0000, lower 1.0000) (0.9s)  [v2-b0/greedy/simple s-1: select 0.0s search 0.9s (2 rounds) certify 0.2s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_political k=25   rho=1.0 LocalSearch      infl=   987.65 disp=0.1349 es pass (ratio 1.0000, lower 1.0000) (2.3s)  [certificate pass]
+    twitter_political k=25   rho=1.0 Simple-v2        infl=   987.65 disp=0.1349 es pass (ratio 1.0000, lower 1.0000) (2.9s)  [certificate pass]
+    twitter_political k=50   rho=0.97 FIM-GAT v2       infl=  1230.80 disp=0.0711 es pass (ratio 0.9757, lower 0.9742) (2.0s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 2.0s (6 rounds) certify 0.9s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=50   rho=0.97 FIM-GAT v2       infl=  1230.35 disp=0.0399 es pass (ratio 0.9754, lower 0.9739) (1.4s)  [v2-a/greedy/simple s-1: select 0.0s search 1.4s (11 rounds) certify 1.4s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=50   rho=0.97 FIM-GAT v2       infl=  1230.52 disp=0.0487 es pass (ratio 0.9755, lower 0.9740) (2.4s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.4s (8 rounds) certify 1.5s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=50   rho=0.97 LocalSearch      infl=  1230.35 disp=0.0399 es pass (ratio 0.9754, lower 0.9739) (5.4s)  [certificate pass]
+    twitter_political k=50   rho=0.97 Simple-v2        infl=  1230.04 disp=0.0413 es pass (ratio 0.9751, lower 0.9737) (5.3s)  [certificate pass]
+    twitter_political k=50   rho=0.98 FIM-GAT v2       infl=  1243.65 disp=0.0605 es pass (ratio 0.9859, lower 0.9845) (2.0s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 2.0s (9 rounds) certify 1.4s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=50   rho=0.98 FIM-GAT v2       infl=  1243.51 disp=0.0707 es pass (ratio 0.9858, lower 0.9844) (0.7s)  [v2-a/greedy/simple s-1: select 0.0s search 0.7s (5 rounds) certify 1.3s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=50   rho=0.98 FIM-GAT v2       infl=  1243.17 disp=0.0620 es pass (ratio 0.9855, lower 0.9842) (2.8s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.8s (9 rounds) certify 1.4s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=50   rho=0.98 LocalSearch      infl=  1242.82 disp=0.0598 es pass (ratio 0.9852, lower 0.9838) (4.7s)  [certificate pass]
+    twitter_political k=50   rho=0.98 Simple-v2        infl=  1243.65 disp=0.0605 es pass (ratio 0.9859, lower 0.9845) (5.7s)  [certificate pass]
+    twitter_political k=50   rho=0.99 FIM-GAT v2       infl=  1256.14 disp=0.0829 es pass (ratio 0.9958, lower 0.9945) (2.2s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 2.2s (8 rounds) certify 1.2s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=50   rho=0.99 FIM-GAT v2       infl=  1256.14 disp=0.0829 es pass (ratio 0.9958, lower 0.9945) (0.6s)  [v2-a/greedy/simple s-1: select 0.0s search 0.6s (5 rounds) certify 1.4s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=50   rho=0.99 FIM-GAT v2       infl=  1256.45 disp=0.0840 es pass (ratio 0.9960, lower 0.9948) (2.0s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.0s (7 rounds) certify 1.3s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=50   rho=0.99 LocalSearch      infl=  1255.71 disp=0.0816 es pass (ratio 0.9955, lower 0.9942) (4.4s)  [certificate pass]
+    twitter_political k=50   rho=0.99 Simple-v2        infl=  1256.14 disp=0.0829 es pass (ratio 0.9958, lower 0.9945) (5.7s)  [certificate pass]
+    twitter_political k=50   rho=1.0 FIM-GAT v2       infl=  1261.43 disp=0.1155 es pass (ratio 1.0000, lower 1.0000) (1.4s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 1.4s (4 rounds) certify 0.4s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_political k=50   rho=1.0 FIM-GAT v2       infl=  1261.43 disp=0.1155 es pass (ratio 1.0000, lower 1.0000) (0.4s)  [v2-a/greedy/simple s-1: select 0.0s search 0.4s (2 rounds) certify 0.5s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_political k=50   rho=1.0 FIM-GAT v2       infl=  1261.43 disp=0.1155 es pass (ratio 1.0000, lower 1.0000) (0.9s)  [v2-b0/greedy/simple s-1: select 0.0s search 0.9s (3 rounds) certify 0.5s, deployed the reference set (path rule: the reference set), certificate pass]
+    twitter_political k=50   rho=1.0 LocalSearch      infl=  1261.95 disp=0.1103 es FAIL (ratio 1.0004, lower 0.9992) (3.6s)  [certificate FAIL]
+    twitter_political k=50   rho=1.0 Simple-v2        infl=  1261.95 disp=0.1103 es FAIL (ratio 1.0004, lower 0.9992) (4.2s)  [certificate FAIL]
+    twitter_political k=100  rho=0.97 FIM-GAT v2       infl=  1538.08 disp=0.0019 es pass (ratio 0.9743, lower 0.9733) (3.5s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 3.5s (19 rounds) certify 1.3s, deployed the path set (path rule: the final set), certificate pass]
+    twitter_political k=100  rho=0.97 FIM-GAT v2       infl=  1537.72 disp=0.0021 es pass (ratio 0.9740, lower 0.9730) (2.0s)  [v2-a/greedy/simple s-1: select 0.0s search 2.0s (19 rounds) certify 1.3s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=100  rho=0.97 FIM-GAT v2       infl=  1551.76 disp=0.0325 es pass (ratio 0.9829, lower 0.9820) (2.7s)  [v2-b0/greedy/simple s-1: select 0.0s search 2.7s (10 rounds) certify 1.3s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=100  rho=0.97 LocalSearch      infl=  1539.65 disp=0.0015 es pass (ratio 0.9753, lower 0.9743) (11.5s)  [certificate pass]
+    twitter_political k=100  rho=0.97 Simple-v2        infl=  1561.87 disp=0.0185 es pass (ratio 0.9893, lower 0.9885) (7.7s)  [certificate pass]
+    twitter_political k=100  rho=0.98 FIM-GAT v2       infl=  1554.79 disp=0.0101 es pass (ratio 0.9848, lower 0.9839) (3.8s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 3.8s (19 rounds) certify 1.6s, deployed the path set (path rule: the final set), certificate pass]
+    twitter_political k=100  rho=0.98 FIM-GAT v2       infl=  1554.29 disp=0.0088 es pass (ratio 0.9845, lower 0.9836) (1.6s)  [v2-a/greedy/simple s-1: select 0.0s search 1.6s (18 rounds) certify 1.4s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=100  rho=0.98 FIM-GAT v2       infl=  1555.46 disp=0.0114 es pass (ratio 0.9853, lower 0.9844) (5.3s)  [v2-b0/greedy/simple s-1: select 0.0s search 5.3s (24 rounds) certify 1.5s, deployed the final set (path rule: the final set), certificate pass]
+    twitter_political k=100  rho=0.98 LocalSearch      infl=  1554.71 disp=0.0075 es pass (ratio 0.9848, lower 0.9839) (9.9s)  [certificate pass]
+    twitter_political k=100  rho=0.98 Simple-v2        infl=  1561.87 disp=0.0185 es pass (ratio 0.9893, lower 0.9885) (7.7s)  [certificate pass]
+    twitter_political k=100  rho=0.99 FIM-GAT v2       infl=  1570.23 disp=0.0321 es pass (ratio 0.9946, lower 0.9938) (2.8s)  [v2-b/greedy/exhaustive s-1: select 0.0s search 2.8s (13 rounds) certify 1.2s, deployed the final set (path rule: the final set), certificate pass]
