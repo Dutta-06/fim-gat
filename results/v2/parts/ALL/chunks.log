@@ -2,3 +2,4 @@
 [2026-10-15T21:43:31Z] t1-small chunk 2 rc=0 106min peak_mem_used_gb=0
 DONE t1-small rc=0
 [2026-10-16T01:43:22Z] t2 chunk 1 rc=124 115min peak_mem_used_gb=0
+[2026-10-16T02:58:12Z] t2 chunk 1 rc=0 15min peak_mem_used_gb=0
