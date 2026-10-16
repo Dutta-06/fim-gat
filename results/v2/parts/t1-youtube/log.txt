@@ -1,0 +1,15 @@
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple, v2-b/learned/simple, v2-b/greedy/exhaustive, v2-a/greedy/simple, v2-b0/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+  no constructor checkpoint for train seed 0: /home/user/fim-gat/results/v2/models/constructor_s0.pt
+  no constructor checkpoint for train seed 1: /home/user/fim-gat/results/v2/models/constructor_s1.pt
+  no constructor checkpoint for train seed 2: /home/user/fim-gat/results/v2/models/constructor_s2.pt
+  no constructor checkpoint for train seed 3: /home/user/fim-gat/results/v2/models/constructor_s3.pt
+  no constructor checkpoint for train seed 4: /home/user/fim-gat/results/v2/models/constructor_s4.pt
+note: no checkpoints for ['v2-b/learned/simple']; those configurations are not run
+snap_youtube / degree (large): 340 queries (80 FIM-GAT, 260 baseline), BSM sweep at 5 budgets; rough estimate 42.1 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 42.1 h of queries, plus the cached stages per graph
+
+=== snap_youtube / degree: 340 pending queries ===
+  load             12.0s  peak GPU nan / nan GB
