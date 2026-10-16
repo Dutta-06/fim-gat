@@ -1,0 +1,2 @@
+dataset,attribute,graph,k,rho,floor_total,work,lb,mean_floor,maximin_ub,n_groups,secs,status,reason,code_tag,when
+twitter_ego,degree,twitter_ego,25,0.97,10110.690590739729,518450660.0,0.0,0.12435356050893819,0.16102724829633916,2,2.1973681099989335,ok,,f53a3e10824a,2026-10-16 11:12:45
