@@ -107,3 +107,4 @@ Total: ~6,500 result rows (T1 / ablation / supplement / certsens / T2). No `WARN
 - **epinions:** pass 1 (all baselines except Prior, all FIM-GAT configs except the learned one): 480 rows, 89 min, exit 0. The exact specified command (which adds Prior) runs last.
 - **instagram:** DONE, 500 rows, 112 min, exit 0, peak job RSS ~3.6 GB (A: R = 8, 150,000 roots; B: R = 32, all 553,628 roots, 59.4M entries). AGE and Prior are not run at this size (n > 5000 / n > 100,000): see the missing rows. The laptop estimate of 42 h was far too high for this VM.
 - **snap_youtube:** running.
+- Epinions Prior pass, k = 25 finished at 20:54 UTC: Prior took 4,027 s > the 1,800 s limit, recorded "missing: time_limit: took 4027.1s > 1800s" for all four rho (the pre-skip estimate was 4,270 s). The same outcome is expected for k = 50..200 (~67 min each); I let the exact command run to completion so the row set equals what the specified command writes.
