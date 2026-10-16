@@ -242,3 +242,24 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.7 h of queries, plus the cached stag
   load             10.9s  peak GPU nan / nan GB
   reference      1405.0s  peak GPU nan / nan GB
   rr_sample       225.0s  peak GPU nan / nan GB
+  cert_sample     218.9s  peak GPU nan / nan GB
+  cover_index       1.4s  peak GPU nan / nan GB
+  evaluation communities: 991 with >= 10 members
+  snap_youtube_bfs100000_s5: n=100,000 m=1,422,394 groups=2; A: R=64 roots=100,000 nnz=70,355,104; B: R=64 roots=100,000 nnz=70,326,377
+  memory: A 1.4 GB, B 1.4 GB (rough, host RAM)
+    snap_youtube_bfs100000_s5 k=100  rho=0.99 FIM-GAT v2       infl= 57457.04 disp=0.4389 es pass (ratio 1.0000, lower 1.0000) (6.5s)  [v2-b0/greedy/simple s-1: select 0.0s search 6.5s (2 rounds) certify 3.6s, deployed the reference set (path rule: the reference set), certificate pass]
+    snap_youtube_bfs100000_s5 k=150  rho=0.97 FIM-GAT v2       infl= 58918.40 disp=0.3945 es pass (ratio 0.9748, lower 0.9743) (27.9s)  [v2-b/greedy/simple s-1: select 0.0s search 27.9s (8 rounds) certify 11.6s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=150  rho=0.97 FIM-GAT v2       infl= 58918.40 disp=0.3945 es pass (ratio 0.9748, lower 0.9743) (9.3s)  [v2-a/greedy/simple s-1: select 0.0s search 9.3s (6 rounds) certify 17.1s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=150  rho=0.97 FIM-GAT v2       infl= 58912.10 disp=0.3920 es pass (ratio 0.9747, lower 0.9743) (14.4s)  [v2-b0/greedy/simple s-1: select 0.0s search 14.4s (7 rounds) certify 14.5s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=150  rho=0.99 FIM-GAT v2       infl= 60147.92 disp=0.4293 es pass (ratio 0.9952, lower 0.9949) (22.8s)  [v2-b/greedy/simple s-1: select 0.0s search 22.8s (6 rounds) certify 7.4s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=150  rho=0.99 FIM-GAT v2       infl= 60147.92 disp=0.4293 es pass (ratio 0.9952, lower 0.9949) (7.0s)  [v2-a/greedy/simple s-1: select 0.0s search 7.0s (4 rounds) certify 12.9s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=150  rho=0.99 FIM-GAT v2       infl= 60144.69 disp=0.4289 es pass (ratio 0.9951, lower 0.9948) (17.3s)  [v2-b0/greedy/simple s-1: select 0.0s search 17.3s (8 rounds) certify 13.8s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=200  rho=0.97 FIM-GAT v2       infl= 60538.96 disp=0.3897 es pass (ratio 0.9747, lower 0.9742) (25.0s)  [v2-b/greedy/simple s-1: select 0.0s search 25.0s (8 rounds) certify 8.3s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=200  rho=0.97 FIM-GAT v2       infl= 60538.96 disp=0.3897 es pass (ratio 0.9747, lower 0.9742) (9.3s)  [v2-a/greedy/simple s-1: select 0.0s search 9.3s (6 rounds) certify 15.6s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=200  rho=0.97 FIM-GAT v2       infl= 60559.30 disp=0.3799 es pass (ratio 0.9750, lower 0.9746) (22.7s)  [v2-b0/greedy/simple s-1: select 0.0s search 22.7s (11 rounds) certify 15.6s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=200  rho=0.99 FIM-GAT v2       infl= 61793.07 disp=0.4208 es pass (ratio 0.9949, lower 0.9947) (30.2s)  [v2-b/greedy/simple s-1: select 0.0s search 30.2s (9 rounds) certify 10.4s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=200  rho=0.99 FIM-GAT v2       infl= 61793.07 disp=0.4208 es pass (ratio 0.9949, lower 0.9947) (11.9s)  [v2-a/greedy/simple s-1: select 0.0s search 11.9s (7 rounds) certify 12.7s, deployed the final set (path rule: the final set), certificate pass]
+    snap_youtube_bfs100000_s5 k=200  rho=0.99 FIM-GAT v2       infl= 61795.78 disp=0.4215 es pass (ratio 0.9949, lower 0.9947) (17.6s)  [v2-b0/greedy/simple s-1: select 0.0s search 17.6s (8 rounds) certify 12.7s, deployed the final set (path rule: the final set), certificate pass]
+
+=== snap_youtube_bfs100000_s6 / degree: 30 pending queries ===
+  load              1.0s  peak GPU nan / nan GB
