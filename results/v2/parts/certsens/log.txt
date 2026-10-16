@@ -338,3 +338,43 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.4 h of queries, plus the cached stag
     pokec_n          k=200  rho=0.99 BSM              infl= 10864.38 disp=0.0167 es pass (ratio 0.9951, lower 0.9933) (7.8s)  [certificate pass]
     pokec_n          k=200  rho=0.99 MultiFW-MaxMin   infl= 10675.94 disp=0.0018 es FAIL (ratio 0.9778, lower 0.9761) (4.0s)  [certificate FAIL]
     pokec_n          k=200  rho=0.99 RFIM             infl=  9412.66 disp=0.0027 es FAIL (ratio 0.8621, lower 0.8600) (4.2s)  [certificate FAIL]
+T1: device=cpu gpu=cpu preset=8gb code_tag=f53a3e10824a
+tuning: delta=0.005 phi0=0.4 start=greedy tuned=True
+FIM-GAT configurations: v2-b/greedy/simple
+One GPU job at a time: nothing else may use the GPU while this runs.
+pokec_n / region (medium): 70 queries (5 FIM-GAT, 65 baseline); rough estimate 0.4 h
+ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.4 h of queries, plus the cached stages per graph
+
+=== pokec_n / region: 70 pending queries ===
+  load              0.5s  peak GPU nan / nan GB
+  reference        70.7s  peak GPU nan / nan GB
+  rr_sample         2.0s  peak GPU nan / nan GB
+  cert_sample       7.5s  peak GPU nan / nan GB
+  cover_index       0.1s  peak GPU nan / nan GB
+  pokec_n: n=66,082 m=728,806 groups=2; A: R=16 roots=66,082 nnz=10,241,327; B: R=64 roots=66,082 nnz=41,034,686
+    pokec_n          k=25   rho=0.99 FIM-GAT v2       infl=  3381.92 disp=0.0024 es pass (ratio 1.0011, lower 0.9934) (3.5s)  [v2-b/greedy/simple s-1: select 0.0s search 3.5s (5 rounds) certify 5.5s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_n          k=25   rho=0.99 Degree           infl=  2401.61 disp=0.0362 es FAIL (ratio 0.7109, lower 0.7048) (0.0s)  [certificate FAIL]
+  suite_index       1.6s  peak GPU nan / nan GB
+    pokec_n          k=25   rho=0.99 Greedy           infl=  3385.93 disp=0.0108 es pass (ratio 1.0023, lower 0.9948) (1.0s)  [certificate pass]
+    pokec_n          k=25   rho=0.99 Parity-Greedy    infl=  3378.86 disp=0.0021 es pass (ratio 1.0002, lower 0.9924) (0.8s)  [certificate pass]
+    pokec_n          k=25   rho=0.99 Welfare-Greedy   infl=  3374.60 disp=0.0072 es pass (ratio 0.9989, lower 0.9913) (0.8s)  [certificate pass]
+    pokec_n          k=25   rho=0.99 Maximin-Greedy   infl=  3060.84 disp=0.0008 es FAIL (ratio 0.9060, lower 0.8984) (0.7s)  [certificate FAIL]
+    pokec_n          k=25   rho=0.99 FW-Disparity     infl=  3371.16 disp=0.0062 es pass (ratio 0.9979, lower 0.9903) (14.0s)  [certificate pass]
+    pokec_n          k=25   rho=0.99 LocalSearch      infl=  3381.92 disp=0.0024 es pass (ratio 1.0011, lower 0.9934) (4.8s)  [certificate pass]
+    pokec_n          k=25   rho=0.99 Simple-v2        infl=  3374.81 disp=0.0022 es pass (ratio 0.9990, lower 0.9913) (4.5s)  [certificate pass]
+    pokec_n          k=25   rho=0.99 AGE              missing: not run: n=66082 > 5000
+    pokec_n          k=25   rho=0.99 Prior            missing: skipped: estimated 6030s > 3 x time_limit 1800s
+    pokec_n          k=25   rho=0.99 BSM              infl=  3368.76 disp=0.0071 es FAIL (ratio 0.9972, lower 0.9898) (1.7s)  [certificate pass]
+    pokec_n          k=25   rho=0.99 MultiFW-MaxMin   infl=  3347.50 disp=0.0008 es FAIL (ratio 0.9909, lower 0.9833) (3.9s)  [certificate FAIL]
+    pokec_n          k=25   rho=0.99 RFIM             infl=  2869.93 disp=0.0066 es FAIL (ratio 0.8495, lower 0.8418) (3.2s)  [certificate FAIL]
+    pokec_n          k=50   rho=0.99 FIM-GAT v2       infl=  5169.67 disp=0.0205 es FAIL (ratio 0.9940, lower 0.9892) (3.6s)  [v2-b/greedy/simple s-1: select 0.0s search 3.6s (7 rounds) certify 5.7s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_n          k=50   rho=0.99 Degree           infl=  4434.45 disp=0.0496 es FAIL (ratio 0.8526, lower 0.8478) (0.0s)  [certificate FAIL]
+    pokec_n          k=50   rho=0.99 Greedy           infl=  5218.33 disp=0.0284 es pass (ratio 1.0033, lower 0.9986) (1.5s)  [certificate pass]
+    pokec_n          k=50   rho=0.99 Parity-Greedy    infl=  5160.99 disp=0.0106 es FAIL (ratio 0.9923, lower 0.9875) (1.6s)  [certificate pass]
+    pokec_n          k=50   rho=0.99 Welfare-Greedy   infl=  5195.89 disp=0.0222 es pass (ratio 0.9990, lower 0.9943) (1.5s)  [certificate pass]
+    pokec_n          k=50   rho=0.99 Maximin-Greedy   infl=  4594.19 disp=0.0004 es FAIL (ratio 0.8833, lower 0.8788) (1.7s)  [certificate FAIL]
+    pokec_n          k=50   rho=0.99 FW-Disparity     infl=  5200.92 disp=0.0291 es pass (ratio 1.0000, lower 1.0000) (11.1s)  [certificate pass]
+    pokec_n          k=50   rho=0.99 LocalSearch      infl=  5160.08 disp=0.0183 es FAIL (ratio 0.9921, lower 0.9873) (8.4s)  [certificate pass]
+    pokec_n          k=50   rho=0.99 Simple-v2        infl=  5160.08 disp=0.0183 es FAIL (ratio 0.9921, lower 0.9873) (6.8s)  [certificate pass]
+    pokec_n          k=50   rho=0.99 AGE              missing: not run: n=66082 > 5000
+    pokec_n          k=50   rho=0.99 Prior            missing: skipped: estimated 6030s > 3 x time_limit 1800s

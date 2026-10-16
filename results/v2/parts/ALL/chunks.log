@@ -25,3 +25,4 @@ DONE certsens-rice_facebook-R64 rc=0
 [2026-10-16T09:40:08Z] certsens-rice_facebook-R256 chunk 1 rc=0 38min peak_mem_used_gb=0
 DONE certsens-rice_facebook-R256 rc=0
 [2026-10-16T09:50:01Z] certsens-pokec_n-R16 chunk 1 rc=0 9min peak_mem_used_gb=0
+DONE certsens-pokec_n-R16 rc=0
