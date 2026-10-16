@@ -250,3 +250,15 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 42.1 h of queries, plus the cached sta
     snap_youtube     k=150  rho=0.98 FIM-GAT v2       infl=222436.86 disp=0.0432 es pass (ratio 0.9832, lower 0.9820) (21.2s)  [v2-b0/greedy/simple s-1: select 0.0s search 21.2s (17 rounds) certify 14.6s, deployed the final set (path rule: the final set), certificate pass]
     snap_youtube     k=150  rho=0.98 Degree           infl=221343.19 disp=0.0565 es FAIL (ratio 0.9783, lower 0.9771) (0.1s)  [certificate FAIL]
     snap_youtube     k=150  rho=0.98 Greedy           infl=226219.54 disp=0.0508 es pass (ratio 0.9999, lower 0.9988) (8.2s)  [certificate pass]
+    snap_youtube     k=150  rho=0.98 Parity-Greedy    infl=172029.80 disp=0.0304 es FAIL (ratio 0.7604, lower 0.7590) (9.2s)  [certificate FAIL]
+    snap_youtube     k=150  rho=0.98 Welfare-Greedy   infl=226150.76 disp=0.0503 es pass (ratio 0.9996, lower 0.9984) (9.2s)  [certificate pass]
+    snap_youtube     k=150  rho=0.98 Maximin-Greedy   infl=220546.03 disp=0.0361 es FAIL (ratio 0.9748, lower 0.9736) (9.5s)  [certificate FAIL]
+    snap_youtube     k=150  rho=0.98 FW-Disparity     infl=225060.45 disp=0.0462 es pass (ratio 0.9948, lower 0.9936) (10.7s)  [certificate pass]
+    snap_youtube     k=150  rho=0.98 LocalSearch      infl=222449.53 disp=0.0447 es pass (ratio 0.9832, lower 0.9821) (55.3s)  [certificate pass]
+    snap_youtube     k=150  rho=0.98 Simple-v2        infl=222440.31 disp=0.0448 es pass (ratio 0.9832, lower 0.9820) (36.2s)  [certificate pass]
+    snap_youtube     k=150  rho=0.98 AGE              missing: not run: n=1134890 > 5000
+    snap_youtube     k=150  rho=0.98 Prior            missing: not run: n=1134890 > 100000
+    snap_youtube     k=150  rho=0.98 BSM              infl=225692.84 disp=0.0491 es pass (ratio 0.9976, lower 0.9964) (0.7s)  [certificate pass]
+    snap_youtube     k=150  rho=0.98 MultiFW-MaxMin   infl=220696.97 disp=0.0362 es FAIL (ratio 0.9755, lower 0.9743) (14.5s)  [certificate FAIL]
+    snap_youtube     k=150  rho=0.98 RFIM             infl=219646.13 disp=0.0536 es FAIL (ratio 0.9708, lower 0.9696) (33.1s)  [certificate FAIL]
+    snap_youtube     k=150  rho=0.99 FIM-GAT v2       infl=224692.84 disp=0.0464 es pass (ratio 0.9931, lower 0.9920) (13.5s)  [v2-b/greedy/simple s-1: select 0.0s search 13.5s (15 rounds) certify 15.2s, deployed the final set (path rule: the final set), certificate pass]

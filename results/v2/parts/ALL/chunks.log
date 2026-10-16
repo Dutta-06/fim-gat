@@ -36,3 +36,4 @@ DONE sup-twitter_ego rc=0
 DONE sup-epinions-noprior rc=0
 [2026-10-16T16:26:00Z] sup-instagram chunk 1 rc=0 112min peak_mem_used_gb=0
 DONE sup-instagram rc=0
+[2026-10-16T18:21:04Z] sup-snap_youtube chunk 1 rc=124 115min peak_mem_used_gb=0
