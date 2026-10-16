@@ -409,3 +409,7 @@ ROUGH ESTIMATE (UNVERIFIED, 8 GB laptop): 0.1 h of queries, plus the cached stag
   cert_sample      21.8s  peak GPU nan / nan GB
   cover_index       0.1s  peak GPU nan / nan GB
   epinions: n=75,879 m=508,837 groups=2; A: R=16 roots=75,879 nnz=10,722,518; B: R=89 roots=75,879 nnz=59,769,106
+    epinions         k=50   rho=0.97 Prior            missing: time_limit: took 3791.2s > 1800s
+    epinions         k=50   rho=0.98 Prior            missing: time_limit: took 3791.2s > 1800s
+    epinions         k=50   rho=0.99 Prior            missing: time_limit: took 3791.2s > 1800s
+    epinions         k=50   rho=1.0 Prior            missing: time_limit: took 3791.2s > 1800s
