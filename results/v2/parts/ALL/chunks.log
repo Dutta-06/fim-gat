@@ -33,3 +33,4 @@ DONE certsens-pokec_n-R256 rc=0
 [2026-10-16T13:04:08Z] sup-twitter_ego chunk 1 rc=0 109min peak_mem_used_gb=0
 DONE sup-twitter_ego rc=0
 [2026-10-16T14:33:39Z] sup-epinions-noprior chunk 1 rc=0 89min peak_mem_used_gb=0
+DONE sup-epinions-noprior rc=0
