@@ -50,3 +50,17 @@ cases left: 30 of 30 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per 
   snap_youtube_bfs100000_s4 k=25 rho=0.97: D_a 0.3183, SE 0.00049; phase-2 moves {'b-1se': 0, 'b-1pct': 1, 'b-5pct': 3, 'b-20pct': 3}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00115, H 0.00307
   snap_youtube_bfs100000_s4 k=50 rho=0.97: D_a 0.3682, SE 0.00043; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 4}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00273, H 0.00089
   snap_youtube_bfs100000_s4 k=100 rho=0.97: D_a 0.3846, SE 0.00039; phase-2 moves {'b-1se': 0, 'b-1pct': 2, 'b-5pct': 2, 'b-20pct': 2}; deployed = (a): {'b-1se': True, 'b-1pct': False, 'b-5pct': False, 'b-20pct': False}; price F 0.00254, H 0.00002
+  snap_youtube_bfs100000_s4 k=150 rho=0.97: D_a 0.3754, SE 0.00037; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 3, 'b-20pct': 6}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00012, H 0.00167
+  snap_youtube_bfs100000_s4 k=200 rho=0.97: D_a 0.3681, SE 0.00036; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 3, 'b-20pct': 3}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00012
+
+=== snap_youtube_bfs100000_s5: 5 cases ===
+  load              0.7s
+  reference      1405.0s
+  rr_sample       221.3s
+  cert_sample     219.8s
+  cover_index       1.4s
+  snap_youtube_bfs100000_s5: n=100,000 m=1,422,394 groups=2; A: R=64 roots=100,000 nnz=70,355,104; B: R=64 roots=100,000 nnz=70,326,377; 991 evaluated ground-truth communities
+  snap_youtube_bfs100000_s5 k=25 rho=0.97: D_a 0.2642, SE 0.00050; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00242, H 0.00055
+  snap_youtube_bfs100000_s5 k=50 rho=0.97: D_a 0.3387, SE 0.00045; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00351, H 0.00455
+  snap_youtube_bfs100000_s5 k=100 rho=0.97: D_a 0.3923, SE 0.00037; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00012, H 0.00086
+  snap_youtube_bfs100000_s5 k=150 rho=0.97: D_a 0.3945, SE 0.00034; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00000, H 0.00000
