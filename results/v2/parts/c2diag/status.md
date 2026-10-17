@@ -12,3 +12,8 @@ cases left: 60 of 60 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per 
 - Order: rho = 0.97 first (30 cases), then rho = 0.99 (30 cases), then `--summarize`.
 - Measured (sample 1 at rho = 0.97): ~8 min for the cached stages (reference loaded from T2's cache, rr_sample 225 s, cert_sample 222 s) plus ~3-4 min per case, i.e. ~30 min per sample; ETA ~2.5 h for the 30 cases at rho = 0.97 and ~2.5-3 h for rho = 0.99 (the samples are rebuilt on the second run). Peak job RSS so far 6.0 GB; a watchdog kills the job if MemAvailable < 800 MB.
 - Validity check (`matches_t2` for variants a and b-1se): after 5 cases (10 rows each) all True, none False (checked after every case batch; I stop and report if any False appears).
+
+## rho = 0.97: DONE (08:53 UTC; 30 cases, 300 room rows, 0 tracebacks)
+- Wall time 2 h 27 min (06:26 -> 08:53), 6 samples (~25-30 min each including cached stages), no VM reboot, peak job RSS 6.0 GB, watchdog never fired.
+- **Validity:** `matches_t2` is True in 60 of 60 rows for variant "a" and 60 of 60 for "b-1se" (30 cases x 2 deployments), none False.
+- `--summarize` run and pushed (`summary.md`, rho = 0.97 tables only). Next: rho = 0.99 (started 08:54 UTC), then the final `--summarize` and the pull request.

@@ -78,3 +78,7 @@ cases left: 30 of 30 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per 
   snap_youtube_bfs100000_s6 k=100 rho=0.97: D_a 0.4164, SE 0.00039; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00006, H 0.00053
   snap_youtube_bfs100000_s6 k=150 rho=0.97: D_a 0.4080, SE 0.00037; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00001
   snap_youtube_bfs100000_s6 k=200 rho=0.97: D_a 0.3977, SE 0.00036; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00001
+C2 diagnostics (EXPLORATORY): 6 samples x 5 budgets x 1 floors; runs ['a', 'b-1se', 'b-1pct', 'b-5pct', 'b-20pct']; R=64; delta=0.005 phi0=0.4; code_tag=539c06dcb0d8; device=cpu
+cases left: 30 of 30 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per sample for its cached stages)
+
+=== snap_youtube_bfs100000_s1: 5 cases ===
