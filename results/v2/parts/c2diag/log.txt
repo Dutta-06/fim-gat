@@ -149,3 +149,12 @@ cases left: 30 of 30 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per 
 === snap_youtube_bfs100000_s6: 5 cases ===
   load              1.3s
   reference      1396.4s
+  rr_sample       230.3s
+  cert_sample     231.5s
+  cover_index       1.8s
+  snap_youtube_bfs100000_s6: n=100,000 m=1,573,368 groups=2; A: R=64 roots=100,000 nnz=76,904,634; B: R=64 roots=100,000 nnz=76,721,416; 1091 evaluated ground-truth communities
+  snap_youtube_bfs100000_s6 k=25 rho=0.99: D_a 0.3808, SE 0.00049; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00026, H 0.00026
+  snap_youtube_bfs100000_s6 k=50 rho=0.99: D_a 0.4306, SE 0.00042; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00030, H 0.00030
+  snap_youtube_bfs100000_s6 k=100 rho=0.99: D_a 0.4577, SE 0.00033; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00003, H 0.00002
+  snap_youtube_bfs100000_s6 k=150 rho=0.99: D_a 0.4521, SE 0.00030; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00035, H 0.00035
+  snap_youtube_bfs100000_s6 k=200 rho=0.99: D_a 0.4450, SE 0.00028; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00017, H 0.00003

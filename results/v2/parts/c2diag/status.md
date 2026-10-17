@@ -17,3 +17,10 @@ cases left: 60 of 60 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per 
 - Wall time 2 h 27 min (06:26 -> 08:53), 6 samples (~25-30 min each including cached stages), no VM reboot, peak job RSS 6.0 GB, watchdog never fired.
 - **Validity:** `matches_t2` is True in 60 of 60 rows for variant "a" and 60 of 60 for "b-1se" (30 cases x 2 deployments), none False.
 - `--summarize` run and pushed (`summary.md`, rho = 0.97 tables only). Next: rho = 0.99 (started 08:54 UTC), then the final `--summarize` and the pull request.
+
+## rho = 0.99: DONE (11:19 UTC; 30 cases) and final `--summarize`
+- Wall time: rho = 0.97 2 h 27 min (06:26 -> 08:53), rho = 0.99 2 h 25 min (08:54 -> 11:19 UTC); total about 4 h 55 min. No VM reboot during this job. Peak job RSS 6.9 GB; the 800 MB watchdog never fired. 0 tracebacks.
+- **Validity (both floors, 60 cases):** `matches_t2` is True in 120 of 120 rows for variant "a" and 120 of 120 for "b-1se" (60 cases x 2 deployments), none False.
+- Rows: `room.csv` 600 (60 cases x 5 variants x 2 deployments), `coverage.csv`, `price.csv`, `summary.md`.
+- Fixes: none. Deviations: none (the script was run as given, with no extra arguments beyond `--rhos`, `--dry-run` and `--summarize`; nothing from earlier runs was touched).
+- Tooling note: the periodic snapshot commits on this branch are mine (a 30-minute `git add -A results/v2/parts/c2diag`), not part of the experiment.
