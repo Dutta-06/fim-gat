@@ -2,9 +2,9 @@
 
 Branch `claude/fimgat-all`. VM: 4 vCPU, 15 GB RAM, no GPU. Python 3.13 (`.venv`), torch 2.6.0+cu124 (cuda False), numba 0.63.1.
 
-## OVERVIEW (written 2026-10-16 19:50 UTC; detail and incidents below)
+## OVERVIEW (written 2026-10-16 19:50 UTC, updated 2026-10-17 01:35 UTC when the last run finished; detail and incidents below)
 
-Job ALL, branch `claude/fimgat-all`, 4 vCPU / 15 GB / no GPU. Started 2026-10-15 17:38 UTC, main list finished 2026-10-16 19:40 UTC (~26 h wall). **Five unplanned VM reboots** (22:09, 23:47, 02:42, 05:22 and 11:13 UTC; causes unknown, see the incidents below); every one was recovered from the saved rows and none cost a completed row.
+Job ALL, branch `claude/fimgat-all`, 4 vCPU / 15 GB / no GPU. Started 2026-10-15 17:38 UTC, the list finished 2026-10-17 01:33 UTC (~32 h wall; the main list was done 2026-10-16 19:40 UTC and the rest was the epinions Prior baseline). **Six unplanned VM reboots** (Oct 15 22:09 and 23:47; Oct 16 02:42, 05:22 and 11:13; Oct 17 00:31 UTC; causes unknown, see the incidents below); every one was recovered from the saved rows and none cost a completed row.
 
 | step | what | rows | outcome |
 |---|---|---|---|
@@ -14,10 +14,10 @@ Job ALL, branch `claude/fimgat-all`, 4 vCPU / 15 GB / no GPU. Started 2026-10-15
 | 4 | T1 headline, Pokec-n x3 | 3 x 280 (+3 x 220 ablation) | 40 missing per run by the suite's rules (AGE n > 5000, Prior pre-skipped) |
 | 5 | T1 ablations | 878 + 660 | learned start not run (needs a GPU checkpoint) |
 | 6 | certificate-size sensitivity | 480 | all ok |
-| 7 | supplements | twitter_ego 500, instagram 500, snap_youtube 500, epinions 480 of 500 | **epinions' 20 Prior rows are still being computed** (see "Open items") |
+| 7 | supplements | twitter_ego 500, instagram 500, snap_youtube 500, epinions 500 | all done; epinions' 20 Prior rows are "missing: time_limit" (3,125-4,027 s against the 1,800 s limit) |
 | 8 | job C: summary, figures, case studies | | 11 Pareto figures; 8 of 11 case studies (3 pokec_full cases need the GPU machine) |
 
-Total: ~6,500 result rows (T1 / ablation / supplement / certsens / T2). No `WARNING` was printed by `summarize_v2.py` or `interpret_v2.py` (no untuned rows, no repeated queries, every case rerun reproduced its recorded set). Peak job RSS 6.6 GB of 15 GB (T2 at R = 64; Pokec-n at cert R = 256); the 800 MB watchdog never fired.
+Total: 6,518 result rows (T1 / ablation / supplement / certsens / T2). No `WARNING` was printed by `summarize_v2.py` or `interpret_v2.py` (no untuned rows, no repeated queries, every case rerun reproduced its recorded set). Peak job RSS 6.6 GB of 15 GB (T2 at R = 64; Pokec-n at cert R = 256); the 800 MB watchdog never fired.
 
 ### Verdicts (copied from `results/v2/summary_v2.md`, interim for epinions only)
 - **T1 headline, 8 real-attribute graphs (rice x3, twitter_political, pokec_n x3, instagram/gender; 160 cases).** "Holds across the range" (a significant win at every rho in {0.97, 0.98, 0.99}): **yes** against BSM, FW-Disparity, Greedy, Parity-Greedy and Welfare-Greedy; **no** against the *best baseline per case* (significant only at rho = 0.99, p = 0.039, 27 wins / 13 losses; at 0.97 p = 0.383 with 28 / 12, at 0.98 p = 0.148 with 27 / 13), Degree (5 graphs, p = 0.0625 at every rho: too few graphs to reach significance), Maximin-Greedy (6, 6, 2 graphs), MultiFW-MaxMin (significant at 0.97 only, p = 0.0156; 0.98 p = 0.0625; 0.99 p = 0.188), Prior (1 graph), RFIM (3 graphs, no paired cases at 0.99). Effects against the strongest baselines are small (median mean difference of the best baseline -0.0044 at 0.97, -0.0041 at 0.98, -0.0044 at 0.99). rho = 1.0: best-baseline comparison 1 win / 33 ties / 1 loss, p = 1.
@@ -30,15 +30,15 @@ Total: ~6,500 result rows (T1 / ablation / supplement / certsens / T2). No `WARN
 ### Needs the researcher / the GPU machine
 - **Data decision:** rice_facebook has 1,216 nodes (11 attributed users without edges) against the 1,205 in the design and in `tests/test_smoke_data.py`; the test fails. All Rice rows use n = 1,216; they must be rerun if the isolates are to be dropped.
 - **GPU jobs (not run, by rule 3):** `train_constructor.py`; `train_proposer.py` and `run_t3.py` (the W3 rule says train); `run_t4.py`; pokec_full; LinkedIn. The "start: learned" ablation needs the constructor checkpoint.
-- **Cost warning:** the Prior baseline on epinions is pre-skipped only above 5,400 s of estimated time; its estimate (4,270 s) is below that, so it runs ~1 h per k and ends as "missing: time_limit" (the Prior pass is still computing at the time of writing; see "Open items").
+- **Cost note (resolved):** the Prior baseline on epinions is pre-skipped only above 5,400 s of estimated time; its estimate (4,270 s) is below that, so it ran 52-67 min per k (4,027 / 3,791 / 3,408 / 3,126 / 3,349 s for k = 25 / 50 / 100 / 150 / 200) and was recorded "missing: time_limit" each time: ~5 h of compute for 20 missing rows. A lower pre-skip threshold, or a time-limit abort, would avoid this on the next run.
 
 ### Deviations and fixes
 - No code or pre-registered setting was changed; no `fix:` commits were needed. `R` was never lowered.
 - Scheduling only: epinions was run in two passes (all baselines except Prior first, then the exact specified command), see the notes under step 7; the case studies and the first summaries were run earlier than the brief's order (their inputs were already complete).
 - One attempt to run twitter_ego in parallel with epinions ended in the 5th reboot; the job was restarted alone and all its rows come from the single-job run.
 
-### Open items at the time of writing
-- epinions exact-command pass (Prior, k = 25..200; ~1 h per k expected) is running; when it ends, `summarize_v2.py --figures` is rerun and the files are pushed to this branch as a follow-up commit.
+### Open items
+- None on the CPU list. The summary was regenerated after the last epinions rows: `summary_v2.md`, the CSVs and the figures are unchanged (missing rows enter no test), so every verdict above stands.
 
 ## Step 1: job A (in progress)
 - Tests: 169 passed, 13 skipped (before datasets were built). Log: `results/v2/parts/A/tests.txt`.
