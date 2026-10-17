@@ -1,0 +1,12 @@
+cases: rice_facebook/college k=50 rho=0.99, rice_facebook/age k=50 rho=0.99, rice_facebook/major k=50 rho=0.99, twitter_political/leaning k=50 rho=0.99, pokec_n/region k=50 rho=0.99, pokec_n/gender k=50 rho=0.99, pokec_n/age k=50 rho=0.99, pokec_full/region k=50 rho=0.99, pokec_full/gender k=50 rho=0.99, pokec_full/age k=50 rho=0.99, instagram/gender k=50 rho=0.99
+rice_facebook_college_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/rice_facebook_college_k50_rho0.99
+rice_facebook_age_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/rice_facebook_age_k50_rho0.99
+rice_facebook_major_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/rice_facebook_major_k50_rho0.99
+twitter_political_leaning_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/twitter_political_leaning_k50_rho0.99
+pokec_n_region_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/pokec_n_region_k50_rho0.99
+pokec_n_gender_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/pokec_n_gender_k50_rho0.99
+pokec_n_age_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/pokec_n_age_k50_rho0.99
+pokec_full: not built; skipped
+pokec_full: not built; skipped
+pokec_full: not built; skipped
+instagram_gender_k50_rho0.99: wrote /home/user/fim-gat/results/v2/cases/instagram_gender_k50_rho0.99

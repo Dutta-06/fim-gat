@@ -1,0 +1,49 @@
+...............................................ssssss..ssss............. [ 39%]
+...............................................s.ss..................... [ 79%]
+......................................                                   [100%]
+=============================== warnings summary ===============================
+tests/test_prerun_fixes_v2.py::test_train_proposer_then_t3_then_summary
+tests/test_prerun_fixes_v2.py::test_train_proposer_then_t3_then_summary
+  /home/user/fim-gat/experiments/v2/pipeline_v2.py:403: RuntimeWarning: All-NaN axis encountered
+    alloc=np.nanmax([m["alloc"], a2]), reserved=np.nanmax([m["reserved"], r2]))
+
+tests/test_scripts_v2.py: 17 warnings
+  /home/user/fim-gat/experiments/v2/pipeline_v2.py:635: RuntimeWarning: All-NaN axis encountered
+    "peak_alloc_gb": np.nanmax([a1, a2, a3]), "peak_reserved_gb": np.nanmax([r1, r2, r3]),
+
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_run_t4_logs_cached_and_query_stages
+tests/test_scripts_v2.py::test_run_t4_logs_cached_and_query_stages
+  /home/user/fim-gat/experiments/v2/pipeline_v2.py:664: RuntimeWarning: All-NaN axis encountered
+    out.update(judge=judge, verify_s=s_ver, peak_alloc_gb=np.nanmax([a1, a2]),
+
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_tune_t1_t2_summary_end_to_end
+tests/test_scripts_v2.py::test_run_t4_logs_cached_and_query_stages
+tests/test_scripts_v2.py::test_run_t4_logs_cached_and_query_stages
+  /home/user/fim-gat/experiments/v2/pipeline_v2.py:665: RuntimeWarning: All-NaN axis encountered
+    peak_reserved_gb=np.nanmax([r1, r2]))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] tests/conftest.py:166: Pokec build: /home/user/fim-gat/data/pokec/pokec_full.npz not present yet
+SKIPPED [1] tests/conftest.py:166: old-project raw file: C:\Users\Odwitiyo\Desktop\xAI Project\Baseline_Test/data/soc-Epinions1.txt not present yet
+SKIPPED [1] tests/test_smoke_data.py:67: epinions not built yet
+SKIPPED [1] tests/test_smoke_data.py:67: instagram not built yet
+SKIPPED [1] tests/test_smoke_data.py:67: linkedin not built yet
+SKIPPED [1] tests/test_smoke_data.py:67: pokec_full not built yet
+SKIPPED [1] tests/test_smoke_data.py:67: rice_facebook not built yet
+SKIPPED [1] tests/test_smoke_data.py:67: snap_youtube not built yet
+SKIPPED [1] tests/test_smoke_data.py:67: twitter_ego not built yet
+SKIPPED [1] tests/test_smoke_data.py:67: twitter_political not built yet
+SKIPPED [1] tests/test_spec_v2.py:339: linkedin not built yet
+SKIPPED [1] tests/test_spec_v2.py:360: epinions not built yet
+SKIPPED [1] tests/test_spec_v2.py:374: snap_youtube not built yet
+169 passed, 13 skipped, 40 deselected, 33 warnings in 42.25s

@@ -1,0 +1,42 @@
+[2026-10-15T19:57:09Z] t1-small chunk 1 rc=124 115min peak_mem_used_gb=0
+[2026-10-15T21:43:31Z] t1-small chunk 2 rc=0 106min peak_mem_used_gb=0
+DONE t1-small rc=0
+[2026-10-16T01:43:22Z] t2 chunk 1 rc=124 115min peak_mem_used_gb=0
+[2026-10-16T02:58:12Z] t2 chunk 1 rc=0 15min peak_mem_used_gb=0
+DONE t2 rc=0
+[2026-10-16T03:40:15Z] t1-pokec-n-region chunk 1 rc=0 40min peak_mem_used_gb=0
+DONE t1-pokec-n-region rc=0
+[2026-10-16T04:22:46Z] t1-pokec-n-gender chunk 1 rc=0 42min peak_mem_used_gb=0
+DONE t1-pokec-n-gender rc=0
+[2026-10-16T05:05:47Z] t1-pokec-n-age chunk 1 rc=0 42min peak_mem_used_gb=0
+DONE t1-pokec-n-age rc=0
+[2026-10-16T05:56:20Z] abl-small chunk 1 rc=0 33min peak_mem_used_gb=0
+DONE abl-small rc=0
+[2026-10-16T06:31:01Z] abl-pokec-n-region chunk 1 rc=0 34min peak_mem_used_gb=0
+DONE abl-pokec-n-region rc=0
+[2026-10-16T07:07:18Z] abl-pokec-n-gender chunk 1 rc=0 36min peak_mem_used_gb=0
+DONE abl-pokec-n-gender rc=0
+[2026-10-16T07:44:49Z] abl-pokec-n-age chunk 1 rc=0 37min peak_mem_used_gb=0
+DONE abl-pokec-n-age rc=0
+[2026-10-16T08:24:46Z] certsens-rice_facebook-R16 chunk 1 rc=0 39min peak_mem_used_gb=0
+DONE certsens-rice_facebook-R16 rc=0
+[2026-10-16T09:02:01Z] certsens-rice_facebook-R64 chunk 1 rc=0 37min peak_mem_used_gb=0
+DONE certsens-rice_facebook-R64 rc=0
+[2026-10-16T09:40:08Z] certsens-rice_facebook-R256 chunk 1 rc=0 38min peak_mem_used_gb=0
+DONE certsens-rice_facebook-R256 rc=0
+[2026-10-16T09:50:01Z] certsens-pokec_n-R16 chunk 1 rc=0 9min peak_mem_used_gb=0
+DONE certsens-pokec_n-R16 rc=0
+[2026-10-16T10:01:08Z] certsens-pokec_n-R64 chunk 1 rc=0 11min peak_mem_used_gb=0
+DONE certsens-pokec_n-R64 rc=0
+[2026-10-16T10:22:56Z] certsens-pokec_n-R256 chunk 1 rc=0 21min peak_mem_used_gb=0
+DONE certsens-pokec_n-R256 rc=0
+[2026-10-16T13:04:08Z] sup-twitter_ego chunk 1 rc=0 109min peak_mem_used_gb=0
+DONE sup-twitter_ego rc=0
+[2026-10-16T14:33:39Z] sup-epinions-noprior chunk 1 rc=0 89min peak_mem_used_gb=0
+DONE sup-epinions-noprior rc=0
+[2026-10-16T16:26:00Z] sup-instagram chunk 1 rc=0 112min peak_mem_used_gb=0
+DONE sup-instagram rc=0
+[2026-10-16T18:21:04Z] sup-snap_youtube chunk 1 rc=124 115min peak_mem_used_gb=0
+[2026-10-16T19:40:30Z] sup-snap_youtube chunk 2 rc=0 79min peak_mem_used_gb=0
+DONE sup-snap_youtube rc=0
+[2026-10-16T21:41:24Z] sup-epinions-exact chunk 1 rc=124 115min peak_mem_used_gb=0
