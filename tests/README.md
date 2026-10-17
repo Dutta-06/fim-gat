@@ -58,6 +58,8 @@ Never use `python3` (a different interpreter; see `CLAUDE.md`).
 - the summary's dominance, its T3 rule and its T4 filter, on synthetic rows;
 - `train_proposer.py` → `run_t3.py` → `summarize_v2.py` end to end on synthetic stand-ins, the first execution of `fimgat.v2.imitation`, and the W3 gate refusing to train.
 
+`test_c2_diagnostics.py` runs the exploratory C2 diagnostics (`experiments/v2/c2_diagnostics.py`, design §22) on a synthetic com-Youtube stand-in. Its control runs must reproduce T2's deployed sets exactly.
+
 `test_scripts_v2.py` runs the experiment scripts end to end on synthetic stand-ins, with `fimgat.v2.datasets` patched and every output under `tmp_path`:
 - `tune_v2` → `run_t1_t2` (T1 with BSM's τ sweep, T2) → `summarize_v2` (with the Pareto table and a figure), three rows per FIM-GAT query, and resumption;
 - tuning refuses a test graph;

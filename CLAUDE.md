@@ -53,7 +53,13 @@ v1's honest outcome:
 
 ## Status (2026-10-14)
 
-- **No v2 experiment has run.** Of the v2 datasets, only the Pokec graphs (`pokec_z`, `pokec_n`, `pokec_full`) are built.
+- **Cloud results (2026-10-17; job ALL, merged as PR #1; `results/v2/summary_v2.md`, `results/v2/parts/ALL/status.md`).** 6,518 rows, the committed code unchanged (code_tag f53a3e10824a).
+  - Tuning: δ = 0.005, φ₀ = 0.4, start greedy (provisional), W3 says train (H = 8.1).
+  - C1, 8 real-attribute graphs: a significant win against the best certified baseline at ρ = 0.99 only (p = 0.039; at 0.97 and 0.98, no difference). It is a win at every ρ against each of BSM, FW-Disparity and the Greedy family. Its weak spot is Pokec-n / region, where BSM is lower.
+  - C2 (T2): a pre-registered null. (b) and (a) deployed identical sets in 60 of 60 cases, because κ − D_a was only about 0.0004.
+  - Rice was built with 1,216 nodes (11 isolates) against the specified 1,205: a pending decision.
+  - The adversary's framing after the C2 null is the user's call (protocol: ask, do not drop).
+  - Still to run on a GPU: the constructor, the proposer and T3, full Pokec, LinkedIn and T4.
 - **Design:** `docs/design_v2.md`.
   - **§18 is the pre-registration amendment** the user approved before any run:
     - T2 tests the ε-constraint phase (`improve.hive_search`), with (b0), the published rule, also reported;

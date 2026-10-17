@@ -700,3 +700,47 @@ Nine of the thirteen suite methods ignore the spread floor, and BSM, RFIM and Mu
   - S3D;
   - IMM/OPIM-C as a runtime reference;
   - a second diffusion model.
+
+## 22. The C2 null and its post-hoc diagnostics (2026-10-17; exploratory)
+
+**The pre-registered result stands.** T2 failed by its own rule (cloud job ALL, `results/v2/summary_v2.md`). On six 100,000-node samples of com-Youtube, option (b) deployed the same set as option (a) in all 60 cases. The ε-constraint phase may raise labelled disparity by at most κ − D_a = 1 SE, which was about 0.0004 against labelled disparities of 0.18–0.46, and it accepted no move.
+
+**The user's framing decision (2026-10-17).** Report C2 as a finding about what the method cannot do, and why, rather than only as a claim that could not be made. Three conditions apply:
+- the pre-registered verdict is stated first;
+- the mechanism is shown with data and labelled post hoc;
+- the explanation is tested.
+
+**The evidence already in hand** (descriptive):
+- Across the 224 runs below ρ = 1, the phase changed the final set in 0% of the runs in the lowest fifth of room (κ − D_a) and in 56% of the highest fifth. The rank correlation is 0.42 (p = 5·10⁻¹¹).
+- The median room was 0.0025 where the phase acted and 0.0007 where it did not.
+- On the full com-Youtube and Instagram graphs it almost never acted despite 3–5 times T2's room. That is consistent with an auditor that finds no cohesive community there (theory §9.6, item 7).
+- The cross-graph pattern is confounded: graph size drives both the room and the density of communities.
+
+**The diagnostics, fixed before they run** (`experiments/v2/c2_diagnostics.py`; tested in `tests/test_c2_diagnostics.py`, where the control reproduces T2's deployed sets exactly). They use T2's 60 states: samples, budgets, floors, R = 64, the tuned δ and φ₀.
+1. **Room (the intervention).**
+   - What runs: phase 2 exactly as `hive_search` runs it, from the same phase-1 end, with κ = D_a (1 + f) for f ∈ {1%, 5%, 20%}. The pre-registered κ = D_a + 1 SE is the control.
+   - Scoring: each run is deployed by T2's path rule on B and scored by forward Monte Carlo, paired with (a)'s deployment.
+   - Prediction: the phase accepts moves once it has room.
+2. **Coverage.**
+   - Lemma W1.1's terms for every deployed set: D_H, D_F, the gap bounds from the hidden extremes h⁺ and h⁻ to the auditor's family, and their best Jaccard overlaps.
+   - Per sample, the conductance of every evaluated ground-truth community against φ₀.
+   - This separates "no room" from "wrong communities".
+3. **Price.**
+   - At the labelled-only optimum, floor-feasible single swaps are scanned in increasing labelled cost (at most 5,000 of them).
+   - It reports the cost of the cheapest swap that lowers community disparity: for the auditor's first-audit family, and for the hidden communities on sample A.
+   - It also reports the most a single swap can buy within labelled-cost budgets of one SE and of 1%, 5% and 20% of D_a.
+   - This is the exchange rate between labelled and community fairness that κ decides whether to pay.
+
+**Reading, fixed in advance.** The outcomes map onto findings as follows:
+
+| Outcome | Finding |
+|---|---|
+| The phase acts with room, and hidden-community disparity falls | the method can protect unlabelled communities at a stated, measured price |
+| It acts, but hidden disparity does not fall | coverage is the bottleneck; the auditor's communities miss the hidden extremes |
+| It stays inert even with 20% room | no community-improving moves exist at the labelled optimum on these graphs |
+
+A relative cap gives no room when D_a ≈ 0. On T2's samples D_a is 0.18–0.46.
+
+**Reporting.** Every result is exploratory. Paired tests are reported descriptively, and no number here replaces T2's verdict. A confirmatory test of a scaled cap would be a new pre-registered test on new samples.
+
+**Not used for any choice.** Ground-truth communities only score and price, as in T2.
