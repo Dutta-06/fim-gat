@@ -18,3 +18,21 @@ cases left: 30 of 30 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per 
   load              0.8s
   reference      1401.2s
   rr_sample       216.4s
+  cert_sample     215.5s
+  cover_index       1.4s
+  snap_youtube_bfs100000_s2: n=100,000 m=1,374,066 groups=2; A: R=64 roots=100,000 nnz=68,700,053; B: R=64 roots=100,000 nnz=68,742,450; 918 evaluated ground-truth communities
+  snap_youtube_bfs100000_s2 k=25 rho=0.97: D_a 0.2764, SE 0.00050; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00023, H 0.00105
+  snap_youtube_bfs100000_s2 k=50 rho=0.97: D_a 0.3424, SE 0.00045; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00249, H 0.00102
+  snap_youtube_bfs100000_s2 k=100 rho=0.97: D_a 0.3792, SE 0.00038; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00250, H 0.00015
+  snap_youtube_bfs100000_s2 k=150 rho=0.97: D_a 0.3811, SE 0.00035; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00199, H 0.00081
+  snap_youtube_bfs100000_s2 k=200 rho=0.97: D_a 0.3751, SE 0.00034; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 6}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': False}; price F 0.00046, H 0.00000
+
+=== snap_youtube_bfs100000_s3: 5 cases ===
+  load              0.7s
+  reference       901.6s
+  rr_sample       129.5s
+  cert_sample     127.7s
+  cover_index       1.5s
+  snap_youtube_bfs100000_s3: n=100,000 m=1,273,772 groups=2; A: R=64 roots=100,000 nnz=67,299,008; B: R=64 roots=100,000 nnz=67,439,534; 833 evaluated ground-truth communities
+  snap_youtube_bfs100000_s3 k=25 rho=0.97: D_a 0.1834, SE 0.00047; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00143, H 0.00068
+  snap_youtube_bfs100000_s3 k=50 rho=0.97: D_a 0.2380, SE 0.00046; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00050, H 0.00101
