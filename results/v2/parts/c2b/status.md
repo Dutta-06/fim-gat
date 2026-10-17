@@ -15,3 +15,10 @@ cases left: 60 of 60 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per 
 
 ## Progress
 - 19:55 UTC: sample 1 done (10 cases, 19 min including its reference: much faster than the note's ~1 h per sample). Rate ~110 s per case, so ETA ~2 h for the 6 samples (started 19:36 UTC). Peak job RSS so far 4.3 GB.
+
+## DONE (21:14 UTC): 60 of 60 cases, `--summarize` run
+- Wall time 1 h 38 min (19:36 -> 21:14 UTC): ~95-120 s per case; sample 1 (including its own reference) took 19 min, about 20 min per sample. Far below the note's ~6 h estimate. No VM reboot, 0 tracebacks, no watchdog kill. Peak job RSS 4.6 GB.
+- Verdicts as printed in `summary.md`:
+  - **H1, the method (kappa = D_a + 1 SE): FAIL** (no significant decrease). Hidden-community disparity, b-1se - a over 30 cases: median +0.0000, p nan; labelled disparity: median +0.0000, p nan.
+  - **H2, the scaled cap (kappa = D_a (1 + 0.05)): FAIL** (no significant decrease). Hidden-community disparity, b-5pct - a over 30 cases: median +0.0000, p nan; labelled disparity: median +0.0000, p nan.
+- Fixes: none. Deviations: none (the script was run with no arguments except `--dry-run` and `--summarize`; no constants changed; no earlier file touched). The periodic snapshot commits on this branch are my 30-minute `git add -A results/v2/parts/c2b`.
