@@ -1,0 +1,273 @@
+
+===== 2026-10-17 08:13:29 GPU 1: experiments/v2/train_constructor.py --seeds 3 4 --noadv-seeds 0 --log results/v2/train_log_gpu1.csv --preset 8gb
+device cuda (Tesla T4), preset 8gb, code 03abe91d201f; run one GPU job at a time
+train ['pokec_z'] x ['region', 'gender', 'age', 'degree'], validate ['pokec_t'] x ['region', 'gender', 'degree'], ks [25, 50, 100, 150, 200], R=16, checkpointing True
+3 model(s) to train: ['constructor_s3.pt', 'constructor_s4.pt', 'constructor_noadv_s0.pt']; 40 epochs x 12 steps, validation every 5 epoch(s)
+rough estimate (UNVERIFIED unit costs): preparing contexts 1.2 min, then about 10 min per model (480 steps x 1.18s + 8 validations x 5s); total about 0.5 h
+
+preparing training contexts (identical RR sets across definitions: same graph, R and seed)
+  pokec_z:region   G=  2  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  16.1s
+  pokec_z:gender   G=  2  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  16.2s
+  pokec_z:age      G=  4  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  16.1s
+  pokec_z:degree   G=  2  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  15.4s
+preparing validation contexts
+  pokec_t:region   G=  2  RR sets=625,216 nnz=6,935,677 (mean RR size 11.09)  7.9s
+  pokec_t:gender   G=  2  RR sets=625,216 nnz=6,935,677 (mean RR size 11.09)  8.1s
+  pokec_t:degree   G=  2  RR sets=625,216 nnz=6,935,677 (mean RR size 11.09)  7.0s
+contexts ready in 87s; GPU peak so far 1.41/1.43 GB
+
+=== constructor_s3.pt: seed 3, gamma_comm 0.5 ===
+constructor_s3.pt:   0%|                                                            | 0/480 [00:00<?, ?step/s]
+  ep    1  L=1.3418  disp=0.0227  comm=0.0088  spread=0.559  mu=0.047  comms=16.0 eff=15.95 (min 15.73)  T=0.999  (11s)
+  ep    2  L=0.2019  disp=0.0405  comm=0.1391  spread=0.924  mu=0.498  comms=16.0 eff=15.92 (min 15.69)  T=0.995  (20s)
+  ep    3  L=0.3571  disp=0.0290  comm=0.4225  spread=0.912  mu=0.268  comms=16.0 eff=15.43 (min 15.17)  T=0.988  (30s)
+  ep    4  L=0.3611  disp=0.0276  comm=0.2807  spread=0.858  mu=0.419  comms=16.0 eff=15.43 (min 15.08)  T=0.979  (40s)
+  ep    5  val=-0.0423 (fallback 1.00)  L=0.2596  disp=0.0247  comm=0.2282  spread=0.917  mu=0.389  comms=16.0 eff=15.8/16  T=0.967  (55s)
+constructor_s3.pt:  14%|#####1                                | 65/480 [01:00<06:25,  1.08step/s, loss 0.2310]
+  ep    6  L=0.2342  disp=0.0129  comm=0.2792  spread=0.927  mu=0.382  comms=16.0 eff=15.66 (min 15.49)  T=0.952  (66s)
+  ep    7  L=0.2971  disp=0.0143  comm=0.1426  spread=0.861  mu=0.624  comms=16.0 eff=15.47 (min 15.31)  T=0.935  (76s)
+  ep    8  L=0.2289  disp=0.0197  comm=0.1600  spread=0.894  mu=0.492  comms=16.0 eff=15.45 (min 15.22)  T=0.916  (87s)
+  ep    9  L=0.4342  disp=0.0216  comm=0.5733  spread=0.899  mu=0.566  comms=16.0 eff=14.61 (min 13.19)  T=0.894  (98s)
+  ep   10  val=-0.0423 (fallback 1.00)  L=0.4541  disp=0.0292  comm=0.7265  spread=0.957  mu=0.644  comms=16.0 eff=14.9/16  T=0.870  (113s)
+constructor_s3.pt:  27%|##########                           | 130/480 [02:02<05:29,  1.06step/s, loss 0.4433]
+  ep   11  L=0.4386  disp=0.0244  comm=0.7186  spread=0.958  mu=0.472  comms=16.0 eff=14.84 (min 14.61)  T=0.844  (124s)
+  ep   12  L=0.4517  disp=0.0252  comm=0.7439  spread=0.964  mu=0.536  comms=16.0 eff=14.93 (min 13.90)  T=0.817  (135s)
+  ep   13  L=0.4126  disp=0.0313  comm=0.6743  spread=0.971  mu=0.602  comms=16.0 eff=14.92 (min 14.02)  T=0.788  (146s)
+  ep   14  L=0.4412  disp=0.0203  comm=0.6909  spread=0.954  mu=0.849  comms=15.8 eff=14.95 (min 14.71)  T=0.757  (156s)
+  ep   15  val=-0.0423 (fallback 1.00)  L=0.4513  disp=0.0169  comm=0.7648  spread=0.965  mu=0.466  comms=15.9 eff=14.8/16  T=0.725  (174s)
+  ep   16  L=0.4686  disp=0.0182  comm=0.7855  spread=0.969  mu=0.618  comms=15.9 eff=14.57 (min 13.95)  T=0.692  (185s)
+constructor_s3.pt:  40%|##############8                      | 193/480 [03:05<04:36,  1.04step/s, loss 0.3907]
+  ep   17  L=0.4639  disp=0.0216  comm=0.7839  spread=0.967  mu=0.624  comms=15.8 eff=14.55 (min 14.38)  T=0.658  (196s)
+  ep   18  L=0.4848  disp=0.0162  comm=0.8182  spread=0.963  mu=0.724  comms=16.0 eff=14.41 (min 14.09)  T=0.623  (207s)
+  ep   19  L=0.4010  disp=0.0129  comm=0.6620  spread=0.968  mu=0.670  comms=16.0 eff=14.73 (min 14.52)  T=0.588  (217s)
+  ep   20  val=-0.0423 (fallback 1.00)  L=0.4763  disp=0.0165  comm=0.8031  spread=0.958  mu=0.574  comms=15.9 eff=14.5/16  T=0.553  (233s)
+  ep   21  L=0.4598  disp=0.0280  comm=0.7781  spread=0.973  mu=0.528  comms=16.0 eff=14.67 (min 14.46)  T=0.518  (244s)
+constructor_s3.pt:  53%|###################5                 | 254/480 [04:05<03:38,  1.03step/s, loss 0.4437]
+  ep   22  L=0.4925  disp=0.0329  comm=0.8398  spread=0.975  mu=0.644  comms=15.9 eff=14.53 (min 14.12)  T=0.483  (254s)
+  ep   23  L=0.5012  disp=0.0190  comm=0.8711  spread=0.980  mu=0.854  comms=16.0 eff=14.65 (min 14.13)  T=0.448  (265s)
+  ep   24  L=0.4900  disp=0.0249  comm=0.8418  spread=0.969  mu=0.654  comms=16.0 eff=14.82 (min 14.60)  T=0.414  (276s)
+  ep   25  val=-0.0423 (fallback 1.00)  L=0.5056  disp=0.0176  comm=0.8715  spread=0.971  mu=0.998  comms=16.0 eff=14.8/16  T=0.381  (291s)
+  ep   26  L=0.9235  disp=0.0247  comm=0.8263  spread=0.892  mu=0.719  comms=16.0 eff=14.88 (min 14.70)  T=0.348  (301s)
+constructor_s3.pt:  66%|########################4            | 317/480 [05:06<02:37,  1.03step/s, loss 0.5884]
+  ep   27  L=0.5321  disp=0.0383  comm=0.9011  spread=0.970  mu=0.814  comms=16.0 eff=14.75 (min 14.28)  T=0.317  (313s)
+  ep   28  L=0.5295  disp=0.0395  comm=0.9151  spread=0.973  mu=0.851  comms=16.0 eff=14.84 (min 14.62)  T=0.288  (323s)
+  ep   29  L=0.4981  disp=0.0272  comm=0.8506  spread=0.975  mu=0.785  comms=15.9 eff=14.77 (min 14.34)  T=0.260  (333s)
+  ep   30  val=-0.0423 (fallback 1.00)  L=0.8766  disp=0.0248  comm=0.7299  spread=0.892  mu=0.776  comms=16.0 eff=15.0/16  T=0.234  (348s)
+  ep   31  L=0.9959  disp=0.0206  comm=0.8521  spread=0.871  mu=0.894  comms=16.0 eff=14.82 (min 14.56)  T=0.210  (359s)
+constructor_s3.pt:  79%|#############################2       | 380/480 [06:06<01:36,  1.04step/s, loss 6.8513]
+  ep   32  L=1.0278  disp=0.0258  comm=0.7864  spread=0.887  mu=0.982  comms=16.0 eff=14.61 (min 13.93)  T=0.188  (371s)
+  ep   33  L=0.4909  disp=0.0283  comm=0.8420  spread=0.975  mu=0.977  comms=16.0 eff=14.85 (min 14.58)  T=0.168  (381s)
+  ep   34  L=0.9101  disp=0.0321  comm=0.8468  spread=0.893  mu=0.959  comms=16.0 eff=14.75 (min 14.48)  T=0.150  (391s)
+  ep   35  val=-0.0423 (fallback 1.00)  L=0.5439  disp=0.0313  comm=0.9386  spread=0.969  mu=1.077  comms=16.0 eff=14.8/16  T=0.135  (407s)
+  ep   36  L=0.5417  disp=0.0234  comm=0.9684  spread=0.975  mu=0.940  comms=16.0 eff=14.73 (min 14.51)  T=0.123  (418s)
+constructor_s3.pt:  92%|##################################1  | 443/480 [07:07<00:35,  1.03step/s, loss 0.5770]
+  ep   37  L=0.5551  disp=0.0361  comm=0.9905  spread=0.976  mu=1.023  comms=16.0 eff=14.79 (min 14.66)  T=0.113  (429s)
+  ep   38  L=0.5581  disp=0.0380  comm=0.9944  spread=0.975  mu=0.672  comms=16.0 eff=14.80 (min 14.71)  T=0.106  (441s)
+  ep   39  L=0.5597  disp=0.0335  comm=0.9957  spread=0.973  mu=1.041  comms=16.0 eff=14.80 (min 14.76)  T=0.102  (452s)
+  ep   40  val=-0.0423 (fallback 1.00)  L=0.5553  disp=0.0334  comm=0.9965  spread=0.974  mu=1.042  comms=16.0 eff=14.8/16  T=0.100  (469s)
+constructor_s3.pt: 100%|#####################################| 480/480 [07:48<00:00,  1.02step/s, loss 0.5285]
+  saved /tmp/fimgat/results/v2/models/constructor_s3.pt: best val -0.0423 (epoch 5), train 469s, peak GPU 4.26/4.48 GB (allocated/reserved); mu_ref {25: 0.614, 50: 0.147, 100: 0.552, 150: 0.644, 200: 0.219}
+
+=== constructor_s4.pt: seed 4, gamma_comm 0.5 ===
+constructor_s4.pt:   0%|                                                            | 0/480 [00:00<?, ?step/s]
+  ep    1  L=1.9039  disp=0.0329  comm=0.0159  spread=0.441  mu=0.057  comms=16.0 eff=15.98 (min 15.96)  T=0.999  (12s)
+  ep    2  L=0.3751  disp=0.0534  comm=0.2369  spread=0.840  mu=0.329  comms=16.0 eff=15.70 (min 15.26)  T=0.995  (23s)
+  ep    3  L=0.4138  disp=0.0344  comm=0.5139  spread=0.900  mu=0.535  comms=16.0 eff=15.22 (min 14.90)  T=0.988  (33s)
+  ep    4  L=0.3245  disp=0.0281  comm=0.1056  spread=0.835  mu=0.532  comms=16.0 eff=15.58 (min 15.21)  T=0.979  (43s)
+  ep    5  val=-0.0423 (fallback 1.00)  L=0.3115  disp=0.0177  comm=0.3527  spread=0.922  mu=0.740  comms=16.0 eff=15.4/16  T=0.967  (60s)
+constructor_s4.pt:  13%|####8                                 | 61/480 [01:01<07:00,  1.00s/step, loss 0.3532]
+  ep    6  L=0.3012  disp=0.0213  comm=0.4292  spread=0.962  mu=0.619  comms=15.3 eff=14.46 (min 13.12)  T=0.952  (72s)
+  ep    7  L=0.4102  disp=0.0176  comm=0.5622  spread=0.925  mu=0.774  comms=14.9 eff=13.52 (min 13.07)  T=0.935  (83s)
+  ep    8  L=0.4208  disp=0.0196  comm=0.6731  spread=0.949  mu=0.645  comms=15.0 eff=13.45 (min 12.95)  T=0.916  (95s)
+  ep    9  L=0.3924  disp=0.0209  comm=0.5236  spread=0.943  mu=0.506  comms=15.8 eff=13.81 (min 11.78)  T=0.894  (105s)
+  ep   10  val=-0.0423 (fallback 1.00)  L=0.4725  disp=0.0171  comm=0.7816  spread=0.955  mu=0.715  comms=16.0 eff=14.6/16  T=0.870  (120s)
+constructor_s4.pt:  25%|#########3                           | 121/480 [02:01<05:59,  1.00s/step, loss 0.4319]
+  ep   11  L=0.4565  disp=0.0286  comm=0.7550  spread=0.965  mu=0.747  comms=16.0 eff=14.86 (min 14.07)  T=0.844  (131s)
+  ep   12  L=0.4753  disp=0.0173  comm=0.7749  spread=0.958  mu=0.791  comms=16.0 eff=14.86 (min 14.43)  T=0.817  (141s)
+  ep   13  L=0.5186  disp=0.0365  comm=0.8466  spread=0.959  mu=0.668  comms=16.0 eff=14.74 (min 14.23)  T=0.788  (152s)
+  ep   14  L=0.3913  disp=0.0268  comm=0.6238  spread=0.970  mu=0.762  comms=16.0 eff=14.96 (min 14.18)  T=0.757  (163s)
+  ep   15  val=-0.0423 (fallback 1.00)  L=0.5208  disp=0.0308  comm=0.7754  spread=0.929  mu=0.766  comms=16.0 eff=14.7/16  T=0.725  (179s)
+constructor_s4.pt:  38%|##############1                      | 184/480 [03:01<04:52,  1.01step/s, loss 0.5559]
+  ep   16  L=0.5155  disp=0.0317  comm=0.8705  spread=0.974  mu=0.922  comms=16.0 eff=14.70 (min 14.35)  T=0.692  (189s)
+  ep   17  L=0.5126  disp=0.0315  comm=0.8692  spread=0.974  mu=0.660  comms=16.0 eff=14.67 (min 13.74)  T=0.658  (200s)
+  ep   18  L=0.4681  disp=0.0383  comm=0.7734  spread=0.974  mu=0.997  comms=16.0 eff=15.07 (min 14.66)  T=0.623  (211s)
+  ep   19  L=0.4307  disp=0.0118  comm=0.6762  spread=0.955  mu=0.888  comms=15.8 eff=14.77 (min 13.90)  T=0.588  (221s)
+  ep   20  val=-0.0423 (fallback 1.00)  L=0.5015  disp=0.0294  comm=0.8607  spread=0.979  mu=0.793  comms=16.0 eff=14.6/16  T=0.553  (237s)
+constructor_s4.pt:  51%|###################                  | 247/480 [04:03<03:49,  1.02step/s, loss 0.5195]
+  ep   21  L=0.8888  disp=0.0293  comm=0.7839  spread=0.898  mu=0.678  comms=16.0 eff=14.68 (min 14.42)  T=0.518  (248s)
+  ep   22  L=0.5154  disp=0.0332  comm=0.8852  spread=0.980  mu=0.837  comms=16.0 eff=14.63 (min 14.10)  T=0.483  (259s)
+  ep   23  L=0.4378  disp=0.0254  comm=0.7376  spread=0.977  mu=0.698  comms=16.0 eff=14.92 (min 14.60)  T=0.448  (270s)
+  ep   24  L=0.5243  disp=0.0147  comm=0.9011  spread=0.964  mu=0.710  comms=16.0 eff=14.72 (min 14.42)  T=0.414  (280s)
+  ep   25  val=-0.0423 (fallback 1.00)  L=0.5110  disp=0.0257  comm=0.8836  spread=0.971  mu=0.909  comms=16.0 eff=14.6/16  T=0.381  (296s)
+constructor_s4.pt:  64%|#######################8             | 309/480 [05:04<02:48,  1.02step/s, loss 0.5032]
+  ep   26  L=0.4674  disp=0.0268  comm=0.8010  spread=0.979  mu=0.782  comms=16.0 eff=14.82 (min 14.50)  T=0.348  (307s)
+  ep   27  L=0.5385  disp=0.0233  comm=0.9146  spread=0.965  mu=0.971  comms=16.0 eff=14.70 (min 14.47)  T=0.317  (317s)
+  ep   28  L=0.9571  disp=0.0313  comm=0.8484  spread=0.896  mu=1.027  comms=16.0 eff=14.77 (min 14.65)  T=0.288  (327s)
+  ep   29  L=0.5267  disp=0.0220  comm=0.9314  spread=0.978  mu=0.574  comms=16.0 eff=14.78 (min 14.71)  T=0.260  (338s)
+  ep   30  val=-0.0423 (fallback 1.00)  L=0.5241  disp=0.0327  comm=0.9150  spread=0.977  mu=0.653  comms=16.0 eff=14.7/16  T=0.234  (354s)
+constructor_s4.pt:  77%|############################5        | 371/480 [06:04<01:46,  1.02step/s, loss 0.5249]
+  ep   31  L=0.9815  disp=0.0308  comm=0.8476  spread=0.896  mu=0.943  comms=16.0 eff=14.77 (min 14.70)  T=0.210  (365s)
+  ep   32  L=0.5355  disp=0.0184  comm=0.9406  spread=0.980  mu=1.060  comms=16.0 eff=14.72 (min 14.09)  T=0.188  (376s)
+  ep   33  L=0.5383  disp=0.0318  comm=0.9353  spread=0.978  mu=1.039  comms=16.0 eff=14.73 (min 14.50)  T=0.168  (387s)
+  ep   34  L=0.5321  disp=0.0223  comm=0.9440  spread=0.980  mu=1.039  comms=16.0 eff=14.78 (min 14.66)  T=0.150  (397s)
+  ep   35  val=-0.0423 (fallback 1.00)  L=0.5313  disp=0.0302  comm=0.9342  spread=0.981  mu=0.926  comms=16.0 eff=14.8/16  T=0.135  (414s)
+  ep   36  L=0.5332  disp=0.0383  comm=0.9304  spread=0.982  mu=1.136  comms=16.0 eff=14.72 (min 14.53)  T=0.123  (425s)
+constructor_s4.pt:  90%|#################################3   | 433/480 [07:05<00:46,  1.02step/s, loss 0.5337]
+  ep   37  L=0.5337  disp=0.0275  comm=0.9384  spread=0.984  mu=0.822  comms=16.0 eff=14.76 (min 14.64)  T=0.113  (435s)
+  ep   38  L=1.4786  disp=0.0216  comm=0.7841  spread=0.815  mu=0.912  comms=16.0 eff=14.78 (min 14.65)  T=0.106  (445s)
+  ep   39  L=0.5298  disp=0.0276  comm=0.9397  spread=0.981  mu=1.129  comms=16.0 eff=14.78 (min 14.65)  T=0.102  (456s)
+  ep   40  val=-0.0423 (fallback 1.00)  L=0.5341  disp=0.0346  comm=0.9422  spread=0.980  mu=0.926  comms=16.0 eff=14.7/16  T=0.100  (472s)
+constructor_s4.pt: 100%|#####################################| 480/480 [07:51<00:00,  1.02step/s, loss 0.4963]
+  saved /tmp/fimgat/results/v2/models/constructor_s4.pt: best val -0.0423 (epoch 5), train 472s, peak GPU 4.26/4.53 GB (allocated/reserved); mu_ref {25: 0.361, 50: 0.461, 100: 0.750, 150: 0.783, 200: 0.684}
+
+=== constructor_noadv_s0.pt: seed 0, gamma_comm 0.0 ===
+constructor_noadv_s0.pt:   0%|                                                      | 0/480 [00:00<?, ?step/s]
+  ep    1  L=1.6243  disp=0.0261  comm=nan  spread=0.483  mu=0.073  comms=nan eff=nan (min nan)  T=0.999  (10s)
+  ep    2  L=0.1840  disp=0.0571  comm=nan  spread=0.858  mu=0.332  comms=nan eff=nan (min nan)  T=0.995  (20s)
+  ep    3  L=0.0740  disp=0.0418  comm=nan  spread=0.943  mu=0.267  comms=nan eff=nan (min nan)  T=0.988  (30s)
+  ep    4  L=0.0808  disp=0.0364  comm=nan  spread=0.951  mu=0.350  comms=nan eff=nan (min nan)  T=0.979  (39s)
+  ep    5  val=-0.0423 (fallback 1.00)  L=0.0538  disp=0.0267  comm=nan  spread=0.961  mu=0.414  comms=nan eff=nan/16  T=0.967  (55s)
+constructor_noadv_s0.pt:  14%|####4                           | 67/480 [01:00<06:15,  1.10step/s, loss 0.1202]
+  ep    6  L=0.0603  disp=0.0334  comm=nan  spread=0.957  mu=0.413  comms=nan eff=nan (min nan)  T=0.952  (65s)
+  ep    7  L=0.0710  disp=0.0420  comm=nan  spread=0.961  mu=0.356  comms=nan eff=nan (min nan)  T=0.935  (75s)
+  ep    8  L=0.0552  disp=0.0332  comm=nan  spread=0.974  mu=0.477  comms=nan eff=nan (min nan)  T=0.916  (85s)
+  ep    9  L=0.0566  disp=0.0363  comm=nan  spread=0.967  mu=0.359  comms=nan eff=nan (min nan)  T=0.894  (95s)
+  ep   10  val=-0.0423 (fallback 1.00)  L=0.0584  disp=0.0421  comm=nan  spread=0.972  mu=0.420  comms=nan eff=nan/16  T=0.870  (110s)
+  ep   11  L=0.0577  disp=0.0335  comm=nan  spread=0.975  mu=0.579  comms=nan eff=nan (min nan)  T=0.844  (119s)
+constructor_noadv_s0.pt:  28%|########6                      | 134/480 [02:01<05:12,  1.11step/s, loss 0.0485]
+  ep   12  L=0.0532  disp=0.0288  comm=nan  spread=0.975  mu=0.364  comms=nan eff=nan (min nan)  T=0.817  (129s)
+  ep   13  L=0.0518  disp=0.0352  comm=nan  spread=0.975  mu=0.472  comms=nan eff=nan (min nan)  T=0.788  (139s)
+  ep   14  L=0.0563  disp=0.0324  comm=nan  spread=0.974  mu=0.486  comms=nan eff=nan (min nan)  T=0.757  (148s)
+  ep   15  val=-0.0423 (fallback 1.00)  L=0.0571  disp=0.0353  comm=nan  spread=0.970  mu=0.437  comms=nan eff=nan/16  T=0.725  (163s)
+  ep   16  L=0.0532  disp=0.0329  comm=nan  spread=0.971  mu=0.489  comms=nan eff=nan (min nan)  T=0.692  (173s)
+constructor_noadv_s0.pt:  42%|#############1                 | 203/480 [03:01<04:07,  1.12step/s, loss 0.0362]
+  ep   17  L=0.0547  disp=0.0385  comm=nan  spread=0.977  mu=0.393  comms=nan eff=nan (min nan)  T=0.658  (182s)
+  ep   18  L=0.4997  disp=0.0333  comm=nan  spread=0.894  mu=0.575  comms=nan eff=nan (min nan)  T=0.623  (192s)
+  ep   19  L=0.0544  disp=0.0381  comm=nan  spread=0.978  mu=0.429  comms=nan eff=nan (min nan)  T=0.588  (201s)
+  ep   20  val=-0.0423 (fallback 1.00)  L=0.0546  disp=0.0319  comm=nan  spread=0.976  mu=0.414  comms=nan eff=nan/16  T=0.553  (216s)
+  ep   21  L=0.0651  disp=0.0366  comm=nan  spread=0.961  mu=0.510  comms=nan eff=nan (min nan)  T=0.518  (225s)
+  ep   22  L=0.0542  disp=0.0335  comm=nan  spread=0.975  mu=0.738  comms=nan eff=nan (min nan)  T=0.483  (235s)
+constructor_noadv_s0.pt:  57%|#################6             | 273/480 [04:01<03:02,  1.13step/s, loss 0.0377]
+  ep   23  L=0.0546  disp=0.0196  comm=nan  spread=0.963  mu=0.645  comms=nan eff=nan (min nan)  T=0.448  (244s)
+  ep   24  L=0.5972  disp=0.0235  comm=nan  spread=0.888  mu=0.581  comms=nan eff=nan (min nan)  T=0.414  (254s)
+  ep   25  val=-0.0423 (fallback 1.00)  L=0.7046  disp=0.0346  comm=nan  spread=0.883  mu=0.607  comms=nan eff=nan/16  T=0.381  (269s)
+  ep   26  L=0.0590  disp=0.0421  comm=nan  spread=0.973  mu=0.365  comms=nan eff=nan (min nan)  T=0.348  (278s)
+  ep   27  L=0.0506  disp=0.0346  comm=nan  spread=0.976  mu=0.876  comms=nan eff=nan (min nan)  T=0.317  (288s)
+  ep   28  L=0.0556  disp=0.0264  comm=nan  spread=0.959  mu=0.396  comms=nan eff=nan (min nan)  T=0.288  (300s)
+constructor_noadv_s0.pt:  71%|######################1        | 343/480 [05:05<02:02,  1.12step/s, loss 5.2850]
+  ep   29  L=0.5269  disp=0.0280  comm=nan  spread=0.878  mu=0.746  comms=nan eff=nan (min nan)  T=0.260  (310s)
+  ep   30  val=-0.0423 (fallback 1.00)  L=0.7598  disp=0.0353  comm=nan  spread=0.890  mu=1.186  comms=nan eff=nan/16  T=0.234  (325s)
+  ep   31  L=0.0515  disp=0.0330  comm=nan  spread=0.979  mu=0.855  comms=nan eff=nan (min nan)  T=0.210  (334s)
+  ep   32  L=0.4764  disp=0.0344  comm=nan  spread=0.896  mu=0.691  comms=nan eff=nan (min nan)  T=0.188  (344s)
+  ep   33  L=0.0479  disp=0.0298  comm=nan  spread=0.977  mu=0.531  comms=nan eff=nan (min nan)  T=0.168  (353s)
+  ep   34  L=0.0638  disp=0.0451  comm=nan  spread=0.976  mu=0.596  comms=nan eff=nan (min nan)  T=0.150  (362s)
+constructor_noadv_s0.pt:  86%|##########################6    | 413/480 [06:06<00:59,  1.13step/s, loss 0.0327]
+  ep   35  val=-0.0423 (fallback 1.00)  L=0.0506  disp=0.0325  comm=nan  spread=0.979  mu=0.769  comms=nan eff=nan/16  T=0.135  (378s)
+  ep   36  L=0.0523  disp=0.0364  comm=nan  spread=0.978  mu=0.621  comms=nan eff=nan (min nan)  T=0.123  (388s)
+  ep   37  L=0.0491  disp=0.0308  comm=nan  spread=0.981  mu=0.584  comms=nan eff=nan (min nan)  T=0.113  (399s)
+  ep   38  L=0.0454  disp=0.0236  comm=nan  spread=0.977  mu=0.490  comms=nan eff=nan (min nan)  T=0.106  (409s)
+  ep   39  L=0.0497  disp=0.0285  comm=nan  spread=0.978  mu=0.594  comms=nan eff=nan (min nan)  T=0.102  (419s)
+  ep   40  val=-0.0423 (fallback 1.00)  L=0.0525  disp=0.0356  comm=nan  spread=0.977  mu=0.967  comms=nan eff=nan/16  T=0.100  (434s)
+constructor_noadv_s0.pt: 100%|###############################| 480/480 [07:13<00:00,  1.11step/s, loss 0.0277]
+  saved /tmp/fimgat/results/v2/models/constructor_noadv_s0.pt: best val -0.0423 (epoch 5), train 434s, peak GPU 4.26/4.53 GB (allocated/reserved); mu_ref {25: 0.503, 50: 0.683, 100: 0.370, 150: 0.512, 200: 0.212}
+
+done: 3 model(s) in 22.9 min; log results/v2/train_log_gpu1.csv
+
+===== 2026-10-17 08:38:54 GPU 1: experiments/v2/train_proposer.py --preset 8gb
+train ['pokec_z'] x ['region', 'gender', 'age', 'degree'], validate ['pokec_t'] x ['region', 'gender', 'degree'], ks [25, 50, 100, 150, 200], rho (0.97, 0.99), delta 0.005; seeds [0, 1, 2, 3, 4] -> /tmp/fimgat/results/v2/models
+plan: about 320 training and 30 validation states, 8 epochs per seed
+device cuda (Tesla T4), preset 8gb, code 03abe91d201f; run one GPU job at a time
+
+preparing contexts
+  pokec_z:region   G=  2  RR sets=1,078,960 nnz=11,911,089 (mean RR size 11.04)  23.4s
+  pokec_z:gender   G=  2  RR sets=1,078,960 nnz=11,911,089 (mean RR size 11.04)  14.4s
+  pokec_z:age      G=  4  RR sets=1,078,960 nnz=11,911,089 (mean RR size 11.04)  16.3s
+  pokec_z:degree   G=  2  RR sets=1,078,960 nnz=11,911,089 (mean RR size 11.04)  16.2s
+  pokec_t:region   G=  2  RR sets=625,216 nnz=6,939,959 (mean RR size 11.10)  9.2s
+  pokec_t:gender   G=  2  RR sets=625,216 nnz=6,939,959 (mean RR size 11.10)  8.3s
+  pokec_t:degree   G=  2  RR sets=625,216 nnz=6,939,959 (mean RR size 11.10)  7.4s
+rough estimate (UNVERIFIED unit costs): states 10 min, then about 42 min per seed
+generating training states (exhaustive local-search trajectories, a quarter random improving moves)
+states:   0%|                                                                       | 0/40 [00:00<?, ?query/s]
+states:  15%|#########4                                                     | 6/40 [01:02<05:56, 10.48s/query]
+states:  30%|##################5                                           | 12/40 [02:31<05:53, 12.64s/query]
+states:  42%|##########################3                                   | 17/40 [03:34<04:50, 12.64s/query]
+states:  55%|##################################1                           | 22/40 [04:38<03:48, 12.69s/query]
+states:  70%|###########################################4                  | 28/40 [05:55<02:32, 12.74s/query]
+states:  82%|###################################################1          | 33/40 [06:57<01:28, 12.68s/query]
+states:  98%|############################################################4 | 39/40 [08:11<00:12, 12.61s/query]
+states: 100%|##############################################################| 40/40 [08:28<00:00, 12.71s/query]
+  285 states from 4 contexts in 508s
+generating validation states
+states:   0%|                                                                       | 0/30 [00:00<?, ?query/s]
+states:  60%|#####################################1                        | 18/30 [01:05<00:43,  3.63s/query]
+states: 100%|##############################################################| 30/30 [01:57<00:00,  3.91s/query]
+  60 states from 3 contexts in 117s
+simple proposer, validation recall@C: C=8: 0.283, C=32: 0.283, C=128: 0.300
+
+=== proposer_s0.pt: seed 0 ===
+  initial policy: constructor_s0.pt
+    ep   0  loss=nan (0 steps)  val=0.9833  (12s)
+    ep   1  loss=3.0048 (285 steps)  val=0.9833  (196s)
+    ep   2  loss=3.0344 (285 steps)  val=0.8167  (379s)
+    ep   3  loss=3.0032 (285 steps)  val=0.5833  (563s)
+    ep   4  loss=3.0317 (285 steps)  val=0.5833  (747s)
+    ep   5  loss=2.9023 (285 steps)  val=0.7500  (931s)
+    ep   6  loss=2.8190 (285 steps)  val=0.7000  (1115s)
+    ep   7  loss=2.8399 (285 steps)  val=0.7833  (1298s)
+    ep   8  loss=2.7303 (285 steps)  val=0.5667  (1482s)
+  saved /tmp/fimgat/results/v2/models/proposer_s0.pt: validation recall@128 0.983 (epoch 0; simple proposer 0.300), cost ratio 7.35, 1482s, peak GPU 4.25/6.03 GB
+
+=== proposer_s1.pt: seed 1 ===
+  initial policy: constructor_s1.pt
+    ep   0  loss=nan (0 steps)  val=0.9833  (11s)
+    ep   1  loss=2.8882 (285 steps)  val=0.9833  (194s)
+    ep   2  loss=2.9523 (285 steps)  val=0.8833  (378s)
+    ep   3  loss=3.0058 (285 steps)  val=0.8500  (561s)
+    ep   4  loss=2.9986 (285 steps)  val=0.8000  (745s)
+    ep   5  loss=2.7606 (285 steps)  val=0.5833  (929s)
+    ep   6  loss=2.7978 (285 steps)  val=0.6000  (1112s)
+    ep   7  loss=2.7937 (285 steps)  val=0.7333  (1296s)
+    ep   8  loss=2.7808 (285 steps)  val=0.6333  (1479s)
+  saved /tmp/fimgat/results/v2/models/proposer_s1.pt: validation recall@128 0.983 (epoch 0; simple proposer 0.300), cost ratio 7.17, 1479s, peak GPU 4.25/5.46 GB
+
+=== proposer_s2.pt: seed 2 ===
+  initial policy: constructor_s2.pt
+    ep   0  loss=nan (0 steps)  val=0.9833  (11s)
+    ep   1  loss=2.9799 (285 steps)  val=0.9833  (195s)
+    ep   2  loss=3.0505 (285 steps)  val=0.9667  (378s)
+    ep   3  loss=3.0034 (285 steps)  val=0.9833  (562s)
+    ep   4  loss=2.8622 (285 steps)  val=0.9500  (746s)
+    ep   5  loss=2.8211 (285 steps)  val=0.9500  (930s)
+    ep   6  loss=2.7925 (285 steps)  val=0.9333  (1114s)
+    ep   7  loss=2.8257 (285 steps)  val=0.8500  (1297s)
+    ep   8  loss=2.7889 (285 steps)  val=0.8000  (1480s)
+  saved /tmp/fimgat/results/v2/models/proposer_s2.pt: validation recall@128 0.983 (epoch 0; simple proposer 0.300), cost ratio 7.14, 1480s, peak GPU 4.25/5.46 GB
+
+=== proposer_s3.pt: seed 3 ===
+  initial policy: constructor_s3.pt
+    ep   0  loss=nan (0 steps)  val=0.9833  (12s)
+    ep   1  loss=3.0618 (285 steps)  val=0.9833  (195s)
+    ep   2  loss=2.9859 (285 steps)  val=0.8500  (378s)
+    ep   3  loss=2.9172 (285 steps)  val=0.8500  (562s)
+    ep   4  loss=2.9749 (285 steps)  val=0.9500  (746s)
+    ep   5  loss=2.8046 (285 steps)  val=0.7667  (930s)
+    ep   6  loss=2.8335 (285 steps)  val=0.6000  (1113s)
+    ep   7  loss=2.8404 (285 steps)  val=0.9167  (1297s)
+    ep   8  loss=2.8308 (285 steps)  val=0.6000  (1481s)
+  saved /tmp/fimgat/results/v2/models/proposer_s3.pt: validation recall@128 0.983 (epoch 0; simple proposer 0.300), cost ratio 7.18, 1481s, peak GPU 4.25/5.46 GB
+
+=== proposer_s4.pt: seed 4 ===
+  initial policy: constructor_s4.pt
+    ep   0  loss=nan (0 steps)  val=0.9833  (11s)
+    ep   1  loss=2.9022 (285 steps)  val=0.9833  (195s)
+    ep   2  loss=2.9043 (285 steps)  val=0.9833  (379s)
+    ep   3  loss=2.9602 (285 steps)  val=0.8833  (563s)
+    ep   4  loss=2.9229 (285 steps)  val=0.7167  (746s)
+    ep   5  loss=2.8775 (285 steps)  val=0.6833  (929s)
+    ep   6  loss=2.9141 (285 steps)  val=0.5500  (1113s)
+    ep   7  loss=2.8002 (285 steps)  val=0.6333  (1297s)
+    ep   8  loss=2.8225 (285 steps)  val=0.6833  (1480s)
+  saved /tmp/fimgat/results/v2/models/proposer_s4.pt: validation recall@128 0.983 (epoch 0; simple proposer 0.300), cost ratio 7.07, 1480s, peak GPU 4.25/5.46 GB
+
+done: 5 proposer(s); log /tmp/fimgat/results/v2/train_proposer_log.csv

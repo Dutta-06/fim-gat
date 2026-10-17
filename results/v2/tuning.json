@@ -45,15 +45,16 @@
   "graph_tier": "medium",
   "note": "no large-tier validation graph exists; measured on pokec_t"
  },
- "code_tag": "f53a3e10824a",
- "when": "2026-10-15 18:01:33",
+ "code_tag": "03abe91d201f",
+ "when": "2026-10-17 08:47:51",
  "tuned": true,
  "steps": [
   "delta",
   "phi0",
+  "start",
   "w3"
  ],
- "gpu": "cpu",
+ "gpu": "Tesla T4",
  "preset": "8gb",
  "history": [
   {
@@ -66,7 +67,21 @@
    "when": "2026-10-15 18:01:33",
    "gpu": "cpu",
    "preset": "8gb"
+  },
+  {
+   "steps": [
+    "start"
+   ],
+   "code_tag": "03abe91d201f",
+   "when": "2026-10-17 08:47:51",
+   "gpu": "Tesla T4",
+   "preset": "8gb"
   }
  ],
- "start_reason": "provisional: the start step has not run (it waits for the constructor; cloud runbook)"
+ "start_reason": "constructor mean 0.04727 >= greedy 0.03644",
+ "start_scores": {
+  "greedy": 0.036437183944943365,
+  "learned": 0.04727486464287817,
+  "n_learned_seeds": 5
+ }
 }

@@ -62,6 +62,11 @@ v1's honest outcome:
   - Rice was built with 1,216 nodes (11 isolates) against the specified 1,205: a pending decision.
   - The adversary's framing after the C2 null is the user's call (protocol: ask, do not drop).
   - Still to run on a GPU: the constructor, the proposer and T3, full Pokec, LinkedIn and T4.
+- **Kaggle G1 (2026-10-17; `results/v2/parts/kaggle-G1-train/`, 2.7 h on 2x T4, complete).**
+  - Constructor, 6 models (seeds 0-4 and the no-adversary ablation): every validation query at rho = 0.99 fell back to greedy (none of the candidates met the floor min(0.99 + delta, 1) x reference; training reached 0.96-0.98 of the reference). The validation score was therefore constant, so the saved checkpoints are epoch 5 of 40. The adversary did not collapse (about 15 of 16 communities in use).
+  - Start step: **greedy** (the constructor's start mean 0.0473 against greedy's 0.0364). The learned start fell back in 25 of 25 queries, so that score is greedy-on-A's, not the constructor's.
+  - Proposer: imitation lowered validation recall@128, so every seed kept its starting policy, the constructor checkpoint: recall@128 0.983 against the simple proposer's 0.300. Its per-round cost is 7.1-7.4 times the simple proposer's (W3 headroom H = 8.1).
+  - Pending the user's decision (2026-10-17): keep this result, or apply a declared fix (the decoder repairs a near-feasible set; checkpoint selection cannot tie on fallbacks), retrain, and rerun the start step, keeping this attempt on record.
 - **Design:** `docs/design_v2.md`.
   - **§18 is the pre-registration amendment** the user approved before any run:
     - T2 tests the ε-constraint phase (`improve.hive_search`), with (b0), the published rule, also reported;

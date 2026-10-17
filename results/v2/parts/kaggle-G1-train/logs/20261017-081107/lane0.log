@@ -1,0 +1,359 @@
+
+===== 2026-10-17 08:11:34 GPU 0: experiments/v2/train_constructor.py --quick --preset 8gb
+device cuda (Tesla T4), preset 8gb, code 03abe91d201f; run one GPU job at a time
+train ['pokec_z'] x ['region', 'gender', 'age', 'degree'], validate ['pokec_t'] x ['region', 'gender', 'degree'], ks [25, 50], R=16, checkpointing True
+2 model(s) to train: ['constructor_s0.pt', 'constructor_noadv_s0.pt']; 2 epochs x 4 steps, validation every 1 epoch(s)
+rough estimate (UNVERIFIED unit costs): preparing contexts 1.2 min, then about 0 min per model (8 steps x 1.18s + 2 validations x 2s); total about 0.0 h
+
+preparing training contexts (identical RR sets across definitions: same graph, R and seed)
+  pokec_z:region   G=  2  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  8.8s
+  pokec_z:gender   G=  2  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  7.9s
+  pokec_z:age      G=  4  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  8.3s
+  pokec_z:degree   G=  2  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  7.9s
+preparing validation contexts
+  pokec_t:region   G=  2  RR sets=625,216 nnz=6,935,677 (mean RR size 11.09)  4.2s
+  pokec_t:gender   G=  2  RR sets=625,216 nnz=6,935,677 (mean RR size 11.09)  4.2s
+  pokec_t:degree   G=  2  RR sets=625,216 nnz=6,935,677 (mean RR size 11.09)  4.2s
+contexts ready in 46s; GPU peak so far 1.41/1.43 GB
+
+=== constructor_s0.pt: seed 0, gamma_comm 0.5 ===
+constructor_s0.pt:   0%|                                                              | 0/8 [00:00<?, ?step/s]
+  ep    1  val=-0.0397 (fallback 1.00)  L=3.3291  disp=0.0043  comm=0.0032  spread=0.185  mu=0.000  comms=16.0 eff=16.0/16  T=0.722  (7s)
+  ep    2  val=-0.0397 (fallback 1.00)  L=0.4283  disp=0.0348  comm=0.0242  spread=0.778  mu=0.223  comms=16.0 eff=16.0/16  T=0.134  (12s)
+constructor_s0.pt: 100%|#########################################| 8/8 [00:12<00:00,  1.50s/step, loss 0.0967]
+  saved /tmp/fimgat/results/v2/quick/models/constructor_s0.pt: best val -0.0397 (epoch 1), train 12s, peak GPU 4.26/4.48 GB (allocated/reserved); mu_ref {25: 0.880, 50: 0.720}
+
+=== constructor_noadv_s0.pt: seed 0, gamma_comm 0.0 ===
+constructor_noadv_s0.pt:   0%|                                                        | 0/8 [00:00<?, ?step/s]
+  ep    1  val=-0.0397 (fallback 1.00)  L=3.2736  disp=0.0043  comm=nan  spread=0.185  mu=0.000  comms=nan eff=nan/16  T=0.722  (5s)
+  ep    2  val=-0.0397 (fallback 1.00)  L=1.4564  disp=0.0256  comm=nan  spread=0.612  mu=0.223  comms=nan eff=nan/16  T=0.134  (10s)
+constructor_noadv_s0.pt: 100%|###################################| 8/8 [00:09<00:00,  1.24s/step, loss 0.0389]
+  saved /tmp/fimgat/results/v2/quick/models/constructor_noadv_s0.pt: best val -0.0397 (epoch 1), train 10s, peak GPU 4.26/4.53 GB (allocated/reserved); mu_ref {25: 0.880, 50: 0.720}
+
+done: 2 model(s) in 0.4 min; log /tmp/fimgat/results/v2/quick/train_log.csv
+
+===== 2026-10-17 08:12:52 GPU 0: experiments/v2/train_proposer.py --ignore-gate --seeds 0 --ks 25 --attributes region --val-attributes region --states-per-query 1 --val-states-per-query 1 --epochs 1 --constructor-pattern results/v2/quick/models/constructor_s{seed}.pt --preset 8gb
+train ['pokec_z'] x ['region'], validate ['pokec_t'] x ['region'], ks [25], rho (0.97, 0.99), delta 0.005; seeds [0] -> /tmp/fimgat/results/v2/quick/models (IGNORING THE W3 GATE)
+plan: about 2 training and 1 validation states, 1 epochs per seed
+device cuda (Tesla T4), preset 8gb, code 03abe91d201f; run one GPU job at a time
+
+preparing contexts
+  pokec_z:region   G=  2  RR sets=1,078,960 nnz=11,911,089 (mean RR size 11.04)  7.3s
+  pokec_t:region   G=  2  RR sets=625,216 nnz=6,939,959 (mean RR size 11.10)  3.7s
+rough estimate (UNVERIFIED unit costs): states 0 min, then about 0 min per seed
+generating training states (exhaustive local-search trajectories, a quarter random improving moves)
+states:   0%|                                                                        | 0/2 [00:00<?, ?query/s]
+states: 100%|################################################################| 2/2 [00:08<00:00,  4.16s/query]
+  2 states from 1 contexts in 8s
+generating validation states
+states:   0%|                                                                        | 0/2 [00:00<?, ?query/s]
+states: 100%|################################################################| 2/2 [00:03<00:00,  1.64s/query]
+  2 states from 1 contexts in 3s
+simple proposer, validation recall@C: C=8: 0.000, C=32: 0.000, C=128: 0.000
+
+=== proposer_s0.pt: seed 0 ===
+  initial policy: constructor_s0.pt
+    ep   0  loss=nan (0 steps)  val=1.0000  (1s)
+    ep   1  loss=2.7969 (2 steps)  val=1.0000  (2s)
+  saved /tmp/fimgat/results/v2/quick/models/proposer_s0.pt: validation recall@128 1.000 (epoch 0; simple proposer 0.000), cost ratio 6.80, 2s, peak GPU 3.24/4.49 GB
+
+done: 1 proposer(s); log /tmp/fimgat/results/v2/quick/train_proposer_log.csv
+
+===== 2026-10-17 08:13:29 GPU 0: experiments/v2/train_constructor.py --seeds 0 1 2 --noadv-seeds --log results/v2/train_log_gpu0.csv --preset 8gb
+device cuda (Tesla T4), preset 8gb, code 03abe91d201f; run one GPU job at a time
+train ['pokec_z'] x ['region', 'gender', 'age', 'degree'], validate ['pokec_t'] x ['region', 'gender', 'degree'], ks [25, 50, 100, 150, 200], R=16, checkpointing True
+3 model(s) to train: ['constructor_s0.pt', 'constructor_s1.pt', 'constructor_s2.pt']; 40 epochs x 12 steps, validation every 5 epoch(s)
+rough estimate (UNVERIFIED unit costs): preparing contexts 1.2 min, then about 10 min per model (480 steps x 1.18s + 8 validations x 5s); total about 0.5 h
+
+preparing training contexts (identical RR sets across definitions: same graph, R and seed)
+  pokec_z:region   G=  2  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  15.8s
+  pokec_z:gender   G=  2  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  15.3s
+  pokec_z:age      G=  4  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  15.7s
+  pokec_z:degree   G=  2  RR sets=1,078,960 nnz=11,930,008 (mean RR size 11.06)  15.6s
+preparing validation contexts
+  pokec_t:region   G=  2  RR sets=625,216 nnz=6,935,677 (mean RR size 11.09)  7.8s
+  pokec_t:gender   G=  2  RR sets=625,216 nnz=6,935,677 (mean RR size 11.09)  8.0s
+  pokec_t:degree   G=  2  RR sets=625,216 nnz=6,935,677 (mean RR size 11.09)  8.0s
+contexts ready in 86s; GPU peak so far 1.41/1.43 GB
+
+=== constructor_s0.pt: seed 0, gamma_comm 0.5 ===
+constructor_s0.pt:   0%|                                                            | 0/480 [00:00<?, ?step/s]
+  ep    1  L=1.6812  disp=0.0261  comm=0.0181  spread=0.483  mu=0.073  comms=16.0 eff=15.97 (min 15.93)  T=0.999  (11s)
+  ep    2  L=0.3283  disp=0.0567  comm=0.2486  spread=0.861  mu=0.332  comms=16.0 eff=15.56 (min 14.62)  T=0.995  (22s)
+  ep    3  L=0.4161  disp=0.0368  comm=0.6039  spread=0.920  mu=0.265  comms=16.0 eff=14.79 (min 14.16)  T=0.988  (32s)
+  ep    4  L=0.2744  disp=0.0241  comm=0.1475  spread=0.873  mu=0.400  comms=16.0 eff=15.33 (min 15.03)  T=0.979  (42s)
+  ep    5  val=-0.0423 (fallback 1.00)  L=0.3007  disp=0.0300  comm=0.1838  spread=0.854  mu=0.537  comms=16.0 eff=15.3/16  T=0.967  (59s)
+constructor_s0.pt:  13%|####8                                 | 61/480 [01:00<06:53,  1.01step/s, loss 0.2759]
+  ep    6  L=0.2909  disp=0.0265  comm=0.1058  spread=0.842  mu=0.582  comms=16.0 eff=15.24 (min 15.09)  T=0.952  (70s)
+  ep    7  L=0.2631  disp=0.0235  comm=0.2994  spread=0.923  mu=0.499  comms=16.0 eff=15.26 (min 15.02)  T=0.935  (81s)
+  ep    8  L=0.2390  disp=0.0176  comm=0.2177  spread=0.909  mu=0.683  comms=16.0 eff=15.34 (min 14.60)  T=0.916  (93s)
+  ep    9  L=0.2769  disp=0.0162  comm=0.2287  spread=0.878  mu=0.695  comms=16.0 eff=15.27 (min 14.73)  T=0.894  (104s)
+  ep   10  val=-0.0423 (fallback 1.00)  L=0.4219  disp=0.0177  comm=0.5707  spread=0.913  mu=0.955  comms=15.0 eff=13.0/16  T=0.870  (120s)
+constructor_s0.pt:  25%|#########4                           | 122/480 [02:01<05:57,  1.00step/s, loss 0.6919]
+  ep   11  L=0.3149  disp=0.0194  comm=0.4376  spread=0.949  mu=0.886  comms=14.5 eff=12.58 (min 11.47)  T=0.844  (131s)
+  ep   12  L=0.5129  disp=0.0126  comm=0.8444  spread=0.939  mu=0.748  comms=14.9 eff=13.10 (min 12.26)  T=0.817  (141s)
+  ep   13  L=0.4617  disp=0.0263  comm=0.7919  spread=0.964  mu=0.978  comms=15.0 eff=13.63 (min 13.12)  T=0.788  (153s)
+  ep   14  L=0.3503  disp=0.0318  comm=0.5719  spread=0.972  mu=0.874  comms=16.0 eff=13.56 (min 13.09)  T=0.757  (163s)
+  ep   15  val=-0.0423 (fallback 1.00)  L=0.4916  disp=0.0128  comm=0.7954  spread=0.937  mu=0.866  comms=15.9 eff=13.2/16  T=0.725  (179s)
+constructor_s0.pt:  38%|##############1                      | 184/480 [03:02<04:54,  1.01step/s, loss 0.5324]
+  ep   16  L=0.4246  disp=0.0193  comm=0.7375  spread=0.974  mu=0.756  comms=16.0 eff=13.86 (min 13.42)  T=0.692  (190s)
+  ep   17  L=0.4966  disp=0.0330  comm=0.8749  spread=0.975  mu=0.887  comms=16.0 eff=14.04 (min 13.83)  T=0.658  (201s)
+  ep   18  L=0.4781  disp=0.0173  comm=0.7981  spread=0.956  mu=0.973  comms=16.0 eff=14.31 (min 13.93)  T=0.623  (212s)
+  ep   19  L=0.5198  disp=0.0249  comm=0.9207  spread=0.962  mu=0.747  comms=16.0 eff=14.36 (min 13.92)  T=0.588  (222s)
+  ep   20  val=-0.0423 (fallback 1.00)  L=0.5102  disp=0.0285  comm=0.9044  spread=0.977  mu=0.863  comms=15.9 eff=14.3/16  T=0.553  (238s)
+constructor_s0.pt:  51%|##################9                  | 246/480 [04:02<03:50,  1.01step/s, loss 0.5265]
+  ep   21  L=0.5055  disp=0.0312  comm=0.9002  spread=0.980  mu=0.980  comms=16.0 eff=14.38 (min 13.86)  T=0.518  (248s)
+  ep   22  L=0.4814  disp=0.0250  comm=0.8493  spread=0.975  mu=1.139  comms=16.0 eff=14.36 (min 14.08)  T=0.483  (259s)
+  ep   23  L=0.5436  disp=0.0191  comm=0.9837  spread=0.973  mu=1.057  comms=16.0 eff=14.02 (min 13.55)  T=0.448  (269s)
+  ep   24  L=0.5472  disp=0.0236  comm=0.9768  spread=0.971  mu=1.105  comms=16.0 eff=14.10 (min 13.73)  T=0.414  (281s)
+  ep   25  val=-0.0423 (fallback 1.00)  L=0.5550  disp=0.0216  comm=0.9910  spread=0.971  mu=0.862  comms=16.0 eff=14.1/16  T=0.381  (297s)
+constructor_s0.pt:  64%|#######################7             | 308/480 [05:03<02:49,  1.01step/s, loss 0.6193]
+  ep   26  L=0.5639  disp=0.0304  comm=0.9948  spread=0.972  mu=0.963  comms=16.0 eff=14.12 (min 13.94)  T=0.348  (307s)
+  ep   27  L=0.5517  disp=0.0316  comm=0.9954  spread=0.979  mu=1.041  comms=16.0 eff=14.22 (min 13.88)  T=0.317  (318s)
+  ep   28  L=0.5514  disp=0.0342  comm=0.9959  spread=0.979  mu=0.811  comms=16.0 eff=14.23 (min 14.05)  T=0.288  (330s)
+  ep   29  L=0.5611  disp=0.0318  comm=0.9966  spread=0.982  mu=1.015  comms=16.0 eff=14.33 (min 14.18)  T=0.260  (342s)
+  ep   30  val=-0.0423 (fallback 1.00)  L=1.3995  disp=0.0250  comm=0.8308  spread=0.814  mu=1.221  comms=16.0 eff=14.3/16  T=0.234  (358s)
+constructor_s0.pt:  77%|############################5        | 370/480 [06:06<01:49,  1.01step/s, loss 0.5360]
+  ep   31  L=0.5497  disp=0.0298  comm=0.9971  spread=0.981  mu=1.158  comms=16.0 eff=14.35 (min 14.20)  T=0.210  (368s)
+  ep   32  L=0.5477  disp=0.0300  comm=0.9847  spread=0.979  mu=1.114  comms=16.0 eff=14.28 (min 13.94)  T=0.188  (379s)
+  ep   33  L=0.3346  disp=0.0190  comm=0.5175  spread=0.959  mu=1.312  comms=16.0 eff=14.37 (min 13.92)  T=0.168  (389s)
+  ep   34  L=0.8166  disp=0.0179  comm=0.3322  spread=0.826  mu=0.846  comms=16.0 eff=14.56 (min 14.20)  T=0.150  (400s)
+  ep   35  val=-0.0423 (fallback 1.00)  L=0.7994  disp=0.0260  comm=0.1511  spread=0.780  mu=1.195  comms=16.0 eff=14.6/16  T=0.135  (417s)
+constructor_s0.pt:  90%|#################################3   | 432/480 [07:07<00:47,  1.01step/s, loss 6.4295]
+  ep   36  L=0.8895  disp=0.0146  comm=0.3832  spread=0.817  mu=1.226  comms=16.0 eff=14.63 (min 14.40)  T=0.123  (427s)
+  ep   37  L=0.5283  disp=0.0229  comm=0.9043  spread=0.965  mu=1.161  comms=16.0 eff=14.15 (min 13.78)  T=0.113  (439s)
+  ep   38  L=0.9571  disp=0.0283  comm=0.7881  spread=0.892  mu=1.145  comms=16.0 eff=14.39 (min 14.26)  T=0.106  (451s)
+  ep   39  L=0.5441  disp=0.0229  comm=0.9728  spread=0.977  mu=1.166  comms=16.0 eff=14.28 (min 14.03)  T=0.102  (462s)
+  ep   40  val=-0.0423 (fallback 1.00)  L=0.5342  disp=0.0194  comm=0.9416  spread=0.965  mu=1.397  comms=16.0 eff=14.5/16  T=0.100  (478s)
+constructor_s0.pt: 100%|#####################################| 480/480 [07:57<00:00,  1.01step/s, loss 0.5350]
+  saved /tmp/fimgat/results/v2/models/constructor_s0.pt: best val -0.0423 (epoch 5), train 478s, peak GPU 4.26/4.48 GB (allocated/reserved); mu_ref {25: 0.521, 50: 0.718, 100: 0.560, 150: 0.779, 200: 0.435}
+
+=== constructor_s1.pt: seed 1, gamma_comm 0.5 ===
+constructor_s1.pt:   0%|                                                            | 0/480 [00:00<?, ?step/s]
+  ep    1  L=1.9956  disp=0.0207  comm=0.0078  spread=0.417  mu=0.111  comms=16.0 eff=15.98 (min 15.97)  T=0.999  (10s)
+  ep    2  L=0.2706  disp=0.0439  comm=0.2016  spread=0.894  mu=0.289  comms=16.0 eff=15.85 (min 15.42)  T=0.995  (22s)
+  ep    3  L=0.4108  disp=0.0306  comm=0.5710  spread=0.915  mu=0.378  comms=16.0 eff=15.40 (min 15.17)  T=0.988  (32s)
+  ep    4  L=0.2779  disp=0.0244  comm=0.2071  spread=0.875  mu=0.438  comms=16.0 eff=15.50 (min 15.28)  T=0.979  (42s)
+  ep    5  val=-0.0423 (fallback 1.00)  L=0.4624  disp=0.0229  comm=0.5511  spread=0.854  mu=0.386  comms=15.9 eff=14.6/16  T=0.967  (58s)
+constructor_s1.pt:  13%|####9                                 | 63/480 [01:00<06:39,  1.05step/s, loss 0.4812]
+  ep    6  L=0.4286  disp=0.0263  comm=0.6847  spread=0.956  mu=0.575  comms=15.8 eff=14.87 (min 14.64)  T=0.952  (69s)
+  ep    7  L=0.4616  disp=0.0261  comm=0.7635  spread=0.965  mu=0.753  comms=16.0 eff=14.88 (min 14.22)  T=0.935  (80s)
+  ep    8  L=0.4451  disp=0.0244  comm=0.7601  spread=0.961  mu=0.480  comms=15.9 eff=14.81 (min 14.63)  T=0.916  (90s)
+  ep    9  L=0.4654  disp=0.0336  comm=0.7730  spread=0.958  mu=0.538  comms=16.0 eff=15.17 (min 14.72)  T=0.894  (101s)
+  ep   10  val=-0.0423 (fallback 1.00)  L=0.5085  disp=0.0184  comm=0.8510  spread=0.937  mu=0.432  comms=16.0 eff=14.9/16  T=0.870  (116s)
+constructor_s1.pt:  26%|#########7                           | 126/480 [02:00<05:39,  1.04step/s, loss 0.5724]
+  ep   11  L=0.5320  disp=0.0253  comm=0.9138  spread=0.955  mu=0.683  comms=16.0 eff=14.71 (min 14.22)  T=0.844  (126s)
+  ep   12  L=0.5232  disp=0.0260  comm=0.9361  spread=0.970  mu=0.602  comms=16.0 eff=14.63 (min 14.16)  T=0.817  (137s)
+  ep   13  L=0.4757  disp=0.0197  comm=0.8323  spread=0.965  mu=0.815  comms=16.0 eff=14.76 (min 14.39)  T=0.788  (147s)
+  ep   14  L=0.5045  disp=0.0191  comm=0.8879  spread=0.967  mu=0.624  comms=15.9 eff=14.57 (min 14.16)  T=0.757  (158s)
+  ep   15  val=-0.0423 (fallback 1.00)  L=0.5386  disp=0.0235  comm=0.9549  spread=0.969  mu=0.806  comms=16.0 eff=14.6/16  T=0.725  (174s)
+constructor_s1.pt:  39%|##############5                      | 189/480 [03:02<04:41,  1.04step/s, loss 0.5406]
+  ep   16  L=0.5442  disp=0.0230  comm=0.9761  spread=0.966  mu=0.656  comms=16.0 eff=14.76 (min 14.64)  T=0.692  (185s)
+  ep   17  L=0.5267  disp=0.0251  comm=0.9410  spread=0.971  mu=0.378  comms=16.0 eff=14.71 (min 14.21)  T=0.658  (197s)
+  ep   18  L=0.5379  disp=0.0200  comm=0.9630  spread=0.968  mu=0.741  comms=16.0 eff=14.71 (min 14.42)  T=0.623  (207s)
+  ep   19  L=0.9742  disp=0.0283  comm=0.8900  spread=0.893  mu=0.653  comms=15.9 eff=14.61 (min 14.26)  T=0.588  (219s)
+  ep   20  val=-0.0423 (fallback 1.00)  L=0.5506  disp=0.0288  comm=0.9746  spread=0.970  mu=0.812  comms=16.0 eff=14.8/16  T=0.553  (235s)
+constructor_s1.pt:  52%|###################3                 | 251/480 [04:03<03:42,  1.03step/s, loss 0.5076]
+  ep   21  L=0.5348  disp=0.0333  comm=0.9423  spread=0.972  mu=0.613  comms=16.0 eff=14.69 (min 14.29)  T=0.518  (245s)
+  ep   22  L=0.9228  disp=0.0238  comm=0.8632  spread=0.889  mu=0.815  comms=16.0 eff=14.60 (min 13.70)  T=0.483  (255s)
+  ep   23  L=0.5672  disp=0.0258  comm=0.9391  spread=0.933  mu=0.864  comms=16.0 eff=14.68 (min 14.33)  T=0.448  (265s)
+  ep   24  L=0.5023  disp=0.0372  comm=0.8808  spread=0.965  mu=0.803  comms=15.9 eff=14.58 (min 14.02)  T=0.414  (277s)
+  ep   25  val=-0.0423 (fallback 1.00)  L=0.5590  disp=0.0395  comm=0.9804  spread=0.967  mu=0.939  comms=16.0 eff=14.7/16  T=0.381  (294s)
+constructor_s1.pt:  65%|########################             | 312/480 [05:04<02:44,  1.02step/s, loss 0.6532]
+  ep   26  L=0.5548  disp=0.0355  comm=0.9753  spread=0.964  mu=0.651  comms=16.0 eff=14.75 (min 14.60)  T=0.348  (305s)
+  ep   27  L=0.5673  disp=0.0226  comm=0.9973  spread=0.967  mu=1.148  comms=16.0 eff=14.73 (min 14.65)  T=0.317  (316s)
+  ep   28  L=1.5425  disp=0.0164  comm=0.8319  spread=0.805  mu=0.818  comms=16.0 eff=14.77 (min 14.65)  T=0.288  (328s)
+  ep   29  L=0.5623  disp=0.0445  comm=0.9984  spread=0.975  mu=0.795  comms=16.0 eff=14.74 (min 14.56)  T=0.260  (339s)
+  ep   30  val=-0.0423 (fallback 1.00)  L=1.5188  disp=0.0309  comm=0.8321  spread=0.812  mu=0.992  comms=16.0 eff=14.8/16  T=0.234  (356s)
+  ep   31  L=0.5587  disp=0.0384  comm=0.9987  spread=0.976  mu=0.667  comms=16.0 eff=14.76 (min 14.64)  T=0.210  (366s)
+constructor_s1.pt:  78%|############################7        | 373/480 [06:07<01:45,  1.01step/s, loss 0.5451]
+  ep   32  L=0.5604  disp=0.0337  comm=0.9988  spread=0.977  mu=0.980  comms=16.0 eff=14.78 (min 14.62)  T=0.188  (377s)
+  ep   33  L=0.5568  disp=0.0352  comm=0.9988  spread=0.980  mu=1.022  comms=16.0 eff=14.77 (min 14.66)  T=0.168  (388s)
+  ep   34  L=0.5569  disp=0.0252  comm=0.9990  spread=0.978  mu=1.119  comms=16.0 eff=14.79 (min 14.69)  T=0.150  (399s)
+  ep   35  val=-0.0423 (fallback 1.00)  L=0.5556  disp=0.0325  comm=0.9988  spread=0.979  mu=1.183  comms=16.0 eff=14.8/16  T=0.135  (415s)
+  ep   36  L=0.9940  disp=0.0363  comm=0.9158  spread=0.894  mu=1.516  comms=16.0 eff=14.78 (min 14.69)  T=0.123  (426s)
+constructor_s1.pt:  90%|#################################4   | 434/480 [07:07<00:45,  1.01step/s, loss 0.5417]
+  ep   37  L=0.5596  disp=0.0392  comm=0.9990  spread=0.980  mu=0.636  comms=16.0 eff=14.79 (min 14.66)  T=0.113  (436s)
+  ep   38  L=0.5568  disp=0.0402  comm=0.9990  spread=0.982  mu=1.045  comms=16.0 eff=14.79 (min 14.66)  T=0.106  (447s)
+  ep   39  L=0.5569  disp=0.0324  comm=0.9992  spread=0.984  mu=0.853  comms=16.0 eff=14.80 (min 14.69)  T=0.102  (458s)
+  ep   40  val=-0.0423 (fallback 1.00)  L=0.5484  disp=0.0312  comm=0.9991  spread=0.979  mu=1.011  comms=16.0 eff=14.8/16  T=0.100  (474s)
+constructor_s1.pt: 100%|#####################################| 480/480 [07:54<00:00,  1.01step/s, loss 0.5400]
+  saved /tmp/fimgat/results/v2/models/constructor_s1.pt: best val -0.0423 (epoch 5), train 474s, peak GPU 4.26/4.53 GB (allocated/reserved); mu_ref {25: 0.529, 50: 0.633, 100: 0.359, 150: 0.453, 200: 0.828}
+
+=== constructor_s2.pt: seed 2, gamma_comm 0.5 ===
+constructor_s2.pt:   0%|                                                            | 0/480 [00:00<?, ?step/s]
+  ep    1  L=2.0029  disp=0.0232  comm=0.0103  spread=0.446  mu=0.348  comms=16.0 eff=15.98 (min 15.91)  T=0.999  (11s)
+  ep    2  L=0.3012  disp=0.0499  comm=0.3041  spread=0.886  mu=0.190  comms=16.0 eff=15.65 (min 15.27)  T=0.995  (22s)
+  ep    3  L=0.2910  disp=0.0224  comm=0.3068  spread=0.911  mu=0.686  comms=15.9 eff=15.26 (min 14.93)  T=0.988  (33s)
+  ep    4  L=0.2067  disp=0.0190  comm=0.1064  spread=0.885  mu=0.443  comms=16.0 eff=15.65 (min 15.42)  T=0.979  (43s)
+  ep    5  val=-0.0423 (fallback 1.00)  L=0.3483  disp=0.0333  comm=0.4572  spread=0.931  mu=0.246  comms=16.0 eff=15.7/16  T=0.967  (60s)
+constructor_s2.pt:  13%|####8                                 | 61/480 [01:00<06:57,  1.00step/s, loss 0.4385]
+  ep    6  L=0.1939  disp=0.0165  comm=0.1542  spread=0.914  mu=0.412  comms=16.0 eff=15.37 (min 15.07)  T=0.952  (71s)
+  ep    7  L=0.2658  disp=0.0189  comm=0.2324  spread=0.888  mu=0.294  comms=16.0 eff=15.27 (min 15.10)  T=0.935  (82s)
+  ep    8  L=0.2310  disp=0.0194  comm=0.0815  spread=0.872  mu=0.718  comms=16.0 eff=15.29 (min 15.08)  T=0.916  (93s)
+  ep    9  L=0.3029  disp=0.0185  comm=0.3676  spread=0.920  mu=0.752  comms=15.8 eff=14.75 (min 13.98)  T=0.894  (104s)
+  ep   10  val=-0.0423 (fallback 1.00)  L=0.3991  disp=0.0245  comm=0.6263  spread=0.948  mu=0.541  comms=16.0 eff=14.6/16  T=0.870  (121s)
+constructor_s2.pt:  25%|#########4                           | 122/480 [02:02<05:58,  1.00s/step, loss 0.3830]
+  ep   11  L=0.4860  disp=0.0212  comm=0.7888  spread=0.931  mu=0.395  comms=16.0 eff=14.56 (min 13.71)  T=0.844  (131s)
+  ep   12  L=0.4674  disp=0.0267  comm=0.7689  spread=0.959  mu=0.977  comms=16.0 eff=14.64 (min 13.88)  T=0.817  (141s)
+  ep   13  L=0.4649  disp=0.0280  comm=0.7704  spread=0.957  mu=0.664  comms=15.9 eff=14.86 (min 14.56)  T=0.788  (153s)
+  ep   14  L=0.4997  disp=0.0233  comm=0.8357  spread=0.964  mu=0.828  comms=16.0 eff=14.63 (min 13.91)  T=0.757  (164s)
+  ep   15  val=-0.0423 (fallback 1.00)  L=0.9996  disp=0.0232  comm=0.7161  spread=0.892  mu=0.885  comms=16.0 eff=14.7/16  T=0.725  (180s)
+constructor_s2.pt:  38%|##############1                      | 183/480 [03:03<04:57,  1.00s/step, loss 0.5605]
+  ep   16  L=0.4114  disp=0.0219  comm=0.6866  spread=0.974  mu=0.588  comms=15.8 eff=14.39 (min 13.65)  T=0.692  (191s)
+  ep   17  L=0.4132  disp=0.0212  comm=0.6787  spread=0.949  mu=0.574  comms=16.0 eff=14.41 (min 14.00)  T=0.658  (203s)
+  ep   18  L=0.4945  disp=0.0189  comm=0.8474  spread=0.955  mu=0.522  comms=15.7 eff=14.06 (min 13.79)  T=0.623  (213s)
+  ep   19  L=0.4832  disp=0.0281  comm=0.8251  spread=0.968  mu=0.695  comms=15.9 eff=14.47 (min 14.37)  T=0.588  (224s)
+  ep   20  val=-0.0423 (fallback 1.00)  L=0.5059  disp=0.0382  comm=0.8681  spread=0.970  mu=0.754  comms=16.0 eff=14.1/16  T=0.553  (240s)
+constructor_s2.pt:  51%|##################8                  | 244/480 [04:03<03:55,  1.00step/s, loss 0.5105]
+  ep   21  L=0.4866  disp=0.0254  comm=0.8284  spread=0.972  mu=0.912  comms=16.0 eff=14.25 (min 13.84)  T=0.518  (250s)
+  ep   22  L=0.4819  disp=0.0183  comm=0.8135  spread=0.954  mu=0.965  comms=16.0 eff=14.44 (min 13.77)  T=0.483  (261s)
+  ep   23  L=0.4459  disp=0.0257  comm=0.7659  spread=0.973  mu=0.953  comms=15.9 eff=14.75 (min 14.43)  T=0.448  (272s)
+  ep   24  L=0.5022  disp=0.0361  comm=0.8660  spread=0.975  mu=0.815  comms=16.0 eff=14.52 (min 14.30)  T=0.414  (283s)
+  ep   25  val=-0.0423 (fallback 1.00)  L=0.5183  disp=0.0387  comm=0.8606  spread=0.966  mu=0.964  comms=16.0 eff=14.4/16  T=0.381  (300s)
+constructor_s2.pt:  64%|#######################5             | 305/480 [05:04<02:54,  1.00step/s, loss 0.4812]
+  ep   26  L=0.4834  disp=0.0336  comm=0.8474  spread=0.976  mu=0.771  comms=16.0 eff=14.56 (min 14.40)  T=0.348  (311s)
+  ep   27  L=0.4798  disp=0.0215  comm=0.8416  spread=0.975  mu=0.923  comms=16.0 eff=14.42 (min 13.77)  T=0.317  (321s)
+  ep   28  L=0.9118  disp=0.0116  comm=0.8072  spread=0.872  mu=0.636  comms=16.0 eff=14.70 (min 14.62)  T=0.288  (331s)
+  ep   29  L=0.5434  disp=0.0200  comm=0.9368  spread=0.956  mu=1.184  comms=16.0 eff=14.74 (min 14.50)  T=0.260  (342s)
+  ep   30  val=-0.0423 (fallback 1.00)  L=0.5587  disp=0.0147  comm=0.9581  spread=0.950  mu=0.961  comms=16.0 eff=14.7/16  T=0.234  (358s)
+constructor_s2.pt:  77%|############################3        | 368/480 [06:04<01:50,  1.01step/s, loss 0.5501]
+  ep   31  L=0.5249  disp=0.0325  comm=0.9248  spread=0.975  mu=0.977  comms=15.9 eff=14.53 (min 13.88)  T=0.210  (368s)
+  ep   32  L=0.5449  disp=0.0391  comm=0.9744  spread=0.977  mu=0.886  comms=16.0 eff=14.58 (min 14.17)  T=0.188  (378s)
+  ep   33  L=0.4664  disp=0.0327  comm=0.8225  spread=0.977  mu=0.804  comms=16.0 eff=14.84 (min 14.47)  T=0.168  (389s)
+  ep   34  L=0.4355  disp=0.0240  comm=0.7509  spread=0.974  mu=0.924  comms=15.8 eff=14.81 (min 14.64)  T=0.150  (400s)
+  ep   35  val=-0.0423 (fallback 1.00)  L=0.5505  disp=0.0347  comm=0.9947  spread=0.977  mu=0.686  comms=16.0 eff=14.6/16  T=0.135  (415s)
+constructor_s2.pt:  90%|#################################2   | 431/480 [07:05<00:48,  1.01step/s, loss 0.6034]
+  ep   36  L=0.5585  disp=0.0320  comm=0.9981  spread=0.974  mu=1.000  comms=16.0 eff=14.74 (min 14.54)  T=0.123  (427s)
+  ep   37  L=0.5536  disp=0.0217  comm=0.9989  spread=0.970  mu=0.975  comms=16.0 eff=14.83 (min 14.74)  T=0.113  (437s)
+  ep   38  L=0.5616  disp=0.0284  comm=0.9991  spread=0.976  mu=1.320  comms=16.0 eff=14.79 (min 14.68)  T=0.106  (448s)
+  ep   39  L=0.5569  disp=0.0403  comm=0.9989  spread=0.978  mu=0.916  comms=16.0 eff=14.79 (min 14.66)  T=0.102  (459s)
+  ep   40  val=-0.0423 (fallback 1.00)  L=0.5625  disp=0.0412  comm=0.9993  spread=0.977  mu=0.822  comms=16.0 eff=14.8/16  T=0.100  (475s)
+constructor_s2.pt: 100%|#####################################| 480/480 [07:55<00:00,  1.01step/s, loss 0.5396]
+  saved /tmp/fimgat/results/v2/models/constructor_s2.pt: best val -0.0423 (epoch 5), train 475s, peak GPU 4.26/4.53 GB (allocated/reserved); mu_ref {25: 0.712, 50: 0.707, 100: 0.292, 150: 0.838, 200: 0.276}
+
+done: 3 model(s) in 23.8 min; log results/v2/train_log_gpu0.csv
+
+===== 2026-10-17 08:38:54 GPU 0: experiments/v2/tune_v2.py --steps start --preset 8gb
+tuning on pokec_t / region: device=cuda gpu=Tesla T4 preset=8gb code_tag=03abe91d201f
+plan: 30 method queries (5 constructor checkpoints)
+  load              0.4s
+  reference        44.4s
+  rr_sample         3.4s
+  cert_sample      19.9s
+  features          0.6s
+  rr_greedy         6.0s
+  cover_index       0.1s
+  pokec_t: n=39,076 m=522,321 groups=2; A: R=16 roots=39,076 nnz=6,947,708; B: R=138 roots=39,076 nnz=59,641,011
+tuning start:   0%|                                                                 | 0/30 [00:00<?, ?query/s]
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2957.37 disp=0.0313 es FAIL (ratio 0.9947, lower 0.9879) (3.6s)  [v2-b/greedy/simple s-1: select 0.0s search 3.6s (6 rounds) certify 7.3s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4350.53 disp=0.0447 es FAIL (ratio 0.9913, lower 0.9867) (1.8s)  [v2-b/greedy/simple s-1: select 0.0s search 1.8s (6 rounds) certify 6.1s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6097.57 disp=0.0419 es FAIL (ratio 0.9909, lower 0.9882) (3.1s)  [v2-b/greedy/simple s-1: select 0.0s search 3.1s (13 rounds) certify 8.6s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7253.35 disp=0.0365 es FAIL (ratio 0.9910, lower 0.9890) (4.3s)  [v2-b/greedy/simple s-1: select 0.0s search 4.3s (28 rounds) certify 8.6s, deployed the path set (path rule: the path set), certificate pass]
+tuning start:  13%|#######6                                                 | 4/30 [01:22<08:56, 20.64s/query]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8136.19 disp=0.0279 es pass (ratio 0.9929, lower 0.9912) (12.5s)  [v2-b/greedy/simple s-1: select 0.0s search 12.5s (50 rounds) certify 9.3s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2957.37 disp=0.0313 es FAIL (ratio 0.9947, lower 0.9879) (2.5s)  [v2-b/learned/simple s0: select 0.6s search 1.9s (5 rounds) certify 6.3s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4364.05 disp=0.0442 es FAIL (ratio 0.9943, lower 0.9899) (2.0s)  [v2-b/learned/simple s0: select 0.4s search 1.6s (5 rounds) certify 6.5s, deployed the final set (path rule: the final set), certificate pass]
+tuning start:  23%|#############3                                           | 7/30 [02:29<08:11, 21.35s/query]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6106.44 disp=0.0512 es FAIL (ratio 0.9923, lower 0.9897) (2.4s)  [v2-b/learned/simple s0: select 0.4s search 2.0s (7 rounds) certify 7.9s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7318.86 disp=0.0552 es pass (ratio 0.9999, lower 0.9979) (3.2s)  [v2-b/learned/simple s0: select 0.4s search 2.7s (11 rounds) certify 9.4s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8194.49 disp=0.0546 es pass (ratio 1.0000, lower 1.0000) (3.0s)  [v2-b/learned/simple s0: select 0.4s search 2.6s (10 rounds) certify 9.4s, deployed the reference set (path rule: the path set), certificate pass]
+tuning start:  33%|##################6                                     | 10/30 [03:57<07:57, 23.88s/query]
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2957.37 disp=0.0313 es FAIL (ratio 0.9947, lower 0.9879) (2.3s)  [v2-b/learned/simple s1: select 0.4s search 1.9s (5 rounds) certify 6.1s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4364.05 disp=0.0442 es FAIL (ratio 0.9943, lower 0.9899) (2.1s)  [v2-b/learned/simple s1: select 0.4s search 1.7s (5 rounds) certify 6.2s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6106.44 disp=0.0512 es FAIL (ratio 0.9923, lower 0.9897) (2.5s)  [v2-b/learned/simple s1: select 0.4s search 2.0s (7 rounds) certify 7.8s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7318.86 disp=0.0552 es pass (ratio 0.9999, lower 0.9979) (3.2s)  [v2-b/learned/simple s1: select 0.4s search 2.8s (11 rounds) certify 9.4s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8194.49 disp=0.0546 es pass (ratio 1.0000, lower 1.0000) (3.0s)  [v2-b/learned/simple s1: select 0.4s search 2.5s (10 rounds) certify 9.5s, deployed the reference set (path rule: the path set), certificate pass]
+tuning start:  50%|############################                            | 15/30 [05:02<04:59, 19.99s/query]
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2957.37 disp=0.0313 es FAIL (ratio 0.9947, lower 0.9879) (2.2s)  [v2-b/learned/simple s2: select 0.4s search 1.7s (5 rounds) certify 6.0s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4364.05 disp=0.0442 es FAIL (ratio 0.9943, lower 0.9899) (2.0s)  [v2-b/learned/simple s2: select 0.4s search 1.6s (5 rounds) certify 6.0s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6106.44 disp=0.0512 es FAIL (ratio 0.9923, lower 0.9897) (2.4s)  [v2-b/learned/simple s2: select 0.4s search 2.0s (7 rounds) certify 7.8s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7318.86 disp=0.0552 es pass (ratio 0.9999, lower 0.9979) (3.3s)  [v2-b/learned/simple s2: select 0.4s search 2.9s (11 rounds) certify 9.5s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8194.49 disp=0.0546 es pass (ratio 1.0000, lower 1.0000) (3.3s)  [v2-b/learned/simple s2: select 0.4s search 2.8s (10 rounds) certify 9.5s, deployed the reference set (path rule: the path set), certificate pass]
+tuning start:  67%|#####################################3                  | 20/30 [06:07<03:00, 18.08s/query]
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2957.37 disp=0.0313 es FAIL (ratio 0.9947, lower 0.9879) (2.1s)  [v2-b/learned/simple s3: select 0.4s search 1.7s (5 rounds) certify 6.2s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4364.05 disp=0.0442 es FAIL (ratio 0.9943, lower 0.9899) (2.0s)  [v2-b/learned/simple s3: select 0.4s search 1.6s (5 rounds) certify 6.2s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6106.44 disp=0.0512 es FAIL (ratio 0.9923, lower 0.9897) (2.4s)  [v2-b/learned/simple s3: select 0.4s search 2.0s (7 rounds) certify 7.6s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7318.86 disp=0.0552 es pass (ratio 0.9999, lower 0.9979) (3.3s)  [v2-b/learned/simple s3: select 0.4s search 2.9s (11 rounds) certify 9.3s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8194.49 disp=0.0546 es pass (ratio 1.0000, lower 1.0000) (3.2s)  [v2-b/learned/simple s3: select 0.4s search 2.7s (10 rounds) certify 9.5s, deployed the reference set (path rule: the path set), certificate pass]
+tuning start:  83%|##############################################6         | 25/30 [07:12<01:24, 16.95s/query]
+    pokec_t          k=25   rho=0.99 FIM-GAT v2       infl=  2957.37 disp=0.0313 es FAIL (ratio 0.9947, lower 0.9879) (2.2s)  [v2-b/learned/simple s4: select 0.4s search 1.7s (5 rounds) certify 6.4s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=50   rho=0.99 FIM-GAT v2       infl=  4364.05 disp=0.0442 es FAIL (ratio 0.9943, lower 0.9899) (2.1s)  [v2-b/learned/simple s4: select 0.4s search 1.7s (5 rounds) certify 6.1s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=100  rho=0.99 FIM-GAT v2       infl=  6106.44 disp=0.0512 es FAIL (ratio 0.9923, lower 0.9897) (2.4s)  [v2-b/learned/simple s4: select 0.4s search 2.0s (7 rounds) certify 7.9s, deployed the final set (path rule: the final set), certificate pass]
+    pokec_t          k=150  rho=0.99 FIM-GAT v2       infl=  7318.86 disp=0.0552 es pass (ratio 0.9999, lower 0.9979) (3.1s)  [v2-b/learned/simple s4: select 0.4s search 2.7s (11 rounds) certify 9.5s, deployed the path set (path rule: the path set), certificate pass]
+    pokec_t          k=200  rho=0.99 FIM-GAT v2       infl=  8194.49 disp=0.0546 es pass (ratio 1.0000, lower 1.0000) (3.2s)  [v2-b/learned/simple s4: select 0.4s search 2.7s (10 rounds) certify 9.5s, deployed the reference set (path rule: the path set), certificate pass]
+tuning start: 100%|########################################################| 30/30 [08:18<00:00, 16.22s/query]
+  -> start = greedy (constructor mean 0.04727 >= greedy 0.03644)
+tuning start: 100%|########################################################| 30/30 [08:18<00:00, 16.60s/query]
+wrote /tmp/fimgat/results/v2/tuning.json:
+{
+ "validation": {
+  "dataset": "pokec_t",
+  "attribute": "region",
+  "ks": [
+   25,
+   50,
+   100,
+   150,
+   200
+  ],
+  "rho_phi0": 0.97,
+  "rho_start": 0.99,
+  "graph_n": 39076,
+  "R": 16,
+  "cert_R": 138
+ },
+ "delta": 0.005,
+ "phi0": 0.4,
+ "start": "greedy",
+ "delta_scores": {
+  "0.0025": 0.0416179968150321,
+  "0.005": 0.036780585895819534,
+  "0.01": 0.038076615959405896,
+  "0.02": 0.038076615959405896
+ },
+ "phi0_scores": {
+  "0.3": 0.04315392665399102,
+  "0.4": 0.04116988995171842,
+  "0.5": 0.04364892884857661
+ },
+ "code_tag": "03abe91d201f",
+ "when": "2026-10-17 08:47:51",
+ "tuned": true,
+ "steps": [
+  "delta",
+  "phi0",
+  "start",
+  "w3"
+ ],
+ "gpu": "Tesla T4",
+ "preset": "8gb",
+ "history": [
+  {
+   "steps": [
+    "delta",
+    "phi0",
+    "w3"
+   ],
+   "code_tag": "f53a3e10824a",
+   "when": "2026-10-15 18:01:33",
+   "gpu": "cpu",
+   "preset": "8gb"
+  },
+  {
+   "steps": [
+    "start"
+   ],
+   "code_tag": "03abe91d201f",
+   "when": "2026-10-17 08:47:51",
+   "gpu": "Tesla T4",
+   "preset": "8gb"
+  }
+ ],
+ "start_reason": "constructor mean 0.04727 >= greedy 0.03644",
+ "start_scores": {
+  "greedy": 0.036437183944943365,
+  "learned": 0.04727486464287817,
+  "n_learned_seeds": 5
+ }
+}

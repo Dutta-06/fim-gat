@@ -20,3 +20,5 @@ results/v2/quick/
 # Kaggle: the bundle built for upload and local runner output (kaggle/README.md)
 kaggle_bundle/
 kaggle_outputs/
+/outputs_*.zip
+/outputs_*.json
