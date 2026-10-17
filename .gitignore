@@ -16,3 +16,7 @@ results/v2/quick/
 *.tmp
 *.tmp.npz
 *.part
+
+# Kaggle: the bundle built for upload and local runner output (kaggle/README.md)
+kaggle_bundle/
+kaggle_outputs/

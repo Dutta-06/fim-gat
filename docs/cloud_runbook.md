@@ -95,6 +95,8 @@ After the B branches are merged:
 
 ## 5. What waits for the GPU machine
 
+Since 2026-10-17 these run on Kaggle's GPU notebooks: `kaggle/README.md` has the jobs and their order (design §23).
+
 - **The constructor (`train_constructor.py`, 5 seeds), trained before the start step of tuning**, which then runs as `tune_v2.py --steps start`. Until then T1 and T2 use the provisional greedy start. If the constructor wins on validation, the T1 rows of the greedy start become the "start" ablation row, and the method's learned-start rows are added (they have their own resume keys). This order was fixed on 2026-10-15, before any test result: the start rule stays validation-only.
 - **The learned proposer and T3**, only if session A's W3 result says train.
 - **T1 on full Pokec (three attributes) and on LinkedIn, their case studies, and T4.**

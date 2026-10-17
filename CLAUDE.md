@@ -19,13 +19,15 @@ v1's honest outcome:
 - The user asked for maximal novelty and results, with **adversarial graph networks as the core** of the project (it is in the title). Do not drop, rename or demote the adversarial component, or change headline claims, without the user's explicit approval.
 - The user values honest reporting. Keep losses and caveats visible.
 - **Delegation (2026-10-10).** The user gave authority to "transform this codebase into what we need". Make engineering and open methodology calls, record each with its reason in `docs/design_v2.md` §19, and report them.
-- **Current phase (2026-10-15): running, cloud first.** The user said "we need to get fim-gat done fast ... as much stuff that can be covered with claude code should be done there asap". Everything a Claude Code cloud session can carry runs there, following `docs/cloud_runbook.md`; the GPU parts (constructor and proposer training, full Pokec, LinkedIn, T4) wait for a GPU machine. Until 2026-10-15 the phase was codebase preparation only.
+- **Current phase (2026-10-15): running, cloud first.** The user said "we need to get fim-gat done fast ... as much stuff that can be covered with claude code should be done there asap". Everything a Claude Code cloud session can carry runs there, following `docs/cloud_runbook.md`; the GPU parts (constructor and proposer training, full Pokec, T3, T4) run on Kaggle's free T4 x2 notebooks (2026-10-17: `kaggle/README.md`; the user launches each job and brings back its output). Until 2026-10-15 the phase was codebase preparation only.
 - The user's compute target is 16 GB VRAM (occasionally 40 GB); development happens on an 8 GB laptop. Ask before starting multi-hour runs.
 - **Before running experiments, changing the method, or moving hardware, read `docs/research_protocol.md`.** It covers the run order, the pre-registration checklist, backups, launch commands, memory and the tuning rules.
 
 ## Where to pick up
 
 **On a Claude Code cloud session (Linux VM):** follow `docs/cloud_mission.md`, your brief (setup, rules, jobs); `docs/cloud_runbook.md` has the background. The laptop-only advice below (the `python` vs `python3` warning, `PYTHONIOENCODING`, CRLF, the old project's paths) does not apply there.
+
+**GPU work (Kaggle, 2026-10-17):** `kaggle/README.md` has the jobs, their order and the setup. `kaggle/run_job.py` defines the jobs, `kaggle/make_bundle.py` builds the upload, and `kaggle/import_outputs.py` merges the outputs back into `results/`. Design §23 records the choices (one preset, 8gb, for every pipeline script; timing jobs on one lane).
 
 1. **Ask the user before multi-hour local runs.** The user said to start on 2026-10-15, cloud first (`docs/cloud_runbook.md`).
 2. The run order is `docs/research_protocol.md` §1:
@@ -113,8 +115,10 @@ v1's honest outcome:
 
   The private GitHub repository and the cloud environment's network allowlist are set up by the user; session A (data and tuning) runs first, then the B jobs in parallel (`docs/cloud_runbook.md` §4).
 - **Pending:**
-  - session A, then the B jobs, then session C;
-  - on a GPU machine: the constructor (before `tune_v2.py --steps start`), the learned proposer and T3 if W3 says train, full Pokec, LinkedIn and T4.
+  - the cloud's C2 diagnostics (`docs/cloud_note_c2_diagnostics.md`, design §22), once the user has pushed the commit that adds them;
+  - the Kaggle jobs (`kaggle/README.md`): G1 (constructor, start step, proposer) together with C1 (full Pokec's T1 without the constructor, CPU), then G2 (the learned start's rows, full Pokec's case studies), G3 (T3) and G4 (T4);
+  - LinkedIn is not bundled (its node file holds personal data): the user decides whether to drop it or prepare an edges-only build;
+  - the Rice node count (1,216 built against 1,205 specified).
 - **Not done (each needs a download, a design change or the user's decision):** CrossWalk's released code, a DQ4FairIM reimplementation, S3D, IMM/OPIM-C as a runtime reference, a second diffusion model.
 
 ## Code map
@@ -156,8 +160,9 @@ v1's honest outcome:
   - `common_v2.py`: recorder, provenance and memory presets;
   - `theory_checks.py` and `weakspots.py`;
   - `experiments/build_pokec.py`: the Pokec builder, which builds `pokec_t`.
+- **`kaggle/`:** the Kaggle runner (`run_job.py`), the bundle builder, the importer and the notebook (`fimgat_kaggle.ipynb`); see `kaggle/README.md`.
 - **`tests/`:** see `tests/README.md`.
-  - The default run (smoke + spec) gives **167 passed, 10 skipped** (unbuilt datasets) on 2026-10-14, after the pre-run fixes.
+  - The default run (smoke + spec) gives **167 passed, 10 skipped** (unbuilt datasets) on 2026-10-14, after the pre-run fixes. Added on 2026-10-17, and passing on their own: `test_c2_diagnostics.py` (1 test) and `test_kaggle_v2.py` (9, including the first end-to-end run of `train_constructor.py`, on synthetic stand-ins).
   - Stress tests are opt-in.
 
 ## Environment
@@ -185,7 +190,7 @@ v1's honest outcome:
 ## Running experiments
 
 - **Order and commands:** see `docs/research_protocol.md` §1. In short: build the datasets, optionally train the constructor, tune, run T1, T2 and T4, then summarise. Each script prints its plan and a rough estimate first; `--dry-run` stops there.
-- **Resuming:** rows are skipped when their key exists. The keys include the tuned δ and φ₀, but not the code, preset or hardware. Back up `results/v2/` or use a fresh `--out` before rerunning after a code change, because there is no git.
+- **Resuming:** rows are skipped when their key exists. The keys include the tuned δ and φ₀, but not the code, preset or hardware. Commit `results/v2/` (git tracks it) or use a fresh `--out` before rerunning after a code change.
 - **Pitfalls:**
   - Run one GPU job at a time on the 8 GB card.
   - Bash chains like `a; b` keep going after you kill `a`, so stop the background shell task too.

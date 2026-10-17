@@ -60,6 +60,14 @@ Never use `python3` (a different interpreter; see `CLAUDE.md`).
 
 `test_c2_diagnostics.py` runs the exploratory C2 diagnostics (`experiments/v2/c2_diagnostics.py`, design §22) on a synthetic com-Youtube stand-in. Its control runs must reproduce T2's deployed sets exactly.
 
+`test_kaggle_v2.py` checks the Kaggle runner (`kaggle/`, design §23):
+- every job command names a real script, real options, built datasets, their attributes and the suite's methods, and the pipeline scripts run at the 8gb preset;
+- the CPU jobs never use the constructor, and the timing jobs use one lane;
+- outputs round-trip through export, resume and import, results CSVs merge without losing or repeating rows, and nothing outside `results/` and `data/cache/` is written;
+- the session deadline, the run-once markers and the conditional steps;
+- the notebook's cells parse, and the bundle never takes LinkedIn or raw data.
+- job G1's chain on synthetic stand-ins: `train_constructor.py` (its first execution) writes checkpoints that `tune_v2.py --steps start` and T1's learned-start rows load.
+
 `test_scripts_v2.py` runs the experiment scripts end to end on synthetic stand-ins, with `fimgat.v2.datasets` patched and every output under `tmp_path`:
 - `tune_v2` → `run_t1_t2` (T1 with BSM's τ sweep, T2) → `summarize_v2` (with the Pareto table and a figure), three rows per FIM-GAT query, and resumption;
 - tuning refuses a test graph;

@@ -744,3 +744,26 @@ A relative cap gives no room when D_a ≈ 0. On T2's samples D_a is 0.18–0.46.
 **Reporting.** Every result is exploratory. Paired tests are reported descriptively, and no number here replaces T2's verdict. A confirmatory test of a scaled cap would be a new pre-registered test on new samples.
 
 **Not used for any choice.** Ground-truth communities only score and price, as in T2.
+
+## 23. GPU runs on Kaggle (2026-10-17, under the delegation)
+
+The user chose Kaggle's free notebooks (GPU T4 x2) for the GPU part and runs each job by hand. `kaggle/run_job.py` defines the jobs, and `kaggle/README.md` is the user's guide. The choices below are operational: nothing pre-registered changes.
+
+- **One preset.** Every pipeline script runs at `--preset 8gb`.
+  - *Why:* the cloud made every row at 8gb (the preset a CPU machine detects). The preset sets the large tier's search sample A (R = 8, 150,000 roots), and it is not part of a row's resume key, so another preset would silently mix two samples within one graph.
+  - *Cost:* a 16 GB T4 is under-used, so T4's timings are those of the 8 GB preset on a T4, which is conservative.
+  - The trainers run at 8gb too. There the preset only switches activation checkpointing, which is on for `pokec_z` under either preset.
+- **Constructor training on two GPUs.** Seeds 0–2 train on one GPU; seeds 3–4 and the no-adversary ablation (seed 0) train on the other. Each model's training is unchanged (seeds, data, steps). The two processes share the CPUs, so the training wall times in the checkpoints were measured under that sharing.
+- **The timing tests run alone,** one process on one GPU.
+  - T4 computes its references afresh, because they are one of its timed cached stages.
+  - T3 reuses T1's stored references, because its clock times only the search. A reference key names the graph, attribute, sample sizes and seeds, so a matching key holds the same values.
+- **CPU and GPU sessions.**
+  - Full Pokec's T1 rows that need no constructor run in CPU sessions (jobs C1), which never load a checkpoint.
+  - The learned start's rows run afterwards in a GPU session (job G2), as the missing rows of the same job folders.
+  - Resume keys exclude the hardware, and every row records its machine (`gpu`), as before.
+- **The cloud's job folders.** G2 writes the learned start's rows into the cloud's folders (`results/v2/parts/t1-*`), so each graph's rows stay in one file and no query runs twice. If the start step picks the constructor, G2 also reruns T2 (whose method rows then change) and the eight case studies made with the greedy start.
+- **Session limits.** A Kaggle session ends at 12 h. The runner starts no command after 11 h, and it stops a running command in time to save the output. Every script resumes, so a second session continues the job.
+- **Outputs.** A job's zip holds only files under `results/` and `data/cache/` that differ from the bundle. `kaggle/import_outputs.py` merges results CSVs by query key, so two outputs that extend one file lose no rows and count none twice.
+- **Not bundled:**
+  - LinkedIn: its node file holds personal data. Dropping it, or preparing an edges-only build, is the user's call.
+  - Raw downloads, and the raw Pokec dumps.
