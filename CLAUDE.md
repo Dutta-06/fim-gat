@@ -121,6 +121,7 @@ v1's honest outcome:
 
   The private GitHub repository and the cloud environment's network allowlist are set up by the user; session A (data and tuning) runs first, then the B jobs in parallel (`docs/cloud_runbook.md` §4).
 - **Pending:**
+  - **Test C2b** (pre-registered 2026-10-18, design §25, approved by the user): T2's comparison on com-Amazon, whose top-5,000 communities are cohesive (com-DBLP failed that check). H1 tests the method (κ = D_a + 1 SE), and H2 tests a 5% scaled cap; each is tested at α = 0.025. It runs on the cloud with `docs/cloud_note_c2b.md` (`experiments/v2/run_c2b.py`, about 6 h on CPU), after the user pushes.
   - the Kaggle jobs (`kaggle/README.md`): G1b (constructor, start step, proposer; attempt 2, design §24) together with C1 (full Pokec's T1 without the constructor, CPU), then G2 (the learned start's rows, full Pokec's case studies), G3 (T3) and G4 (T4);
   - LinkedIn is not bundled (its node file holds personal data): the user decides whether to drop it or prepare an edges-only build;
   - the Rice node count (1,216 built against 1,205 specified).

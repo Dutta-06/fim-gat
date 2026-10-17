@@ -90,10 +90,11 @@ class Job:
 _GT = {}
 
 
-def gt_communities(which):
-    if which not in _GT:
-        _GT[which] = D.ground_truth_communities(T2_DATASET, which)
-    return _GT[which]
+def gt_communities(which, dataset=T2_DATASET):
+    """Ground-truth communities of a graph in datasets.GT_GRAPHS (T2's com-Youtube by default), cached."""
+    if (dataset, which) not in _GT:
+        _GT[(dataset, which)] = D.ground_truth_communities(dataset, which)
+    return _GT[(dataset, which)]
 
 
 def restrict(comms, full_ids, min_size):
@@ -124,24 +125,28 @@ def t1_jobs(args):
 
 
 def t2_jobs(args):
+    """T2's BFS samples (com-Youtube); args.t2_dataset, when set, takes them from another graph with ground-truth
+    communities (the follow-up C2b, design section 25)."""
+    dataset = getattr(args, "t2_dataset", None) or T2_DATASET
     full = {}
 
     def load_full():
         if "g" not in full:
-            full["g"] = D.load(T2_DATASET, "degree")
+            full["g"] = D.load(dataset, "degree")
         return full["g"]
 
     def loader(seed):
         def f():
-            g = D.sample(T2_DATASET, args.t2_size, seed, attribute="degree", full=load_full())
+            g = D.sample(dataset, args.t2_size, seed, attribute="degree", full=load_full())
             g.meta["tier"] = P.tier_of(g)            # a sample's tier is its size's, for R and the MC budget
             return g
         return f
     tier = "small" if args.t2_size <= P.SMALL_MAX_N else "medium" if args.t2_size <= P.MEDIUM_MAX_N else "large"
     for seed in (args.t2_seeds or range(1, int(args.t2_samples) + 1)):
-        name = f"{T2_DATASET}_bfs{int(args.t2_size)}_s{seed}"
-        yield Job({"dataset": T2_DATASET, "attribute": "degree", "graph": name}, tier, loader(seed),
-                  lambda g, w=args.t2_communities: restrict(gt_communities(w), g.meta["full_ids"], EVAL_MIN_COMMUNITY))
+        name = f"{dataset}_bfs{int(args.t2_size)}_s{seed}"
+        yield Job({"dataset": dataset, "attribute": "degree", "graph": name}, tier, loader(seed),
+                  lambda g, w=args.t2_communities: restrict(gt_communities(w, dataset), g.meta["full_ids"],
+                                                            EVAL_MIN_COMMUNITY))
 
 
 def configs(test, tuning, which):

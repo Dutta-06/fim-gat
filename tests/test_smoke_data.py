@@ -24,6 +24,8 @@ V2_DATASETS = {
     "twitter_ego":       (81_306, 1_768_149, "directed", []),
     "instagram":         (553_628, None, "undirected", ["gender"]),
     "snap_youtube":      (1_134_890, 2_987_624, "undirected", []),
+    "snap_amazon":       (334_863, 925_872, "undirected", []),       # C2b's graph (design section 25)
+    "snap_dblp":         (317_080, 1_049_866, "undirected", []),     # checked for C2b, not used (section 25)
     "linkedin":          (None, None, "undirected", []),
 }
 

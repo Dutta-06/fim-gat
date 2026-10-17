@@ -73,6 +73,10 @@ Never use `python3` (a different interpreter; see `CLAUDE.md`).
 - `select_seeds_v2` repairs before it falls back to greedy, and `n_repair = 0` keeps the old behaviour;
 - a fallback scores as a failure in validation, and an exact tie keeps the later epoch, in `V2Trainer.fit` and in `train_constructor`'s log alike.
 
+`test_c2b.py` checks test C2b (`experiments/v2/run_c2b.py`, design §25):
+- the run on a synthetic stand-in for com-Amazon: the three runs, the secondary community sets, no T2 rows, and resumption;
+- the pre-registered pass rules: H1 needs no significant labelled rise, H2 may pay its stated price, and an underpowered test or a rise is never a pass.
+
 `test_scripts_v2.py` runs the experiment scripts end to end on synthetic stand-ins, with `fimgat.v2.datasets` patched and every output under `tmp_path`:
 - `tune_v2` → `run_t1_t2` (T1 with BSM's τ sweep, T2) → `summarize_v2` (with the Pareto table and a figure), three rows per FIM-GAT query, and resumption;
 - tuning refuses a test graph;

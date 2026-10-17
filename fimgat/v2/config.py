@@ -60,6 +60,13 @@ DEPLOY_TOL_SE = KAPPA_SE       # path rule: the furthest certified path state wh
                                # this many standard errors (on B) of the smallest one, the deployment analogue of kappa
 T2_RR_PER_NODE = 64            # RR sets per node of the T2 samples' search sample A (the R of the W1 evidence, theory
                                # section 9.6); at the medium tier's 16 a 10-node community's rate is mostly noise
+# Follow-up C2b (2026-10-18, design section 25): T2's comparison where the hidden communities are cohesive, fixed
+# before any method ran on the graph. The graph was chosen by the cohesion of its ground-truth communities alone.
+C2B_DATASET = "snap_amazon"    # com-Amazon: its top-5000 communities have median conductance 0.06-0.07 inside T2-size
+                               # BFS samples, all within phi0 (com-DBLP failed the same check)
+C2B_COMMUNITIES = "top5000"    # the primary hidden-community set (SNAP's top 5,000); "all" is secondary
+C2B_FRACTION = 0.05            # H2's scaled cap kappa = D_a (1 + C2B_FRACTION); H1 keeps T2's kappa = D_a + 1 SE
+C2B_ALPHA = 0.025              # the level of each of H1 and H2 (Bonferroni over the two)
 T3_RHO = RHO_C1                # test T3 runs at the headline floor
 T3_SPEEDUP_MIN = 1.5           # T3 pass (i): the learned proposer reaches the simple hybrid's final RR disparity at
                                # least this many times sooner (the W3 threshold), on more than half of the test graphs
@@ -76,7 +83,7 @@ REPAIR_EXACT = 16              # ... of whose pairs this many (largest gain - lo
 
 TIER = {"rice_facebook": "small", "twitter_political": "small", "pokec_z": "medium", "pokec_n": "medium",
         "pokec_t": "medium", "epinions": "medium", "twitter_ego": "medium", "pokec_full": "large",
-        "instagram": "large", "snap_youtube": "large", "linkedin": "large"}
+        "instagram": "large", "snap_youtube": "large", "linkedin": "large", "snap_amazon": "large", "snap_dblp": "large"}
 N_SIMS = {"small": 5000, "medium": 2000, "large": 1000}
 RR_PER_NODE = {"small": 512, "medium": 16, "large": None}   # large: from the memory preset (full_R, full_max_roots)
 

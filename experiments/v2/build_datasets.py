@@ -27,15 +27,17 @@ from fimgat.v2 import datasets as D                  # noqa: E402
 from fimgat.v2.config import OLD_PROJECT, RAW_V2    # noqa: E402
 
 ORDER = ("rice_facebook", "twitter_political", "epinions", "twitter_ego", "pokec_t", "instagram", "snap_youtube",
-         "linkedin")
+         "snap_amazon", "snap_dblp", "linkedin")
 # (nodes, edges as the source counts them) from docs/design_v2.md section 8; None = not stated
 EXPECTED = {"rice_facebook": (1_205, 42_443), "twitter_political": (3_753, 6_993), "epinions": (75_879, 508_837),
             "twitter_ego": (81_306, 1_768_149), "instagram": (553_628, None), "snap_youtube": (1_134_890, 2_987_624),
+            "snap_amazon": (334_863, 925_872), "snap_dblp": (317_080, 1_049_866),   # the SNAP pages (C2b, section 25)
             "linkedin": (None, None)}
 # UNVERIFIED: rough guesses for the 8 GB laptop (15.5 GB RAM); nothing here has been run yet
 ESTIMATE = {"rice_facebook": "seconds", "twitter_political": "seconds", "epinions": "about 10 s",
             "twitter_ego": "under 1 min", "pokec_t": "3-6 min (reads the 30.6M-line Pokec dump; RAM about 4 GB)",
             "instagram": "under 1 min (about 13 MB download)", "snap_youtube": "1-3 min (tens of MB download)",
+            "snap_amazon": "under 1 min (about 6 MB download)", "snap_dblp": "under 1 min (about 7 MB download)",
             "linkedin": "3-10 min (19.4M lines; RAM about 3-4 GB)"}
 
 

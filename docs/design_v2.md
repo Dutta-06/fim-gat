@@ -817,3 +817,55 @@ The user chose to fix both and rerun, keeping attempt 1 on record. No test row h
 The learned proposer is retrained as well, because it starts from the constructor checkpoints.
 
 **The rerun** is Kaggle job `G1b-train`, with the same phases. Its output alone feeds G2–G4, and attempt 1's output is ignored. Attempt 1's decision is kept in `tuning.json` under `attempts`, and its rows are kept in its archive folder. If the repaired constructor still loses, the start stays greedy and both attempts are reported.
+
+## 25. C2b: T2's test where the hidden communities are cohesive (pre-registered 2026-10-18)
+
+**Why.** T2 (C2) was a null on com-Youtube. Its diagnostics (§22, "Outcome") traced the null to coverage: inside T2's samples, YouTube's user groups have median conductance 0.97, and none lies within the auditor's cap φ₀. C2b asks the same question where the auditor can see the communities. The user approved the follow-up on 2026-10-18.
+
+**Graph choice, made before any method ran on these graphs.** The premise is a property of the data: the hidden communities must be cohesive inside T2-size samples (BFS balls of 100,000 nodes). It was measured on samples s1 and s2, with conductance computed as the auditor computes it, over communities with at least 10 members in the sample:
+
+| Graph | Communities | Median conductance | Share within φ₀ = 0.4 |
+|---|---|---|---|
+| com-Youtube | all | 0.97 | 0% |
+| com-DBLP | all | 0.80–0.81 | 3% |
+| com-DBLP | top 5,000 | 0.58–0.59 | 22–26% |
+| com-Amazon | all | 0.54 | 25–29% |
+| com-Amazon | top 5,000 | 0.06–0.07 | 100% (70–225 communities per sample) |
+
+com-DBLP fails the premise even with its top 5,000. com-Amazon's top-5,000 communities (product categories) pass, so they are the test's hidden communities.
+
+**The design, fixed in advance** (`config.C2B_*`, `experiments/v2/run_c2b.py`):
+- **Samples:** T2's design on com-Amazon. That is 6 BFS samples of 100,000 nodes (seeds 1–6), labelled groups by degree, R = 64, the tuned δ (0.005) and φ₀ (0.4), all five budgets, and ρ = 0.97 (primary) and 0.99.
+- **Runs**, all from the same labelled-only optimum (`c2_diagnostics.run_case`, which reproduced T2's sets exactly on com-Youtube):
+  - **(a)** the labelled-only search;
+  - **(b)**, the method: the ε-constraint phase with T2's cap κ = D_a + 1 SE (tested by H1);
+  - **(b5)**: the same phase with κ = D_a × 1.05 (tested by H2). The 5% is where the YouTube price scan saw a single swap's purchasing power level off: 1% bought little, and 20% bought almost nothing beyond 5%.
+
+  Each run is deployed by T2's path rule on B and scored by forward Monte Carlo.
+- **Metric:** disparity (max − min rate) over the top-5,000 communities that have at least 10 members in the sample.
+- **Tests:** per case (sample × budget), at ρ = 0.97, on the path-rule deployments, a two-sided Wilcoxon test on (run) − (a). Each hypothesis is tested at α = 0.025 (Bonferroni over the two) and needs at least 20 cases (`T2_MIN_PAIRS`); 30 are planned.
+  - **H1 passes** with p < 0.025, a negative median, and no significant rise in labelled disparity (T2's rule).
+  - **H2 passes** with p < 0.025 and a negative median. Its labelled cost is reported as a median and a p-value; on sample A, the cap bounds it at 5% of D_a.
+- **Descriptive only, with no verdict:**
+  - ρ = 0.99 and the final search sets;
+  - two secondary metrics: Amazon's "all" communities, and the subset of them within φ₀;
+  - coverage (Jaccard overlap with h⁺ and h⁻, Lemma W1.1's bound) and the price scan, as in §22.
+- **Caveat:** each sample covers about 30% of the graph, so samples share nodes. The test treats cases as independent, as T2 did.
+
+**Predictions, written before the run.**
+- H1 will probably fail. On com-Youtube, the phase accepted no move at κ = D_a + 1 SE, even where an affordable improvement to its own family existed.
+- H2 is open. With more room, the phase acted in a minority of the YouTube cases. Whether hidden disparity falls where the auditor can see the communities is the question.
+
+**Reading, fixed in advance.**
+
+| Outcome | Finding |
+|---|---|
+| H1 passes | The method as specified protects cohesive hidden communities: C2 holds where the auditor can see. |
+| H1 fails, H2 passes | Visibility is necessary but not sufficient. The pre-registered room is too small, but with a stated labelled price the method protects cohesive communities. |
+| Both fail | The ε phase does not protect hidden communities even when they are cohesive. The limitation is in the search, not only in what the auditor sees. |
+
+**Integrity.**
+- Ground-truth communities only score sets and price swaps.
+- No method had run on com-Amazon or com-DBLP before this entry.
+- δ and φ₀ keep their validation-tuned values.
+- T2's verdict on com-Youtube stands, whatever C2b finds.

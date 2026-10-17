@@ -7,8 +7,9 @@ carries attrs["degree"]: degree groups of the *full* graph (samples inherit them
 Built files (build_<name>, from the raw files in SOURCES): data/v2/<name>.npz with n; arcs, every directed
 influence arc src -> dst (sorted, no self-loops or duplicates, both directions for undirected data; weighted
 cascade is applied at load); undirected; orig_id, the raw id of each node; and one int64 array per attribute plus
-<attr>_names. YouTube's ground-truth communities go in data/v2/snap_youtube_cmty.npz (ptr, members = top 5,000;
-all_ptr, all_members = all). Pokec loads through fimgat.data.load_pokec from data/pokec/ (pokec_z, pokec_n and
+<attr>_names. Ground-truth communities go in data/v2/<name>_cmty.npz (ptr, members = top 5,000; all_ptr,
+all_members = all) for com-Youtube, and for com-Amazon and com-DBLP, the graphs of the pre-registered follow-up C2b
+(design section 25), which are loadable but outside the T1 registry (NAMES). Pokec loads through fimgat.data.load_pokec from data/pokec/ (pokec_z, pokec_n and
 pokec_full built by experiments/build_pokec.py, pokec_t by experiments/v2/build_datasets.py).
 
 Orientation and node set per dataset. There is no component filtering: the reference sizes (design section 8)
@@ -22,6 +23,8 @@ the Pokec districts keep v1's largest weakly connected component).
   twitter_ego        SNAP ego-Twitter "a b" means a follows b (readme-Ego.txt), so influence flows b -> a: reversed.
   instagram          undirected, as S3D (fairness-sim-ot) treats it. Nodes: users in graph_gender_anon.csv.
   snap_youtube       undirected friendships; communities are user-created groups (overlapping, most users in none).
+  snap_amazon        undirected co-purchases; communities are product categories (SNAP's deduplicated "all" file).
+  snap_dblp          undirected co-authorships; communities are publication venues.
   linkedin           undirected pairs of soc-linkedin.edges. Nodes: ids that occur in an edge. soc-linkedin.nodes
                      holds real profile handles and is never opened.
   pokec_*            SNAP u -> v as listed, as in v1.
@@ -42,12 +45,14 @@ NAMES = ("rice_facebook", "twitter_political", "pokec_z", "pokec_n", "pokec_full
          "instagram", "snap_youtube", "linkedin")
 POKEC = ("pokec_z", "pokec_n", "pokec_t", "pokec_full")
 POKEC_ATTRS = ("region", "gender", "age")
-LOADABLE = NAMES + ("pokec_t",)                       # pokec_t (validation) is loadable but not in the test registry
+C2B = ("snap_amazon", "snap_dblp")                  # test graphs of the follow-up C2b only (design section 25)
+GT_GRAPHS = ("snap_youtube",) + C2B                   # graphs with ground-truth communities (evaluation only)
+LOADABLE = NAMES + ("pokec_t",) + C2B                 # pokec_t (validation) and C2B are loadable, not in NAMES
 POKEC_T_DISTRICTS = ("trenciansky kraj, trencin", "trenciansky kraj, povazska bystrica")
 
 DEFAULT_ATTRIBUTE = {"rice_facebook": "college", "twitter_political": "leaning", "instagram": "gender",
                      **{p: "region" for p in POKEC},
-                     **{s: "degree" for s in ("epinions", "twitter_ego", "snap_youtube", "linkedin")}}
+                     **{s: "degree" for s in ("epinions", "twitter_ego", "snap_youtube", "linkedin") + C2B}}
 
 _OLD = os.path.join(OLD_PROJECT, "data")
 _GH = "https://raw.githubusercontent.com/"
@@ -79,10 +84,19 @@ SOURCES = {
                   _GH + "nicolaslanzetti/fairness-sim-ot/main/data/instagram_ds/raw/graph_gender_anon.csv"],
     "snap_youtube": [_SNAP + "com-youtube.ungraph.txt.gz", _SNAP + "com-youtube.top5000.cmty.txt.gz",
                      _SNAP + "com-youtube.all.cmty.txt.gz"],
+    "snap_amazon": [_SNAP + "com-amazon.ungraph.txt.gz", _SNAP + "com-amazon.top5000.cmty.txt.gz",
+                    _SNAP + "com-amazon.all.dedup.cmty.txt.gz"],
+    "snap_dblp": [_SNAP + "com-dblp.ungraph.txt.gz", _SNAP + "com-dblp.top5000.cmty.txt.gz",
+                  _SNAP + "com-dblp.all.cmty.txt.gz"],
     # edges only, never the .nodes file; local only: no public source is used, so LinkedIn builds only on the laptop
     "linkedin": [os.path.join(OLD_PROJECT, "soc-linkedin.edges")],
 }
 CMTY_PATH = os.path.join(DATA_V2, "snap_youtube_cmty.npz")
+
+
+def cmty_path(name):
+    """The ground-truth community file of a graph in GT_GRAPHS."""
+    return CMTY_PATH if name == "snap_youtube" else os.path.join(DATA_V2, f"{name}_cmty.npz")
 
 
 # ------------------------------------------------------------------ registry and splits
@@ -108,8 +122,8 @@ def built_path(name):
 
 
 def available(name):
-    """True if the built file exists (for snap_youtube, also its community file)."""
-    return os.path.exists(built_path(name)) and (name != "snap_youtube" or os.path.exists(CMTY_PATH))
+    """True if the built file exists (for a graph with ground-truth communities, also its community file)."""
+    return os.path.exists(built_path(name)) and (name not in GT_GRAPHS or os.path.exists(cmty_path(name)))
 
 
 def is_url(source):
@@ -189,15 +203,17 @@ def load(name, attribute=None):
 
 
 def ground_truth_communities(name, which="top5000"):
-    """SNAP com-Youtube communities as graph ids (sorted, size >= 3, overlapping). which: "top5000" or "all"."""
-    if name != "snap_youtube":
-        raise ValueError(f"ground-truth communities exist only for snap_youtube, not {name!r}")
+    """SNAP ground-truth communities (GT_GRAPHS) as graph ids (sorted, size >= 3, overlapping). which: "top5000" or
+    "all"."""
+    if name not in GT_GRAPHS:
+        raise ValueError(f"ground-truth communities exist only for {GT_GRAPHS}, not {name!r}")
     if which not in ("top5000", "all"):
         raise ValueError("which must be 'top5000' or 'all'")
-    if not os.path.exists(CMTY_PATH):
-        raise FileNotFoundError(f"{CMTY_PATH} missing: run experiments/v2/build_datasets.py --only snap_youtube")
+    path = cmty_path(name)
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"{path} missing: run experiments/v2/build_datasets.py --only {name}")
     pre = "" if which == "top5000" else "all_"
-    with np.load(CMTY_PATH) as z:
+    with np.load(path) as z:
         ptr, members = z[pre + "ptr"].astype(np.int64), z[pre + "members"].astype(np.int64)
     return [members[ptr[i]:ptr[i + 1]] for i in range(len(ptr) - 1)]
 
@@ -503,18 +519,30 @@ def build_twitter_ego(raw_dir=RAW_V2):
     return _build_structural("twitter_ego", pairs[:, ::-1], undirected=False)       # a follows b: b -> a
 
 
-def build_snap_youtube(raw_dir=RAW_V2):
-    g_path, top_path, all_path = _local("snap_youtube", raw_dir)
+def _build_snap_communities(name, raw_dir):
+    """A SNAP "com-" graph (undirected) and its ground-truth communities (top 5,000 and all)."""
+    g_path, top_path, all_path = _local(name, raw_dir)
     orig, u, v = _relabel(_read_pairs(g_path, comment="#"))
     n = len(orig)
     arcs = _arcs(u, v, n, undirected=True)
     top, every = _read_communities(top_path, orig), _read_communities(all_path, orig)
     os.makedirs(DATA_V2, exist_ok=True)
-    # communities first: available("snap_youtube") needs both files, so a crash in between leaves it unbuilt
-    _atomic_savez(CMTY_PATH, ptr=top[0], members=top[1], all_ptr=every[0], all_members=every[1])
-    _save("snap_youtube", n, arcs, True, orig)
-    return _summary("snap_youtube", n, arcs, True, communities_top5000=len(top[0]) - 1,
-                    communities_all=len(every[0]) - 1)
+    # communities first: available(name) needs both files, so a crash in between leaves it unbuilt
+    _atomic_savez(cmty_path(name), ptr=top[0], members=top[1], all_ptr=every[0], all_members=every[1])
+    _save(name, n, arcs, True, orig)
+    return _summary(name, n, arcs, True, communities_top5000=len(top[0]) - 1, communities_all=len(every[0]) - 1)
+
+
+def build_snap_youtube(raw_dir=RAW_V2):
+    return _build_snap_communities("snap_youtube", raw_dir)
+
+
+def build_snap_amazon(raw_dir=RAW_V2):
+    return _build_snap_communities("snap_amazon", raw_dir)
+
+
+def build_snap_dblp(raw_dir=RAW_V2):
+    return _build_snap_communities("snap_dblp", raw_dir)
 
 
 def build_linkedin(raw_dir=RAW_V2):
@@ -525,7 +553,8 @@ def build_linkedin(raw_dir=RAW_V2):
 
 BUILDERS = {"rice_facebook": build_rice_facebook, "twitter_political": build_twitter_political,
             "epinions": build_epinions, "twitter_ego": build_twitter_ego, "instagram": build_instagram,
-            "snap_youtube": build_snap_youtube, "linkedin": build_linkedin}
+            "snap_youtube": build_snap_youtube, "snap_amazon": build_snap_amazon, "snap_dblp": build_snap_dblp,
+            "linkedin": build_linkedin}
 
 
 def build_all(raw_dir=RAW_V2, only=None, force=False):

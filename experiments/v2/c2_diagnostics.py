@@ -56,16 +56,17 @@ if HERE not in sys.path:
 
 import pipeline_v2 as P                                                   # noqa: E402
 from common_v2 import NAN, RecorderV2, code_tag, device, mc_seed_for, preset_config, progress   # noqa: E402
-from run_t1_t2 import t2_jobs                                             # noqa: E402
+from run_t1_t2 import gt_communities, restrict, t2_jobs                  # noqa: E402
 from fimgat.v2 import imitation as I                                      # noqa: E402
 from fimgat.v2.auditor import audit_bands, conductance, node_exposure, size_bands   # noqa: E402
 from fimgat.v2.certify import certify_sets, choose, deploy_candidates, path_states  # noqa: E402
-from fimgat.v2.config import (AUDIT_BAND_RATIO, AUDIT_MAX_SIZE, BUDGETS, CERT_ALPHA, KAPPA_SE,   # noqa: E402
-                              MIN_COMMUNITY, RESULTS_V2, RHO_C1, RHO_C2, T2_RR_PER_NODE, T2_SAMPLE_SIZE, T2_SAMPLES)
+from fimgat.v2.config import (AUDIT_BAND_RATIO, AUDIT_MAX_SIZE, BUDGETS, CERT_ALPHA, EVAL_MIN_COMMUNITY,   # noqa: E402
+                              KAPPA_SE, MIN_COMMUNITY, RESULTS_V2, RHO_C1, RHO_C2, T2_RR_PER_NODE, T2_SAMPLE_SIZE,
+                              T2_SAMPLES)
 from fimgat.v2.cover import CoverState                                    # noqa: E402
 from fimgat.v2.hidden import transfer_bound                               # noqa: E402
 from fimgat.v2.improve import FLOOR_RTOL, improve                         # noqa: E402
-from fimgat.v2.metrics_v2 import simulate                                 # noqa: E402
+from fimgat.v2.metrics_v2 import _community_rates, _gap, simulate         # noqa: E402
 from fimgat.v2.proposer import community_moves                            # noqa: E402
 from fimgat.v2.verify import CommunityFamily, disparity_se                # noqa: E402
 
@@ -73,7 +74,14 @@ FRACTIONS = (0.01, 0.05, 0.20)         # room runs: kappa = D_a (1 + f)
 COST_FRACTIONS = (0.01, 0.05, 0.20)    # price budgets, as fractions of D_a (plus one SE)
 SCAN_MAX = 5000                        # swaps scanned per case in the price diagnostic, cheapest first
 OUT = os.path.join(RESULTS_V2, "parts", "c2diag")
-LABELS = ["a", "b-1se"] + [f"b-{int(round(f * 100))}pct" for f in FRACTIONS]
+
+
+def labels_for(fractions):
+    """Run labels: (a), the pre-registered cap (b-1se), and one scaled cap per fraction."""
+    return ["a", "b-1se"] + [f"b-{int(round(f * 100))}pct" for f in fractions]
+
+
+LABELS = labels_for(FRACTIONS)
 
 
 # ------------------------------------------------------------------ helpers
@@ -151,7 +159,9 @@ def price(case, state, floor, d_a, se, fam_f, scan_max=SCAN_MAX):
 
 # ------------------------------------------------------------------ one case
 
-def run_case(case, k, rho, args, rec, cov_log, price_log, t2, extra):
+def run_case(case, k, rho, args, rec, cov_log, price_log, t2, extra, fractions=FRACTIONS):
+    """Every run of one case (labels_for(fractions)); case.secondary, when set ({name: communities}), adds the
+    hidden-community disparity over those sets of the deployed set, as comm_disparity_<name> (run_c2b.py)."""
     g, est = case.g, case.est
     ref, _ = case.ref_for(k)
     floor = case.floor_for(k, rho)
@@ -166,7 +176,8 @@ def run_case(case, k, rho, args, rec, cov_log, price_log, t2, extra):
     d_a, se = float(st_a.disp), float(disparity_se(st_a))
     t_phase1 = time.perf_counter() - t0
     runs = [("a", None, math.nan), ("b-1se", d_a + KAPPA_SE * se, math.nan)] + \
-        [(f"b-{int(round(f * 100))}pct", d_a * (1.0 + f), f) for f in FRACTIONS]
+        [(f"b-{int(round(f * 100))}pct", d_a * (1.0 + f), f) for f in fractions]
+    secondary = getattr(case, "secondary", None) or {}
     for label, kappa, frac in runs:
         t1 = time.perf_counter()
         if kappa is None:
@@ -192,12 +203,21 @@ def run_case(case, k, rho, args, rec, cov_log, price_log, t2, extra):
                       deploy_position=int(c["position"]), deploy_is_reference=bool(c["is_reference"]),
                       deployed_is_final=dep == final, matches_t2=(NAN if want is None else bool(want == dep)),
                       **case.base_cols(), **extra)
+        prob = None
+        if fam or secondary:                             # the recorder's Monte Carlo stream: the same probabilities
+            prob, _ = simulate(g, dep, n_sims=case.ns, seed=mc_seed_for(g))
+            prob = np.asarray(prob, dtype=np.float64)
+        sec = {}
+        for nm, comms in secondary.items():
+            r = _community_rates(prob, comms) if comms else np.zeros(0)
+            sec[f"comm_disparity_{nm}"] = _gap(r) if len(r) else NAN
+            sec[f"n_comm_{nm}"] = int(len(r))
         for deployment, seeds in (("certified-path", dep), ("final", final)):
             rec.add(g, k, rho, P.FIM, seeds, secs, ref_seeds=ref, variant=label, communities=case.comms,
-                    deployment=deployment, **P.cert_cols(case.judge(seeds, k, rho)), **common)
+                    deployment=deployment, **P.cert_cols(case.judge(seeds, k, rho)),
+                    **(sec if deployment == "certified-path" else {}), **common)
         if fam:                                          # Lemma W1.1's terms for the deployed set
-            prob, _ = simulate(g, dep, n_sims=case.ns, seed=mc_seed_for(g))
-            tb = transfer_bound(np.asarray(prob, dtype=np.float64), case.comms, fam)
+            tb = transfer_bound(prob, case.comms, fam)
             cov_log.add({"graph": g.name, "k": k, "rho": rho, "variant": label, "kind": "transfer",
                          "D_H": tb["D_H"], "D_F": tb["D_F"], "gap_max": tb["gap_max"], "gap_min": tb["gap_min"],
                          "bound": tb["bound"], "holds": tb["holds"], "family_size": len(fam),
@@ -211,9 +231,10 @@ def run_case(case, k, rho, args, rec, cov_log, price_log, t2, extra):
     pr = price(case, st_a, floor, d_a, se, first_audit(case, st_a), args.scan_max)
     price_log.add({"graph": g.name, "k": k, "rho": rho, "disp_a": d_a, "se_a": se, "secs": time.perf_counter() - t2_,
                    "status": "ok", **pr})
+    labels = labels_for(fractions)
     moved = {lab: rec.find(graph=g.name, k=k, rho=rho, variant=lab, deployment="final")[-1]["phase2_accepted"]
-             for lab in LABELS[1:]}
-    same = {lab: runs_dep[lab] == runs_dep["a"] for lab in LABELS[1:]}
+             for lab in labels[1:]}
+    same = {lab: runs_dep[lab] == runs_dep["a"] for lab in labels[1:]}
     print(f"  {g.name} k={k} rho={rho}: D_a {d_a:.4f}, SE {se:.5f}; phase-2 moves {moved}; deployed = (a): {same}; "
           f"price F {pr['price_F']:.5f}, H {pr['price_H']:.5f}", flush=True)
 
@@ -221,22 +242,31 @@ def run_case(case, k, rho, args, rec, cov_log, price_log, t2, extra):
 runs_dep = {}                                            # label -> deployed set of the current case (for the log)
 
 
-def case_done(rec, price_log, graph, k, rho):
+def case_done(rec, price_log, graph, k, rho, labels=LABELS):
     return bool(price_log.find(graph=graph, k=k, rho=rho, status="ok")) and all(
-        rec.done(graph=graph, k=k, rho=rho, method=P.FIM, variant=lab, deployment="final") for lab in LABELS)
+        rec.done(graph=graph, k=k, rho=rho, method=P.FIM, variant=lab, deployment="final") for lab in labels)
 
 
 # ------------------------------------------------------------------ summary
 
 def summarize(out_dir):
+    md = ["# C2 diagnostics (EXPLORATORY; docs/design_v2.md section 22)\n",
+          "Specified after T2's pre-registered null and before these runs. T2's verdict stands; nothing here "
+          "replaces it.\n"] + summary_lines(out_dir)
+    path = os.path.join(out_dir, "summary.md")
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(md) + "\n")
+    print(f"wrote {path}")
+
+
+def summary_lines(out_dir, rows_name="room.csv", labels=LABELS):
+    """The room, coverage and price tables (markdown lines) of one output folder."""
     from scipy.stats import wilcoxon
-    room = pd.read_csv(os.path.join(out_dir, "room.csv"))
+    room = pd.read_csv(os.path.join(out_dir, rows_name))
     cov = pd.read_csv(os.path.join(out_dir, "coverage.csv"))
     pr = pd.read_csv(os.path.join(out_dir, "price.csv"))
     room, cov, pr = (x[x.status == "ok"] for x in (room, cov, pr))
-    md = ["# C2 diagnostics (EXPLORATORY; docs/design_v2.md section 22)\n",
-          "Specified after T2's pre-registered null and before these runs. T2's verdict stands; nothing here "
-          "replaces it.\n"]
+    md = []
     dep = room[room.deployment == "certified-path"]
     fin = room[room.deployment == "final"]
     md.append("## Room: does the phase act when it may spend more labelled fairness?\n")
@@ -248,7 +278,7 @@ def summarize(out_dir):
     key = ["graph", "k", "rho"]
     for rho in sorted(dep.rho.unique()):
         a = dep[(dep.rho == rho) & (dep.variant == "a")].set_index(key)
-        for lab in LABELS[1:]:
+        for lab in labels[1:]:
             b = dep[(dep.rho == rho) & (dep.variant == lab)].set_index(key)
             f = fin[(fin.rho == rho) & (fin.variant == lab)].set_index(key)
             j = b.join(a, lsuffix="", rsuffix="_a", how="inner")
@@ -259,13 +289,18 @@ def summarize(out_dir):
             ds = j.es_ratio - j.es_ratio_a
             nz = dh[dh != 0]
             p = float(wilcoxon(nz).pvalue) if len(nz) >= 2 else math.nan
-            ctrl = j.matches_t2.dropna().astype(str).isin(["True", "1", "1.0"]).mean() if lab == "b-1se" else math.nan
+            m = j.matches_t2.dropna()
+            ctrl = m.astype(str).isin(["True", "1", "1.0"]).mean() if lab == "b-1se" and len(m) else math.nan
             md.append(f"| {rho:g} | {lab} | {len(j)} | {j.room.median():.5f} | {(f.phase2_accepted > 0).mean():.0%} | "
                       f"{(j.seeds != j.seeds_a).mean():.0%} | {dh.median():+.4f} | {(dh < 0).sum()} / {(dh > 0).sum()} | "
                       f"{p:.3g} | {dl.median():+.4f} | {ds.median():+.4f} | "
-                      + ("-" if lab != "b-1se" else f"{ctrl:.0%}") + " |")
-        ctrl_a = a.matches_t2.dropna().astype(str).isin(["True", "1", "1.0"]).mean() if len(a) else math.nan
-        md.append(f"\n(a) reproduces T2's (a) deployment in {ctrl_a:.0%} of cases at rho {rho:g}.\n")
+                      + ("-" if ctrl != ctrl else f"{ctrl:.0%}") + " |")
+        m = a.matches_t2.dropna() if len(a) else a
+        if len(m):
+            ctrl_a = m.astype(str).isin(["True", "1", "1.0"]).mean()
+            md.append(f"\n(a) reproduces T2's (a) deployment in {ctrl_a:.0%} of cases at rho {rho:g}.\n")
+        else:
+            md.append("")
     md.append("## Coverage: does the auditor find the communities that set the hidden disparity?\n")
     t = cov[cov.kind == "transfer"]
     if len(t):
@@ -276,13 +311,15 @@ def summarize(out_dir):
             md.append(f"| {rho:g} | {lab} | {len(x)} | {x.D_H.median():.4f} | {x.D_F.median():.4f} | "
                       f"{x.gap_max.median():.4f} | {x.gap_min.median():.4f} | {(x.bound < 1).mean():.0%} | "
                       f"{x.jaccard_hmax.median():.3f} | {x.jaccard_hmin.median():.3f} | {x.family_size.median():.0f} |")
-    s = cov[cov.kind == "gt_conductance"]
+    s = cov[cov.kind.astype(str).str.startswith("gt_conductance")]
     if len(s):
         md.append("\nGround-truth communities against the auditor's conductance cap phi0 (per sample):\n")
-        md.append("| sample | communities | conductance median | within phi0 |")
-        md.append("|---|---|---|---|")
+        md.append("| sample | set | communities | conductance median | within phi0 |")
+        md.append("|---|---|---|---|---|")
         for _, r in s.iterrows():
-            md.append(f"| {r.graph} | {int(r.n_communities)} | {r.conductance_median:.3f} | {r.share_within_phi0:.0%} |")
+            st = "evaluated" if r.kind == "gt_conductance" else str(r.kind).replace("gt_conductance_", "")
+            md.append(f"| {r.graph} | {st} | {int(r.n_communities)} | {r.conductance_median:.3f} | "
+                      f"{r.share_within_phi0:.0%} |")
     md.append("\n## Price: what does community fairness cost in labelled fairness, one swap at a time?\n")
     md.append("At the labelled-only optimum. price = labelled-disparity cost of the cheapest floor-feasible swap that "
               "lowers the community disparity (F: the auditor's first family; H: the hidden communities on sample "
@@ -304,10 +341,7 @@ def summarize(out_dir):
         for nm in ("F", "H"):
             md.append(f"| {rho:g} | {nm} | " + " | ".join(f"{x[f'best_dD{nm}_within_{b}'].median():+.4f}"
                                                           for b in budgets) + " |")
-    path = os.path.join(out_dir, "summary.md")
-    with open(path, "w", encoding="utf-8") as fh:
-        fh.write("\n".join(md) + "\n")
-    print(f"wrote {path}")
+    return md
 
 
 # ------------------------------------------------------------------ main
@@ -336,32 +370,40 @@ def main():
         return
     if args.R is None:
         args.R = T2_RR_PER_NODE                         # T2's R, so the states are T2's
+    run_all(args, FRACTIONS, "C2 diagnostics (EXPLORATORY)", test="c2diag", exploratory=True)
+
+
+def run_all(args, fractions, title, test, exploratory, rows_name="room.csv", secondary=False):
+    """Every pending case of the samples t2_jobs(args) gives, with the runs labels_for(fractions); rows go to
+    <out_dir>/<rows_name>, with coverage.csv and price.csv beside them. secondary: also score each deployed set on
+    the sample's "all" communities and on those of them within phi0 (run_c2b.py)."""
     random.seed(args.seed)
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     tuning = P.load_tuning(args.tuning)
     dev = device()
     pname, preset = preset_config(args.preset)
+    labels = labels_for(fractions)
     ks, rhos = sorted({int(k) for k in args.ks}), sorted({float(r) for r in args.rhos})
     jobs = list(t2_jobs(args))
-    print(f"C2 diagnostics (EXPLORATORY): {len(jobs)} samples x {len(ks)} budgets x {len(rhos)} floors; runs "
-          f"{LABELS}; R={args.R}; delta={tuning['delta']} phi0={tuning['phi0']}; code_tag={code_tag()}; device={dev}",
+    print(f"{title}: {len(jobs)} samples x {len(ks)} budgets x {len(rhos)} floors; runs "
+          f"{labels}; R={args.R}; delta={tuning['delta']} phi0={tuning['phi0']}; code_tag={code_tag()}; device={dev}",
           flush=True)
     os.makedirs(args.out_dir, exist_ok=True)
-    rec = RecorderV2(os.path.join(args.out_dir, "room.csv"), n_sims=args.n_sims, preset=pname)
+    rec = RecorderV2(os.path.join(args.out_dir, rows_name), n_sims=args.n_sims, preset=pname)
     cov_log = P.CsvLog(os.path.join(args.out_dir, "coverage.csv"), code_tag=code_tag())
     price_log = P.CsvLog(os.path.join(args.out_dir, "price.csv"), code_tag=code_tag())
     todo = {job.ident["graph"]: [(k, r) for k in ks for r in rhos
-                                 if not case_done(rec, price_log, job.ident["graph"], k, r)] for job in jobs}
+                                 if not case_done(rec, price_log, job.ident["graph"], k, r, labels)] for job in jobs}
     n_left = sum(len(v) for v in todo.values())
     print(f"cases left: {n_left} of {len(jobs) * len(ks) * len(rhos)} (rough: 5-15 min each on a 4-CPU VM, plus about "
           f"25 min per sample for its cached stages)", flush=True)
     if args.dry_run or not n_left:
         return
     from summarize_v2 import load
-    t2 = load(args.t2_csv)
-    extra = {"test": "c2diag", "exploratory": True, "tuning_tag": tuning.get("code_tag", "")}
-    bar = progress(n_left, "C2 diagnostics", unit="case")
+    t2 = load(args.t2_csv) if getattr(args, "t2_csv", None) else None
+    extra = {"test": test, "exploratory": bool(exploratory), "tuning_tag": tuning.get("code_tag", "")}
+    bar = progress(n_left, test, unit="case")
     for job in jobs:
         cases = todo[job.ident["graph"]]
         if not cases:
@@ -378,9 +420,20 @@ def main():
                          "conductance_median": float(np.median(cond)) if len(cond) else NAN,
                          "share_within_phi0": float((cond <= case.phi0).mean()) if len(cond) else NAN,
                          "phi0": case.phi0, "status": "ok"})
+        if secondary:
+            every = restrict(gt_communities("all", job.ident["dataset"]), case.g.meta["full_ids"], EVAL_MIN_COMMUNITY)
+            cond = np.array([conductance(case.g, c) for c in every]) if every else np.zeros(0)
+            case.secondary = {"all": every, "visible": [c for c, x in zip(every, cond) if x <= case.phi0]}
+            print(f"  secondary sets: {len(every)} 'all' communities, {len(case.secondary['visible'])} of them within "
+                  f"phi0", flush=True)
+            if not cov_log.find(graph=case.g.name, kind="gt_conductance_all"):
+                cov_log.add({"graph": case.g.name, "kind": "gt_conductance_all", "n_communities": len(cond),
+                             "conductance_median": float(np.median(cond)) if len(cond) else NAN,
+                             "share_within_phi0": float((cond <= case.phi0).mean()) if len(cond) else NAN,
+                             "phi0": case.phi0, "status": "ok"})
         for k, rho in cases:
             runs_dep.clear()
-            run_case(case, k, rho, args, rec, cov_log, price_log, t2, extra)
+            run_case(case, k, rho, args, rec, cov_log, price_log, t2, extra, fractions)
             bar.update(1)
         del case
         P.free()
