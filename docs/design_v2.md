@@ -764,6 +764,7 @@ The user chose Kaggle's free notebooks (GPU T4 x2) for the GPU part and runs eac
 - **The cloud's job folders.** G2 writes the learned start's rows into the cloud's folders (`results/v2/parts/t1-*`), so each graph's rows stay in one file and no query runs twice. If the start step picks the constructor, G2 also reruns T2 (whose method rows then change) and the eight case studies made with the greedy start.
 - **Session limits.** A Kaggle session ends at 12 h. The runner starts no command after 11 h, and it stops a running command in time to save the output. Every script resumes, so a second session continues the job.
 - **Outputs.** A job's zip holds only files under `results/` and `data/cache/` that differ from the bundle. `kaggle/import_outputs.py` merges results CSVs by query key, so two outputs that extend one file lose no rows and count none twice.
+- **Progress bars.** The long scripts show a progress bar with an ETA (`common_v2.progress`, tqdm), one line a minute in a log, which the runner relays every 5 minutes. It is output only and changes no result, but it changes `code_tag`, as the C2 diagnostics script did. So the Kaggle rows carry a different `code_tag` from the cloud's, and neither change touches a computation.
 - **Not bundled:**
   - LinkedIn: its node file holds personal data. Dropping it, or preparing an edges-only build, is the user's call.
   - Raw downloads, and the raw Pokec dumps.

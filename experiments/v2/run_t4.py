@@ -50,7 +50,7 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 import pipeline_v2 as P                                                   # noqa: E402
-from common_v2 import NAN, RecorderV2, code_tag, device, gpu_name, preset_config   # noqa: E402
+from common_v2 import NAN, RecorderV2, code_tag, device, gpu_name, preset_config, progress   # noqa: E402
 from fimgat.baselines import RRGreedy                                     # noqa: E402
 from fimgat.diffusion import ExposureEstimator                            # noqa: E402
 from fimgat.graph import from_edges                                       # noqa: E402
@@ -135,6 +135,8 @@ def warm_up(dev, models, methods, cfgs):
 class T4Run:
     """Every pending query of one (dataset, attribute), with each cached and query stage logged."""
 
+    bar = None                                      # a progress bar (common_v2.progress), updated after each query
+
     def __init__(self, ident, todo, models, args, rec, log, dev, pname, preset, tuned, extra):
         self.ident, self.todo, self.models, self.args = ident, todo, models, args
         self.rec, self.log, self.dev, self.pname, self.preset = rec, log, dev, pname, preset
@@ -210,6 +212,8 @@ class T4Run:
                         if q[3] is not None:
                             cols["deployment"] = "certified"
                         self.rec.add_missing(case.g, k, rho, q[2], why, train_seed=q[4], **cols)
+                    if self.bar is not None:
+                        self.bar.update(1)
 
     def query(self, q):
         k, rho, name, cfg, ts = q
@@ -352,8 +356,11 @@ def main():
             P.free()
 
     extra = {"test": "t4", "tuned": bool(tuning.get("tuned", True)), "tuning_tag": tuning.get("code_tag", "")}
+    bar = progress(sum(len(todo) for _, todo in jobs), "T4")
     for ident, todo in jobs:
         run = T4Run(ident, todo, models, args, rec, log, dev, pname, preset, tuned, extra)
+        run.bar = bar
+        bar.set_description_str(f"T4 {ident['graph']}/{ident['attribute']}")
         try:
             run.run()
         except (RuntimeError, MemoryError) as e:
@@ -365,6 +372,7 @@ def main():
             print(f"{ident['dataset']} / {ident['attribute']}: {e}; skipped", flush=True)
         del run
         P.free()
+    bar.close()
 
 
 if __name__ == "__main__":

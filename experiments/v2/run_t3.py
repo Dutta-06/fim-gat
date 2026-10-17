@@ -41,7 +41,7 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 import pipeline_v2 as P                                                   # noqa: E402
-from common_v2 import NAN, RecorderV2, code_tag, device, gpu_name, preset_config   # noqa: E402
+from common_v2 import NAN, RecorderV2, code_tag, device, gpu_name, preset_config, progress   # noqa: E402
 from run_t1_t2 import T1_ATTRS                                            # noqa: E402
 from fimgat.v2 import datasets as D                                       # noqa: E402
 from fimgat.v2 import imitation as I                                      # noqa: E402
@@ -176,7 +176,9 @@ def main():
 
     extra = {"test": "t3", "tuned": bool(tuning.get("tuned", True)), "tuning_tag": tuning.get("code_tag", ""),
              "ignore_gate": bool(args.ignore_gate)}
+    bar = progress(sum(len(todo) for _, todo in jobs), "T3", unit="search")
     for ident, todo in jobs:
+        bar.set_description_str(f"T3 {ident['graph']}/{ident['attribute']}")
         print(f"\n=== {ident['graph']} / {ident['attribute']}: {len(todo)} searches ===", flush=True)
         case = P.Case(lambda i=ident: D.load(i["dataset"], i["attribute"]), sorted({q[0] for q in todo}), args, dev,
                       preset, need_features=True, need_rr_greedy=start == "learned", phi0=tuned["phi0"],
@@ -214,6 +216,7 @@ def main():
                 print(f"    k={k} {prop:10s} s{pts}: {len(trace) - 1} moves in {secs:.1f}s "
                       f"({'local optimum' if local_opt else 'time'}), RR disparity {trace[0][1]:.4f} -> "
                       f"{trace[-1][1]:.4f}; MC disparity at {budgets[-1]:g}s {mc:.4f}", flush=True)
+                bar.update(1)
             for ts, path in simple_paths.items():           # recall@C on states along the simple hybrid's path
                 if rlog.find(dataset=ident["dataset"], attribute=ident["attribute"], k=k, start_seed=ts,
                              proposer="simple", status="ok"):
@@ -234,6 +237,7 @@ def main():
                               **{f"recall_{c}": out["recall"][c] for c in T3_RECALL_C}})
         del case
         P.free()
+    bar.close()
 
 
 if __name__ == "__main__":

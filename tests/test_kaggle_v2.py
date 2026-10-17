@@ -263,3 +263,26 @@ def test_g1_chain_constructor_then_start_step_then_learned_t1_rows(t3_env):
     t1 = pd.read_csv(tmp / "t1.csv")
     learned = t1[(t1.start == "learned") & (t1.deployment == "certified")]
     assert len(learned) >= 1 and (learned.status == "ok").all() and set(learned.train_seed) == {0}
+
+
+def test_progress_lines_reach_the_runner(tmp_path, monkeypatch):
+    """common_v2.progress in a log file writes plain lines (no carriage returns) that run_job.last_progress relays,
+    reading only what the current command wrote."""
+    import common_v2
+    log = tmp_path / "lane0.log"
+    with open(log, "w", encoding="utf-8") as f:
+        f.write("an earlier command\nT1 x/y: 100%|##########| 3/3 [00:01<00:00, 2.00query/s]\n")
+        offset = f.tell()
+        monkeypatch.setattr(sys, "stderr", f)
+        monkeypatch.setattr(common_v2, "PROGRESS_LOG_SECONDS", 0.0)
+        assert RJ.last_progress(str(log), offset) == ""
+        bar = common_v2.progress(4, "T1 g/a")
+        for _ in range(4):
+            print("a result row", file=f, flush=True)
+            bar.update(1)
+        bar.close()
+    text = log.read_text(encoding="utf-8")
+    assert "\r" not in text
+    got = RJ.last_progress(str(log), offset)
+    assert got.startswith("T1 g/a") and "4/4 [" in got
+    assert RJ.last_progress(str(tmp_path / "missing.log")) == ""

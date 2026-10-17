@@ -65,7 +65,9 @@ For several jobs at once, use one notebook per job (**File > Copy**), each with 
 The log in the version's page shows:
 - the environment (GPUs, RAM, package versions);
 - the plan;
-- one line per finished command, and a heartbeat every 30 minutes.
+- a line when each command starts and ends;
+- every 5 minutes, each running command's progress bar: done / total, time elapsed < time remaining;
+- every 30 minutes, host memory and a refresh of the output zip.
 
 Each command's full output is inside the zip, under `results/v2/parts/kaggle-<JOB>/logs/`.
 

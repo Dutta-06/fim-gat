@@ -44,7 +44,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
-from common_v2 import code_tag, device, gpu_name, peak_gpu_gb, preset_config, reset_peak, timed   # noqa: E402
+from common_v2 import code_tag, device, gpu_name, peak_gpu_gb, preset_config, progress, reset_peak, timed  # noqa: E402
 from fimgat.v2 import datasets as D                                                            # noqa: E402
 from fimgat.v2.config import BUDGETS, MODELS_V2, N_TRAIN_SEEDS, RESULTS_V2, RR_PER_NODE, TIER   # noqa: E402
 from fimgat.v2.train import V2Trainer, prepare_v2                                              # noqa: E402
@@ -157,12 +157,17 @@ class EpochLog:
         self.stats, self.epoch, self.pending = [], 0, None
         self.best_epoch, self.best_val = None, NAN
         self.t0 = time.time()
+        self.bar = None                                 # a progress bar over the run's steps (common_v2.progress)
 
     def on_step(self, ctx, k, rho, T, out):
         if self.pending is not None:                    # the previous epoch was not a validation epoch
             self._flush()
         self.stats.append({**out, "k": int(k), "rho": float(rho), "T": float(T),
                            "label": self.labels.get(id(ctx), "?")})
+        if self.bar is not None:
+            self.bar.update(1)
+            if out.get("loss") is not None:
+                self.bar.set_postfix_str(f"loss {float(out['loss']):.4f}", refresh=False)
         if len(self.stats) >= self.per_epoch:
             self.epoch += 1
             self.pending, self.stats = self._summary(self.stats), []
@@ -249,6 +254,7 @@ def train_one(variant, seed, gamma, path, train_ctxs, val_ctxs, labels, settings
             "attributes": "+".join(settings["attributes"]), "code_tag": code_tag(), "gpu": gpu_name(),
             "preset": settings["preset"], "quick": bool(args.quick)}
     elog = EpochLog(settings["log"], settings["steps_per_epoch"], base, labels)
+    elog.bar = progress(settings["epochs"] * settings["steps_per_epoch"], os.path.basename(path), unit="step")
     tr.epoch_log = elog
     reset_peak()
     try:
@@ -256,6 +262,7 @@ def train_one(variant, seed, gamma, path, train_ctxs, val_ctxs, labels, settings
                       steps_per_epoch=settings["steps_per_epoch"], eval_every=settings["eval_every"], verbose=True)
     finally:
         elog.close()
+        elog.bar.close()
     alloc, reserved = peak_gpu_gb()
     names = settings["train_graphs"]
     meta = dict(train_time=float(tr.train_time), graph=names[0] if len(names) == 1 else list(names),

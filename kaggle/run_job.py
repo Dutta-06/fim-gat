@@ -28,6 +28,7 @@ import hashlib
 import io
 import json
 import os
+import re
 import subprocess
 import sys
 import threading
@@ -48,6 +49,7 @@ KEY = ["dataset", "attribute", "graph", "k", "rho", "method", "variant", "start"
        "train_seed", "delta", "phi0", "cert_R", "R", "budget_s", "tuning_step"]   # summarize_v2.KEY + tuning step
 FILE_KEYS = {"t1_bounds.csv": ["dataset", "attribute", "graph", "k", "rho"]}
 DONE = ("ok", "done", "not needed")             # command statuses that count as finished
+BAR_LINE = re.compile(r"\d+/\d+ \[")           # a progress-bar line (common_v2.progress: "57/240 [1:12:03<...")
 
 
 # ------------------------------------------------------------------ the jobs
@@ -439,6 +441,21 @@ def describe(c):
                                         if isinstance(c, dict) and c.get("when") else "")
 
 
+def last_progress(log, offset=0, nbytes=16384):
+    """The latest progress-bar line written to `log` after `offset` (the scripts write one a minute), else the
+    last line written there."""
+    try:
+        with open(log, "rb") as f:
+            f.seek(0, 2)
+            f.seek(max(offset, f.tell() - nbytes))
+            lines = f.read().decode("utf-8", errors="replace").replace("\r", "\n").splitlines()
+    except OSError:
+        return ""
+    lines = [ln.strip() for ln in lines if ln.strip()]
+    bars = [ln for ln in lines if BAR_LINE.search(ln)]
+    return (bars or lines or [""])[-1][:200]
+
+
 def run_lane(lane, gpu, ctx):
     """Run one lane's commands in order. A failed command ends the lane unless the lane is keep_going (independent
     commands). Near the session's end no command starts, and a running one is stopped in time to export."""
@@ -446,7 +463,8 @@ def run_lane(lane, gpu, ctx):
     if gpu is not None:
         env["CUDA_VISIBLE_DEVICES"] = str(gpu)
     log = os.path.join(ctx["logdir"], f"lane{lane['_index']}.log")
-    for c in lane["cmds"]:
+    running = ctx.setdefault("running", {})
+    for pos, c in enumerate(lane["cmds"], 1):
         left = ctx["deadline"] - time.time()
         rec = {"cmd": describe(c), "gpu": gpu}
         if isinstance(c, dict) and "call" in c:
@@ -465,9 +483,14 @@ def run_lane(lane, gpu, ctx):
             ctx["record"](dict(rec, status="not started: session time nearly over (resumable)"))
             continue
         t0 = time.time()
+        name = os.path.basename(cmd[0])
+        print(f"  [{time.strftime('%H:%M:%S')}] lane {lane['_index']} (GPU {gpu}): starting {name} "
+              f"(command {pos} of {len(lane['cmds'])})", flush=True)
         with open(log, "a", encoding="utf-8") as f:
             f.write(f"\n===== {time.strftime('%Y-%m-%d %H:%M:%S')} GPU {gpu}: {' '.join(cmd)}\n")
             f.flush()
+            running[lane["_index"]] = {"name": name, "pos": pos, "n": len(lane["cmds"]), "t0": t0, "log": log,
+                                       "offset": f.tell()}
             p = subprocess.Popen([sys.executable, "-u", "-W", "ignore"] + cmd, cwd=ctx["root"], env=env, stdout=f,
                                  stderr=subprocess.STDOUT)
             try:
@@ -481,14 +504,16 @@ def run_lane(lane, gpu, ctx):
                     p.kill()
                     p.wait()
                 status = "stopped: session time (resumable: give this output to the next session)"
+            finally:
+                running.pop(lane["_index"], None)
         if status == "ok" and marker:
             os.makedirs(os.path.dirname(marker), exist_ok=True)
             with open(marker, "w", encoding="utf-8") as f:
                 f.write(time.strftime("%Y-%m-%d %H:%M:%S") + "\n")
         mins = (time.time() - t0) / 60
         ctx["record"](dict(rec, status=status, minutes=round(mins, 1)))
-        print(f"  [{time.strftime('%H:%M:%S')}] lane {lane['_index']} (GPU {gpu}): {os.path.basename(cmd[0])} -> "
-              f"{status} ({mins:.1f} min)", flush=True)
+        print(f"  [{time.strftime('%H:%M:%S')}] lane {lane['_index']} (GPU {gpu}): {name} -> {status} "
+              f"({mins:.1f} min)", flush=True)
         ctx["export"]()
         if status.startswith("exit"):
             with open(log, encoding="utf-8", errors="replace") as f:
@@ -500,8 +525,20 @@ def run_lane(lane, gpu, ctx):
             break
 
 
-def heartbeat(stop, every, export, logdir):
-    while not stop.wait(every):
+def heartbeat(stop, ctx, export, export_every, progress_every):
+    """Every progress_every seconds, each running lane's command and its latest progress line; every export_every
+    seconds, host memory and a refresh of the output zip."""
+    last_export = last_progress_t = time.time()
+    while not stop.wait(30):
+        now = time.time()
+        if progress_every and now - last_progress_t >= progress_every:
+            last_progress_t = now
+            for i, r in sorted(list(ctx.get("running", {}).items())):
+                print(f"  [{time.strftime('%H:%M:%S')}] lane {i}: {r['name']} (command {r['pos']} of {r['n']}, "
+                      f"{(now - r['t0']) / 60:.0f} min): {last_progress(r['log'], r['offset']) or '...'}", flush=True)
+        if now - last_export < export_every:
+            continue
+        last_export = now
         try:
             import psutil
             mem = psutil.virtual_memory()
@@ -510,10 +547,9 @@ def heartbeat(stop, every, export, logdir):
             m = "RAM n/a"
         try:
             n = len(export())
-            print(f"  [{time.strftime('%H:%M:%S')}] running; {m}; outputs refreshed ({n} files); logs in {logdir}",
-                  flush=True)
+            print(f"  [{time.strftime('%H:%M:%S')}] {m}; outputs refreshed ({n} files)", flush=True)
         except Exception as e:                            # a failed refresh must not end the job
-            print(f"  [{time.strftime('%H:%M:%S')}] running; {m}; output refresh failed: {e}", flush=True)
+            print(f"  [{time.strftime('%H:%M:%S')}] {m}; output refresh failed: {e}", flush=True)
 
 
 def main(argv=None):
@@ -526,6 +562,8 @@ def main(argv=None):
     ap.add_argument("--out", default=os.path.join(ROOT, "kaggle_outputs"), help="where outputs go (/kaggle/working)")
     ap.add_argument("--smoke-tests", action="store_true", help="run the fast test file first (about a minute)")
     ap.add_argument("--serial", action="store_true", help="run a phase's lanes one after another (less memory)")
+    ap.add_argument("--progress-minutes", type=float, default=5.0,
+                    help="print each running lane's latest progress line this often (0: never)")
     ap.add_argument("--allow-cpu", action="store_true", help="run a GPU job without a GPU (development only)")
     ap.add_argument("--dry-run", action="store_true", help="print the plan, then stop")
     args = ap.parse_args(argv)
@@ -579,10 +617,10 @@ def main(argv=None):
             export()
             sys.exit("the environment failed the smoke tests; nothing was run (see the test output above)")
     ctx = {"root": ROOT, "deadline": deadline, "logdir": logdir, "markers": os.path.join(part, "done"),
-           "record": record, "export": export}
+           "record": record, "export": export, "running": {}}
     stop = threading.Event()
-    threading.Thread(target=heartbeat, args=(stop, 3600 if job.get("timing") else 1800, export, logdir),
-                     daemon=True).start()
+    threading.Thread(target=heartbeat, args=(stop, ctx, export, 3600 if job.get("timing") else 1800,
+                                             60 * args.progress_minutes), daemon=True).start()
     complete = True
     try:
         for i, ph in enumerate(job["phases"], 1):

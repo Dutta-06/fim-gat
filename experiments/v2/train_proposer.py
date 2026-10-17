@@ -44,7 +44,7 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 import pipeline_v2 as P                                                              # noqa: E402
-from common_v2 import code_tag, device, gpu_name, peak_gpu_gb, preset_config, reset_peak   # noqa: E402
+from common_v2 import code_tag, device, gpu_name, peak_gpu_gb, preset_config, progress, reset_peak   # noqa: E402
 from train_constructor import build_contexts, load_bases, log, read_rows, write_rows  # noqa: E402
 from fimgat.baselines import RRGreedy                                                # noqa: E402
 from fimgat.v2 import datasets as D                                                  # noqa: E402
@@ -93,6 +93,7 @@ def make_states(ctxs, labels, ks, rhos, per_query, explore, delta, seed, dev):
     label and floor ratio; features are left to train_proposer (on the fly)."""
     rng = np.random.default_rng(seed)
     recs, t0 = [], time.time()
+    bar = progress(len(ctxs) * len(ks) * len(rhos), "states", unit="query")
     for i, ctx in enumerate(ctxs):
         rg = RRGreedy(ctx.est)
         for k in ks:
@@ -104,7 +105,9 @@ def make_states(ctxs, labels, ks, rhos, per_query, explore, delta, seed, dev):
                 for r in got:
                     r["label"] = labels.get(id(ctx), str(i))
                 recs += got
+                bar.update(1)
         del rg
+    bar.close()
     log(f"  {len(recs)} states from {len(ctxs)} contexts in {time.time() - t0:.0f}s")
     return recs
 

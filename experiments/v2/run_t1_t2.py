@@ -59,7 +59,7 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 import pipeline_v2 as P                                                   # noqa: E402
-from common_v2 import NAN, RecorderV2, code_tag, device, gpu_name, preset_config   # noqa: E402
+from common_v2 import NAN, RecorderV2, code_tag, device, gpu_name, preset_config, progress   # noqa: E402
 from fimgat.v2 import datasets as D                                       # noqa: E402
 from fimgat.baselines import RRGreedy                                     # noqa: E402
 from fimgat.v2.baselines_v2 import SUITE                                  # noqa: E402
@@ -345,7 +345,9 @@ def main():
     def hook(stage, secs, alloc, res, info):
         print(f"  {stage:12s} {secs:8.1f}s  peak GPU {alloc:.2f} / {res:.2f} GB", flush=True)
 
+    bar = progress(sum(len(todo) + len(sweep) for _, todo, sweep in jobs), args.test.upper())
     for job, todo, sweep in jobs:
+        bar.set_description_str(f"{args.test.upper()} {job.ident['graph']}/{job.ident['attribute']}")
         need_f = any(q[3] is not None and q[3].learned for q in todo)
         need_g = any(q[3] is not None and q[3].start == "learned" for q in todo)
         budgets = sorted({q[0] for q in todo} | set(sweep))
@@ -358,6 +360,7 @@ def main():
                 raise
             print(f"  out of memory while preparing ({type(e).__name__}); graph skipped", flush=True)
             P.free()
+            bar.update(len(todo) + len(sweep))
             continue
         if job.comms is not None:
             case.comms = job.comms(case.g)
@@ -394,6 +397,7 @@ def main():
                         if cfg is not None:
                             cols["deployment"] = "certified"
                         rec.add_missing(case.g, k, rho, name, why, train_seed=ts, **cols)
+                    bar.update(1)
             if prec is not None and k in sweep:
                 try:
                     pareto_sweep(prec, case, job.ident, k, extra)
@@ -402,8 +406,10 @@ def main():
                         raise
                     P.free()
                     print(f"    BSM sweep k={k}: out of memory ({type(e).__name__}); not recorded", flush=True)
+                bar.update(1)
         del case
         P.free()
+    bar.close()
 
 
 if __name__ == "__main__":

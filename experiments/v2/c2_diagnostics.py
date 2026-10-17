@@ -55,7 +55,7 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 import pipeline_v2 as P                                                   # noqa: E402
-from common_v2 import NAN, RecorderV2, code_tag, device, mc_seed_for, preset_config   # noqa: E402
+from common_v2 import NAN, RecorderV2, code_tag, device, mc_seed_for, preset_config, progress   # noqa: E402
 from run_t1_t2 import t2_jobs                                             # noqa: E402
 from fimgat.v2 import imitation as I                                      # noqa: E402
 from fimgat.v2.auditor import audit_bands, conductance, node_exposure, size_bands   # noqa: E402
@@ -361,6 +361,7 @@ def main():
     from summarize_v2 import load
     t2 = load(args.t2_csv)
     extra = {"test": "c2diag", "exploratory": True, "tuning_tag": tuning.get("code_tag", "")}
+    bar = progress(n_left, "C2 diagnostics", unit="case")
     for job in jobs:
         cases = todo[job.ident["graph"]]
         if not cases:
@@ -380,8 +381,10 @@ def main():
         for k, rho in cases:
             runs_dep.clear()
             run_case(case, k, rho, args, rec, cov_log, price_log, t2, extra)
+            bar.update(1)
         del case
         P.free()
+    bar.close()
 
 
 if __name__ == "__main__":

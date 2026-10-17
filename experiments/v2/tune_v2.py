@@ -47,7 +47,7 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 import pipeline_v2 as P                                                   # noqa: E402
-from common_v2 import NAN, RecorderV2, code_tag, device, gpu_name, preset_config   # noqa: E402
+from common_v2 import NAN, RecorderV2, code_tag, device, gpu_name, preset_config, progress   # noqa: E402
 from fimgat.v2 import datasets as D                                       # noqa: E402
 from fimgat.v2.certify import path_states                                 # noqa: E402
 from fimgat.v2.config import (BUDGETS, DELTA_GRID, MAX_CONDUCTANCE_GRID, RESULTS_V2, RHO_C1, RHO_C2,   # noqa: E402
@@ -135,12 +135,18 @@ def main():
            "start": old.get("start", "greedy")}
     greedy = P.FimConfig("v2-b", "greedy", "simple")
     case.phi0 = float(out["phi0"])
+    bar = progress(n_q, "tuning " + "+".join(x for x in STEPS if x in args.steps))
+
+    def query(*a, **kw):                            # run_method, counted on the bar
+        row = run_method(*a, **kw)
+        bar.update(1)
+        return row
 
     if "delta" in args.steps:                       # 1. the RR floor margin
         scores = {}
         for d in args.delta_grid:
             case.delta = float(d)
-            rows = [run_method(rec, case, ident, k, RHO_C1, greedy, P.NO_TRAIN, None, limit, "delta", extra)
+            rows = [query(rec, case, ident, k, RHO_C1, greedy, P.NO_TRAIN, None, limit, "delta", extra)
                     for k in ks]
             scores[str(d)] = mean_of(rows, "disparity")
             ref_share = float(np.mean([str(r.get("deploy_is_reference")) in ("True", "1", "1.0") for r in rows]))
@@ -156,8 +162,8 @@ def main():
         scores = {}
         for phi in args.phi0_grid:
             case.phi0 = float(phi)
-            rows = [run_method(rec, case, ident, k, RHO_C2, greedy, P.NO_TRAIN, None, limit, "phi0", extra,
-                               deployment="certified-path") for k in ks]
+            rows = [query(rec, case, ident, k, RHO_C2, greedy, P.NO_TRAIN, None, limit, "phi0", extra,
+                          deployment="certified-path") for k in ks]
             scores[str(phi)] = mean_of(rows, "heldout_disparity")
             print(f"  phi0={phi}: mean held-out-attribute disparity {scores[str(phi)]:.5f}", flush=True)
         ok = {float(p): s for p, s in scores.items() if s == s}
@@ -167,10 +173,10 @@ def main():
     case.phi0 = float(out["phi0"])
 
     if "start" in args.steps:                       # 3. the start set (T1 rule)
-        g_rows = [run_method(rec, case, ident, k, RHO_C1, greedy, P.NO_TRAIN, None, limit, "start", extra) for k in ks]
+        g_rows = [query(rec, case, ident, k, RHO_C1, greedy, P.NO_TRAIN, None, limit, "start", extra) for k in ks]
         g_score = mean_of(g_rows, "disparity")
         learned = P.FimConfig("v2-b", "learned", "simple")
-        l_rows = [run_method(rec, case, ident, k, RHO_C1, learned, ts, models[ts], limit, "start", extra)
+        l_rows = [query(rec, case, ident, k, RHO_C1, learned, ts, models[ts], limit, "start", extra)
                   for ts in P.seeds_for(learned, models) for k in ks]
         l_score = mean_of(l_rows, "disparity")
         if not models:
@@ -204,6 +210,7 @@ def main():
         out["w3"] = d
         print(f"  -> W3: train a learned proposer = {d['train']} ({d['reason']})", flush=True)
 
+    bar.close()
     run = {"steps": list(args.steps), "code_tag": code_tag(), "when": time.strftime("%Y-%m-%d %H:%M:%S"),
            "gpu": gpu_name(), "preset": pname}
     done = set(old.get("steps", [])) | set(args.steps)

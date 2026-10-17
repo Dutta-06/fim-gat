@@ -99,6 +99,55 @@ def peak_gpu_gb():
     return torch.cuda.max_memory_allocated() / 2**30, torch.cuda.max_memory_reserved() / 2**30
 
 
+# ------------------------------------------------------------------ progress
+
+PROGRESS_LOG_SECONDS = 60.0         # at most one progress line per minute in a log file
+
+
+class _LogLines:
+    """tqdm's output for a log file (Kaggle and cloud runs): each refresh on a line of its own instead of carriage
+    returns, so kaggle/run_job.py can relay the last one."""
+
+    def __init__(self, stream):
+        self.stream = stream
+
+    def write(self, s):
+        s = s.replace("\r", "").strip()
+        if s:
+            self.stream.write(s + "\n")
+
+    def flush(self):
+        self.stream.flush()
+
+
+class _NoBar:
+    def update(self, n=1):
+        pass
+
+    def set_description_str(self, s=None, refresh=True):
+        pass
+
+    def set_postfix_str(self, s="", refresh=True):
+        pass
+
+    def close(self):
+        pass
+
+
+def progress(total, desc="", unit="query"):
+    """A progress bar on stderr (tqdm) with an ETA: live in a terminal, one line a minute in a log file. Output
+    only: it never touches a result. Without tqdm (it comes with torch_geometric) it does nothing."""
+    try:
+        from tqdm import tqdm
+    except ImportError:
+        return _NoBar()
+    tqdm.monitor_interval = 0                     # no monitor thread: nothing runs beside the timed stages
+    tty = sys.stderr.isatty()
+    return tqdm(total=total, desc=desc, unit=unit, file=sys.stderr if tty else _LogLines(sys.stderr),
+                mininterval=0.5 if tty else PROGRESS_LOG_SECONDS, ascii=None if tty else True,
+                ncols=None if tty else 110, dynamic_ncols=tty, smoothing=0.05)
+
+
 # ------------------------------------------------------------------ provenance
 
 @lru_cache(maxsize=None)

@@ -9,3 +9,4 @@ scikit-learn>=1.4     # tested 1.8.0 (AGE baseline only)
 pandas>=2.1           # tested 3.0.0
 networkx>=3.2         # tested 3.6.1 (Louvain communities for evaluation)
 psutil>=5.9           # tested 7.2.1 (optional: host memory in the v2 stage logs)
+tqdm>=4.60            # tested 4.67.1 (progress bars; installed with torch_geometric)
