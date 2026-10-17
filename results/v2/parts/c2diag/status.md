@@ -1,0 +1,13 @@
+# C2 diagnostics (exploratory, design section 22): status
+
+Branch `claude/fimgat-c2diag` (from `main` at eef1374). Same 4 vCPU / 15 GB / no-GPU VM as job ALL. Follows `docs/cloud_note_c2_diagnostics.md`. Nothing from the earlier runs is touched; outputs go to `results/v2/parts/c2diag/` only.
+
+## Plan (dry run, step 2)
+```
+C2 diagnostics (EXPLORATORY): 6 samples x 5 budgets x 2 floors; runs ['a', 'b-1se', 'b-1pct', 'b-5pct', 'b-20pct']; R=64; delta=0.005 phi0=0.4; code_tag=539c06dcb0d8; device=cpu
+cases left: 60 of 60 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per sample for its cached stages)
+```
+- `tests/test_c2_diagnostics.py`: 1 passed (33 s).
+- T2's references are reused from `results/v2/parts/t2/references.json` (the script's default); T2's rows for the reproduction check are read from `results/v2/parts/t2/t2.csv` (merged by `summarize_v2.load`).
+- Order: rho = 0.97 first (30 cases), then rho = 0.99 (30 cases), then `--summarize`.
+- ETA: not measured yet (laptop/VM guess: 6 x 25 min cached stages + 30 x 5-15 min per floor, i.e. about 5-6 h per floor).
