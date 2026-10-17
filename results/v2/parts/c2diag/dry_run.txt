@@ -1,0 +1,2 @@
+C2 diagnostics (EXPLORATORY): 6 samples x 5 budgets x 2 floors; runs ['a', 'b-1se', 'b-1pct', 'b-5pct', 'b-20pct']; R=64; delta=0.005 phi0=0.4; code_tag=539c06dcb0d8; device=cpu
+cases left: 60 of 60 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per sample for its cached stages)

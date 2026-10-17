@@ -1,0 +1,160 @@
+C2 diagnostics (EXPLORATORY): 6 samples x 5 budgets x 1 floors; runs ['a', 'b-1se', 'b-1pct', 'b-5pct', 'b-20pct']; R=64; delta=0.005 phi0=0.4; code_tag=539c06dcb0d8; device=cpu
+cases left: 30 of 30 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per sample for its cached stages)
+
+=== snap_youtube_bfs100000_s1: 5 cases ===
+  load             13.0s
+  reference      1418.5s
+  rr_sample       224.6s
+  cert_sample     221.5s
+  cover_index       2.9s
+  snap_youtube_bfs100000_s1: n=100,000 m=1,555,374 groups=2; A: R=64 roots=100,000 nnz=74,023,658; B: R=64 roots=100,000 nnz=74,055,109; 1001 evaluated ground-truth communities
+  snap_youtube_bfs100000_s1 k=25 rho=0.97: D_a 0.3628, SE 0.00048; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00033, H 0.00005
+  snap_youtube_bfs100000_s1 k=50 rho=0.97: D_a 0.4044, SE 0.00042; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.02310, H 0.00051
+  snap_youtube_bfs100000_s1 k=100 rho=0.97: D_a 0.3903, SE 0.00039; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 12}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.02831, H 0.00094
+  snap_youtube_bfs100000_s1 k=150 rho=0.97: D_a 0.3734, SE 0.00039; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00002, H 0.00095
+  snap_youtube_bfs100000_s1 k=200 rho=0.97: D_a 0.3675, SE 0.00038; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00010, H 0.00001
+
+=== snap_youtube_bfs100000_s2: 5 cases ===
+  load              0.8s
+  reference      1401.2s
+  rr_sample       216.4s
+  cert_sample     215.5s
+  cover_index       1.4s
+  snap_youtube_bfs100000_s2: n=100,000 m=1,374,066 groups=2; A: R=64 roots=100,000 nnz=68,700,053; B: R=64 roots=100,000 nnz=68,742,450; 918 evaluated ground-truth communities
+  snap_youtube_bfs100000_s2 k=25 rho=0.97: D_a 0.2764, SE 0.00050; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00023, H 0.00105
+  snap_youtube_bfs100000_s2 k=50 rho=0.97: D_a 0.3424, SE 0.00045; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00249, H 0.00102
+  snap_youtube_bfs100000_s2 k=100 rho=0.97: D_a 0.3792, SE 0.00038; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00250, H 0.00015
+  snap_youtube_bfs100000_s2 k=150 rho=0.97: D_a 0.3811, SE 0.00035; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00199, H 0.00081
+  snap_youtube_bfs100000_s2 k=200 rho=0.97: D_a 0.3751, SE 0.00034; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 6}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': False}; price F 0.00046, H 0.00000
+
+=== snap_youtube_bfs100000_s3: 5 cases ===
+  load              0.7s
+  reference       901.6s
+  rr_sample       129.5s
+  cert_sample     127.7s
+  cover_index       1.5s
+  snap_youtube_bfs100000_s3: n=100,000 m=1,273,772 groups=2; A: R=64 roots=100,000 nnz=67,299,008; B: R=64 roots=100,000 nnz=67,439,534; 833 evaluated ground-truth communities
+  snap_youtube_bfs100000_s3 k=25 rho=0.97: D_a 0.1834, SE 0.00047; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00143, H 0.00068
+  snap_youtube_bfs100000_s3 k=50 rho=0.97: D_a 0.2380, SE 0.00046; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00050, H 0.00101
+  snap_youtube_bfs100000_s3 k=100 rho=0.97: D_a 0.2947, SE 0.00042; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00007, H 0.00027
+  snap_youtube_bfs100000_s3 k=150 rho=0.97: D_a 0.3235, SE 0.00040; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00001
+  snap_youtube_bfs100000_s3 k=200 rho=0.97: D_a 0.3328, SE 0.00038; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00004, H 0.00004
+
+=== snap_youtube_bfs100000_s4: 5 cases ===
+  load              0.9s
+  reference      1375.0s
+  rr_sample       212.5s
+  cert_sample     211.7s
+  cover_index       1.5s
+  snap_youtube_bfs100000_s4: n=100,000 m=1,453,808 groups=2; A: R=64 roots=100,000 nnz=71,267,219; B: R=64 roots=100,000 nnz=71,424,206; 1003 evaluated ground-truth communities
+  snap_youtube_bfs100000_s4 k=25 rho=0.97: D_a 0.3183, SE 0.00049; phase-2 moves {'b-1se': 0, 'b-1pct': 1, 'b-5pct': 3, 'b-20pct': 3}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00115, H 0.00307
+  snap_youtube_bfs100000_s4 k=50 rho=0.97: D_a 0.3682, SE 0.00043; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 4}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00273, H 0.00089
+  snap_youtube_bfs100000_s4 k=100 rho=0.97: D_a 0.3846, SE 0.00039; phase-2 moves {'b-1se': 0, 'b-1pct': 2, 'b-5pct': 2, 'b-20pct': 2}; deployed = (a): {'b-1se': True, 'b-1pct': False, 'b-5pct': False, 'b-20pct': False}; price F 0.00254, H 0.00002
+  snap_youtube_bfs100000_s4 k=150 rho=0.97: D_a 0.3754, SE 0.00037; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 3, 'b-20pct': 6}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00012, H 0.00167
+  snap_youtube_bfs100000_s4 k=200 rho=0.97: D_a 0.3681, SE 0.00036; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 3, 'b-20pct': 3}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00012
+
+=== snap_youtube_bfs100000_s5: 5 cases ===
+  load              0.7s
+  reference      1405.0s
+  rr_sample       221.3s
+  cert_sample     219.8s
+  cover_index       1.4s
+  snap_youtube_bfs100000_s5: n=100,000 m=1,422,394 groups=2; A: R=64 roots=100,000 nnz=70,355,104; B: R=64 roots=100,000 nnz=70,326,377; 991 evaluated ground-truth communities
+  snap_youtube_bfs100000_s5 k=25 rho=0.97: D_a 0.2642, SE 0.00050; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00242, H 0.00055
+  snap_youtube_bfs100000_s5 k=50 rho=0.97: D_a 0.3387, SE 0.00045; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00351, H 0.00455
+  snap_youtube_bfs100000_s5 k=100 rho=0.97: D_a 0.3923, SE 0.00037; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00012, H 0.00086
+  snap_youtube_bfs100000_s5 k=150 rho=0.97: D_a 0.3945, SE 0.00034; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00000, H 0.00000
+  snap_youtube_bfs100000_s5 k=200 rho=0.97: D_a 0.3899, SE 0.00033; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00001
+
+=== snap_youtube_bfs100000_s6: 5 cases ===
+  load              1.1s
+  reference      1396.4s
+  rr_sample       215.9s
+  cert_sample     218.0s
+  cover_index       1.5s
+  snap_youtube_bfs100000_s6: n=100,000 m=1,573,368 groups=2; A: R=64 roots=100,000 nnz=76,904,634; B: R=64 roots=100,000 nnz=76,721,416; 1091 evaluated ground-truth communities
+  snap_youtube_bfs100000_s6 k=25 rho=0.97: D_a 0.3323, SE 0.00051; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00003, H 0.00025
+  snap_youtube_bfs100000_s6 k=50 rho=0.97: D_a 0.3768, SE 0.00046; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00161, H 0.00013
+  snap_youtube_bfs100000_s6 k=100 rho=0.97: D_a 0.4164, SE 0.00039; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00006, H 0.00053
+  snap_youtube_bfs100000_s6 k=150 rho=0.97: D_a 0.4080, SE 0.00037; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00001
+  snap_youtube_bfs100000_s6 k=200 rho=0.97: D_a 0.3977, SE 0.00036; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00001
+C2 diagnostics (EXPLORATORY): 6 samples x 5 budgets x 1 floors; runs ['a', 'b-1se', 'b-1pct', 'b-5pct', 'b-20pct']; R=64; delta=0.005 phi0=0.4; code_tag=539c06dcb0d8; device=cpu
+cases left: 30 of 30 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per sample for its cached stages)
+
+=== snap_youtube_bfs100000_s1: 5 cases ===
+  load             11.4s
+  reference      1418.5s
+  rr_sample       230.8s
+  cert_sample     233.3s
+  cover_index       1.5s
+  snap_youtube_bfs100000_s1: n=100,000 m=1,555,374 groups=2; A: R=64 roots=100,000 nnz=74,023,658; B: R=64 roots=100,000 nnz=74,055,109; 1001 evaluated ground-truth communities
+  snap_youtube_bfs100000_s1 k=25 rho=0.99: D_a 0.4092, SE 0.00045; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00335, H 0.00011
+  snap_youtube_bfs100000_s1 k=50 rho=0.99: D_a 0.4286, SE 0.00040; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F nan, H 0.00051
+  snap_youtube_bfs100000_s1 k=100 rho=0.99: D_a 0.4444, SE 0.00034; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F nan, H 0.00002
+  snap_youtube_bfs100000_s1 k=150 rho=0.99: D_a 0.4343, SE 0.00032; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 8, 'b-20pct': 8}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00111, H 0.00120
+  snap_youtube_bfs100000_s1 k=200 rho=0.99: D_a 0.4264, SE 0.00030; phase-2 moves {'b-1se': 0, 'b-1pct': 3, 'b-5pct': 11, 'b-20pct': 11}; deployed = (a): {'b-1se': True, 'b-1pct': False, 'b-5pct': False, 'b-20pct': False}; price F 0.00003, H 0.00003
+
+=== snap_youtube_bfs100000_s2: 5 cases ===
+  load              0.8s
+  reference      1401.2s
+  rr_sample       217.4s
+  cert_sample     215.9s
+  cover_index       1.4s
+  snap_youtube_bfs100000_s2: n=100,000 m=1,374,066 groups=2; A: R=64 roots=100,000 nnz=68,700,053; B: R=64 roots=100,000 nnz=68,742,450; 918 evaluated ground-truth communities
+  snap_youtube_bfs100000_s2 k=25 rho=0.99: D_a 0.2978, SE 0.00049; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00024, H 0.00081
+  snap_youtube_bfs100000_s2 k=50 rho=0.99: D_a 0.3739, SE 0.00042; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00027, H 0.00093
+  snap_youtube_bfs100000_s2 k=100 rho=0.99: D_a 0.4031, SE 0.00035; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00208, H 0.00040
+  snap_youtube_bfs100000_s2 k=150 rho=0.99: D_a 0.4145, SE 0.00031; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F nan, H 0.00080
+  snap_youtube_bfs100000_s2 k=200 rho=0.99: D_a 0.4107, SE 0.00029; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00046, H 0.00182
+
+=== snap_youtube_bfs100000_s3: 5 cases ===
+  load              0.8s
+  reference       901.6s
+  rr_sample       131.7s
+  cert_sample     130.2s
+  cover_index       1.2s
+  snap_youtube_bfs100000_s3: n=100,000 m=1,273,772 groups=2; A: R=64 roots=100,000 nnz=67,299,008; B: R=64 roots=100,000 nnz=67,439,534; 833 evaluated ground-truth communities
+  snap_youtube_bfs100000_s3 k=25 rho=0.99: D_a 0.2179, SE 0.00046; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00118, H 0.00118
+  snap_youtube_bfs100000_s3 k=50 rho=0.99: D_a 0.2676, SE 0.00045; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00057, H 0.00125
+  snap_youtube_bfs100000_s3 k=100 rho=0.99: D_a 0.3336, SE 0.00041; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00051, H 0.00075
+  snap_youtube_bfs100000_s3 k=150 rho=0.99: D_a 0.3582, SE 0.00037; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00005
+  snap_youtube_bfs100000_s3 k=200 rho=0.99: D_a 0.3709, SE 0.00035; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00030, H 0.00030
+
+=== snap_youtube_bfs100000_s4: 5 cases ===
+  load              1.1s
+  reference      1375.0s
+  rr_sample       221.6s
+  cert_sample     223.7s
+  cover_index       1.4s
+  snap_youtube_bfs100000_s4: n=100,000 m=1,453,808 groups=2; A: R=64 roots=100,000 nnz=71,267,219; B: R=64 roots=100,000 nnz=71,424,206; 1003 evaluated ground-truth communities
+  snap_youtube_bfs100000_s4 k=25 rho=0.99: D_a 0.3724, SE 0.00046; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00975, H 0.00709
+  snap_youtube_bfs100000_s4 k=50 rho=0.99: D_a 0.4134, SE 0.00040; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00275, H 0.00346
+  snap_youtube_bfs100000_s4 k=100 rho=0.99: D_a 0.4325, SE 0.00033; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F nan, H 0.00003
+  snap_youtube_bfs100000_s4 k=150 rho=0.99: D_a 0.4241, SE 0.00032; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00002, H 0.00189
+  snap_youtube_bfs100000_s4 k=200 rho=0.99: D_a 0.4165, SE 0.00030; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00063
+
+=== snap_youtube_bfs100000_s5: 5 cases ===
+  load              0.9s
+  reference      1405.0s
+  rr_sample       227.6s
+  cert_sample     227.2s
+  cover_index       1.6s
+  snap_youtube_bfs100000_s5: n=100,000 m=1,422,394 groups=2; A: R=64 roots=100,000 nnz=70,355,104; B: R=64 roots=100,000 nnz=70,326,377; 991 evaluated ground-truth communities
+  snap_youtube_bfs100000_s5 k=25 rho=0.99: D_a 0.2890, SE 0.00050; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 1, 'b-20pct': 1}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00126, H 0.00126
+  snap_youtube_bfs100000_s5 k=50 rho=0.99: D_a 0.3645, SE 0.00043; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00005, H 0.00005
+  snap_youtube_bfs100000_s5 k=100 rho=0.99: D_a 0.4201, SE 0.00034; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00013, H 0.00087
+  snap_youtube_bfs100000_s5 k=150 rho=0.99: D_a 0.4288, SE 0.00029; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00002, H 0.00044
+  snap_youtube_bfs100000_s5 k=200 rho=0.99: D_a 0.4205, SE 0.00028; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00001, H 0.00001
+
+=== snap_youtube_bfs100000_s6: 5 cases ===
+  load              1.3s
+  reference      1396.4s
+  rr_sample       230.3s
+  cert_sample     231.5s
+  cover_index       1.8s
+  snap_youtube_bfs100000_s6: n=100,000 m=1,573,368 groups=2; A: R=64 roots=100,000 nnz=76,904,634; B: R=64 roots=100,000 nnz=76,721,416; 1091 evaluated ground-truth communities
+  snap_youtube_bfs100000_s6 k=25 rho=0.99: D_a 0.3808, SE 0.00049; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00026, H 0.00026
+  snap_youtube_bfs100000_s6 k=50 rho=0.99: D_a 0.4306, SE 0.00042; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00030, H 0.00030
+  snap_youtube_bfs100000_s6 k=100 rho=0.99: D_a 0.4577, SE 0.00033; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00003, H 0.00002
+  snap_youtube_bfs100000_s6 k=150 rho=0.99: D_a 0.4521, SE 0.00030; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00035, H 0.00035
+  snap_youtube_bfs100000_s6 k=200 rho=0.99: D_a 0.4450, SE 0.00028; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00017, H 0.00003
