@@ -51,3 +51,54 @@ c2b:  25%|###############7                                               | 15/60
 c2b:  27%|#################                                               | 16/60 [27:11<1:12:33, 98.95s/case]
   snap_amazon_bfs100000_s2 k=150 rho=0.97: D_a 0.0217, SE 0.00023; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00011, H 0.00002
 c2b:  28%|##################1                                             | 17/60 [28:30<1:09:46, 97.36s/case]
+  snap_amazon_bfs100000_s2 k=150 rho=0.99: D_a 0.0252, SE 0.00023; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00014, H 0.00065
+c2b:  30%|###################2                                            | 18/60 [29:50<1:07:11, 95.98s/case]
+  snap_amazon_bfs100000_s2 k=200 rho=0.97: D_a 0.0271, SE 0.00024; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00001, H 0.00005
+c2b:  32%|####################2                                           | 19/60 [31:11<1:04:49, 94.88s/case]
+  snap_amazon_bfs100000_s2 k=200 rho=0.99: D_a 0.0303, SE 0.00025; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00029, H 0.00063
+c2b:  33%|#####################3                                          | 20/60 [32:41<1:03:01, 94.53s/case]
+
+=== snap_amazon_bfs100000_s3: 10 cases ===
+  load              0.3s
+  reference       215.6s
+  rr_sample         5.5s
+  cert_sample      10.6s
+  cover_index       0.5s
+  snap_amazon_bfs100000_s3: n=100,000 m=543,914 groups=2; A: R=64 roots=100,000 nnz=30,082,315; B: R=127 roots=100,000 nnz=59,691,763; 51 evaluated ground-truth communities
+  secondary sets: 3918 'all' communities, 898 of them within phi0
+  snap_amazon_bfs100000_s3 k=25 rho=0.97: D_a 0.0107, SE 0.00014; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00028, H 0.00056
+c2b:  35%|######################                                         | 21/60 [37:46<1:11:15, 109.64s/case]
+  snap_amazon_bfs100000_s3 k=25 rho=0.99: D_a 0.0128, SE 0.00014; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00001, H 0.00082
+c2b:  37%|#######################                                        | 22/60 [38:56<1:07:41, 106.88s/case]
+  snap_amazon_bfs100000_s3 k=50 rho=0.97: D_a 0.0154, SE 0.00017; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00009, H 0.00105
+c2b:  38%|########################1                                      | 23/60 [40:15<1:04:41, 104.92s/case]
+  snap_amazon_bfs100000_s3 k=50 rho=0.99: D_a 0.0186, SE 0.00017; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00103, H 0.00120
+  snap_amazon_bfs100000_s3 k=100 rho=0.97: D_a 0.0200, SE 0.00020; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00010, H 0.00012
+c2b:  42%|###########################                                      | 25/60 [42:34<58:34, 100.42s/case]
+  snap_amazon_bfs100000_s3 k=100 rho=0.99: D_a 0.0227, SE 0.00021; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00014, H 0.00012
+c2b:  43%|############################6                                     | 26/60 [43:46<55:54, 98.65s/case]
+  snap_amazon_bfs100000_s3 k=150 rho=0.97: D_a 0.0254, SE 0.00023; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00025, H 0.00014
+c2b:  45%|#############################7                                    | 27/60 [45:11<53:47, 97.79s/case]
+  snap_amazon_bfs100000_s3 k=150 rho=0.99: D_a 0.0275, SE 0.00023; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00023, H 0.00020
+c2b:  47%|##############################8                                   | 28/60 [46:30<51:33, 96.68s/case]
+  snap_amazon_bfs100000_s3 k=200 rho=0.97: D_a 0.0285, SE 0.00024; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00006, H 0.00008
+c2b:  48%|###############################9                                  | 29/60 [48:07<49:57, 96.70s/case]
+  snap_amazon_bfs100000_s3 k=200 rho=0.99: D_a 0.0325, SE 0.00025; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00033, H 0.00009
+c2b:  50%|#################################                                 | 30/60 [49:35<48:04, 96.15s/case]
+
+=== snap_amazon_bfs100000_s4: 10 cases ===
+  load              0.2s
+  reference       195.2s
+  rr_sample         4.8s
+  cert_sample       9.9s
+  cover_index       0.4s
+  snap_amazon_bfs100000_s4: n=100,000 m=531,452 groups=2; A: R=64 roots=100,000 nnz=28,439,813; B: R=135 roots=100,000 nnz=59,995,265; 278 evaluated ground-truth communities
+  secondary sets: 5973 'all' communities, 2079 of them within phi0
+  snap_amazon_bfs100000_s4 k=25 rho=0.97: D_a 0.0094, SE 0.00013; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00033, H 0.00078
+c2b:  52%|#################################5                               | 31/60 [54:16<51:46, 107.11s/case]
+  snap_amazon_bfs100000_s4 k=25 rho=0.99: D_a 0.0116, SE 0.00013; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00057, H 0.00023
+  snap_amazon_bfs100000_s4 k=50 rho=0.97: D_a 0.0107, SE 0.00016; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00003, H 0.00027
+c2b:  55%|###################################7                             | 33/60 [56:16<45:50, 101.89s/case]
+  snap_amazon_bfs100000_s4 k=50 rho=0.99: D_a 0.0136, SE 0.00016; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00036, H 0.00048
+  snap_amazon_bfs100000_s4 k=100 rho=0.97: D_a 0.0143, SE 0.00019; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00007, H 0.00045
+c2b:  58%|######################################5                           | 35/60 [58:36<41:04, 98.57s/case]
