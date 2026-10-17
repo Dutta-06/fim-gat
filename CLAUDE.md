@@ -66,7 +66,7 @@ v1's honest outcome:
   - Constructor, 6 models (seeds 0-4 and the no-adversary ablation): every validation query at rho = 0.99 fell back to greedy (none of the candidates met the floor min(0.99 + delta, 1) x reference; training reached 0.96-0.98 of the reference). The validation score was therefore constant, so the saved checkpoints are epoch 5 of 40. The adversary did not collapse (about 15 of 16 communities in use).
   - Start step: **greedy** (the constructor's start mean 0.0473 against greedy's 0.0364). The learned start fell back in 25 of 25 queries, so that score is greedy-on-A's, not the constructor's.
   - Proposer: imitation lowered validation recall@128, so every seed kept its starting policy, the constructor checkpoint: recall@128 0.983 against the simple proposer's 0.300. Its per-round cost is 7.1-7.4 times the simple proposer's (W3 headroom H = 8.1).
-  - Pending the user's decision (2026-10-17): keep this result, or apply a declared fix (the decoder repairs a near-feasible set; checkpoint selection cannot tie on fallbacks), retrain, and rerun the start step, keeping this attempt on record.
+  - **Decided by the user (2026-10-17): fix and rerun** (design §24). The decoder now repairs its best candidates onto the floor before falling back, and checkpoint selection cannot tie on fallbacks. Attempt 1 is archived in `results/v2/attempts/G1-attempt1/` and under `attempts` in `tuning.json`, whose start step is provisional again. The rerun is Kaggle job `G1b-train`.
 - **Design:** `docs/design_v2.md`.
   - **§18 is the pre-registration amendment** the user approved before any run:
     - T2 tests the ε-constraint phase (`improve.hive_search`), with (b0), the published rule, also reported;
@@ -121,7 +121,7 @@ v1's honest outcome:
   The private GitHub repository and the cloud environment's network allowlist are set up by the user; session A (data and tuning) runs first, then the B jobs in parallel (`docs/cloud_runbook.md` §4).
 - **Pending:**
   - the cloud's C2 diagnostics (`docs/cloud_note_c2_diagnostics.md`, design §22), once the user has pushed the commit that adds them;
-  - the Kaggle jobs (`kaggle/README.md`): G1 (constructor, start step, proposer) together with C1 (full Pokec's T1 without the constructor, CPU), then G2 (the learned start's rows, full Pokec's case studies), G3 (T3) and G4 (T4);
+  - the Kaggle jobs (`kaggle/README.md`): G1b (constructor, start step, proposer; attempt 2, design §24) together with C1 (full Pokec's T1 without the constructor, CPU), then G2 (the learned start's rows, full Pokec's case studies), G3 (T3) and G4 (T4);
   - LinkedIn is not bundled (its node file holds personal data): the user decides whether to drop it or prepare an edges-only build;
   - the Rice node count (1,216 built against 1,205 specified).
 - **Not done (each needs a download, a design change or the user's decision):** CrossWalk's released code, a DQ4FairIM reimplementation, S3D, IMM/OPIM-C as a runtime reference, a second diffusion model.

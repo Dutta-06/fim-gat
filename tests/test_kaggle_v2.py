@@ -76,7 +76,7 @@ def test_every_job_command_names_real_scripts_options_datasets_and_methods():
     # the CPU jobs never see the constructor; the timing jobs use one lane
     for job, spec in RJ.JOBS.items():
         if not spec["gpu"]:
-            assert "G1-train" not in spec["needs"]
+            assert "G1b-train" not in spec["needs"]
         if spec.get("timing"):
             assert all(len(ph["lanes"]) == 1 for ph in spec["phases"])
     # every pre-registered case without a cloud case folder is run by some job
@@ -221,7 +221,7 @@ def test_notebook_and_bundle_rules():
     for src in code:
         compile(src, "<cell>", "exec")                                                 # every cell parses
     settings = code[0]
-    assert re.search(r'^JOB = "G1-train"', settings, re.M)
+    assert re.search(r'^JOB = "G1b-train"', settings, re.M)
     assert set(re.findall(r"^#\s+(\S+)\s+(?:GPU|CPU)", settings, re.M)) == set(RJ.JOBS)
     assert any("kaggle/run_job.py" in s and "/kaggle/working" in s for s in code)
     for rel in ("data/old/soc-linkedin.nodes", "data/v2/linkedin.npz", "data/v2/raw/x.gz",

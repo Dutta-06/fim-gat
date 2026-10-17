@@ -51,7 +51,6 @@
  "steps": [
   "delta",
   "phi0",
-  "start",
   "w3"
  ],
  "gpu": "Tesla T4",
@@ -78,10 +77,21 @@
    "preset": "8gb"
   }
  ],
- "start_reason": "constructor mean 0.04727 >= greedy 0.03644",
- "start_scores": {
-  "greedy": 0.036437183944943365,
-  "learned": 0.04727486464287817,
-  "n_learned_seeds": 5
- }
+ "start_reason": "provisional: the start step reruns with the repaired constructor (Kaggle job G1b; design section 24); attempt 1 is under 'attempts'",
+ "attempts": [
+  {
+   "start_scores": {
+    "greedy": 0.036437183944943365,
+    "learned": 0.04727486464287817,
+    "n_learned_seeds": 5
+   },
+   "start": "greedy",
+   "start_reason": "constructor mean 0.04727 >= greedy 0.03644",
+   "when": "2026-10-17 08:47:51",
+   "code_tag": "03abe91d201f",
+   "gpu": "Tesla T4",
+   "archived": "results/v2/attempts/G1-attempt1/",
+   "superseded_by": "the rerun with the repaired constructor (design section 24)"
+  }
+ ]
 }

@@ -66,6 +66,14 @@ T3_SPEEDUP_MIN = 1.5           # T3 pass (i): the learned proposer reaches the s
 T3_PRIMARY_BUDGET = 60         # T3 pass (ii): lower Monte Carlo disparity at this budget (seconds; one of TIME_BUDGETS)
 T3_RECALL_C = (8, 32, 128)     # recall@C reported in T3 (128 = improve()'s 16 x 8 proposal grid)
 
+# Constructor decoding repair and checkpoint selection (2026-10-17, approved by the user after Kaggle job G1: no
+# candidate of any constructor met the rho = 0.99 floor on validation, so every query fell back to greedy, and the
+# constant validation score kept epoch 5 of 40; design section 24)
+REPAIR_CANDIDATES = 4          # select_seeds_v2: when no candidate meets the floor, repair this many (largest RR totals)
+                               # onto it before falling back to greedy, and keep the lowest-disparity repaired set
+REPAIR_CHECK = 16              # per repair step: the seeds losing the least spread x the non-seeds adding the most ...
+REPAIR_EXACT = 16              # ... of whose pairs this many (largest gain - loss) get an exact swap delta
+
 TIER = {"rice_facebook": "small", "twitter_political": "small", "pokec_z": "medium", "pokec_n": "medium",
         "pokec_t": "medium", "epinions": "medium", "twitter_ego": "medium", "pokec_full": "large",
         "instagram": "large", "snap_youtube": "large", "linkedin": "large"}

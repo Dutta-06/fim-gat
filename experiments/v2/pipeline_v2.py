@@ -594,7 +594,8 @@ def fim_query(case, k, rho, cfg, model, limit=None):
         rounds, mu = int(model["ck"].get("rounds", 3)), mu_ref(model["ck"], k)
         (start, info), s_sel, a1, r1 = measure(lambda: select_seeds_v2(
             model["policy"], ctx, k, rho, floor, rounds, n_samples=args.n_samples, mu=mu, return_info=True))
-        sel = {"n_candidates": info.get("n_candidates"), "select_fallback": bool(info.get("fallback")), "mu": mu}
+        sel = {"n_candidates": info.get("n_candidates"), "select_fallback": bool(info.get("fallback")),
+               "select_repaired": bool(info.get("repaired")), "repair_swaps": info.get("repair_swaps", 0), "mu": mu}
     else:                                           # the greedy start: the reference set, nothing to compute
         start, s_sel, a1, r1, sel = list(ref), 0.0, NAN, NAN, {}
     left = None if limit is None else max(0.0, limit - s_sel)

@@ -1,8 +1,8 @@
 """Run one FIM-GAT v2 job in a Kaggle notebook (kaggle/README.md).
 
     python kaggle/run_job.py --list
-    python kaggle/run_job.py --job G1-train --dry-run
-    python kaggle/run_job.py --job G1-train --hours 11 --resume-from /kaggle/input --out /kaggle/working
+    python kaggle/run_job.py --job G1b-train --dry-run
+    python kaggle/run_job.py --job G1b-train --hours 11 --resume-from /kaggle/input --out /kaggle/working
 
 A job is a list of phases. A phase is a list of lanes that run in parallel, one per GPU (CUDA_VISIBLE_DEVICES), and
 a lane is a sequence of commands. With fewer GPUs than lanes, the lanes run one after another. Every command is one
@@ -100,9 +100,9 @@ def c1(attr):
 
 
 JOBS = {
-    "G1-train": {
+    "G1b-train": {
         "gpu": True, "needs": [],
-        "about": "the GAT constructor (5 seeds and the no-adversary ablation), tuning's start step, the learned proposer",
+        "about": "attempt 2 (design section 24) of the GAT constructor (5 seeds and the no-adversary ablation), tuning's start step, the learned proposer",
         "phases": [
             {"name": "smoke: a few steps of both trainers, so a broken environment shows in minutes",
              "lanes": [{"gpu": 0, "cmds": [
@@ -120,7 +120,7 @@ JOBS = {
                        {"gpu": 1, "cmds": [[V2 + "train_proposer.py"] + P8]}]}]},
     **{f"C1-pokec-full-{a}": c1(a) for a in FULL},
     "G2-learned": {
-        "gpu": True, "needs": ["G1-train"] + C1_JOBS,
+        "gpu": True, "needs": ["G1b-train"] + C1_JOBS,
         "about": "every T1 row still missing (the learned start's) on every test graph, T2 if the start changed, and "
                  "the full-Pokec case studies",
         "phases": [{"name": "missing T1 rows: full Pokec and its case studies (GPU 0); the other graphs, then T2 "
@@ -133,7 +133,7 @@ JOBS = {
                                + [pipe("run_t1_t2.py", "--test", "t2", "--t2-seeds", 1, 2, 3, 4, 5, 6, "--job", "t2")]
                                + [case(d, a, j, when="start-learned") for d, a, j in CASES_OTHER]}]}]},
     "G3-t3": {
-        "gpu": True, "timing": True, "needs": ["G1-train"] + C1_JOBS,
+        "gpu": True, "timing": True, "needs": ["G1b-train"] + C1_JOBS,
         "about": "T3: the learned proposer against the simple hybrid at equal wall-clock budgets (large tier)",
         "phases": [{"name": "T3 on Instagram, com-Youtube and full Pokec (one lane: timing)",
                     "lanes": [{"gpu": 0, "cmds": [
@@ -142,7 +142,7 @@ JOBS = {
                              "--recall-out", "results/v2/parts/t3/t3_recall.csv",
                              "--ref-file", "results/v2/parts/t3/references.json")]}]}]},
     "G4-t4": {
-        "gpu": True, "timing": True, "needs": ["G1-train"],
+        "gpu": True, "timing": True, "needs": ["G1b-train"],
         "about": "T4: cached and per-query runtime on the large tier (references computed afresh: they are timed)",
         "phases": [{"name": "T4 on Instagram, com-Youtube and full Pokec (one lane: timing)",
                     "lanes": [{"gpu": 0, "cmds": [
@@ -150,8 +150,8 @@ JOBS = {
                              "--runtime-out", "results/v2/parts/t4/t4_runtime.csv",
                              "--ref-file", "results/v2/parts/t4/references.json")]}]}]},
 }
-ORDER = ["1. at once, in parallel: G1-train (GPU T4 x2) and C1-pokec-full-region, -gender, -age (three CPU sessions)",
-         "2. when G1-train and the C1 jobs are done: G2-learned (GPU T4 x2)",
+ORDER = ["1. at once, in parallel: G1b-train (GPU T4 x2) and C1-pokec-full-region, -gender, -age (three CPU sessions)",
+         "2. when G1b-train and the C1 jobs are done: G2-learned (GPU T4 x2)",
          "3. then, one after the other: G3-t3 and G4-t4 (GPU; one GPU used, because they measure time)"]
 
 

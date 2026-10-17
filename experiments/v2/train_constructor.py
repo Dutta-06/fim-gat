@@ -172,14 +172,16 @@ class EpochLog:
             self.epoch += 1
             self.pending, self.stats = self._summary(self.stats), []
 
-    def on_validate(self, v, fallback):
+    def on_validate(self, v, fallback, repaired=NAN):
         if self.pending is None:
             return
         v = float(v)
-        # V2Trainer.fit's rule for keeping a snapshot, to name the epoch whose state fit restores
-        if self.best_epoch is None or math.isnan(v) or math.isnan(self.best_val) or v > self.best_val:
+        # V2Trainer.fit's rule for keeping a snapshot (an exact tie keeps the later epoch), to name the epoch whose
+        # state fit restores
+        if self.best_epoch is None or math.isnan(v) or math.isnan(self.best_val) or v >= self.best_val:
             self.best_epoch, self.best_val = self.pending["epoch"], v
-        self.pending.update(val=v, val_fallback=float(fallback), selected_epoch=self.best_epoch)
+        self.pending.update(val=v, val_fallback=float(fallback), val_repaired=float(repaired),
+                            selected_epoch=self.best_epoch)
         self._flush()
 
     def close(self):
@@ -203,7 +205,8 @@ class EpochLog:
             row[f"disp_{lab}"] = _mean([s.get("disp") for s in mine])
             row[f"ratio_{lab}"] = _mean([s.get("ratio") for s in mine])
         alloc, reserved = peak_gpu_gb()
-        row.update(val=NAN, val_fallback=NAN, selected_epoch=NAN if self.best_epoch is None else self.best_epoch,
+        row.update(val=NAN, val_fallback=NAN, val_repaired=NAN,
+                   selected_epoch=NAN if self.best_epoch is None else self.best_epoch,
                    secs=time.time() - self.t0, peak_alloc_gb=alloc, peak_reserved_gb=reserved)
         return row
 
@@ -232,7 +235,7 @@ class LoggedTrainer(V2Trainer):
     def validate(self, val_ctxs, ks, rhos=(0.99,)):
         v = super().validate(val_ctxs, ks, rhos)
         if self.epoch_log is not None:
-            self.epoch_log.on_validate(v, self.val_fallback)
+            self.epoch_log.on_validate(v, self.val_fallback, self.val_repaired)
         return v
 
 

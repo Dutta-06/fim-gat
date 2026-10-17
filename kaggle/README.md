@@ -13,17 +13,17 @@ All of it runs in Kaggle notebooks, one job per session, through `kaggle/run_job
 
 | Job | Accelerator | Needs the outputs of | What it runs | Rough time (unverified; scaled from the cloud's runs and v1's full-Pokec run) |
 |---|---|---|---|---|
-| `G1-train` | GPU T4 x2 | nothing | smoke run of both trainers; the constructor (5 seeds and the no-adversary ablation, split over the two GPUs); tuning's start step; the learned proposer | 1–4 h |
+| `G1b-train` | GPU T4 x2 | nothing | smoke run of both trainers; the constructor (5 seeds and the no-adversary ablation, split over the two GPUs); tuning's start step; the learned proposer. Attempt 2 (design §24); attempt 1, `G1-train`, is superseded and its output is ignored | about 3 h (attempt 1: 2.7 h) |
 | `C1-pokec-full-region` | None (CPU) | nothing | T1 on full Pokec under region: every row except the learned start's | 2–6 h |
 | `C1-pokec-full-gender` | None (CPU) | nothing | the same under gender | 2–6 h |
 | `C1-pokec-full-age` | None (CPU) | nothing | the same under age | 2–6 h |
-| `G2-learned` | GPU T4 x2 | G1, the three C1 | the learned start's T1 rows on every test graph (full Pokec on GPU 0; the other graphs, then T2, on GPU 1); the three full-Pokec case studies | 5–8 h (T2 adds about 8 h if the start becomes the constructor's) |
-| `G3-t3` | GPU T4 x2 (one GPU used) | G1, the three C1 | T3 on Instagram, com-Youtube and full Pokec | 3–12 h |
-| `G4-t4` | GPU T4 x2 (one GPU used) | G1 | T4 on the same three graphs | 4–8 h |
+| `G2-learned` | GPU T4 x2 | G1b, the three C1 | the learned start's T1 rows on every test graph (full Pokec on GPU 0; the other graphs, then T2, on GPU 1); the three full-Pokec case studies | 5–8 h (T2 adds about 8 h if the start becomes the constructor's) |
+| `G3-t3` | GPU T4 x2 (one GPU used) | G1b, the three C1 | T3 on Instagram, com-Youtube and full Pokec | 3–12 h |
+| `G4-t4` | GPU T4 x2 (one GPU used) | G1b | T4 on the same three graphs | 4–8 h |
 
 **Order:**
-1. Start G1 and the three C1 jobs together. Kaggle limits how many sessions run at once; if it refuses one, run the C1 jobs one after another.
-2. When G1 and the C1 jobs are done, run G2.
+1. Start G1b and the three C1 jobs together. Kaggle limits how many sessions run at once; if it refuses one, run the C1 jobs one after another.
+2. When G1b and the C1 jobs are done, run G2.
 3. Then G3, then G4.
 
 **GPU quota.** The GPU jobs total roughly 15–30 GPU hours. The weekly quota is about 30 h; it floats, so check yours on your Kaggle account page. Plan on one to two weeks. The C1 jobs use no GPU quota.
@@ -51,7 +51,7 @@ All of it runs in Kaggle notebooks, one job per session, through `kaggle/run_job
 
 ## Running a job
 
-1. In the first code cell, set `JOB` (for example `JOB = "G1-train"`).
+1. In the first code cell, set `JOB` (for example `JOB = "G1b-train"`).
 2. Attach the outputs the job needs (the table above), through **Add Input**. There are two ways:
    - **Your Work > the notebook version that ran the job:** its Output holds `outputs_<job>.zip`;
    - **or** download the zips and add them to a private dataset (for example `fimgat-outputs`); add a new version of it as more jobs finish.
@@ -75,8 +75,8 @@ Each command's full output is inside the zip, under `results/v2/parts/kaggle-<JO
 
 On the laptop, after downloading the zips:
 ```
-python kaggle/import_outputs.py path/to/outputs_G1-train.zip            # report: what would change
-python kaggle/import_outputs.py path/to/outputs_G1-train.zip --apply
+python kaggle/import_outputs.py path/to/outputs_G1b-train.zip           # report: what would change
+python kaggle/import_outputs.py path/to/outputs_G1b-train.zip --apply
 python experiments/v2/summarize_v2.py --figures
 ```
 The importer:

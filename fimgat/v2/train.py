@@ -30,7 +30,7 @@ from numba import njit
 from ..baselines import RRGreedy
 from ..diffusion import ExposureEstimator
 from ..model import soft_topk
-from .config import MIN_COMMUNITY, PRICE_TAU, rr_floor
+from .config import MIN_COMMUNITY, PRICE_TAU, REPAIR_CANDIDATES, REPAIR_CHECK, REPAIR_EXACT, rr_floor
 from .features import IN_DIM, build_context, dynamic_v2
 from .model import CommunityAdversaryV2, PolicyV2, dmon_loss, size_penalty, soft_community_rates
 from .objective import disparity, disparity_lagrangian, signed_prices, smooth_disparity
@@ -171,12 +171,74 @@ def _select(est, cands, floor, present, n_exact):
     return best
 
 
+def repair_to_floor(est, seeds, floor, n_check=REPAIR_CHECK, n_exact=REPAIR_EXACT, max_swaps=None):
+    """Swap seeds for spread until the exact RR total meets `floor` (decoding repair, design section 24).
+
+    Each step pairs the n_check seeds whose removal loses the least spread with the n_check non-seeds that would
+    add the most, gives the n_exact pairs with the largest gain - loss (a lower bound on the swap's gain) an exact
+    swap delta (cover.CoverState), and applies the largest exact gain (ties: the lower disparity). Returns
+    (seeds, n_swaps), or None when no swap gains or max_swaps (default k) swaps fall short."""
+    from .cover import CoverState                  # numba kernels; imported here, as only decoding needs them
+    st = CoverState(est, seeds)
+    max_swaps = st.k if max_swaps is None else int(max_swaps)
+    swaps = 0
+    while st.total < floor:
+        if swaps >= max_swaps:
+            return None
+        gain = st.gains() @ st.sizes
+        gain[st.is_seed] = -np.inf
+        loss = st.removal_loss() @ st.sizes
+        seed_arr = np.asarray(st.seeds, dtype=np.int64)
+        us = seed_arr[np.argsort(loss, kind="stable")[:n_check]]
+        lu = np.sort(loss, kind="stable")[:n_check]
+        m = min(int(n_check), int(np.isfinite(gain).sum()))
+        if m == 0:
+            return None
+        vs = np.argpartition(-gain, m - 1)[:m]
+        approx = gain[vs][None, :] - lu[:, None]     # (u, v): ignores sets holding both, so exact >= approx
+        order = np.argsort(-approx, axis=None, kind="stable")[:int(n_exact)]
+        best = None
+        for flat in order:
+            u, v = int(us[flat // m]), int(vs[flat % m])
+            d_rates, d_total = st.swap_delta(u, v)
+            if d_total <= 0:
+                continue
+            key = (-d_total, disparity(st.rates + d_rates, st.present))
+            if best is None or key < best[0]:
+                best = (key, u, v)
+        if best is None:
+            return None
+        st.apply_swap(best[1], best[2])
+        swaps += 1
+    return [int(v) for v in st.seeds], swaps
+
+
+def _repair_best(est, cands, floor, present, n_repair):
+    """(disp, total, seeds, n_swaps) of the lowest exact disparity among the n_repair candidates with the
+    largest RR totals once each is repaired onto the floor (ties: larger total); None if none can be."""
+    _, tot32 = _rank(est, cands)
+    best = None
+    for i in np.argsort(-tot32, kind="stable")[:int(n_repair)]:
+        fixed = repair_to_floor(est, cands[i], floor)
+        if fixed is None:
+            continue
+        rates, total = exact_rates(est, fixed[0])
+        if total < floor:                            # cannot happen (the same total); kept as a guard
+            continue
+        d = disparity(rates, present)
+        if best is None or (d, -total) < (best[0], -best[1]):
+            best = (d, total, fixed[0], fixed[1])
+    return best
+
+
 @torch.no_grad()
 def select_seeds_v2(policy, ctx, k, rho, floor, rounds, n_samples=64, mu=0.0, T=0.05, temps=TEMPS, seed=0,
-                    n_exact=8, return_info=False):
-    """Seeds for one query: decode the rollout on the graph's own RR sample. Returns ctx.greedy_seeds[k]
-    when no candidate meets floor (an exact RR total). mu: spread price inside the features (the trainer
-    passes its learned per-budget price, V2Trainer.mu_for)."""
+                    n_exact=8, n_repair=REPAIR_CANDIDATES, return_info=False):
+    """Seeds for one query: decode the rollout on the graph's own RR sample. The lowest exact disparity among
+    candidates meeting floor (an exact RR total) wins. When none meets it, the n_repair candidates with the
+    largest totals are repaired onto it (repair_to_floor) and the lowest-disparity repaired set wins (design
+    section 24); only when repair fails too does it return ctx.greedy_seeds[k]. mu: spread price inside the
+    features (the trainer passes its learned per-budget price, V2Trainer.mu_for)."""
     policy.eval()
     k = int(k)
     outs = rollout_v2(policy, ctx, k, rho, T, rounds, mu)
@@ -184,14 +246,21 @@ def select_seeds_v2(policy, ctx, k, rho, floor, rounds, n_samples=64, mu=0.0, T=
     zs = (s - s.mean()) / (s.std() + 1e-6)
     key = x + 1e-3 * zs / rounds                    # final mass, ties broken by the last scores
     cands = _candidates(key, k, n_samples, temps, seed, extra=[o[0] for o in outs])
-    best = _select(ctx.est, cands, float(floor), _present(ctx), n_exact)
-    info = {"n_candidates": len(cands), "fallback": best is None}
-    if best is None:
-        ref = getattr(ctx, "greedy_seeds", {}).get(k)
-        seeds = [int(v) for v in (RRGreedy(ctx.est).greedy(k) if ref is None else ref)]
-    else:
+    present = _present(ctx)
+    best = _select(ctx.est, cands, float(floor), present, n_exact)
+    info = {"n_candidates": len(cands), "fallback": False, "repaired": False, "repair_swaps": 0}
+    if best is not None:
         seeds = cands[best[2]].tolist()
         info.update(disp=best[0], total=best[1])
+    else:
+        fixed = _repair_best(ctx.est, cands, float(floor), present, n_repair) if n_repair > 0 else None
+        if fixed is not None:
+            seeds = list(fixed[2])
+            info.update(repaired=True, repair_swaps=int(fixed[3]), disp=fixed[0], total=fixed[1])
+        else:
+            info["fallback"] = True
+            ref = getattr(ctx, "greedy_seeds", {}).get(k)
+            seeds = [int(v) for v in (RRGreedy(ctx.est).greedy(k) if ref is None else ref)]
     return (seeds, info) if return_info else seeds
 
 
@@ -249,6 +318,7 @@ class V2Trainer:
         self.log = []
         self.train_time = 0.0
         self.val_fallback = float("nan")
+        self.val_repaired = float("nan")
 
     # ---------------------------------------------------------- adversary
 
@@ -332,9 +402,11 @@ class V2Trainer:
     @torch.no_grad()
     def validate(self, val_ctxs, ks, rhos=(0.99,)):
         """Mean over (graph, k, rho) of -disparity of select_seeds_v2 (exact, on each graph's own RR
-        sample), minus 1 for each case whose seeds miss the floor config.rr_floor(rho, total_ref).
-        The share of cases that fell back to the RR-greedy set is kept in self.val_fallback."""
-        scores, fallbacks = [], []
+        sample), minus 1 for each case whose seeds miss the floor config.rr_floor(rho, total_ref) or that fell back
+        to the RR-greedy set: a fallback is the constructor's failure, and scored as the greedy set's disparity it
+        made every epoch tie when all fell back (design section 24). The shares of cases that fell back and that
+        were repaired onto the floor are kept in self.val_fallback and self.val_repaired."""
+        scores, fallbacks, repaired = [], [], []
         for ctx in val_ctxs:
             present = _present(ctx)
             for k in ks:
@@ -344,9 +416,12 @@ class V2Trainer:
                     seeds, info = select_seeds_v2(self.policy, ctx, k, rho, floor, self.rounds, n_samples=16,
                                                   mu=self.mu_for(k), return_info=True)
                     rates, total = exact_rates(ctx.est, seeds)
-                    scores.append(-disparity(rates, present) - (1.0 if total < floor else 0.0))
+                    failed = total < floor or bool(info["fallback"])
+                    scores.append(-disparity(rates, present) - (1.0 if failed else 0.0))
                     fallbacks.append(float(info["fallback"]))
+                    repaired.append(float(info["repaired"]))
         self.val_fallback = float(np.mean(fallbacks)) if fallbacks else float("nan")
+        self.val_repaired = float(np.mean(repaired)) if repaired else float("nan")
         return float(np.mean(scores)) if scores else float("nan")
 
     def _snapshot(self):
@@ -362,7 +437,8 @@ class V2Trainer:
             T0=1.0, T1=0.1):
         """Per step: a training graph, k from ks, rho ~ U(rho_range), T annealed T0 -> T1 (cosine).
         Validates every eval_every epochs and at the end, and restores the best validated state
-        (the last one when there are no validation graphs). Returns the best validation score."""
+        (the last one when there are no validation graphs; on an exact tie, the later epoch, design section 24).
+        Returns the best validation score."""
         if not train_ctxs:
             raise ValueError("no training graphs")
         ks = [int(v) for v in np.atleast_1d(ks)]
@@ -380,13 +456,15 @@ class V2Trainer:
                 it += 1
             if (ep + 1) % eval_every == 0 or ep == epochs - 1:
                 v = self.validate(val_ctxs, ks) if val_ctxs else float("nan")
-                if snap is None or math.isnan(v) or math.isnan(best) or v > best:
+                if snap is None or math.isnan(v) or math.isnan(best) or v >= best:
                     best, snap = v, self._snapshot()
                 rec = {"epoch": ep + 1, "val": v, "val_fallback": self.val_fallback if val_ctxs else float("nan"),
+                       "val_repaired": self.val_repaired if val_ctxs else float("nan"),
                        "T": T, **{key: _nanmean([s[key] for s in stats]) for key in stats[0]}}
                 self.log.append(rec)
                 if verbose:
-                    print(f"  ep {ep + 1:4d}  val={v:.4f} (fallback {rec['val_fallback']:.2f})"
+                    print(f"  ep {ep + 1:4d}  val={v:.4f} (fallback {rec['val_fallback']:.2f}, repaired "
+                          f"{rec['val_repaired']:.2f})"
                           f"  L={rec['loss']:.4f}  disp={rec['disp']:.4f}"
                           f"  comm={rec['comm_disp']:.4f}  spread={rec['ratio']:.3f}  mu={rec['mu']:.3f}"
                           f"  comms={rec['n_comm']:.1f} eff={rec['eff_comm']:.1f}/{self.adversary.K}"

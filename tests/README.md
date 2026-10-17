@@ -68,6 +68,11 @@ Never use `python3` (a different interpreter; see `CLAUDE.md`).
 - the notebook's cells parse, and the bundle never takes LinkedIn or raw data.
 - job G1's chain on synthetic stand-ins: `train_constructor.py` (its first execution) writes checkpoints that `tune_v2.py --steps start` and T1's learned-start rows load.
 
+`test_constructor_repair.py` checks the constructor fixes of 2026-10-17 (design §24):
+- `repair_to_floor` reaches a reachable floor by spread-gaining swaps, leaves a feasible set unchanged, and gives up on an unreachable floor;
+- `select_seeds_v2` repairs before it falls back to greedy, and `n_repair = 0` keeps the old behaviour;
+- a fallback scores as a failure in validation, and an exact tie keeps the later epoch, in `V2Trainer.fit` and in `train_constructor`'s log alike.
+
 `test_scripts_v2.py` runs the experiment scripts end to end on synthetic stand-ins, with `fimgat.v2.datasets` patched and every output under `tmp_path`:
 - `tune_v2` → `run_t1_t2` (T1 with BSM's τ sweep, T2) → `summarize_v2` (with the Pareto table and a figure), three rows per FIM-GAT query, and resumption;
 - tuning refuses a test graph;

@@ -768,3 +768,32 @@ The user chose Kaggle's free notebooks (GPU T4 x2) for the GPU part and runs eac
 - **Not bundled:**
   - LinkedIn: its node file holds personal data. Dropping it, or preparing an edges-only build, is the user's call.
   - Raw downloads, and the raw Pokec dumps.
+
+## 24. Constructor fixes after Kaggle G1 (2026-10-17, approved by the user)
+
+The first GPU run, Kaggle job G1 (attempt 1, `results/v2/attempts/G1-attempt1/`), trained the constructor as specified: five seeds and the no-adversary ablation, 40 epochs each. It then ran the start step. Two mechanical failures made that step compare greedy with greedy:
+
+- **Decoding discarded the constructor's sets.** `select_seeds_v2` returned RR-greedy whenever no candidate met the floor exactly. At ρ = 0.99, with floor min(ρ + δ, 1) × reference, no candidate ever did: training reached 0.96–0.98 of the reference. Every validation query fell back, and so did all 25 learned-start queries of the start step.
+- **Checkpoint selection could not rank epochs.** A fallback scored as the greedy set's disparity, so every validation epoch scored −0.0423, and the strict rule kept epoch 5 of 40.
+
+The user chose to fix both and rerun, keeping attempt 1 on record. No test row had used the constructor, so these are validation-stage changes. The rerun is a second look at the start rule, so the paper reports both attempts and the change between them.
+
+**The fixes:**
+1. **Repair before fallback** (`train.repair_to_floor`, and `select_seeds_v2` with `n_repair = config.REPAIR_CANDIDATES`). When no candidate meets the floor:
+   - the 4 candidates with the largest RR totals are each repaired on sample A by spread-gaining swaps until they meet it;
+   - each repair step pairs the 16 seeds that lose the least spread with the 16 non-seeds that add the most, and applies the largest exact gain among the 16 most promising pairs;
+   - the lowest-disparity repaired set becomes the start;
+   - greedy stays the fallback when repair fails.
+
+   Rows record `select_repaired` and `repair_swaps`, so the share of each start that repair replaced is reported.
+2. **Selection that cannot tie on failures** (`V2Trainer.validate` and `fit`). A fallback scores as a failure (−1, like a set below the floor), and an exact tie keeps the later epoch. Training logs also record `val_repaired`, the share of repaired validation queries.
+
+**Unchanged:**
+- the training objective, data and schedule;
+- the validation graphs and floor;
+- the start rule: the constructor's start must have a strictly lower mean validation disparity than greedy's;
+- everything that runs from the greedy start.
+
+The learned proposer is retrained as well, because it starts from the constructor checkpoints.
+
+**The rerun** is Kaggle job `G1b-train`, with the same phases. Its output alone feeds G2–G4, and attempt 1's output is ignored. Attempt 1's decision is kept in `tuning.json` under `attempts`, and its rows are kept in its archive folder. If the repaired constructor still loses, the start stays greedy and both attempts are reported.
