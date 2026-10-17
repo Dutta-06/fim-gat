@@ -745,6 +745,26 @@ A relative cap gives no room when D_a ≈ 0. On T2's samples D_a is 0.18–0.46.
 
 **Not used for any choice.** Ground-truth communities only score and price, as in T2.
 
+**Outcome (2026-10-18; cloud job c2diag, `results/v2/parts/c2diag/summary.md`; exploratory).** The run is valid: the control runs reproduced T2's deployed sets in 120 of 120 rows for (a) and 120 of 120 for (b-1se). No fixes or deviations.
+- **Room does not make the phase act.**
+  - At κ = D_a(1 + 20%), phase 2 accepted moves in 7 of 30 cases at ρ = 0.97 and 3 of 30 at ρ = 0.99.
+  - The deployed set differed from (a)'s in 3 of the 60 cases.
+  - The median change in hidden-community disparity is 0 at every room.
+- **Price rules out row 3 of the reading.** Community-improving moves exist, and they are cheap.
+  - In every case, a floor-feasible single swap lowers the hidden-community disparity (in-sample, on A) at a labelled cost of 0.9–1.4 SE (about 0.1% of D_a).
+  - Within 5% of D_a, one swap lowers it by a median 14% (ρ = 0.97) and 8% (ρ = 0.99).
+  - For the auditor's own first family, a lowering swap within 1 SE of labelled cost existed in 53% and 50% of the cases, yet the phase accepted none at the pre-registered κ: its proposals did not offer those swaps.
+- **Coverage is the bottleneck (row 2).**
+  - The auditor's family of 7–8 communities barely overlaps the hidden extremes: the best Jaccard with h⁺ is at most 0.006, and with h⁻ the median is 0.001–0.002.
+  - Lemma W1.1's bound is vacuous in 100% of cases.
+  - The ground-truth communities have median conductance 0.97, and none lies within φ₀ = 0.4. The φ₀ grid tops out at 0.5, so no choice of φ₀ would admit them.
+- **Reading.** The hive-mind auditor protects structurally cohesive communities (conductance ≤ φ₀). com-Youtube's user-created groups are not cohesive, so the auditor cannot see the groups that set the hidden disparity. Its ε phase also leaves affordable improvements to its own family untaken.
+- **Caveats.**
+  - One graph family (60 cases).
+  - The hidden-community price is in-sample, on sample A.
+  - The extreme groups are small (median 12 members for h⁻, 43 for h⁺).
+  - T2's pre-registered null stands.
+
 ## 23. GPU runs on Kaggle (2026-10-17, under the delegation)
 
 The user chose Kaggle's free notebooks (GPU T4 x2) for the GPU part and runs each job by hand. `kaggle/run_job.py` defines the jobs, and `kaggle/README.md` is the user's guide. The choices below are operational: nothing pre-registered changes.

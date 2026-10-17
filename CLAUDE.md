@@ -59,6 +59,7 @@ v1's honest outcome:
   - Tuning: δ = 0.005, φ₀ = 0.4, start greedy (provisional), W3 says train (H = 8.1).
   - C1, 8 real-attribute graphs: a significant win against the best certified baseline at ρ = 0.99 only (p = 0.039; at 0.97 and 0.98, no difference). It is a win at every ρ against each of BSM, FW-Disparity and the Greedy family. Its weak spot is Pokec-n / region, where BSM is lower.
   - C2 (T2): a pre-registered null. (b) and (a) deployed identical sets in 60 of 60 cases, because κ − D_a was only about 0.0004.
+  - C2 diagnostics (cloud, 2026-10-18; exploratory; design §22 "Outcome"): valid, since the controls reproduced T2 in 240 of 240 rows. The phase stays inert even with 20% room. Cheap community-improving swaps exist. The auditor cannot see the hidden extreme groups: Jaccard about 0, and the ground-truth groups have conductance 0.97 against φ₀ = 0.4. So coverage, not room or price, is the bottleneck.
   - Rice was built with 1,216 nodes (11 isolates) against the specified 1,205: a pending decision.
   - The adversary's framing after the C2 null is the user's call (protocol: ask, do not drop).
   - Still to run on a GPU: the constructor, the proposer and T3, full Pokec, LinkedIn and T4.
@@ -120,7 +121,6 @@ v1's honest outcome:
 
   The private GitHub repository and the cloud environment's network allowlist are set up by the user; session A (data and tuning) runs first, then the B jobs in parallel (`docs/cloud_runbook.md` §4).
 - **Pending:**
-  - the cloud's C2 diagnostics (`docs/cloud_note_c2_diagnostics.md`, design §22), once the user has pushed the commit that adds them;
   - the Kaggle jobs (`kaggle/README.md`): G1b (constructor, start step, proposer; attempt 2, design §24) together with C1 (full Pokec's T1 without the constructor, CPU), then G2 (the learned start's rows, full Pokec's case studies), G3 (T3) and G4 (T4);
   - LinkedIn is not bundled (its node file holds personal data): the user decides whether to drop it or prepare an edges-only build;
   - the Rice node count (1,216 built against 1,205 specified).
