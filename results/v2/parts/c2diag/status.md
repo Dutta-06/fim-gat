@@ -10,4 +10,5 @@ cases left: 60 of 60 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per 
 - `tests/test_c2_diagnostics.py`: 1 passed (33 s).
 - T2's references are reused from `results/v2/parts/t2/references.json` (the script's default); T2's rows for the reproduction check are read from `results/v2/parts/t2/t2.csv` (merged by `summarize_v2.load`).
 - Order: rho = 0.97 first (30 cases), then rho = 0.99 (30 cases), then `--summarize`.
-- ETA: not measured yet (laptop/VM guess: 6 x 25 min cached stages + 30 x 5-15 min per floor, i.e. about 5-6 h per floor).
+- Measured (sample 1 at rho = 0.97): ~8 min for the cached stages (reference loaded from T2's cache, rr_sample 225 s, cert_sample 222 s) plus ~3-4 min per case, i.e. ~30 min per sample; ETA ~2.5 h for the 30 cases at rho = 0.97 and ~2.5-3 h for rho = 0.99 (the samples are rebuilt on the second run). Peak job RSS so far 6.0 GB; a watchdog kills the job if MemAvailable < 800 MB.
+- Validity check (`matches_t2` for variants a and b-1se): after 5 cases (10 rows each) all True, none False (checked after every case batch; I stop and report if any False appears).
