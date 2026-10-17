@@ -82,3 +82,5 @@ C2 diagnostics (EXPLORATORY): 6 samples x 5 budgets x 1 floors; runs ['a', 'b-1s
 cases left: 30 of 30 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per sample for its cached stages)
 
 === snap_youtube_bfs100000_s1: 5 cases ===
+  load             11.4s
+  reference      1418.5s
