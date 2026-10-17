@@ -1,0 +1,20 @@
+C2 diagnostics (EXPLORATORY): 6 samples x 5 budgets x 1 floors; runs ['a', 'b-1se', 'b-1pct', 'b-5pct', 'b-20pct']; R=64; delta=0.005 phi0=0.4; code_tag=539c06dcb0d8; device=cpu
+cases left: 30 of 30 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per sample for its cached stages)
+
+=== snap_youtube_bfs100000_s1: 5 cases ===
+  load             13.0s
+  reference      1418.5s
+  rr_sample       224.6s
+  cert_sample     221.5s
+  cover_index       2.9s
+  snap_youtube_bfs100000_s1: n=100,000 m=1,555,374 groups=2; A: R=64 roots=100,000 nnz=74,023,658; B: R=64 roots=100,000 nnz=74,055,109; 1001 evaluated ground-truth communities
+  snap_youtube_bfs100000_s1 k=25 rho=0.97: D_a 0.3628, SE 0.00048; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00033, H 0.00005
+  snap_youtube_bfs100000_s1 k=50 rho=0.97: D_a 0.4044, SE 0.00042; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.02310, H 0.00051
+  snap_youtube_bfs100000_s1 k=100 rho=0.97: D_a 0.3903, SE 0.00039; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 12}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.02831, H 0.00094
+  snap_youtube_bfs100000_s1 k=150 rho=0.97: D_a 0.3734, SE 0.00039; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00002, H 0.00095
+  snap_youtube_bfs100000_s1 k=200 rho=0.97: D_a 0.3675, SE 0.00038; phase-2 moves {'b-1se': 0, 'b-1pct': 0, 'b-5pct': 0, 'b-20pct': 0}; deployed = (a): {'b-1se': True, 'b-1pct': True, 'b-5pct': True, 'b-20pct': True}; price F 0.00010, H 0.00001
+
+=== snap_youtube_bfs100000_s2: 5 cases ===
+  load              0.8s
+  reference      1401.2s
+  rr_sample       216.4s
