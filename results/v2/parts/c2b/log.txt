@@ -1,0 +1,35 @@
+C2b (PRE-REGISTERED, design section 25): 6 samples x 5 budgets x 2 floors; runs ['a', 'b-1se', 'b-5pct']; R=64; delta=0.005 phi0=0.4; code_tag=4514edc87490; device=cpu
+cases left: 60 of 60 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per sample for its cached stages)
+c2b:   0%|                                                                           | 0/60 [00:00<?, ?case/s]
+
+=== snap_amazon_bfs100000_s1: 10 cases ===
+  load              2.7s
+  reference       209.3s
+  rr_sample         5.4s
+  cert_sample       9.7s
+  cover_index       0.6s
+  snap_amazon_bfs100000_s1: n=100,000 m=551,576 groups=2; A: R=64 roots=100,000 nnz=29,982,386; B: R=128 roots=100,000 nnz=59,955,472; 70 evaluated ground-truth communities
+  secondary sets: 4047 'all' communities, 1026 of them within phi0
+  snap_amazon_bfs100000_s1 k=25 rho=0.97: D_a 0.0085, SE 0.00013; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00026, H 0.00023
+c2b:   2%|#                                                               | 1/60 [04:58<4:53:40, 298.66s/case]
+  snap_amazon_bfs100000_s1 k=25 rho=0.99: D_a 0.0101, SE 0.00013; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00027, H 0.00064
+c2b:   3%|##1                                                             | 2/60 [06:02<2:52:20, 178.29s/case]
+  snap_amazon_bfs100000_s1 k=50 rho=0.97: D_a 0.0148, SE 0.00017; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00036, H 0.00025
+c2b:   5%|###2                                                            | 3/60 [07:11<2:12:58, 139.97s/case]
+  snap_amazon_bfs100000_s1 k=50 rho=0.99: D_a 0.0171, SE 0.00017; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00012, H 0.00025
+c2b:   7%|####2                                                           | 4/60 [08:17<1:51:55, 119.92s/case]
+  snap_amazon_bfs100000_s1 k=100 rho=0.97: D_a 0.0208, SE 0.00020; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00003, H 0.00023
+c2b:   8%|#####3                                                          | 5/60 [09:38<1:42:11, 111.49s/case]
+  snap_amazon_bfs100000_s1 k=100 rho=0.99: D_a 0.0237, SE 0.00020; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00020, H 0.00075
+c2b:  10%|######4                                                         | 6/60 [11:03<1:35:48, 106.45s/case]
+  snap_amazon_bfs100000_s1 k=150 rho=0.97: D_a 0.0253, SE 0.00022; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00014, H 0.00003
+c2b:  12%|#######4                                                        | 7/60 [12:37<1:32:07, 104.30s/case]
+  snap_amazon_bfs100000_s1 k=150 rho=0.99: D_a 0.0278, SE 0.00023; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00027, H 0.00004
+c2b:  13%|########5                                                       | 8/60 [13:57<1:27:20, 100.79s/case]
+  snap_amazon_bfs100000_s1 k=200 rho=0.97: D_a 0.0295, SE 0.00024; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00008, H 0.00069
+c2b:  15%|#########7                                                       | 9/60 [15:22<1:23:47, 98.57s/case]
+  snap_amazon_bfs100000_s1 k=200 rho=0.99: D_a 0.0324, SE 0.00024; phase-2 moves {'b-1se': 0, 'b-5pct': 0}; deployed = (a): {'b-1se': True, 'b-5pct': True}; price F 0.00006, H 0.00003
+c2b:  17%|##########6                                                     | 10/60 [16:51<1:21:08, 97.37s/case]
+
+=== snap_amazon_bfs100000_s2: 10 cases ===
+  load              0.2s

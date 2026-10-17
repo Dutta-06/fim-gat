@@ -12,3 +12,6 @@ cases left: 60 of 60 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per 
 - The run: `python -u -W ignore experiments/v2/run_c2b.py` (both floors in one process), no arguments, no constants changed. References are cached per sample in `results/v2/parts/c2b/references.json`; the script resumes by skipping finished cases.
 - Monitoring: memory/RSS logged every 30 s in `mem.log`, a watchdog kills the job if MemAvailable < 800 MB, and `results/v2/parts/c2b/` is committed and pushed to this branch every 30 min and after every sample. No `timeout` wrapper (a lesson from job ALL).
 - ETA (note's estimate, not yet measured): ~1 h per sample, ~6 h in all.
+
+## Progress
+- 19:55 UTC: sample 1 done (10 cases, 19 min including its reference: much faster than the note's ~1 h per sample). Rate ~110 s per case, so ETA ~2 h for the 6 samples (started 19:36 UTC). Peak job RSS so far 4.3 GB.
