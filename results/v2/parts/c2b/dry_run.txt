@@ -1,0 +1,2 @@
+C2b (PRE-REGISTERED, design section 25): 6 samples x 5 budgets x 2 floors; runs ['a', 'b-1se', 'b-5pct']; R=64; delta=0.005 phi0=0.4; code_tag=4514edc87490; device=cpu
+cases left: 60 of 60 (rough: 5-15 min each on a 4-CPU VM, plus about 25 min per sample for its cached stages)
